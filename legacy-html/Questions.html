@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doctor Articles - Noon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#3c2f00",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#735c00",
+                        "primary-container": "#d4af37",
+                        "surface-variant": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "primary": "#f2ca50",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f1f",
+                        "background": "#131313",
+                        "tertiary-container": "#b4b2b2",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#353534",
+                        "surface-bright": "#3a3939",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-container": "#554300",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary": "#313030",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-tertiary-container": "#454544",
+                        "primary-fixed": "#ffe088",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "on-primary-fixed": "#241a00",
+                        "on-surface-variant": "#d0c5af",
+                        "on-secondary-fixed": "#2f1500",
+                        "tertiary": "#d0cdcd",
+                        "secondary": "#ffb77d",
+                        "secondary-container": "#fd8b00",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "on-secondary": "#4d2600",
+                        "outline": "#99907c",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#603100",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#e5e2e1",
+                        "outline-variant": "#4d4635"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": [
+                            "Archivo Narrow"
+                        ],
+                        "button": [
+                            "Libre Caslon Text"
+                        ],
+                        "body-md": [
+                            "Libre Caslon Text"
+                        ],
+                        "headline-md": [
+                            "Merriweather"
+                        ],
+                        "body-lg": [
+                            "Libre Caslon Text"
+                        ],
+                        "headline-lg": [
+                            "Merriweather"
+                        ],
+                        "headline-lg-mobile": [
+                            "Merriweather"
+                        ],
+                        "display-lg": [
+                            "Merriweather"
+                        ]
+                    },
+                    "fontSize": {
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "button": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-md": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "56px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-lg": [
+                            "72px",
+                            {
+                                "lineHeight": "80px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.05);
+        }
+        .gold-border-gradient {
+            border: 1px solid transparent;
+            background-image: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), linear-gradient(135deg, rgba(212, 175, 55, 0.8), transparent);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(10, 10, 10, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tighter">Noon</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Product</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Features</a>
+<a class="text-primary font-bold border-b border-primary pb-1 font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Methodology</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Case Studies</a>
+</nav>
+<div class="flex gap-4">
+<button class="hidden md:block text-primary font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-4 py-2 rounded-lg scale-95 duration-200">Log In</button>
+<button class="bg-primary-container text-on-primary font-button text-button uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 px-6 py-2 rounded-lg shadow-[0_0_15px_rgba(212,175,55,0.3)] scale-95 duration-200">Get Started</button>
+</div>
+</header>
+<main class="pt-24 pb-section-gap relative">
+<div class="ambient-glow top-0 left-[-200px]"></div>
+<div class="ambient-glow top-[40%] right-[-200px]"></div>
+<div class="ambient-glow bottom-0 left-[20%]"></div>
+<!-- FAQ Hero -->
+<section class="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center mb-section-gap">
+<div class="absolute inset-0 z-0">
+<img alt="FAQ Hero Background" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh6iaobxq3_r12lvTEQPci05cD4dGmdcPtsNrwU9HUY4cht-g3YNkosCn2o9oIxhULGgq9ztLd-ljNdk0hKXQPqO9uzkr9o78BZQ8Gf9xAIjIkTHB1RnnhgH81GbvPT_ONYOoFG44Rbm4gj-xOiFKmQmk1aSo5LiD2y02t7yvW0ppwZyN_gUeVDNhGlW8GPIswDP-NG72ALHdKaSmKtaPusB2K-AZYX5YpQFmcaslpG02MoJdB2RWJQA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-start text-left">
+<span class="text-primary font-label-sm tracking-widest uppercase mb-4 drop-shadow-md">FREQUENTLY ASKED QUESTIONS</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-headline-lg-mobile text-on-surface mb-6 drop-shadow-2xl max-w-3xl">Clear Answers to Your <br/><span class="text-gold-gradient">Most Important Questions</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">Explore clear answers to common questions about plastic-surgery procedures, preparation, recovery, safety, and expected outcomes.</p>
+<div class="flex flex-wrap gap-4 mb-20">
+<button class="bg-gradient-to-r from-primary-container to-primary text-on-primary font-button text-button uppercase tracking-wider px-10 py-4 rounded-full shadow-[0_10px_30px_rgba(212,175,55,0.25)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)] transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+<span class="">Contact Us</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="glass-panel text-on-surface font-button text-button uppercase tracking-wider px-10 py-4 rounded-full hover:bg-surface-container-high transition-all duration-300 flex items-center gap-2 border border-outline-variant/30 transform hover:-translate-y-1">
+<span class="">View Results</span>
+</button>
+</div>
+<!-- Floating Liquid Glass Capsule -->
+<div class="glass-panel gold-border-gradient rounded-full px-8 py-3 flex items-center gap-6 absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce" style="animation-duration: 3s;">
+<a class="text-primary hover:text-primary-fixed transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="call">call</span>
+<span class="font-label-sm text-label-sm">+1 (800) 555-NOON</span>
+</a>
+<div class="w-[1px] h-4 bg-outline-variant/50"></div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]" data-icon="share">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Intro -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 text-center flex flex-col items-center">
+<span class="text-primary font-label-sm tracking-widest uppercase mb-4 drop-shadow-md">COMMON QUESTIONS</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[48px] leading-tight text-on-surface mb-6">Frequently Asked Questions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Find clear, concise information about procedures, consultations, preparation, recovery, safety, and follow-up.</p>
+</section>
+<!-- FAQ Items -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Column 1 -->
+<div class="flex flex-col space-y-6">
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">How do I know which procedure is right for me?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Your surgeon will evaluate your goals, medical history, and anatomy during a thorough consultation to recommend the most suitable approach tailored specifically for you.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">What happens during the first consultation?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                You will discuss your aesthetic goals, review your medical history, and explore potential procedures. The surgeon will outline risks, benefits, and costs to ensure you are fully informed.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">How should I prepare for plastic surgery?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Preparation typically involves avoiding certain medications, quitting smoking, arranging for post-operative care, and following any specific dietary or lifestyle instructions provided by your surgeon.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">What tests may be required before surgery?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Standard preoperative tests may include blood work, an ECG, and specific imaging studies depending on the procedure and your individual health profile to ensure you are fit for surgery.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">Is plastic surgery safe?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                When performed by a board-certified plastic surgeon in an accredited facility, plastic surgery is generally very safe. However, like all surgical procedures, it carries inherent risks that will be discussed in detail.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">What type of anesthesia may be used?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Depending on the extent of the procedure, you may receive local anesthesia, intravenous sedation, or general anesthesia. Your surgeon will recommend the safest and most comfortable option.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">How long does the procedure usually take?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Surgical duration varies widely based on the complexity and number of procedures being performed, ranging from under an hour for minor adjustments to several hours for extensive surgeries.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">Will I need to stay in the hospital?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Many plastic surgery procedures are performed on an outpatient basis, meaning you can return home the same day. More extensive surgeries may require an overnight stay for observation.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">How long is the recovery period?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Initial recovery usually takes one to two weeks, during which bruising and swelling subside. Full healing and final results can take several months, depending on the specific procedure.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">When can I return to work?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Return to work depends on the physical demands of your job and the extent of the surgery. Most patients resume sedentary work within one to two weeks.
+            </div>
+</details>
+</div>
+<!-- Column 2 -->
+<div class="flex flex-col space-y-6">
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">When will the final results appear?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                While you will notice immediate changes, final results may take 6 to 12 months to fully emerge as residual swelling resolves and tissues settle into their new contours.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">Will there be visible scars?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                All surgeries involve some scarring. However, experienced surgeons strategically place incisions in natural skin folds or hidden areas to ensure scars remain as inconspicuous as possible.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">How long do results usually last?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Many plastic surgery results are long-lasting or permanent. However, aging, lifestyle choices, and weight fluctuations can affect the longevity of your outcomes.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">What should I avoid during recovery?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Patients are generally advised to avoid strenuous exercise, heavy lifting, sun exposure on scars, and smoking to promote optimal healing and minimize complications.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">How many follow-up visits are needed?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Follow-up care usually involves an initial post-operative visit within a week, followed by periodic check-ups over the next several months to monitor your progress.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">What are the possible risks and complications?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                While rare, potential risks include infection, bleeding, unfavorable scarring, and anesthesia reactions. Adhering to your surgeon's pre- and post-operative instructions minimizes these risks.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">Can multiple procedures be performed together?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Yes, combining procedures (like a "Mommy Makeover") is common and can reduce overall recovery time and costs, provided you are a suitable candidate for longer surgery.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">How do I maintain my results?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Maintaining a stable weight, adopting a healthy lifestyle, protecting your skin from the sun, and following a good skincare regimen are key to preserving surgical outcomes.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">What should I bring to my consultation?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                Bring a list of your medical history, current medications, past surgeries, and a list of questions or concerns you wish to discuss with the surgeon.
+            </div>
+</details>
+<details class="group glass-panel gold-border-gradient rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 open:bg-surface-container-low/80">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none list-none">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors pr-4">How can I book an appointment?</h3>
+<div class="shrink-0 w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center text-primary transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px] group-open:hidden">add</span>
+<span class="material-symbols-outlined text-[20px] hidden group-open:block">remove</span>
+</div>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-on-surface-variant animate-[fadeIn_0.3s_ease-in-out]">
+                You can easily book a consultation by contacting our clinic via phone, WhatsApp, or through the direct booking links provided on our website.
+            </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Premium Contact CTA -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="glass-panel gold-border-gradient rounded-3xl p-8 md:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center gap-12 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+<!-- Background Shader/Glow -->
+<div class="absolute inset-0 opacity-20 z-0 mix-blend-screen pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary/40 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px]"></div>
+</div>
+<!-- Text Content -->
+<div class="relative z-10 flex-1 space-y-6">
+<span class="text-primary font-label-sm tracking-widest uppercase mb-2 inline-block">STILL HAVE A QUESTION?</span>
+<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-headline-lg-mobile text-on-surface mb-2">Get an Answer <span class="text-gold-gradient">Specific to Your Case</span></h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">General answers can guide you, but every patient is different. Contact Dr. Ahmed Gamal El-Borhamy’s clinic for personalized information and consultation guidance.</p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-primary-container text-on-primary font-button text-button uppercase tracking-wider px-8 py-3 rounded-lg shadow-[0_5px_20px_rgba(212,175,55,0.2)] hover:shadow-[0_8px_25px_rgba(212,175,55,0.3)] transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="">Book Consultation</span>
+</button>
+<button class="glass-panel text-on-surface font-button text-button uppercase tracking-wider px-8 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-300 flex items-center justify-center gap-2 border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary" data-icon="chat">chat</span>
+<span class="">WhatsApp</span>
+</button>
+<button class="glass-panel text-on-surface font-button text-button uppercase tracking-wider px-8 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-300 flex items-center justify-center gap-2 border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">call</span>
+<span class="">Call Now</span>
+</button>
+</div>
+</div>
+<!-- 3D Composition Image -->
+<div class="relative z-10 w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-2xl">
+<img alt="The Answer Portal" class="w-full h-auto object-cover rounded-2xl border border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuJ7yPXXV7zd_0ycGJO5omSCxGyNzxQvXRZprYIWrd1-PbNJ1ekF-U4edAu56ZGC63pBRCDZQYojttZnQbCruNGN6Y_Qnrt6PEqdPHiT-UktYgeEgrElhRHtyBLOZSjYEcql-iGvfiOTwxbFttGdkzD_vyXD-gS0WE2SVkXMWQSmV9ydPGmKxRZqFdzX0fL8ZIQgFdkcgFX81QYArBVcMaY6uM_WX7UH8IUsDlPuiloO-MnmEtqxT7Qg"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant/10 grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-desktop max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<div class="font-headline-md text-headline-md text-on-surface">Noon</div>
+<div class="flex flex-col md:items-end justify-between h-full gap-8">
+<nav class="flex flex-wrap gap-4 md:gap-6">
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Security</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Contact Support</a>
+</nav>
+<div class="font-body-md text-body-md text-primary-fixed-dim">© 2024 Noon AI. All rights reserved.</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Procedures &amp; Services - Noon AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Libre+Caslon+Text:wght@400;700&amp;family=Archivo+Narrow:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#99907c",
+                        "on-primary-container": "#554300",
+                        "surface-bright": "#3a3939",
+                        "surface-tint": "#e9c349",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-primary": "#3c2f00",
+                        "secondary-container": "#fd8b00",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#b4b2b2",
+                        "primary": "#f2ca50",
+                        "on-tertiary": "#313030",
+                        "surface-container": "#201f1f",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "secondary": "#ffb77d",
+                        "on-secondary-fixed": "#2f1500",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-surface": "#e5e2e1",
+                        "inverse-primary": "#735c00",
+                        "primary-fixed": "#ffe088",
+                        "on-secondary": "#4d2600",
+                        "surface-container-highest": "#353534",
+                        "surface": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#603100",
+                        "on-primary-fixed": "#241a00",
+                        "primary-fixed-dim": "#e9c349",
+                        "tertiary": "#d0cdcd",
+                        "outline-variant": "#4d4635",
+                        "on-tertiary-container": "#454544",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-container": "#d4af37",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "on-surface-variant": "#d0c5af"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Merriweather", "serif"],
+                        "label-sm": ["Archivo Narrow", "sans-serif"],
+                        "display-lg": ["Merriweather", "serif"],
+                        "body-lg": ["Libre Caslon Text", "serif"],
+                        "body-md": ["Libre Caslon Text", "serif"],
+                        "headline-lg": ["Merriweather", "serif"],
+                        "headline-lg-mobile": ["Merriweather", "serif"],
+                        "button": ["Libre Caslon Text", "serif"]
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "button": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(24px);
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.5) 0%, rgba(212, 175, 55, 0.05) 100%);
+        }
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(90deg, #f2ca50 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .luxury-card {
+            background: linear-gradient(145deg, rgba(42, 33, 24, 0.9) 0%, rgba(24, 18, 12, 0.95) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                        0 0 20px rgba(212, 175, 55, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .luxury-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+            opacity: 0.5;
+        }
+        .luxury-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.9), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                        0 0 30px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+        .luxury-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.6s, transform 0.6s;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .luxury-card:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .liquid-glass-cta {
+            background: linear-gradient(135deg, rgba(35, 25, 18, 0.85) 0%, rgba(18, 12, 8, 0.95) 100%);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 
+                        inset 0 1px 2px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/20">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tighter">Noon</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider" href="#">Product</a>
+<a class="text-primary font-bold border-b border-primary pb-1 font-button text-button uppercase tracking-wider" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider" href="#">Methodology</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider" href="#">Case Studies</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-on-surface-variant hover:text-on-surface font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-4 py-2 rounded scale-95 duration-200">Log In</button>
+<button class="bg-primary-container text-on-primary-container hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all font-button text-button uppercase tracking-wider px-6 py-2 rounded font-label-sm scale-95 duration-200">Get Started</button>
+</div>
+</div>
+</header>
+<main class="pt-[80px]">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden border-b border-outline-variant/20">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center bg-no-repeat w-full h-full opacity-30" data-alt="A cinematic, wide-angle shot of a pristine, high-tech luxury surgical consultation room. The environment is extremely clean, modern, and professional, bathed in soft, diffused lighting with subtle warm amber glows complementing deep shadows. The setting conveys advanced technology, medical authority, and premium care without any explicit medical procedures shown. The mood is quiet, powerful, and atmospheric, aligning perfectly with a dark, high-contrast, premium aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbfwXVr3GsatDscK-Cy0c4KRhRPBQT7vxMc7rv8iTdTzzSdcwyHo-kjTCsAKpHaBl8C5bbADWIrNt87fRDcB4ONulCXsaq0a3RVl3o79J7YZMp9KdcqUfz315Nr4ylapY_6A6g89oc25dErurGuARUmB9SK0KQMpItQXUUQ_gYypAnX4Hc7hWLwdrNsh98_qznmmFokUpHdwj7-2BZFE4MvtDIf9_YVbdvD8CPoGm74x_t_QiJPhnk2w')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop text-center flex flex-col items-center gap-8">
+<span class="font-label-sm text-label-sm text-primary tracking-[0.2em] uppercase px-4 py-1 border border-primary/30 rounded-full bg-surface-container/50 backdrop-blur-md">OUR PROCEDURES</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface max-w-4xl text-gradient-gold pb-2">Advanced Plastic Surgery Procedures</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Discover precision-driven aesthetic transformations. We combine cutting-edge medical technology with an artist's eye to deliver natural, refined results tailored to your unique anatomy.
+                </p>
+<div class="flex flex-wrap items-center justify-center gap-4 mt-4">
+<button class="bg-primary-container text-on-primary-container font-button text-button uppercase tracking-wider px-8 py-4 rounded hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-300">Book Consultation</button>
+<button class="border border-primary text-primary font-button text-button uppercase tracking-wider px-8 py-4 rounded hover:bg-primary/10 transition-all duration-300 backdrop-blur-md">View Results</button>
+</div>
+</div>
+<!-- Social Capsule -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 glass-card rounded-full px-6 py-3 flex items-center gap-6 gold-glow border border-primary/20 hover:border-primary/50 transition-colors">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center" href="#"><span class="material-symbols-outlined" data-icon="facebook">qr_code_2</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center" href="#"><span class="material-symbols-outlined" data-icon="camera_alt">camera_alt</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center" href="#"><span class="material-symbols-outlined" data-icon="video_library">video_library</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center" href="#"><span class="material-symbols-outlined" data-icon="chat">chat</span></a>
+<div class="w-px h-6 bg-outline-variant/50"></div>
+<a class="text-primary font-label-sm text-label-sm tracking-widest hover:text-primary-fixed transition-colors flex items-center gap-2" href="tel:+1234567890">
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+                    +1 (234) 567-890
+                </a>
+</div>
+</section>
+<!-- Procedures Grid Section -->
+<section class="py-section-gap bg-background relative overflow-hidden">
+<!-- Ambient Background Glows -->
+<div class="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-1/4 right-0 w-96 h-96 bg-secondary-container/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+<div class="text-center mb-16">
+<div class="flex items-center justify-center gap-4 mb-4">
+<div class="h-px w-12 bg-gradient-to-r from-transparent to-primary/50"></div>
+<h2 class="font-display-lg text-headline-md md:text-headline-lg text-gradient-gold uppercase tracking-widest">Our Procedures</h2>
+<div class="h-px w-12 bg-gradient-to-l from-transparent to-primary/50"></div>
+</div>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Masterful precision meets aesthetic vision across our comprehensive suite of surgical excellence.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 0% 0%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Rhinoplasty</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Refine facial harmony with precision nasal reshaping tailored to your unique profile.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 33.33% 0%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Facelift</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Restore youthful contours with advanced lifting techniques for a natural rejuvenation.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 66.66% 0%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Blepharoplasty</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Awaken your gaze by removing excess skin and fat from the upper and lower eyelids.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 100% 0%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Liposuction</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Sculpt and refine body contours by removing stubborn fat deposits with precision.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 0% 50%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Tummy Tuck</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Achieve a firmer, flatter abdominal profile through skin and muscle tightening.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 33.33% 50%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Breast Augmentation</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Enhance volume and shape with premium implants or fat transfer techniques.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 66.66% 50%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Breast Reduction</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Alleviate discomfort and achieve a balanced silhouette with surgical reduction.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 100% 50%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Gynecomastia</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Correct enlarged male breast tissue for a more masculine chest contour.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 9 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 0% 100%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Arm Lift</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Remove excess skin and fat from the upper arms for a toned, sleek appearance.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 10 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 33.33% 100%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Thigh Lift</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Reshape the thighs by reducing excess skin and fat for smoother skin contours.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 11 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 66.66% 100%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Chin Contouring</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Define your jawline and profile with surgical or non-surgical chin enhancement.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 12 -->
+<div class="luxury-card rounded-2xl group cursor-pointer flex flex-col h-full min-h-[400px]">
+<div class="h-[55%] relative overflow-hidden rounded-t-2xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDgapyyV9zFOCltG0L8R9zF7P2K5zMmUO1gbrh9NSMVhqf66eZVwWZPPQgvCbEytcJhcdzDGb1rg3ki9EEMPHv2moq3U2W_F5V18vkO5R4YVvUAoGsCJtlziajJnaSQNCH6j9AZvvoy-ZsFOW3DoK1pn-JlXC6vsS4q4PbaBLaUDOuVL4vkHydLQSShsYuk7m1XNtV8bFtgMLeOIS-KpxQJEQvFZEHrLvarvQ3sTZWhUBGiwLe9jQE-oA&quot;); background-position: 100% 100%; background-size: 400% 300%;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#18120c] via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-[#120d09]">
+<h3 class="font-headline-md text-xl text-primary-fixed mb-2 drop-shadow-md">Body Contouring</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 line-clamp-2 mb-4 flex-grow">Comprehensive transformation combining multiple techniques for total body harmony.</p>
+<div class="flex items-center text-primary font-button text-sm uppercase tracking-wider gap-2 group-hover:gap-3 transition-all mt-auto w-fit border-b border-primary/30 group-hover:border-primary pb-1">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Consultation Gateway CTA Section -->
+<section class="pb-section-gap pt-10 px-margin-desktop relative">
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="liquid-glass-cta rounded-[2rem] overflow-hidden relative">
+<!-- Background Cinematic Elements -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-[#2a1b12] to-[#0f0a07] opacity-90"></div>
+<!-- Diagonal Light Beams -->
+<div class="absolute -top-[50%] -left-[20%] w-[150%] h-[200%] bg-gradient-to-br from-primary/10 via-transparent to-transparent rotate-45 pointer-events-none mix-blend-screen"></div>
+<div class="absolute top-[20%] left-[30%] w-[100%] h-[100%] bg-gradient-to-br from-primary-fixed/5 via-transparent to-transparent rotate-45 pointer-events-none mix-blend-screen"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 relative z-10 min-h-[500px]">
+<!-- Left Content -->
+<div class="p-12 lg:p-16 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-primary tracking-[0.2em] uppercase px-4 py-1 border border-primary/30 rounded-full w-fit mb-6 bg-black/20">PRIVATE CONSULTATION</span>
+<h2 class="font-display-lg text-headline-md md:text-headline-lg text-white mb-6 text-gradient-gold">Your Next Step Starts With a Personal Consultation</h2>
+<p class="font-body-lg text-on-surface-variant/90 mb-10 max-w-lg">
+                        Discuss your aesthetic goals directly with our specialists. Receive a tailored, comprehensive treatment plan in a completely confidential environment.
+                    </p>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+<button class="bg-primary-container text-on-primary-container font-button text-button uppercase tracking-wider px-8 py-4 rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:bg-primary transition-all duration-300 w-full sm:w-auto text-center font-bold">Book Consultation</button>
+<button class="border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-button text-button uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto bg-black/30 backdrop-blur-sm">
+<span class="material-symbols-outlined text-lg">chat</span> WhatsApp
+                        </button>
+<button class="border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-button text-button uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto bg-black/30 backdrop-blur-sm">
+<span class="material-symbols-outlined text-lg">call</span> Call Now
+                        </button>
+</div>
+</div>
+<!-- Right 3D Composition -->
+<div class="relative h-[400px] lg:h-auto overflow-hidden hidden lg:block">
+<!-- Silhouette of Doctor -->
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&amp;fit=crop&amp;q=80&amp;w=1000')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative w-full h-full max-w-[500px]">
+<!-- Base Illuminated Base -->
+<div class="absolute bottom-[20%] left-1/2 -translate-x-1/2 w-[300px] h-[100px] bg-primary/20 blur-[50px] rounded-[100%] rounded-b-none border-b border-primary/50"></div>
+<!-- Floating Elements -->
+<!-- Calendar -->
+<div class="absolute top-[30%] left-[20%] w-[140px] h-[160px] luxury-card rounded-xl rotate-[-15deg] shadow-2xl p-4 flex flex-col gap-2 z-20 animate-[float_6s_ease-in-out_infinite]">
+<div class="w-full flex justify-between items-center mb-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm">calendar_month</span></div>
+</div>
+<div class="h-1.5 w-3/4 bg-primary/40 rounded"></div>
+<div class="h-1.5 w-1/2 bg-outline-variant/50 rounded mb-2"></div>
+<div class="grid grid-cols-4 gap-1 flex-grow">
+<div class="bg-outline-variant/20 rounded-sm"></div>
+<div class="bg-outline-variant/20 rounded-sm"></div>
+<div class="bg-primary/50 rounded-sm shadow-[0_0_10px_rgba(212,175,55,0.5)]"></div>
+<div class="bg-outline-variant/20 rounded-sm"></div>
+<div class="bg-outline-variant/20 rounded-sm"></div>
+<div class="bg-outline-variant/20 rounded-sm"></div>
+<div class="bg-outline-variant/20 rounded-sm"></div>
+</div>
+</div>
+<!-- Medical Folder -->
+<div class="absolute top-[20%] right-[15%] w-[180px] h-[220px] bg-gradient-to-br from-[#3a2c20] to-[#1a120c] rounded-lg border border-primary/30 rotate-[10deg] shadow-[0_20px_40px_rgba(0,0,0,0.8)] p-5 z-10 animate-[float_8s_ease-in-out_infinite_reverse]">
+<div class="w-16 h-4 bg-primary/30 rounded-full mb-6 mx-auto"></div>
+<div class="space-y-3">
+<div class="h-2 w-full bg-white/10 rounded"></div>
+<div class="h-2 w-5/6 bg-white/10 rounded"></div>
+<div class="h-2 w-4/6 bg-white/10 rounded"></div>
+</div>
+<div class="mt-8 flex justify-center">
+<div class="w-16 h-16 rounded-full border-2 border-primary/40 flex items-center justify-center text-primary/60">
+<span class="material-symbols-outlined text-2xl">medical_information</span>
+</div>
+</div>
+</div>
+<!-- Appointment Card -->
+<div class="absolute bottom-[35%] left-[30%] w-[240px] h-[120px] liquid-glass-cta rounded-xl border border-primary/50 shadow-[0_30px_50px_rgba(0,0,0,0.9)] p-4 flex items-center gap-4 z-30 animate-[float_7s_ease-in-out_infinite]">
+<div class="w-14 h-14 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">event_available</span>
+</div>
+<div>
+<div class="text-xs text-primary font-bold uppercase tracking-wider mb-1">Confirmed</div>
+<div class="text-sm text-white font-headline-md">Dr. Ahmed Gamal</div>
+<div class="text-xs text-outline-variant">Thursday, 10:00 AM</div>
+</div>
+</div>
+<!-- Floating Particles -->
+<div class="absolute top-[10%] left-[50%] w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#f2ca50] animate-ping"></div>
+<div class="absolute bottom-[20%] right-[30%] w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_8px_#f2ca50] animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div>
+<div class="font-headline-md text-headline-md text-on-surface mb-4">Noon</div>
+<p class="font-body-md text-body-md text-primary-fixed-dim">© 2024 Noon AI. All rights reserved.</p>
+</div>
+<div class="flex flex-col md:flex-row md:justify-end gap-6 font-body-md text-body-md">
+<a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Security</a>
+<a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</main>
+<style>
+    @keyframes float {
+        0% { transform: translateY(0px) rotate(auto); }
+        50% { transform: translateY(-15px) rotate(auto); }
+        100% { transform: translateY(0px) rotate(auto); }
+    }
+</style>
+
+
+</body></html>

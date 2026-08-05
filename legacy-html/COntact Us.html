@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Dr. Ahmed Gamal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Merriweather:wght@300;400;700;900&amp;family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#2a2a2a",
+                        "background": "#131313",
+                        "tertiary-container": "#b4b2b2",
+                        "on-secondary": "#4d2600",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed": "#241a00",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#e9c349",
+                        "on-error": "#690005",
+                        "tertiary": "#d0cdcd",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "outline-variant": "#4d4635",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#2f1500",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#313030",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-container": "#454544",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-bright": "#3a3939",
+                        "secondary": "#ffb77d",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-surface-variant": "#d0c5af",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#353534",
+                        "primary": "#f2ca50",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-secondary-container": "#603100",
+                        "outline": "#99907c",
+                        "inverse-primary": "#735c00",
+                        "primary-container": "#d4af37",
+                        "on-primary-container": "#554300",
+                        "error-container": "#93000a",
+                        "on-surface": "#e5e2e1",
+                        "secondary-container": "#fd8b00",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "surface-container": "#201f1f",
+                        "surface-dim": "#131313",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "primary-fixed": "#ffe088"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Libre Caslon Text", "serif"],
+                        "headline-md": ["Merriweather", "serif"],
+                        "button": ["Libre Caslon Text", "serif"],
+                        "headline-lg-mobile": ["Merriweather", "serif"],
+                        "label-sm": ["Archivo Narrow", "sans-serif"],
+                        "display-lg": ["Merriweather", "serif"],
+                        "body-lg": ["Libre Caslon Text", "serif"],
+                        "headline-lg": ["Merriweather", "serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "button": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(42, 42, 42, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+        
+        .gold-edge {
+            position: relative;
+        }
+        
+        .gold-edge::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.8) 0%, rgba(212, 175, 55, 0) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+        }
+        
+        .light-leak {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header (Shared Component) -->
+<header class="bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto md:flex hidden">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tighter">Noon</div>
+<nav class="flex gap-8 items-center">
+<a class="font-button text-button uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-lg duration-300 scale-95" href="#">Product</a>
+<a class="font-button text-button uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-lg duration-300 scale-95" href="#">Features</a>
+<a class="font-button text-button uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-lg duration-300 scale-95" href="#">Methodology</a>
+<a class="font-button text-button uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-lg duration-300 scale-95" href="#">Case Studies</a>
+</nav>
+<div class="flex gap-4 items-center">
+<button class="font-button text-button uppercase tracking-wider text-primary border border-primary px-4 py-2 rounded-full hover:bg-primary-container/10 transition-all duration-300">Log In</button>
+<button class="font-button text-button uppercase tracking-wider bg-primary-container text-on-primary-container px-6 py-2 rounded-full hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-300">Get Started</button>
+</div>
+</header>
+<!-- Mobile Header (Simplified for demo) -->
+<header class="bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20 flex justify-between items-center px-margin-mobile py-4 md:hidden">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tighter">Noon</div>
+<button class="text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-grow pt-24 md:pt-32">
+<!-- Contact Hero -->
+<section class="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A cinematic, medium-shot view of a premium consultation room in a luxury clinic. Warm, low-key lighting with bronze and amber accents highlights elegant dark wood paneling and sophisticated leather seating. The atmosphere is highly professional, confidential, and welcoming." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgmYFnO0VaMm9NdlPIKsp17FB8BlOqVULoyDVTCWcEo9EqBGf6mrKURmaPvIOCsAGkpWh2vg2oJu_dA0yxdk613lURtx4RBlXqpFRZlJrt1fVEy9YVOjvuqKWwf5Ra2GhLeDo_pdlY25E7EXQFdA_a8-DUMaWLO84ZNta_KtlSrEdf9BZxUtXXJhCA7s0Rb-d9Xosc7xt_h-whsuLr8IF0VOLXgOfAc5MuuSqPH4vZQAKipZaCxUq99Q"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile max-w-4xl mx-auto flex flex-col items-center">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 drop-shadow-lg">Let’s Start With a Conversation</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Schedule a confidential consultation to discuss your aesthetic goals with precision and care.</p>
+<a class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container font-button text-button uppercase tracking-wider px-8 py-4 rounded-full gold-glow hover:scale-105 transition-transform duration-300" href="#whatsapp">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    Contact on WhatsApp
+                </a>
+</div>
+<!-- Floating Social Capsule -->
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 glass-card gold-edge rounded-full px-8 py-3 flex items-center gap-6 z-20">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span class="font-label-sm text-label-sm uppercase hidden md:inline">Call Us</span>
+</a>
+<div class="w-px h-4 bg-outline-variant/50"></div>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+<span class="font-label-sm text-label-sm uppercase hidden md:inline">Email</span>
+</a>
+<div class="w-px h-4 bg-outline-variant/50"></div>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-label-sm text-label-sm uppercase hidden md:inline">Directions</span>
+</a>
+</div>
+</section>
+<!-- The Consultation Desk -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop relative">
+<div class="light-leak top-0 left-[-100px]"></div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Form Side -->
+<div class="glass-card gold-edge rounded-xl p-8 relative z-10 w-full max-w-md mx-auto lg:mx-0">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Request Consultation</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Fill out the details below to initiate a priority connection.</p>
+<form class="space-y-4">
+<div>
+<input class="w-full bg-[#050505] border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md placeholder:font-label-sm placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Full Name" type="text"/>
+</div>
+<div>
+<input class="w-full bg-[#050505] border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md placeholder:font-label-sm placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Phone Number" type="tel"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<input class="w-full bg-[#050505] border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md placeholder:font-label-sm placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Age" type="number"/>
+</div>
+<div>
+<select class="w-full bg-[#050505] border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md placeholder:font-label-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none">
+<option class="text-outline" disabled="" selected="" value="">Procedure</option>
+<option value="face">Facial Aesthetics</option>
+<option value="body">Body Contouring</option>
+<option value="skin">Skin Rejuvenation</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<input class="w-full bg-[#050505] border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md placeholder:font-label-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-outline" type="date"/>
+</div>
+<div>
+<input class="w-full bg-[#050505] border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md placeholder:font-label-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-outline" type="time"/>
+</div>
+</div>
+<div>
+<textarea class="w-full bg-[#050505] border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md placeholder:font-label-sm placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none" placeholder="Message (Optional)" rows="3"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-button text-button uppercase tracking-wider py-4 rounded-lg gold-glow mt-4 hover:bg-primary transition-colors flex justify-center items-center gap-2" type="button">
+<span>Continue on WhatsApp</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+<!-- Image Side -->
+<div class="relative h-[500px] rounded-xl overflow-hidden glass-card gold-edge hidden lg:block">
+<img class="w-full h-full object-cover opacity-80" data-alt="A highly stylized, futuristic holographic display interface floating in a dark, luxurious office setting. The interface shows a doctor's profile and a digital consultation form, rendered in glowing bronze and gold tones, conveying advanced medical technology blended with elite aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACTK-A5eBAlSPQFR9f4zyyDeV61WZdeJMvvnoT2FWAiruN6g4y3FroL3jMdIuYfzwoHinrJxyseLV5PmdTGFlpIX1xr8Gi71yVvVKpk-w-nleAQzqDUVmdGLqgP3PNcNuY-nGdYc-cs99TWSIXGhdkhbLEDcoD8HJojj-8dbq-0nx8AqfhVd2dePKlezMa1rs8Z3yQcWosfgQhL116oOJr7DM-mkzlbvTCtDokUAX2XeW0IVXIzhd9FQ"/>
+</div>
+</div>
+</section>
+<!-- The Clinic Destination -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<div class="glass-card gold-edge rounded-2xl overflow-hidden relative">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<!-- Image/Map Area -->
+<div class="h-64 md:h-auto relative">
+<img class="w-full h-full object-cover" data-alt="The elegant exterior of a luxury medical clinic at dusk. The building features classic stone architecture accented by warm, glowing bronze lighting under a sophisticated canopy. Pedestrians walk by, establishing a prime, high-end urban location." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBixc8ARCZSYVBXOP1Oevk9NyEDxH8m6eMk_hWv4JOAZfekywZilSe1ij619Y02paqkEhPXnY57wz601DJCZTe-syKAkY2SsOy9-Xfo0HNzyft-zrRYrEh-An1UstKxRWbY_DvREUl0fm2EUrg5WJ6-pioWyqZK5ASHPvZ0rKla_J10En_HzjDO7Wc6ylwJrhiHzyn7MN5BUKH4dt8eqAMWiiEtTmyVzcEB270QERVHfeFNuHAPNMl1Pg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container-lowest/90 md:block hidden"></div>
+</div>
+<!-- Location Details -->
+<div class="p-8 md:p-12 flex flex-col justify-center bg-surface-container-high/40 backdrop-blur-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Clinic Destination</h3>
+<p class="font-body-md text-body-md text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                                Elite Aesthetics Center
+                            </p>
+<div class="space-y-4 font-body-md text-body-md text-on-surface-variant mb-8">
+<p>125 Harley Street<br/>Marylebone, London<br/>W1G 6BR, United Kingdom</p>
+</div>
+<button class="self-start border border-primary text-primary font-button text-button uppercase tracking-wider px-6 py-3 rounded-full hover:bg-primary-container/10 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">map</span>
+                                Open in Google Maps
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Information Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop relative">
+<div class="light-leak bottom-0 right-0"></div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Phone -->
+<div class="glass-card gold-edge rounded-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-6 group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">phone_in_talk</span>
+</div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider text-outline mb-2">Phone Numbers</h4>
+<a class="font-body-lg text-body-lg text-on-surface hover:text-primary transition-colors block mb-1" href="tel:+442071234567">+44 20 7123 4567</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors block" href="tel:+447700900123">Emergency: +44 7700 900123</a>
+</div>
+<!-- Email -->
+<div class="glass-card gold-edge rounded-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-6 group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">mail</span>
+</div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider text-outline mb-2">Email Address</h4>
+<a class="font-body-lg text-body-lg text-on-surface hover:text-primary transition-colors block mb-1" href="mailto:consult@drahmed.com">consult@drahmed.com</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors block" href="mailto:info@drahmed.com">info@drahmed.com</a>
+</div>
+<!-- Hours -->
+<div class="glass-card gold-edge rounded-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-6 group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">schedule</span>
+</div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider text-outline mb-2">Working Hours</h4>
+<p class="font-body-lg text-body-lg text-on-surface mb-1">Mon - Fri: 9am - 6pm</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Sat: 10am - 2pm (By Appt)</p>
+</div>
+<!-- Social -->
+<div class="glass-card gold-edge rounded-xl p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-6 group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">share</span>
+</div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider text-outline mb-4">Connect Socially</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="pb-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto glass-card gold-edge rounded-2xl p-12 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4 relative z-10">One Message Away</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto relative z-10">Ready to discuss your journey? Reach out directly via WhatsApp for the fastest response.</p>
+<button class="bg-primary-container text-on-primary-container font-button text-button uppercase tracking-wider px-8 py-4 rounded-full gold-glow hover:scale-105 transition-transform duration-300 relative z-10 inline-flex items-center gap-2">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    Start WhatsApp Conversation
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant/10 grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-desktop max-w-container-max mx-auto flat no shadows">
+<div class="font-headline-md text-headline-md text-on-surface opacity-80 hover:opacity-100 transition-opacity">Noon</div>
+<div class="flex flex-col items-end gap-4">
+<div class="font-body-md text-body-md text-primary-fixed-dim">© 2024 Noon AI. All rights reserved.</div>
+<nav class="flex gap-6">
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Security</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Contact Support</a>
+</nav>
+</div>
+</footer>
+</body></html>

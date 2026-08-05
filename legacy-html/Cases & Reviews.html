@@ -1,0 +1,903 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Patient Results &amp; Reviews - Dr. Ahmed Gamal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-highest": "#353534",
+                "surface-container-low": "#1c1b1b",
+                "surface-variant": "#353534",
+                "surface-tint": "#e9c349",
+                "on-tertiary-fixed": "#1c1b1b",
+                "primary": "#f2ca50",
+                "on-primary": "#3c2f00",
+                "on-primary-fixed": "#241a00",
+                "error-container": "#93000a",
+                "on-primary-container": "#554300",
+                "primary-container": "#d4af37",
+                "primary-fixed-dim": "#e9c349",
+                "on-error-container": "#ffdad6",
+                "surface-container-lowest": "#0e0e0e",
+                "outline": "#99907c",
+                "secondary-container": "#fd8b00",
+                "on-primary-fixed-variant": "#574500",
+                "surface-dim": "#131313",
+                "on-secondary-fixed-variant": "#6e3900",
+                "on-surface-variant": "#d0c5af",
+                "tertiary": "#d0cdcd",
+                "inverse-surface": "#e5e2e1",
+                "on-surface": "#e5e2e1",
+                "secondary-fixed-dim": "#ffb77d",
+                "on-tertiary-fixed-variant": "#474746",
+                "tertiary-fixed": "#e5e2e1",
+                "outline-variant": "#4d4635",
+                "surface-container": "#201f1f",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "on-secondary": "#4d2600",
+                "on-background": "#e5e2e1",
+                "on-tertiary-container": "#454544",
+                "tertiary-container": "#b4b2b2",
+                "background": "#131313",
+                "surface": "#131313",
+                "inverse-on-surface": "#313030",
+                "error": "#ffb4ab",
+                "secondary-fixed": "#ffdcc3",
+                "on-secondary-fixed": "#2f1500",
+                "inverse-primary": "#735c00",
+                "on-tertiary": "#313030",
+                "on-error": "#690005",
+                "on-secondary-container": "#603100",
+                "surface-container-high": "#2a2a2a",
+                "primary-fixed": "#ffe088",
+                "secondary": "#ffb77d",
+                "surface-bright": "#3a3939"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "unit": "8px",
+                "margin-desktop": "64px",
+                "container-max": "1280px",
+                "section-gap": "120px",
+                "margin-mobile": "20px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "headline-lg-mobile": [
+                        "Merriweather"
+                ],
+                "headline-lg": [
+                        "Merriweather"
+                ],
+                "display-lg": [
+                        "Merriweather"
+                ],
+                "label-sm": [
+                        "Archivo Narrow"
+                ],
+                "headline-md": [
+                        "Merriweather"
+                ],
+                "body-lg": [
+                        "Libre Caslon Text"
+                ],
+                "button": [
+                        "Libre Caslon Text"
+                ],
+                "body-md": [
+                        "Libre Caslon Text"
+                ]
+        },
+        "fontSize": {
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "72px",
+                        {
+                                "lineHeight": "80px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "button": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    body { background-color: #0a0a0a; color: #e5e2e1; }
+    .glass-card {
+        background: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: 0 4px 30px rgba(212, 175, 55, 0.1);
+    }
+    .gold-gradient-text {
+        background: linear-gradient(to right, #d4af37, #f2ca50);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .gold-glow {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+    
+    /* New Carousel and Card Styles */
+    .carousel-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .carousel-slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+    @media (min-width: 768px) {
+        .carousel-slide {
+            flex: 0 0 calc(100% / 3);
+            min-width: calc(100% / 3);
+            padding: 0 12px;
+        }
+    }
+    
+    .premium-card {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: linear-gradient(145deg, #2a1f10, #130e07);
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        transform: translateY(0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .premium-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    .card-glow-bg {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1), transparent 70%);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .premium-card:hover .card-glow-bg {
+        opacity: 1;
+    }
+    
+    /* Clipping Mask Slider Styles */
+    .comparison-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        border-radius: 16px 16px 0 0;
+    }
+    .comparison-image-before,
+    .comparison-image-after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /* The 'After' image is clipped based on the slider value */
+    .comparison-image-after {
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        z-index: 10;
+    }
+    .comparison-slider-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 30;
+        cursor: ew-resize;
+        margin: 0;
+    }
+    .comparison-slider-line {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background: #d4af37;
+        box-shadow: 0 0 10px #d4af37;
+        transform: translateX(-50%);
+        z-index: 20;
+        pointer-events: none;
+    }
+    .comparison-slider-handle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 36px;
+        height: 36px;
+        background: rgba(20, 20, 20, 0.8);
+        backdrop-filter: blur(8px);
+        border: 2px solid #d4af37;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 21;
+        pointer-events: none;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    }
+    .comparison-slider-handle::before,
+    .comparison-slider-handle::after {
+        content: '';
+        border: solid #d4af37;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+    .comparison-slider-handle::before {
+        transform: rotate(135deg);
+        margin-right: 4px;
+    }
+    .comparison-slider-handle::after {
+        transform: rotate(-45deg);
+        margin-left: 4px;
+    }
+
+    .carousel-nav-btn {
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        color: #d4af37;
+        transition: all 0.2s ease;
+    }
+    .carousel-nav-btn:hover {
+        background: rgba(212, 175, 55, 0.1);
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    }
+</style>
+</head>
+<body class="font-body-md antialiased overflow-x-hidden">
+<!-- Navigation -->
+<nav class="bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-on-surface tracking-tighter" href="#">Noon</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider" href="#">Product</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider" href="#">Methodology</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider" href="#">Case Studies</a>
+<a class="text-primary font-bold border-b border-primary pb-1 font-button text-button uppercase tracking-wider" href="#">Results</a>
+</div>
+<div class="hidden md:flex space-x-4">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider pt-2" href="#">Log In</a>
+<a class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-button text-button uppercase tracking-wider hover:bg-primary-container/90 transition-all gold-glow scale-95 duration-200" href="#">Get Started</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A luxurious, cinematic high-end medical clinic waiting area. Soft amber lighting, deep espresso walls, and elegant bronze accents. A woman stands in silhouette near a large window, embodying refinement and transformation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDreGDi5Tk5vPjyM0FkzujGOSivDoOuN6JzhgfqEyk82twgar9ZlVqQA8Mxuj9Pa3d71I0psf0deXNczx2CxGQpwqV33pqQeMK71vqiEqpJcJTLchBjn_aYnXoOktF9ukPzQecONsikmXGtafgZTiq5Qip0u8gS1olO7gD8CaYPVVhiVsd-kDIWYuAYirx2zOnpyeamKfQArfQzitgUywx4SaZq4drgSVwtkDn59R4bugr-dkoaoHWRDQ">
+<div class="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-mobile md:px-margin-desktop">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 drop-shadow-2xl">Real Journeys. <span class="gold-gradient-text">Refined Results.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Explore the transformative outcomes achieved through precision, artistry, and advanced medical expertise.</p>
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-full font-button text-button uppercase tracking-wider hover:scale-105 transition-transform duration-300 gold-glow">Book Now</button>
+</div>
+<!-- Floating Social Capsule -->
+<div class="fixed right-6 top-1/2 -translate-y-1/2 z-40 glass-card rounded-full p-3 flex flex-col gap-4">
+<a class="text-primary hover:text-surface-tint transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+<a class="text-primary hover:text-surface-tint transition-colors" href="#"><span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span></a>
+<a class="text-primary hover:text-surface-tint transition-colors" href="#"><span class="material-symbols-outlined" data-icon="play_circle">play_circle</span></a>
+<a class="text-primary hover:text-surface-tint transition-colors" href="#"><span class="material-symbols-outlined" data-icon="chat">chat</span></a>
+<a class="text-primary hover:text-surface-tint transition-colors" href="#"><span class="material-symbols-outlined" data-icon="call">call</span></a>
+</div>
+</section>
+<!-- Results Title -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<div class="flex items-center justify-center gap-6 mb-16">
+<div class="h-px w-24 bg-gradient-to-r from-transparent to-primary"></div>
+<h2 class="font-headline-lg text-headline-lg gold-gradient-text">Before &amp; After Results</h2>
+<div class="h-px w-24 bg-gradient-to-l from-transparent to-primary"></div>
+</div>
+<!-- Row 1: Face Procedures -->
+<div class="mb-24 relative" id="face-carousel">
+<div class="flex items-center justify-between mb-10">
+<h3 class="font-headline-md text-headline-md text-on-surface text-left">FACE PROCEDURES</h3>
+<div class="flex gap-4">
+<button aria-label="Previous" class="carousel-nav-btn w-12 h-12 rounded-full flex items-center justify-center prev-btn">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button aria-label="Next" class="carousel-nav-btn w-12 h-12 rounded-full flex items-center justify-center next-btn">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="carousel-container">
+<div class="carousel-track -mx-3">
+<!-- Cases 1-6 -->
+<!-- We need 6 identical structure cards for Face -->
+<!-- Card 1 -->
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<!-- Bottom Image (Before) -->
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLvlHgZ8X15tLCT3LAg_cgKixrTXYk3zvYe66_-KZBjtJgjYJwHJI6Xvp3lXADXLNuJGSBTxK1dWd72Cn3w9KuS4e8bsQ8v7WobZzzNm-Oyo1zzUXeP3xt8pUHJsC5jXFWEW7WrIuYQ3dJGSJkya8tZE0kHOO2hzehcIFikSYiHW8VcqdM4xhnVGJsXN9_wxNgJAtttQe0g9WIUjdgvvqwyikYIoWE6PAWlU4GT3yTEe2nVylWWKX3B8Jm54">
+<!-- Top Image (After) -->
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLu8NBBcpModbYhhji6yE9-J4o5z3R7FWp_i9iGiSqMK80tdXeZcsdK9jeD1Oq6VzKma3EkZ5s2Hv7k5oV4A3JdAEtmDvV8EpRMU2bkaityJ83t1RQuioA6qZsTspnZj883EkCI9tqOZS4NtzWkjMVfpsrUgatkyfq48yvf0CjCitLUtQjY-jeqsac4nHPGWgkcCdC791hXli5_53PzN6Cl3u5uZV0jG-SLa-YtSAQLsq0XkYlH-3vPWbaE" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Rhinoplasty</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Refined structural contouring for balanced facial harmony.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLugtWEqxKGT0olY55IJi1XXZwifRqRavj9-SnM_sjorGMdkLi18zLkgkCoiNQ027d5GYgldZ5pmtr2JQjdguH0rYfYMJ_XRbzlE-cUdnlbk8K_v27qfIH5C709jB0chg6ydTHNjem_uVf46L4c6jq5Fzdg8SNrIKEp4dhKAYP0sW94XLMWpqqjEcdK4HbCrPL6FPC3lkWeJVQyMznulOrY_Ay622WqCl4tpCnsiMBwrYWb53x0IITtHo2t1">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLvpiYmhS42zctt9QqauIjONQbNVge5HLnM9f_JMAqkkr0UJhx8ywI4JRyZGH6nVjJ9J5EtPMif-_jCPBj0MpB9L244N5zfiBbroF87wvdZaygRCwZDscshMuVHRDsMMg-k5WjW8pNBjAeUq2a335ff5m345K9Xnw8E8Ti6AbAjM6SsyI_50Ldv-3wtdgg172EdMCbs1JnRBpYSfteYtSBSyGCC9SywL2CPA2r4Kl4GW8Z9-1cG8YCajsVsi" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Facelift</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Comprehensive rejuvenation of lower face and neck regions.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLthmfPokURjS1BzaQfLDh2VaAv5f_8osNajTTdI2XbFpqIDzeFZJYko4djfdEV5R-ieprbI6X3kcu2SOKTc9iw00ergXbhEvy4Z5j7QiOYBMela83QXQKnDZOnEyu7c7NxaBrGjhWmKSNYs6O0-eywpNfqcMDl4Pr4GViOkiv9tByO9fU7-uIxqawoi-DFUwX8CDg1SAKhuUC5uK0Kcb3-KMciiuTuNjYdaMRe279Wmqwd1ruLH1DsULIMK">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLuXoJnAEMxCq1YwMJabgZJaQ9zpMtpXggioVE--dp_ilQnzOFL32VUgdAyfV0Z0M5-tj6r57Bg1j6btEONriCpUEhbwcjuIuLm1TDRf6kK8AhJ9NAULhttDlcnaDJLupgN9pUdy62sXqEmqYTQOZmGxJXrJbYXdhcIY_fcWEmHN4Xw3AORyS0d05DQeehZo6g_K3LZZsp3XgeHmooR6jDmHLlonnWRk2CqdFBAcliaSJ7LI-HUlCpJj9hfw" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Jawline</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Crisp definition and sculpting of the mandibular profile.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4, 5, 6 (using placeholders for images, maintaining structure) -->
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLvlHgZ8X15tLCT3LAg_cgKixrTXYk3zvYe66_-KZBjtJgjYJwHJI6Xvp3lXADXLNuJGSBTxK1dWd72Cn3w9KuS4e8bsQ8v7WobZzzNm-Oyo1zzUXeP3xt8pUHJsC5jXFWEW7WrIuYQ3dJGSJkya8tZE0kHOO2hzehcIFikSYiHW8VcqdM4xhnVGJsXN9_wxNgJAtttQe0g9WIUjdgvvqwyikYIoWE6PAWlU4GT3yTEe2nVylWWKX3B8Jm54">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLu8NBBcpModbYhhji6yE9-J4o5z3R7FWp_i9iGiSqMK80tdXeZcsdK9jeD1Oq6VzKma3EkZ5s2Hv7k5oV4A3JdAEtmDvV8EpRMU2bkaityJ83t1RQuioA6qZsTspnZj883EkCI9tqOZS4NtzWkjMVfpsrUgatkyfq48yvf0CjCitLUtQjY-jeqsac4nHPGWgkcCdC791hXli5_53PzN6Cl3u5uZV0jG-SLa-YtSAQLsq0XkYlH-3vPWbaE" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Blepharoplasty</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Upper and lower eyelid rejuvenation for a rested appearance.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLugtWEqxKGT0olY55IJi1XXZwifRqRavj9-SnM_sjorGMdkLi18zLkgkCoiNQ027d5GYgldZ5pmtr2JQjdguH0rYfYMJ_XRbzlE-cUdnlbk8K_v27qfIH5C709jB0chg6ydTHNjem_uVf46L4c6jq5Fzdg8SNrIKEp4dhKAYP0sW94XLMWpqqjEcdK4HbCrPL6FPC3lkWeJVQyMznulOrY_Ay622WqCl4tpCnsiMBwrYWb53x0IITtHo2t1">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLvpiYmhS42zctt9QqauIjONQbNVge5HLnM9f_JMAqkkr0UJhx8ywI4JRyZGH6nVjJ9J5EtPMif-_jCPBj0MpB9L244N5zfiBbroF87wvdZaygRCwZDscshMuVHRDsMMg-k5WjW8pNBjAeUq2a335ff5m345K9Xnw8E8Ti6AbAjM6SsyI_50Ldv-3wtdgg172EdMCbs1JnRBpYSfteYtSBSyGCC9SywL2CPA2r4Kl4GW8Z9-1cG8YCajsVsi" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Brow Lift</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Elevating the brow line to restore youthful vibrancy.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLthmfPokURjS1BzaQfLDh2VaAv5f_8osNajTTdI2XbFpqIDzeFZJYko4djfdEV5R-ieprbI6X3kcu2SOKTc9iw00ergXbhEvy4Z5j7QiOYBMela83QXQKnDZOnEyu7c7NxaBrGjhWmKSNYs6O0-eywpNfqcMDl4Pr4GViOkiv9tByO9fU7-uIxqawoi-DFUwX8CDg1SAKhuUC5uK0Kcb3-KMciiuTuNjYdaMRe279Wmqwd1ruLH1DsULIMK">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLuXoJnAEMxCq1YwMJabgZJaQ9zpMtpXggioVE--dp_ilQnzOFL32VUgdAyfV0Z0M5-tj6r57Bg1j6btEONriCpUEhbwcjuIuLm1TDRf6kK8AhJ9NAULhttDlcnaDJLupgN9pUdy62sXqEmqYTQOZmGxJXrJbYXdhcIY_fcWEmHN4Xw3AORyS0d05DQeehZo6g_K3LZZsp3XgeHmooR6jDmHLlonnWRk2CqdFBAcliaSJ7LI-HUlCpJj9hfw" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Neck Contouring</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Targeted removal of excess tissue for a sculpted neckline.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 2: Body Procedures -->
+<div class="mb-24 relative" id="body-carousel">
+<div class="flex items-center justify-between mb-10">
+<h3 class="font-headline-md text-headline-md text-on-surface text-left">BODY CONTOURING</h3>
+<div class="flex gap-4">
+<button aria-label="Previous" class="carousel-nav-btn w-12 h-12 rounded-full flex items-center justify-center prev-btn">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button aria-label="Next" class="carousel-nav-btn w-12 h-12 rounded-full flex items-center justify-center next-btn">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="carousel-container">
+<div class="carousel-track -mx-3">
+<!-- Cases 1-6 -->
+<!-- Card 1 -->
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtsZcIKgBV4xvkA1II32vkJ-3jl7uka5cX3bgdLLCmyK36ir2I9BEn5JmhoSGiSDcUsSrsqa_SWk-8wSxtyh7mYYnypyWM2MuE9To3WgHsYUU259eEsH-Wl9OC9Zk0lY7frVMNdf23ooQyrIfp_y2rFsZJKgo7ScmwQXM6FCV_BM7S1hdFqsbSZwc3V7QhlfYmXqssS7MRYIr5gu6a1EBW2yiJgBzczJOKeSqjem_ZryocQ_ErL9LboivAz">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLvWGHraHbJV88T6daPqMCZcXkTWykgBKYq---IxaAdzivp40_aRSCFhopluUR4AGUoQ5dHZnZEDnIlVAtPvr40GlS8VdX7wSmd2DHWKY5kVqHnPYleyI9uDOAPZ7gBNH_J8kUMvoPGZLfp7dvJI_s6f3HYWq42LX_M0lSD7tSIpTxLCi9JOLY71UuS2Fjs6mLWEhBojU5nf_GLIX2P0t5sqqlFl2age15JJv-SYg675jbaJxuhmnNzu3qkp" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Liposuction</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Precision fat removal to enhance natural body contours.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Cards 2-6 with placeholder images using the Body Contouring img -->
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtsZcIKgBV4xvkA1II32vkJ-3jl7uka5cX3bgdLLCmyK36ir2I9BEn5JmhoSGiSDcUsSrsqa_SWk-8wSxtyh7mYYnypyWM2MuE9To3WgHsYUU259eEsH-Wl9OC9Zk0lY7frVMNdf23ooQyrIfp_y2rFsZJKgo7ScmwQXM6FCV_BM7S1hdFqsbSZwc3V7QhlfYmXqssS7MRYIr5gu6a1EBW2yiJgBzczJOKeSqjem_ZryocQ_ErL9LboivAz">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLvWGHraHbJV88T6daPqMCZcXkTWykgBKYq---IxaAdzivp40_aRSCFhopluUR4AGUoQ5dHZnZEDnIlVAtPvr40GlS8VdX7wSmd2DHWKY5kVqHnPYleyI9uDOAPZ7gBNH_J8kUMvoPGZLfp7dvJI_s6f3HYWq42LX_M0lSD7tSIpTxLCi9JOLY71UuS2Fjs6mLWEhBojU5nf_GLIX2P0t5sqqlFl2age15JJv-SYg675jbaJxuhmnNzu3qkp" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Tummy Tuck</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Restoring abdominal tone and creating a sleeker profile.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtsZcIKgBV4xvkA1II32vkJ-3jl7uka5cX3bgdLLCmyK36ir2I9BEn5JmhoSGiSDcUsSrsqa_SWk-8wSxtyh7mYYnypyWM2MuE9To3WgHsYUU259eEsH-Wl9OC9Zk0lY7frVMNdf23ooQyrIfp_y2rFsZJKgo7ScmwQXM6FCV_BM7S1hdFqsbSZwc3V7QhlfYmXqssS7MRYIr5gu6a1EBW2yiJgBzczJOKeSqjem_ZryocQ_ErL9LboivAz">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLvWGHraHbJV88T6daPqMCZcXkTWykgBKYq---IxaAdzivp40_aRSCFhopluUR4AGUoQ5dHZnZEDnIlVAtPvr40GlS8VdX7wSmd2DHWKY5kVqHnPYleyI9uDOAPZ7gBNH_J8kUMvoPGZLfp7dvJI_s6f3HYWq42LX_M0lSD7tSIpTxLCi9JOLY71UuS2Fjs6mLWEhBojU5nf_GLIX2P0t5sqqlFl2age15JJv-SYg675jbaJxuhmnNzu3qkp" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Mommy Makeover</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Comprehensive restoration of pre-pregnancy body contours.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtsZcIKgBV4xvkA1II32vkJ-3jl7uka5cX3bgdLLCmyK36ir2I9BEn5JmhoSGiSDcUsSrsqa_SWk-8wSxtyh7mYYnypyWM2MuE9To3WgHsYUU259eEsH-Wl9OC9Zk0lY7frVMNdf23ooQyrIfp_y2rFsZJKgo7ScmwQXM6FCV_BM7S1hdFqsbSZwc3V7QhlfYmXqssS7MRYIr5gu6a1EBW2yiJgBzczJOKeSqjem_ZryocQ_ErL9LboivAz">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLvWGHraHbJV88T6daPqMCZcXkTWykgBKYq---IxaAdzivp40_aRSCFhopluUR4AGUoQ5dHZnZEDnIlVAtPvr40GlS8VdX7wSmd2DHWKY5kVqHnPYleyI9uDOAPZ7gBNH_J8kUMvoPGZLfp7dvJI_s6f3HYWq42LX_M0lSD7tSIpTxLCi9JOLY71UuS2Fjs6mLWEhBojU5nf_GLIX2P0t5sqqlFl2age15JJv-SYg675jbaJxuhmnNzu3qkp" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Thigh Lift</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Firming and tightening the upper legs for improved shape.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtsZcIKgBV4xvkA1II32vkJ-3jl7uka5cX3bgdLLCmyK36ir2I9BEn5JmhoSGiSDcUsSrsqa_SWk-8wSxtyh7mYYnypyWM2MuE9To3WgHsYUU259eEsH-Wl9OC9Zk0lY7frVMNdf23ooQyrIfp_y2rFsZJKgo7ScmwQXM6FCV_BM7S1hdFqsbSZwc3V7QhlfYmXqssS7MRYIr5gu6a1EBW2yiJgBzczJOKeSqjem_ZryocQ_ErL9LboivAz">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLvWGHraHbJV88T6daPqMCZcXkTWykgBKYq---IxaAdzivp40_aRSCFhopluUR4AGUoQ5dHZnZEDnIlVAtPvr40GlS8VdX7wSmd2DHWKY5kVqHnPYleyI9uDOAPZ7gBNH_J8kUMvoPGZLfp7dvJI_s6f3HYWq42LX_M0lSD7tSIpTxLCi9JOLY71UuS2Fjs6mLWEhBojU5nf_GLIX2P0t5sqqlFl2age15JJv-SYg675jbaJxuhmnNzu3qkp" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Arm Lift</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Reducing excess skin for toned, youthful upper arms.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtsZcIKgBV4xvkA1II32vkJ-3jl7uka5cX3bgdLLCmyK36ir2I9BEn5JmhoSGiSDcUsSrsqa_SWk-8wSxtyh7mYYnypyWM2MuE9To3WgHsYUU259eEsH-Wl9OC9Zk0lY7frVMNdf23ooQyrIfp_y2rFsZJKgo7ScmwQXM6FCV_BM7S1hdFqsbSZwc3V7QhlfYmXqssS7MRYIr5gu6a1EBW2yiJgBzczJOKeSqjem_ZryocQ_ErL9LboivAz">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLvWGHraHbJV88T6daPqMCZcXkTWykgBKYq---IxaAdzivp40_aRSCFhopluUR4AGUoQ5dHZnZEDnIlVAtPvr40GlS8VdX7wSmd2DHWKY5kVqHnPYleyI9uDOAPZ7gBNH_J8kUMvoPGZLfp7dvJI_s6f3HYWq42LX_M0lSD7tSIpTxLCi9JOLY71UuS2Fjs6mLWEhBojU5nf_GLIX2P0t5sqqlFl2age15JJv-SYg675jbaJxuhmnNzu3qkp" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">BBL</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Enhancing curves through precise fat transfer techniques.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 3: Breast Procedures -->
+<div class="mb-24 relative" id="breast-carousel">
+<div class="flex items-center justify-between mb-10">
+<h3 class="font-headline-md text-headline-md text-on-surface text-left">BREAST &amp; COMBINED</h3>
+<div class="flex gap-4">
+<button aria-label="Previous" class="carousel-nav-btn w-12 h-12 rounded-full flex items-center justify-center prev-btn">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button aria-label="Next" class="carousel-nav-btn w-12 h-12 rounded-full flex items-center justify-center next-btn">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="carousel-container">
+<div class="carousel-track -mx-3">
+<!-- Cases 1-6 -->
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtwQ5VGTk3HhdtBx5TgV6AT5zfEt3VsvRuoYNovzJJNa3G4-4XJxW7hdr6y7oH6H5QU-lBeIdA7CnU5WC6Sv5oes_sAuoa4NEsKvUrvPxOdp6iY3T6QF187nyULV9i5zawER7bkeXsZsiWxfV4qKBC1nsafFcWm-LRRGxTIKcEzn-tnQYCf1HNXPKJP2JK1YaFlm0VXJca4pqVlP3-kDK04Ac5B3DMXP5BJ6BVSBY1Sa_r0Np5fR_8zogSl">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLuB5lR_AqS6tTi430phWCoapTBFs_mDRH1ueP-wliMhwQyb_sDleS_hxXDYJgtBVK1cPf68hd9-LZRd5zYi8ehC46XMKuW3JLYEPUOLAxtAnW6SieJD0Qrl2OISvcOb3DvqNB58oQznQCKDkmtdXDrsjwLZC7nRk2Pm2078tAQzQ8s1QQvLh4MtQNQH95xnfVMZVoDJueVNW7sYAnvVR7AQv-1fseSz4qZWP5rFxaeXxa5DTTVJ8K4X3wzb" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Augmentation</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Natural enhancement tailored to individual proportions.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Duplicate for structure 2-6 -->
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtwQ5VGTk3HhdtBx5TgV6AT5zfEt3VsvRuoYNovzJJNa3G4-4XJxW7hdr6y7oH6H5QU-lBeIdA7CnU5WC6Sv5oes_sAuoa4NEsKvUrvPxOdp6iY3T6QF187nyULV9i5zawER7bkeXsZsiWxfV4qKBC1nsafFcWm-LRRGxTIKcEzn-tnQYCf1HNXPKJP2JK1YaFlm0VXJca4pqVlP3-kDK04Ac5B3DMXP5BJ6BVSBY1Sa_r0Np5fR_8zogSl">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLuB5lR_AqS6tTi430phWCoapTBFs_mDRH1ueP-wliMhwQyb_sDleS_hxXDYJgtBVK1cPf68hd9-LZRd5zYi8ehC46XMKuW3JLYEPUOLAxtAnW6SieJD0Qrl2OISvcOb3DvqNB58oQznQCKDkmtdXDrsjwLZC7nRk2Pm2078tAQzQ8s1QQvLh4MtQNQH95xnfVMZVoDJueVNW7sYAnvVR7AQv-1fseSz4qZWP5rFxaeXxa5DTTVJ8K4X3wzb" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Reduction</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Relieving discomfort while achieving a lighter profile.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtwQ5VGTk3HhdtBx5TgV6AT5zfEt3VsvRuoYNovzJJNa3G4-4XJxW7hdr6y7oH6H5QU-lBeIdA7CnU5WC6Sv5oes_sAuoa4NEsKvUrvPxOdp6iY3T6QF187nyULV9i5zawER7bkeXsZsiWxfV4qKBC1nsafFcWm-LRRGxTIKcEzn-tnQYCf1HNXPKJP2JK1YaFlm0VXJca4pqVlP3-kDK04Ac5B3DMXP5BJ6BVSBY1Sa_r0Np5fR_8zogSl">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLuB5lR_AqS6tTi430phWCoapTBFs_mDRH1ueP-wliMhwQyb_sDleS_hxXDYJgtBVK1cPf68hd9-LZRd5zYi8ehC46XMKuW3JLYEPUOLAxtAnW6SieJD0Qrl2OISvcOb3DvqNB58oQznQCKDkmtdXDrsjwLZC7nRk2Pm2078tAQzQ8s1QQvLh4MtQNQH95xnfVMZVoDJueVNW7sYAnvVR7AQv-1fseSz4qZWP5rFxaeXxa5DTTVJ8K4X3wzb" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Mastopexy</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Elevating and reshaping for youthful perkiness.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtwQ5VGTk3HhdtBx5TgV6AT5zfEt3VsvRuoYNovzJJNa3G4-4XJxW7hdr6y7oH6H5QU-lBeIdA7CnU5WC6Sv5oes_sAuoa4NEsKvUrvPxOdp6iY3T6QF187nyULV9i5zawER7bkeXsZsiWxfV4qKBC1nsafFcWm-LRRGxTIKcEzn-tnQYCf1HNXPKJP2JK1YaFlm0VXJca4pqVlP3-kDK04Ac5B3DMXP5BJ6BVSBY1Sa_r0Np5fR_8zogSl">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLuB5lR_AqS6tTi430phWCoapTBFs_mDRH1ueP-wliMhwQyb_sDleS_hxXDYJgtBVK1cPf68hd9-LZRd5zYi8ehC46XMKuW3JLYEPUOLAxtAnW6SieJD0Qrl2OISvcOb3DvqNB58oQznQCKDkmtdXDrsjwLZC7nRk2Pm2078tAQzQ8s1QQvLh4MtQNQH95xnfVMZVoDJueVNW7sYAnvVR7AQv-1fseSz4qZWP5rFxaeXxa5DTTVJ8K4X3wzb" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Implant Exchange</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Updating size or style with modern advanced materials.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtwQ5VGTk3HhdtBx5TgV6AT5zfEt3VsvRuoYNovzJJNa3G4-4XJxW7hdr6y7oH6H5QU-lBeIdA7CnU5WC6Sv5oes_sAuoa4NEsKvUrvPxOdp6iY3T6QF187nyULV9i5zawER7bkeXsZsiWxfV4qKBC1nsafFcWm-LRRGxTIKcEzn-tnQYCf1HNXPKJP2JK1YaFlm0VXJca4pqVlP3-kDK04Ac5B3DMXP5BJ6BVSBY1Sa_r0Np5fR_8zogSl">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLuB5lR_AqS6tTi430phWCoapTBFs_mDRH1ueP-wliMhwQyb_sDleS_hxXDYJgtBVK1cPf68hd9-LZRd5zYi8ehC46XMKuW3JLYEPUOLAxtAnW6SieJD0Qrl2OISvcOb3DvqNB58oQznQCKDkmtdXDrsjwLZC7nRk2Pm2078tAQzQ8s1QQvLh4MtQNQH95xnfVMZVoDJueVNW7sYAnvVR7AQv-1fseSz4qZWP5rFxaeXxa5DTTVJ8K4X3wzb" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Fat Transfer</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Natural volume enhancement using your body's own tissue.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="relative group">
+<div class="card-glow-bg"></div>
+<div class="premium-card">
+<div class="comparison-container">
+<img alt="Before" class="comparison-image-before" src="https://lh3.googleusercontent.com/aida/AP1WRLtwQ5VGTk3HhdtBx5TgV6AT5zfEt3VsvRuoYNovzJJNa3G4-4XJxW7hdr6y7oH6H5QU-lBeIdA7CnU5WC6Sv5oes_sAuoa4NEsKvUrvPxOdp6iY3T6QF187nyULV9i5zawER7bkeXsZsiWxfV4qKBC1nsafFcWm-LRRGxTIKcEzn-tnQYCf1HNXPKJP2JK1YaFlm0VXJca4pqVlP3-kDK04Ac5B3DMXP5BJ6BVSBY1Sa_r0Np5fR_8zogSl">
+<img alt="After" class="comparison-image-after" src="https://lh3.googleusercontent.com/aida/AP1WRLuB5lR_AqS6tTi430phWCoapTBFs_mDRH1ueP-wliMhwQyb_sDleS_hxXDYJgtBVK1cPf68hd9-LZRd5zYi8ehC46XMKuW3JLYEPUOLAxtAnW6SieJD0Qrl2OISvcOb3DvqNB58oQznQCKDkmtdXDrsjwLZC7nRk2Pm2078tAQzQ8s1QQvLh4MtQNQH95xnfVMZVoDJueVNW7sYAnvVR7AQv-1fseSz4qZWP5rFxaeXxa5DTTVJ8K4X3wzb" style="clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 50% 100%);">
+<input class="comparison-slider-input" max="100" min="0" oninput="updateSlider(this)" type="range" value="50">
+<div class="comparison-slider-line" style="left: 50%;"></div>
+<div class="comparison-slider-handle" style="left: 50%;"></div>
+<div class="absolute top-4 left-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">Before</div>
+<div class="absolute top-4 right-4 z-40 bg-background/80 backdrop-blur-md px-3 py-1 rounded border border-primary/30 text-label-sm font-label-sm text-primary uppercase">After</div>
+</div>
+<div class="p-5 border-t border-primary/20 bg-surface/50 h-[100px] flex flex-col justify-center">
+<h4 class="font-button text-on-surface uppercase tracking-wider mb-2">Combined</h4>
+<p class="font-body-sm text-on-surface-variant text-sm line-clamp-2">Synergistic procedures for comprehensive aesthetic harmony.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="py-section-gap bg-surface-container-low border-y border-outline-variant/10 relative overflow-hidden"><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none opacity-50"></div><div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10"><h2 class="font-headline-lg text-headline-lg text-on-surface text-center mb-16 tracking-tight">What Our Patients Say</h2><div class="grid grid-cols-1 md:grid-cols-4 gap-8"><div class="group relative transition-all duration-500 hover:-translate-y-2"><div class="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-transparent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div><div class="relative h-full glass-card p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-surface-container-highest/40 to-surface-container-low/60 backdrop-blur-xl shadow-2xl flex flex-col gap-6"><div class="flex justify-between items-start"><div class="w-10 h-10 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)]"><span class="material-symbols-outlined text-primary/40 text-sm">person</span></div><span class="material-symbols-outlined text-primary/30 text-4xl">format_quote</span></div><div class="flex text-primary/80 gap-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span></div><p class="font-body-md text-on-surface-variant italic leading-relaxed">"An absolute artist. The results exceeded my expectations and the care was unparalleled."</p><div class="mt-auto pt-6 border-t border-outline-variant/20 flex items-center justify-between"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Sarah M.</span><div class="w-2 h-2 rounded-full bg-primary/40 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div></div></div></div><div class="group relative transition-all duration-500 hover:-translate-y-2"><div class="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-transparent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div><div class="relative h-full glass-card p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-surface-container-highest/40 to-surface-container-low/60 backdrop-blur-xl shadow-2xl flex flex-col gap-6"><div class="flex justify-between items-start"><div class="w-10 h-10 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)]"><span class="material-symbols-outlined text-primary/40 text-sm">person</span></div><span class="material-symbols-outlined text-primary/30 text-4xl">format_quote</span></div><div class="flex text-primary/80 gap-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span></div><p class="font-body-md text-on-surface-variant italic leading-relaxed">"I feel like myself again, but better. Dr. Gamal's precision is truly remarkable."</p><div class="mt-auto pt-6 border-t border-outline-variant/20 flex items-center justify-between"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Emily R.</span><div class="w-2 h-2 rounded-full bg-primary/40 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div></div></div></div><div class="group relative transition-all duration-500 hover:-translate-y-2"><div class="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-transparent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div><div class="relative h-full glass-card p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-surface-container-highest/40 to-surface-container-low/60 backdrop-blur-xl shadow-2xl flex flex-col gap-6"><div class="flex justify-between items-start"><div class="w-10 h-10 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)]"><span class="material-symbols-outlined text-primary/40 text-sm">person</span></div><span class="material-symbols-outlined text-primary/30 text-4xl">format_quote</span></div><div class="flex text-primary/80 gap-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span></div><p class="font-body-md text-on-surface-variant italic leading-relaxed">"The consultation was thorough, and the outcome is incredibly natural. Highly recommend."</p><div class="mt-auto pt-6 border-t border-outline-variant/20 flex items-center justify-between"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Jessica T.</span><div class="w-2 h-2 rounded-full bg-primary/40 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div></div></div></div><div class="group relative transition-all duration-500 hover:-translate-y-2"><div class="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-transparent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div><div class="relative h-full glass-card p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-surface-container-highest/40 to-surface-container-low/60 backdrop-blur-xl shadow-2xl flex flex-col gap-6"><div class="flex justify-between items-start"><div class="w-10 h-10 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)]"><span class="material-symbols-outlined text-primary/40 text-sm">person</span></div><span class="material-symbols-outlined text-primary/30 text-4xl">format_quote</span></div><div class="flex text-primary/80 gap-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span></div><p class="font-body-md text-on-surface-variant italic leading-relaxed">"A seamless experience from start to finish. The clinic environment is as luxurious as the results."</p><div class="mt-auto pt-6 border-t border-outline-variant/20 flex items-center justify-between"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Amanda L.</span><div class="w-2 h-2 rounded-full bg-primary/40 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div></div></div></div><div class="group relative transition-all duration-500 hover:-translate-y-2"><div class="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-transparent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div><div class="relative h-full glass-card p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-surface-container-highest/40 to-surface-container-low/60 backdrop-blur-xl shadow-2xl flex flex-col gap-6"><div class="flex justify-between items-start"><div class="w-10 h-10 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)]"><span class="material-symbols-outlined text-primary/40 text-sm">person</span></div><span class="material-symbols-outlined text-primary/30 text-4xl">format_quote</span></div><div class="flex text-primary/80 gap-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span></div><p class="font-body-md text-on-surface-variant italic leading-relaxed">"Life-changing results. My confidence has skyrocketed since my procedure."</p><div class="mt-auto pt-6 border-t border-outline-variant/20 flex items-center justify-between"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Rachel B.</span><div class="w-2 h-2 rounded-full bg-primary/40 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div></div></div></div><div class="group relative transition-all duration-500 hover:-translate-y-2"><div class="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-transparent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div><div class="relative h-full glass-card p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-surface-container-highest/40 to-surface-container-low/60 backdrop-blur-xl shadow-2xl flex flex-col gap-6"><div class="flex justify-between items-start"><div class="w-10 h-10 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)]"><span class="material-symbols-outlined text-primary/40 text-sm">person</span></div><span class="material-symbols-outlined text-primary/30 text-4xl">format_quote</span></div><div class="flex text-primary/80 gap-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span></div><p class="font-body-md text-on-surface-variant italic leading-relaxed">"Professional, compassionate, and incredibly skilled. Truly a master of his craft."</p><div class="mt-auto pt-6 border-t border-outline-variant/20 flex items-center justify-between"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Maria C.</span><div class="w-2 h-2 rounded-full bg-primary/40 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div></div></div></div><div class="group relative transition-all duration-500 hover:-translate-y-2"><div class="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-transparent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div><div class="relative h-full glass-card p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-surface-container-highest/40 to-surface-container-low/60 backdrop-blur-xl shadow-2xl flex flex-col gap-6"><div class="flex justify-between items-start"><div class="w-10 h-10 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)]"><span class="material-symbols-outlined text-primary/40 text-sm">person</span></div><span class="material-symbols-outlined text-primary/30 text-4xl">format_quote</span></div><div class="flex text-primary/80 gap-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span></div><p class="font-body-md text-on-surface-variant italic leading-relaxed">"I traveled from out of state just to see Dr. Gamal. Best decision I could have made."</p><div class="mt-auto pt-6 border-t border-outline-variant/20 flex items-center justify-between"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Lauren K.</span><div class="w-2 h-2 rounded-full bg-primary/40 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div></div></div></div><div class="group relative transition-all duration-500 hover:-translate-y-2"><div class="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-transparent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div><div class="relative h-full glass-card p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-surface-container-highest/40 to-surface-container-low/60 backdrop-blur-xl shadow-2xl flex flex-col gap-6"><div class="flex justify-between items-start"><div class="w-10 h-10 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)]"><span class="material-symbols-outlined text-primary/40 text-sm">person</span></div><span class="material-symbols-outlined text-primary/30 text-4xl">format_quote</span></div><div class="flex text-primary/80 gap-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span></div><p class="font-body-md text-on-surface-variant italic leading-relaxed">"The attention to detail is unmatched. I felt safe and heard throughout the entire process."</p><div class="mt-auto pt-6 border-t border-outline-variant/20 flex items-center justify-between"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Nicole S.</span><div class="w-2 h-2 rounded-full bg-primary/40 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div></div></div></div></div></div></section>
+<!-- Contact Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="glass-card rounded-2xl overflow-hidden relative border border-primary/30 flex flex-col md:flex-row items-center p-8 md:p-12 gap-12">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-highest to-surface/80"></div>
+</div>
+<div class="relative z-10 md:w-1/2 flex justify-center">
+<div class="w-64 h-80 rounded-full border border-primary/50 overflow-hidden relative shadow-[0_0_40px_rgba(212,175,55,0.2)]">
+<img class="w-full h-full object-cover" data-alt="A glowing, futuristic aesthetic mirror with contour lines mapping a face, placed in a dark, high-end clinic setting. Cinematic amber lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDETa-BrO3IMYyWgC7gvzL7Hdf5GT7XRD8MDRRV5_8I2MUp9h_ARL6svupcYGN1geO3hZ02jokxBOA_OL6ScHLvgpvzGlnhLluqDOGjzI4qUrq6DjvYXE1Hh3tu0gsVuLN_fDeWhpFOHY3PUA2Y0GYxELIUwiPFhSM5kEtAyB3RP6Epy1SfzUmDllpiCywEqz_v6qEfYgP0DwUoa2MzOy7pVh_mZM7BKj43f_oSaMsvPDsYUHFq8drybA">
+</div>
+</div>
+<div class="relative z-10 md:w-1/2 flex flex-col items-start gap-6 text-left">
+<div class="text-primary font-label-sm uppercase tracking-widest">THE TRANSFORMATION MIRROR</div>
+<h2 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface">Plan Your Transformation With Confidence</h2>
+<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full">
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-button text-button uppercase tracking-wider hover:bg-primary-container/90 transition-all gold-glow text-center">Book Consultation</button>
+<button class="border border-primary text-primary px-8 py-3 rounded-full font-button text-button uppercase tracking-wider hover:bg-primary/10 transition-all text-center">WhatsApp</button>
+<button class="border border-primary text-primary px-8 py-3 rounded-full font-button text-button uppercase tracking-wider hover:bg-primary/10 transition-all text-center">Call Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div>
+<div class="font-headline-md text-headline-md text-on-surface mb-4">Noon</div>
+<p class="font-body-md text-body-md text-primary-fixed-dim">© 2024 Noon AI. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-6 justify-end items-center">
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Security</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+    // Comparison Slider Logic (Clipping Mask approach)
+    function updateSlider(element) {
+        const value = element.value;
+        const container = element.parentElement;
+        
+        // Update the clip-path of the 'after' image
+        const afterImg = container.querySelector('.comparison-image-after');
+        if (afterImg) {
+            afterImg.style.clipPath = `polygon(${value}% 0, 100% 0, 100% 100%, ${value}% 100%)`;
+        }
+        
+        // Update the line position
+        const line = container.querySelector('.comparison-slider-line');
+        if (line) {
+            line.style.left = `${value}%`;
+        }
+        
+        // Update the handle position
+        const handle = container.querySelector('.comparison-slider-handle');
+        if (handle) {
+            handle.style.left = `${value}%`;
+        }
+    }
+
+    // Initialize all sliders on load
+    document.querySelectorAll('.comparison-slider-input').forEach(slider => {
+        updateSlider(slider);
+    });
+
+    // Independent Carousel Logic
+    function setupCarousel(carouselId) {
+        const carousel = document.getElementById(carouselId);
+        if (!carousel) return;
+
+        const track = carousel.querySelector('.carousel-track');
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+        let currentSlide = 0;
+        
+        // Total groups of 3 (0 for first 3, 1 for next 3)
+        const totalSlides = 2; // Assuming 6 items total, showing 3 at a time
+
+        function updateCarousel() {
+            // Translate by 100% of container width per slide group
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1;
+            updateCarousel();
+        });
+    }
+
+    setupCarousel('face-carousel');
+    setupCarousel('body-carousel');
+    setupCarousel('breast-carousel');
+
+</script>
+
+
+</body></html>

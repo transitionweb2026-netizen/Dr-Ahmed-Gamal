@@ -1,0 +1,816 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Dr. Ahmed Gamal | Premium Plastic Surgery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#1c1b1b',
+              darker: '#131313',
+              gold: '#d4af37',
+              light: '#f4ede4',
+            }
+          },
+          fontFamily: {
+            serif: ['"Libre Caslon Text"', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          boxShadow: {
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+            'gold': '0 4px 20px 0 rgba(212, 175, 55, 0.15)',
+            'neon-gold': '0 0 15px rgba(212, 175, 55, 0.3), inset 0 0 10px rgba(212, 175, 55, 0.1)',
+            'neon-gold-hover': '0 0 25px rgba(212, 175, 55, 0.6), inset 0 0 15px rgba(212, 175, 55, 0.3)',
+            'card-3d': '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.15)',
+            'card-3d-hover': '0 35px 60px -15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styles">
+    body {
+      background-color: #131313;
+      color: #f4ede4;
+      font-family: 'Montserrat', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .font-serif {
+      font-family: '"Libre Caslon Text"', serif;
+    }
+    .text-gold { color: #d4af37; }
+    .bg-gold { background-color: #d4af37; }
+    .border-gold { border-color: #d4af37; }
+    
+    .glass-panel {
+      background: rgba(28, 27, 27, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+    
+    .card-gradient {
+      background: linear-gradient(180deg, rgba(28,27,27,0) 0%, rgba(19,19,19,1) 100%);
+    }
+
+    .neon-card {
+      background: linear-gradient(145deg, #2a2015 0%, #1a120a 100%);
+      position: relative;
+    }
+    .neon-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.5) 0%, rgba(212, 175, 55, 0.1) 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .neon-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    
+    .timeline-node::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.2);
+      z-index: -1;
+      animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+      0% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none;
+    }
+    .modal.active {
+      display: flex;
+    }
+
+    /* Coverflow specific styles */
+    .coverflow-item {
+      position: absolute;
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="antialiased bg-brand-darker overflow-x-hidden">
+<!-- SECTION 1: Premium Transparent Header -->
+<header class="fixed w-full z-50 transition-all duration-300 glass-panel border-b-0 border-brand-gold/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-24">
+<div class="flex-shrink-0 flex items-center">
+<img alt="Dr. Ahmed Gamal Logo" class="h-16 w-auto object-contain rounded-md" src="https://lh3.googleusercontent.com/aida/AP1WRLs9iXfLy6rfYNrVIyz5Evr957eQ-aYI_9MCQvaxrCp4EkGoz48KVhHeZ6QVUSSV0tuzdVYrdvtRWQZMTrbJWj_4weLGV2hS7NRNGzlIZBJ1tBLXHizVBsB4pHo0aM7ZunpA6GjP49IFCi__oDU-rhNN3RvV2OAiCzI1sY5bSjocCpynO1z48ks3t7gGLPKyWFRv2nDqA91gdq4yKkZFlCcn-iSMR4sslMszTdTDz8U72ofj9_mCV1BScZtp">
+</div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-sm text-gray-300 hover:text-brand-gold transition-colors font-medium tracking-wide" href="#">Home</a>
+<a class="text-sm text-gray-300 hover:text-brand-gold transition-colors font-medium tracking-wide" href="#">About the Doctor</a>
+<a class="text-sm text-gray-300 hover:text-brand-gold transition-colors font-medium tracking-wide" href="#">Procedures</a>
+<a class="text-sm text-gray-300 hover:text-brand-gold transition-colors font-medium tracking-wide" href="#">Before &amp; After</a>
+<a class="text-sm text-gray-300 hover:text-brand-gold transition-colors font-medium tracking-wide" href="#">Reviews</a>
+<a class="text-sm text-gray-300 hover:text-brand-gold transition-colors font-medium tracking-wide" href="#">Videos</a>
+<a class="text-sm text-gray-300 hover:text-brand-gold transition-colors font-medium tracking-wide" href="#">Contact</a>
+</nav>
+<div class="hidden md:flex items-center">
+<a class="inline-flex items-center justify-center px-6 py-3 text-xs font-bold tracking-widest uppercase bg-brand-gold text-brand-darker hover:bg-white transition-colors duration-300 shadow-gold" href="#">
+          Book Consultation
+        </a>
+</div>
+<!-- Mobile menu button -->
+<div class="md:hidden flex items-center">
+<button class="text-brand-light hover:text-brand-gold">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- About the Doctor Hero -->
+<section class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-brand-darker">
+<div class="absolute inset-0 z-0">
+<img alt="Meet Dr. Ahmed Gamal El-Borhamy" class="w-full h-full object-cover opacity-60 object-[70%_20%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0VNsM0wX80bzSvbTOR489BcEFjL1kq6Ana5TSz17vJzdDbhMpj5wDSBzqa4CFFaUQxa0i3bk5W7LsKv88Hn9jD88m3jPXnVmgsTq_hZ52H_s_ihzkdv0KsPgxdiwhmXaWlnVTHudtmoPpiOfsOxn7SPNwrpLVG6FcMlR4q_XJRkyTSUVNSh6DdnGU2pYmaJJxIOCRECMXsPUx7vijuf3AtBNDEMKeyaaiBAmsbo6v2H0St0B8UAGtGQ">
+<div class="absolute inset-0 bg-gradient-to-r from-brand-darker via-brand-darker/60 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-darker via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start w-full h-full">
+<div class="space-y-6 max-w-2xl">
+<p class="text-sm tracking-widest uppercase text-brand-gold font-semibold">Board Certified Plastic Surgeon</p>
+<h1 class="text-5xl lg:text-7xl font-serif text-brand-light leading-tight">
+        Meet Dr. Ahmed Gamal El-Borhamy
+</h1>
+<p class="text-lg text-gray-300 font-light leading-relaxed">
+        Dedicated to the pursuit of aesthetic harmony through surgical excellence and artistic vision.
+      </p>
+<div class="flex flex-col sm:flex-row items-start gap-6 pt-4">
+<a class="inline-flex items-center justify-center px-10 py-4 text-sm font-medium tracking-wider uppercase text-white rounded-full bg-gradient-to-b from-[#a67c00] to-[#5c4000] border border-brand-gold/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),0_0_25px_rgba(212,175,55,0.6)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group" href="#">
+<div class="absolute top-0 inset-x-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent"></div>
+<span class="relative z-10">Book Consultation</span>
+</a>
+<a class="inline-flex items-center justify-center px-10 py-4 text-sm font-medium tracking-wider uppercase text-brand-gold rounded-full bg-[#5c4000]/20 backdrop-blur-md border border-brand-gold/40 hover:border-brand-gold/80 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:-translate-y-1 transition-all duration-300" href="#">
+          View Results
+        </a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 w-auto max-w-[90vw]"><div class="glass-panel rounded-full px-6 py-3 flex items-center gap-6 border border-brand-gold/20 shadow-2xl relative overflow-hidden group transition-all duration-500 hover:shadow-gold/20" style="background: rgba(26, 18, 11, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"><div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div><div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div><div class="flex items-center gap-4 sm:gap-6"><a class="text-brand-light hover:text-brand-gold hover:scale-110 transition-all duration-300 flex items-center" href="#"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a><a class="text-brand-light hover:text-brand-gold hover:scale-110 transition-all duration-300 flex items-center" href="#"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c.796 0 1.441.645 1.441 1.44s-.645 1.44-1.441 1.44c-.795 0-1.439-.645-1.439-1.44s.644-1.44 1.439-1.44z"></path></svg></a></div><div class="w-px h-6 bg-brand-gold/20"></div><a class="flex items-center gap-2 text-brand-light hover:text-brand-gold transition-colors group/phone" href="tel:+18001234567"><span class="material-symbols-outlined text-xl group-hover/phone:scale-110 transition-transform">phone</span><span class="text-sm font-medium tracking-wider whitespace-nowrap">+1 (800) 123-4567</span></a></div></div></section>
+<!-- Personal Message -->
+<section class="py-24 relative overflow-hidden" style="background: radial-gradient(circle at right, #2a1a0f 0%, #131313 100%);">
+<div class="absolute inset-0 bg-[radial-gradient(rgba(212,175,55,0.05)_1px,transparent_1px)] [background-size:40px_40px] opacity-30"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative group h-full">
+<div class="absolute -inset-2 bg-gradient-to-r from-brand-gold/20 to-brand-darker rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition duration-1000"></div>
+<div class="relative rounded-2xl overflow-hidden border border-brand-gold/30 shadow-2xl h-full aspect-[3/4]">
+<img alt="Dr. Ahmed Gamal" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A">
+<div class="absolute inset-0 bg-gradient-to-t from-brand-darker/80 via-transparent to-transparent"></div>
+</div>
+</div>
+<div class="space-y-8 glass-panel p-10 rounded-2xl border border-brand-gold/10 relative">
+<p class="text-xs tracking-[0.2em] uppercase text-brand-gold font-semibold">A Message From The Doctor</p>
+<h2 class="text-3xl lg:text-5xl font-serif text-brand-light leading-tight">
+          Beauty Begins With <br>
+<span class="italic text-brand-gold">Understanding You.</span>
+</h2>
+<div class="space-y-6 text-gray-300 font-light leading-relaxed">
+<p class="">"My philosophy has always been centered on the individual. Every face and body tells a unique story, and my goal is never to change that narrative, but to enhance its most beautiful chapters. We strive for results that whisper, rather than shout.</p>
+<p class="">Through years of refined technique and an unwavering commitment to safety, I approach each procedure as a collaboration between surgical precision and your personal aesthetic goals. Trust is the foundation of our practice."</p>
+</div>
+<div class="pt-6 border-t border-brand-gold/10">
+<p class="font-serif text-2xl text-brand-gold italic">Dr. Ahmed Gamal El-Borhamy</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About with Video -->
+<section class="py-24 bg-brand-dark relative border-y border-brand-gold/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 space-y-8">
+<h2 class="text-3xl lg:text-4xl font-serif text-brand-light leading-tight">
+          Precision, Experience, and an <br><span class="text-brand-gold italic">Artistic Perspective</span>
+</h2>
+<p class="text-gray-300 font-light leading-relaxed">
+          Dr. Gamal brings over two decades of specialized expertise in aesthetic plastic surgery. His comprehensive approach integrates the latest advancements in medical technology with a deeply ingrained understanding of anatomical harmony. He is dedicated to achieving subtle, elegant, and long-lasting results for every patient.
+        </p>
+<a class="inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wider uppercase text-brand-gold rounded-full bg-transparent border border-brand-gold hover:bg-brand-gold hover:text-brand-darker transition-all duration-300" href="#">
+          Learn More
+        </a>
+</div>
+<div class="order-1 lg:order-2 relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-brand-darker rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+<div class="relative aspect-video rounded-2xl overflow-hidden border border-brand-gold/20 shadow-glass shadow-2xl">
+<img alt="Doctor Video" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs-hVD0lJ4yx7N7zAL-xkWqMY0Rdk0J698iY7nBTpAq5jqLOaEBTRiTyulHY3BtKgWhBQblXV8lVnrf0MiTJyMVqgIKTQffvgvIRuU80tUklqI_rw6CWtCKCwSjP3wNtPol5uyAhD3tqUyuTPFmQRLk1hacjj5k-Ozq6i6fgndTzJ2mU0PA_-JmoOmbATfibTwrxk75baP9pK_vEyII-OfIOZ9DqVCAIHLBAT4Xqfs2MY62PdGcOd97w">
+<div class="absolute inset-0 bg-brand-darker/30 flex items-center justify-center group-hover:bg-brand-darker/10 transition duration-500">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements strip -->
+<section class="py-12 bg-brand-darker relative z-20 -mt-12 mb-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8 text-center">
+<div class="glass-panel p-6 rounded-xl shadow-glass transform hover:-translate-y-1 transition duration-300 border border-brand-gold/20 bg-[#1c1a18]/90">
+<div class="text-3xl lg:text-4xl font-serif text-brand-gold mb-1">20+</div>
+<div class="text-[10px] lg:text-xs tracking-widest uppercase text-gray-400 font-medium">Years Experience</div>
+</div>
+<div class="glass-panel p-6 rounded-xl shadow-glass transform hover:-translate-y-1 transition duration-300 border border-brand-gold/20 bg-[#1c1a18]/90">
+<div class="text-3xl lg:text-4xl font-serif text-brand-gold mb-1">10k+</div>
+<div class="text-[10px] lg:text-xs tracking-widest uppercase text-gray-400 font-medium">Successful Procedures</div>
+</div>
+<div class="glass-panel p-6 rounded-xl shadow-glass transform hover:-translate-y-1 transition duration-300 border border-brand-gold/20 bg-[#1c1a18]/90">
+<div class="text-3xl lg:text-4xl font-serif text-brand-gold mb-1">99%</div>
+<div class="text-[10px] lg:text-xs tracking-widest uppercase text-gray-400 font-medium">Happy Patients</div>
+</div>
+<div class="glass-panel p-6 rounded-xl shadow-glass transform hover:-translate-y-1 transition duration-300 border border-brand-gold/20 bg-[#1c1a18]/90">
+<div class="text-3xl lg:text-4xl font-serif text-brand-gold mb-1">50+</div>
+<div class="text-[10px] lg:text-xs tracking-widest uppercase text-gray-400 font-medium">Advanced Trainings</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Procedures -->
+<section class="py-24 relative bg-brand-darker" style="background-image: linear-gradient(rgba(19, 19, 19, 0.85), rgba(19, 19, 19, 0.85)), url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC0WgM_rg_waaEBMCdhv5XDCqHeU6U_FOqXabijXUaOm8QMZ_o7p11xukV2J94x4nEW-H8f3cTOQfMQe6cvf8ttRSxtpUkklcjIjTDL9e-G8p_gYNed5m67UcLpwucrYLg64Nv6xpsm9LRIVflrBkFi1_BekJ4S4zAx3jDRoTwdQhuf7_IavEhnEc051z-LLfzIyeK9ihNcnQQgW3ZU41T6N1yDH1XOuKmNwa2ml6kNRC-iT82qyFsXNeFTY6NTWNm_pUg&quot;); background-size: cover; background-position: center center;">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-16">
+<p class="text-xs tracking-widest uppercase text-brand-gold font-semibold mb-4">Specialized Care</p>
+<h2 class="text-4xl font-serif text-brand-light">Featured Procedures</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Procedure 1 -->
+<div class="group cursor-pointer flex flex-col rounded-2xl overflow-hidden neon-card shadow-card-3d hover:shadow-card-3d-hover hover:-translate-y-3 transition-all duration-500 bg-[#231a11]" onclick="document.getElementById('modal-rhinoplasty').classList.add('active')">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Rhinoplasty" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB0RvD_wR00R1UKFT4sbotiDBe-4gDlNC0TXksUryKkCvfQFeqGoKjckFREwa8NBT1mHNu_5cPc8-PiwxI7QAZ8b_OAUFwdIE_b2jfFUzWAEIxxuqUJFxR0dIvrs1qqCZ-E2uX3zXhDa8WysfXe2fafewqa-1veqDemv8kphtYLiIvDSpMM9_vQDGCOn_o6P-gnlpbNyFtAUrH1-N21MrwDBaeTO3jaU5Cq4pdY6DF3KSzbTk7LnEEhw">
+<div class="absolute inset-0 bg-gradient-to-t from-[#231a11] to-transparent"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col items-center text-center relative z-10 -mt-6">
+<div class="w-12 h-12 rounded-full bg-brand-darker border border-brand-gold/30 flex items-center justify-center mb-4 text-brand-gold shadow-gold">
+<span class="material-symbols-outlined text-2xl">face</span>
+</div>
+<h3 class="font-serif text-xl text-brand-light mb-3">Rhinoplasty</h3>
+<p class="text-sm text-gray-400 font-light mb-6 flex-1">Refining nasal contours for optimal facial harmony and function.</p>
+<div class="mt-auto w-full flex justify-end">
+<span class="material-symbols-outlined text-brand-gold/50 group-hover:text-brand-gold transition-colors transform group-hover:translate-x-1 duration-300">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Procedure 2 -->
+<div class="group cursor-pointer flex flex-col rounded-2xl overflow-hidden neon-card shadow-card-3d hover:shadow-card-3d-hover hover:-translate-y-3 transition-all duration-500 bg-[#231a11]" onclick="document.getElementById('modal-face').classList.add('active')">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Face &amp; Neck" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEJR5L-t8jc4vh5jK4iK1RLdvcUfjsgQIz4UMZLhG5juoRhYwfG4L5KeB48qXPLH0ES_Q3KNmBj3MC5sJSrh7wrKmQfzhQdirFGz0D79nHN9SQhEAVlEdplUpAnRJ3JjplbCSKFaRerIfA2yVwyZYNis9U8D8u_Fx0SuC8-ktPVHAiQZ6a6hWBEMj3qF1KPphOLdoVmAmgLLBhKUDaaaIdnG9mAsgaJnJI2t01gJeGgYmiajxNUPce8A">
+<div class="absolute inset-0 bg-gradient-to-t from-[#231a11] to-transparent"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col items-center text-center relative z-10 -mt-6">
+<div class="w-12 h-12 rounded-full bg-brand-darker border border-brand-gold/30 flex items-center justify-center mb-4 text-brand-gold shadow-gold">
+<span class="material-symbols-outlined text-2xl">self_improvement</span>
+</div>
+<h3 class="font-serif text-xl text-brand-light mb-3">Face &amp; Neck</h3>
+<p class="text-sm text-gray-400 font-light mb-6 flex-1">Restoring youthful volume and lifting delicate facial tissues naturally.</p>
+<div class="mt-auto w-full flex justify-end">
+<span class="material-symbols-outlined text-brand-gold/50 group-hover:text-brand-gold transition-colors transform group-hover:translate-x-1 duration-300">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Procedure 3 -->
+<div class="group cursor-pointer flex flex-col rounded-2xl overflow-hidden neon-card shadow-card-3d hover:shadow-card-3d-hover hover:-translate-y-3 transition-all duration-500 bg-[#231a11]" onclick="document.getElementById('modal-body').classList.add('active')">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Body Contouring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTKU68wWuLn1AkvsDtfkkLupEgq7eS6kMoHPm8Qkyxo7FXdxYT60W2cDmZXvjjJvtBPiJqtsLW8nJLuYwvACb-SUr-vx1ji0dli_C_681AEDVjFfTMTaO6mNkRHee36ZiwAGQQcE73PYB3WIQQbbKknDzhRrY9N8RyEXgM_pSayUwOL4ZJNs-pIIvxy_3RWRsNpf14a9nk0CU6-s4aFWqNfrkouhYoZuCl0jOuAlqASnG5r8oCto-k2g">
+<div class="absolute inset-0 bg-gradient-to-t from-[#231a11] to-transparent"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col items-center text-center relative z-10 -mt-6">
+<div class="w-12 h-12 rounded-full bg-brand-darker border border-brand-gold/30 flex items-center justify-center mb-4 text-brand-gold shadow-gold">
+<span class="material-symbols-outlined text-2xl">accessibility_new</span>
+</div>
+<h3 class="font-serif text-xl text-brand-light mb-3">Body Contouring</h3>
+<p class="text-sm text-gray-400 font-light mb-6 flex-1">Sculpting and refining silhouettes for a toned, balanced aesthetic.</p>
+<div class="mt-auto w-full flex justify-end">
+<span class="material-symbols-outlined text-brand-gold/50 group-hover:text-brand-gold transition-colors transform group-hover:translate-x-1 duration-300">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Procedure 4 -->
+<div class="group cursor-pointer flex flex-col rounded-2xl overflow-hidden neon-card shadow-card-3d hover:shadow-card-3d-hover hover:-translate-y-3 transition-all duration-500 bg-[#231a11]" onclick="document.getElementById('modal-breast').classList.add('active')">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Breast Procedures" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDISZ3dymHm-bSB98xjy4B7V4IJwnPDGO8X66Q55oC_hvyqY-Ati2KN3tOEysDJz1l_HFWkQWRhlPhEdblFOiheXKkecCAfKpGdDKuFX4wWukYkSXnw78guAIY2SEVKjXPDiVic71UFzWszSp55SSbP8KhHCgZNhM8EQ9XAhODj0-kEmlkzG1HKJlf6kNG26OraJmffIkRuxyGPYUwlrbTsHoZX86BARRsS2QC7TmcTpWX8Gu3PMU9xrA">
+<div class="absolute inset-0 bg-gradient-to-t from-[#231a11] to-transparent"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col items-center text-center relative z-10 -mt-6">
+<div class="w-12 h-12 rounded-full bg-brand-darker border border-brand-gold/30 flex items-center justify-center mb-4 text-brand-gold shadow-gold">
+<span class="material-symbols-outlined text-2xl">spa</span>
+</div>
+<h3 class="font-serif text-xl text-brand-light mb-3">Breast Procedures</h3>
+<p class="text-sm text-gray-400 font-light mb-6 flex-1">Customized augmentation and lifts for natural-looking proportions.</p>
+<div class="mt-auto w-full flex justify-end">
+<span class="material-symbols-outlined text-brand-gold/50 group-hover:text-brand-gold transition-colors transform group-hover:translate-x-1 duration-300">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center">
+<a class="inline-flex items-center text-sm font-bold tracking-widest uppercase text-brand-gold hover:text-white transition-colors duration-300 border-b border-brand-gold pb-1" href="#">
+        View All Procedures
+</a>
+</div>
+</div>
+<!-- Modals -->
+<div class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-black/80 backdrop-blur-sm" id="modal-rhinoplasty">
+<div class="bg-brand-darker border border-brand-gold/30 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-card-3d relative">
+<button class="absolute top-4 right-4 text-brand-light hover:text-brand-gold transition-colors z-10" onclick="this.closest('.modal').classList.remove('active')">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="h-64 relative">
+<img alt="Rhinoplasty" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB0RvD_wR00R1UKFT4sbotiDBe-4gDlNC0TXksUryKkCvfQFeqGoKjckFREwa8NBT1mHNu_5cPc8-PiwxI7QAZ8b_OAUFwdIE_b2jfFUzWAEIxxuqUJFxR0dIvrs1qqCZ-E2uX3zXhDa8WysfXe2fafewqa-1veqDemv8kphtYLiIvDSpMM9_vQDGCOn_o6P-gnlpbNyFtAUrH1-N21MrwDBaeTO3jaU5Cq4pdY6DF3KSzbTk7LnEEhw">
+<div class="absolute inset-0 bg-gradient-to-t from-brand-darker to-transparent"></div>
+</div>
+<div class="p-8 -mt-12 relative z-10">
+<h3 class="text-3xl font-serif text-brand-light mb-4">Rhinoplasty</h3>
+<div class="space-y-6 text-gray-300 font-light text-sm">
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">Overview</h4>
+<p class="">Rhinoplasty is a highly personalized procedure designed to harmonize your facial features by reshaping the nose. Dr. Gamal focuses on preserving breathing function while achieving aesthetically pleasing, natural-looking results.</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">Recovery</h4>
+<p class="">Most patients return to light activities within a week. Initial swelling subsides significantly after 2-3 weeks, with final refined results becoming apparent over the following months.</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">FAQ</h4>
+<ul class="list-disc pl-5 space-y-1">
+<li class="">How long does the surgery take? Typically 2-3 hours.</li>
+<li class="">Will there be visible scars? Closed rhinoplasty incisions are hidden inside the nose.</li>
+</ul>
+</div>
+<div class="pt-6 border-t border-brand-gold/20 flex justify-center">
+<a class="inline-flex items-center justify-center px-8 py-3 text-sm font-bold tracking-widest uppercase bg-brand-gold text-brand-darker rounded-full hover:bg-white transition-colors duration-300" href="#">
+              Book Consultation
+            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-black/80 backdrop-blur-sm" id="modal-face">
+<div class="bg-brand-darker border border-brand-gold/30 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-card-3d relative">
+<button class="absolute top-4 right-4 text-brand-light hover:text-brand-gold transition-colors z-10" onclick="this.closest('.modal').classList.remove('active')">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="h-64 relative">
+<img alt="Face &amp; Neck" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEJR5L-t8jc4vh5jK4iK1RLdvcUfjsgQIz4UMZLhG5juoRhYwfG4L5KeB48qXPLH0ES_Q3KNmBj3MC5sJSrh7wrKmQfzhQdirFGz0D79nHN9SQhEAVlEdplUpAnRJ3JjplbCSKFaRerIfA2yVwyZYNis9U8D8u_Fx0SuC8-ktPVHAiQZ6a6hWBEMj3qF1KPphOLdoVmAmgLLBhKUDaaaIdnG9mAsgaJnJI2t01gJeGgYmiajxNUPce8A">
+<div class="absolute inset-0 bg-gradient-to-t from-brand-darker to-transparent"></div>
+</div>
+<div class="p-8 -mt-12 relative z-10">
+<h3 class="text-3xl font-serif text-brand-light mb-4">Face &amp; Neck Rejuvenation</h3>
+<div class="space-y-6 text-gray-300 font-light text-sm">
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">Overview</h4>
+<p class="">Our face and neck procedures are tailored to reverse signs of aging by restoring volume and repositioning underlying tissues. The goal is a refreshed, rested appearance, not a "pulled" look.</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">Recovery</h4>
+<p class="">Downtime varies depending on the specific procedures performed, but typically ranges from 10 to 14 days for initial social recovery.</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">FAQ</h4>
+<ul class="list-disc pl-5 space-y-1">
+<li class="">What is a deep plane facelift? An advanced technique that lifts deeper tissues for longer-lasting, natural results.</li>
+<li class="">Can this be combined with eyelid surgery? Yes, combination procedures are common and efficient.</li>
+</ul>
+</div>
+<div class="pt-6 border-t border-brand-gold/20 flex justify-center">
+<a class="inline-flex items-center justify-center px-8 py-3 text-sm font-bold tracking-widest uppercase bg-brand-gold text-brand-darker rounded-full hover:bg-white transition-colors duration-300" href="#">
+              Book Consultation
+            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-black/80 backdrop-blur-sm" id="modal-body">
+<div class="bg-brand-darker border border-brand-gold/30 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-card-3d relative">
+<button class="absolute top-4 right-4 text-brand-light hover:text-brand-gold transition-colors z-10" onclick="this.closest('.modal').classList.remove('active')">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="h-64 relative">
+<img alt="Body Contouring" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTKU68wWuLn1AkvsDtfkkLupEgq7eS6kMoHPm8Qkyxo7FXdxYT60W2cDmZXvjjJvtBPiJqtsLW8nJLuYwvACb-SUr-vx1ji0dli_C_681AEDVjFfTMTaO6mNkRHee36ZiwAGQQcE73PYB3WIQQbbKknDzhRrY9N8RyEXgM_pSayUwOL4ZJNs-pIIvxy_3RWRsNpf14a9nk0CU6-s4aFWqNfrkouhYoZuCl0jOuAlqASnG5r8oCto-k2g">
+<div class="absolute inset-0 bg-gradient-to-t from-brand-darker to-transparent"></div>
+</div>
+<div class="p-8 -mt-12 relative z-10">
+<h3 class="text-3xl font-serif text-brand-light mb-4">Body Contouring</h3>
+<div class="space-y-6 text-gray-300 font-light text-sm">
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">Overview</h4>
+<p class="">Body contouring encompasses procedures like liposuction and tummy tucks to remove stubborn fat and excess skin, creating a firmer, more sculpted physique.</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">Recovery</h4>
+<p class="">Recovery depends on the extent of the surgery. Most patients require 1-3 weeks off work and wear compression garments for several weeks to optimize results.</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">FAQ</h4>
+<ul class="list-disc pl-5 space-y-1">
+<li class="">Is this a weight loss procedure? No, body contouring is for refining shape after weight stability.</li>
+<li class="">Are the results permanent? Fat cells removed are gone, but maintaining a stable weight is key.</li>
+</ul>
+</div>
+<div class="pt-6 border-t border-brand-gold/20 flex justify-center">
+<a class="inline-flex items-center justify-center px-8 py-3 text-sm font-bold tracking-widest uppercase bg-brand-gold text-brand-darker rounded-full hover:bg-white transition-colors duration-300" href="#">
+              Book Consultation
+            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-black/80 backdrop-blur-sm" id="modal-breast">
+<div class="bg-brand-darker border border-brand-gold/30 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-card-3d relative">
+<button class="absolute top-4 right-4 text-brand-light hover:text-brand-gold transition-colors z-10" onclick="this.closest('.modal').classList.remove('active')">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="h-64 relative">
+<img alt="Breast Procedures" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDISZ3dymHm-bSB98xjy4B7V4IJwnPDGO8X66Q55oC_hvyqY-Ati2KN3tOEysDJz1l_HFWkQWRhlPhEdblFOiheXKkecCAfKpGdDKuFX4wWukYkSXnw78guAIY2SEVKjXPDiVic71UFzWszSp55SSbP8KhHCgZNhM8EQ9XAhODj0-kEmlkzG1HKJlf6kNG26OraJmffIkRuxyGPYUwlrbTsHoZX86BARRsS2QC7TmcTpWX8Gu3PMU9xrA">
+<div class="absolute inset-0 bg-gradient-to-t from-brand-darker to-transparent"></div>
+</div>
+<div class="p-8 -mt-12 relative z-10">
+<h3 class="text-3xl font-serif text-brand-light mb-4">Breast Procedures</h3>
+<div class="space-y-6 text-gray-300 font-light text-sm">
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">Overview</h4>
+<p class="">Whether seeking augmentation, lift, or reduction, we offer tailored approaches to achieve breasts that beautifully complement your body's natural proportions.</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">Recovery</h4>
+<p class="">Most patients resume normal, non-strenuous activities within a week. Full release to vigorous exercise usually occurs around 6 weeks post-op.</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-2">FAQ</h4>
+<ul class="list-disc pl-5 space-y-1">
+<li class="">What types of implants do you use? We discuss silicone and saline options based on your goals.</li>
+<li class="">Will a lift affect sensation? Temporary changes are common, but long-term issues are rare.</li>
+</ul>
+</div>
+<div class="pt-6 border-t border-brand-gold/20 flex justify-center">
+<a class="inline-flex items-center justify-center px-8 py-3 text-sm font-bold tracking-widest uppercase bg-brand-gold text-brand-darker rounded-full hover:bg-white transition-colors duration-300" href="#">
+              Book Consultation
+            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Journey Timeline -->
+<section class="py-24 bg-brand-dark relative border-t border-brand-gold/10 overflow-hidden">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-20">
+<p class="text-xs tracking-widest uppercase text-brand-gold font-semibold mb-4">Milestones</p>
+<h2 class="text-4xl font-serif text-brand-light">Professional Journey</h2>
+</div>
+<div class="relative">
+<!-- Central Line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-transparent via-brand-gold/50 to-transparent shadow-[0_0_10px_rgba(212,175,55,0.5)]"></div>
+<!-- Timeline Items -->
+<div class="space-y-16">
+<!-- Item 1 -->
+<div class="relative flex items-center justify-between md:justify-normal group">
+<div class="hidden md:block w-5/12 text-right pr-8">
+<h3 class="text-brand-gold font-serif text-xl mb-2">Medical Degree</h3>
+<p class="text-gray-400 text-sm font-light">Graduated with top honors, establishing the foundation for surgical excellence.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-brand-gold border-4 border-brand-darker timeline-node z-10"></div>
+<div class="w-full md:w-5/12 md:pl-8">
+<div class="glass-panel p-6 rounded-xl border border-brand-gold/20 shadow-glass md:hidden mb-4">
+<h3 class="text-brand-gold font-serif text-lg mb-1">Medical Degree</h3>
+<p class="text-gray-400 text-sm font-light">Graduated with top honors.</p>
+</div>
+<span class="text-brand-light/40 font-serif text-4xl hidden md:block group-hover:text-brand-gold transition-colors duration-500">2001</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative flex items-center justify-between md:justify-normal md:flex-row-reverse group">
+<div class="hidden md:block w-5/12 text-left pl-8">
+<h3 class="text-brand-gold font-serif text-xl mb-2">Specialty Certification</h3>
+<p class="text-gray-400 text-sm font-light">Board certification in Plastic and Reconstructive Surgery.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-brand-gold border-4 border-brand-darker timeline-node z-10"></div>
+<div class="w-full md:w-5/12 md:pr-8 text-right">
+<div class="glass-panel p-6 rounded-xl border border-brand-gold/20 shadow-glass md:hidden mb-4 text-left">
+<h3 class="text-brand-gold font-serif text-lg mb-1">Specialty Certification</h3>
+<p class="text-gray-400 text-sm font-light">Board certification in Plastic Surgery.</p>
+</div>
+<span class="text-brand-light/40 font-serif text-4xl hidden md:block group-hover:text-brand-gold transition-colors duration-500">2008</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative flex items-center justify-between md:justify-normal group">
+<div class="hidden md:block w-5/12 text-right pr-8">
+<h3 class="text-brand-gold font-serif text-xl mb-2">International Fellowship</h3>
+<p class="text-gray-400 text-sm font-light">Advanced training in microsurgery and complex reconstructive techniques abroad.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-brand-gold border-4 border-brand-darker timeline-node z-10"></div>
+<div class="w-full md:w-5/12 md:pl-8">
+<div class="glass-panel p-6 rounded-xl border border-brand-gold/20 shadow-glass md:hidden mb-4">
+<h3 class="text-brand-gold font-serif text-lg mb-1">International Fellowship</h3>
+<p class="text-gray-400 text-sm font-light">Advanced training in microsurgery.</p>
+</div>
+<span class="text-brand-light/40 font-serif text-4xl hidden md:block group-hover:text-brand-gold transition-colors duration-500">2010</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative flex items-center justify-between md:justify-normal md:flex-row-reverse group">
+<div class="hidden md:block w-5/12 text-left pl-8">
+<h3 class="text-brand-gold font-serif text-xl mb-2">Private Practice Founded</h3>
+<p class="text-gray-400 text-sm font-light">Established a premier aesthetic center dedicated to personalized patient care.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-brand-gold border-4 border-brand-darker timeline-node z-10"></div>
+<div class="w-full md:w-5/12 md:pr-8 text-right">
+<div class="glass-panel p-6 rounded-xl border border-brand-gold/20 shadow-glass md:hidden mb-4 text-left">
+<h3 class="text-brand-gold font-serif text-lg mb-1">Private Practice Founded</h3>
+<p class="text-gray-400 text-sm font-light">Established a premier aesthetic center.</p>
+</div>
+<span class="text-brand-light/40 font-serif text-4xl hidden md:block group-hover:text-brand-gold transition-colors duration-500">2012</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Photo Album: Floating Coverflow Gallery -->
+<section class="py-24 bg-[#131313] relative overflow-hidden" id="gallery-section">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-16">
+<p class="text-xs tracking-widest uppercase text-brand-gold font-semibold mb-4">Behind the Scenes</p>
+<h2 class="text-4xl font-serif text-brand-light">The Doctor at Work</h2>
+</div>
+<div class="relative w-full h-[400px] md:h-[600px] flex items-center justify-center overflow-hidden" id="coverflow-container">
+<!-- Navigation Arrows -->
+<button class="absolute left-2 md:left-12 z-40 w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center bg-[#1c120a]/60 backdrop-blur-md border border-brand-gold/40 text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] hover:border-brand-gold hover:bg-[#1c120a]/80 transition-all duration-300" id="prev-btn">
+<span class="material-symbols-outlined text-2xl md:text-3xl">chevron_left</span>
+</button>
+<button class="absolute right-2 md:right-12 z-40 w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center bg-[#1c120a]/60 backdrop-blur-md border border-brand-gold/40 text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] hover:border-brand-gold hover:bg-[#1c120a]/80 transition-all duration-300" id="next-btn">
+<span class="material-symbols-outlined text-2xl md:text-3xl">chevron_right</span>
+</button>
+<!-- Track -->
+<div class="relative w-full h-full flex items-center justify-center" id="coverflow-track" style="perspective: 1200px;">
+<!-- JS will populate items here -->
+<div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 20; transform: translateX(0%) translateZ(0px) rotateY(0deg) scale(1); opacity: 1; box-shadow: rgba(0, 0, 0, 0.9) 0px 25px 60px -15px, rgba(212, 175, 55, 0.4) 0px 0px 30px; border-color: rgba(212, 175, 55, 0.8);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 0;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 19; transform: translateX(60%) translateZ(-100px) rotateY(-25deg) scale(0.85); opacity: 1; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 0.2;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 18; transform: translateX(120%) translateZ(-200px) rotateY(-25deg) scale(0.85); opacity: 1; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 0.4;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 17; transform: translateX(180%) translateZ(-300px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 0.6;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 16; transform: translateX(240%) translateZ(-400px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 0.8;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 15; transform: translateX(300%) translateZ(-500px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 1;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 14; transform: translateX(360%) translateZ(-600px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 1.2;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 13; transform: translateX(420%) translateZ(-700px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 1.4;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 12; transform: translateX(480%) translateZ(-800px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 1.6;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 11; transform: translateX(540%) translateZ(-900px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 1.8;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 10; transform: translateX(600%) translateZ(-1000px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 2;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 9; transform: translateX(660%) translateZ(-1100px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 2.2;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 8; transform: translateX(720%) translateZ(-1200px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 2.4;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 7; transform: translateX(780%) translateZ(-1300px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 2.6;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 6; transform: translateX(840%) translateZ(-1400px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 2.8;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 5; transform: translateX(900%) translateZ(-1500px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 3;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 4; transform: translateX(960%) translateZ(-1600px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 3.2;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 3; transform: translateX(1020%) translateZ(-1700px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 3.4;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 2; transform: translateX(1080%) translateZ(-1800px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 3.6;"></div></div><div class="coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group" style="z-index: 1; transform: translateX(1140%) translateZ(-1900px) rotateY(-25deg) scale(0.85); opacity: 0; box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 40px -12px, rgba(212, 175, 55, 0.1) 0px 0px 10px; border-color: rgba(212, 175, 55, 0.3);"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A" class="w-full h-full object-cover transition-opacity duration-500"><div class="absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay" style="opacity: 3.8;"></div></div></div>
+</div>
+<!-- Indicator -->
+<div class="text-center mt-8">
+<p class="text-brand-gold font-serif text-lg tracking-widest" id="gallery-indicator">01 / 20</p>
+</div>
+</div>
+</section>
+<!-- Lightbox -->
+<div class="fixed inset-0 z-[200] hidden items-center justify-center bg-[#0a0705]/95 backdrop-blur-xl opacity-0 transition-opacity duration-500" id="lightbox">
+<button class="absolute top-6 right-6 text-brand-light hover:text-brand-gold transition-colors z-50" id="lightbox-close">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<button class="absolute left-6 text-brand-light hover:text-brand-gold transition-colors z-50" id="lightbox-prev">
+<span class="material-symbols-outlined text-4xl">chevron_left</span>
+</button>
+<button class="absolute right-6 text-brand-light hover:text-brand-gold transition-colors z-50" id="lightbox-next">
+<span class="material-symbols-outlined text-4xl">chevron_right</span>
+</button>
+<img alt="Gallery Image Fullscreen" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg border border-brand-gold/30 shadow-[0_0_50px_rgba(212,175,55,0.2)] transition-transform duration-500 scale-95" id="lightbox-img" src="">
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('coverflow-track');
+    const indicator = document.getElementById('gallery-indicator');
+    const totalItems = 20;
+    let currentIndex = 0;
+    
+    // Sample image URL to use for all placeholders
+    const sampleImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A";
+    
+    // Create items
+    const items = [];
+    for(let i=0; i<totalItems; i++) {
+      const item = document.createElement('div');
+      item.className = 'coverflow-item w-48 h-60 md:w-80 md:h-[400px] rounded-2xl overflow-hidden border border-brand-gold/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),_0_0_20px_rgba(212,175,55,0.2)] bg-black absolute top-1/2 left-1/2 -mt-[120px] -ml-[96px] md:-mt-[200px] md:-ml-[160px] group';
+      
+      const img = document.createElement('img');
+      img.src = sampleImg;
+      img.className = 'w-full h-full object-cover transition-opacity duration-500';
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'absolute inset-0 bg-black/40 transition-opacity duration-500 pointer-events-none coverflow-overlay';
+      
+      item.appendChild(img);
+      item.appendChild(overlay);
+      
+      item.addEventListener('click', () => {
+        if(i === currentIndex) {
+          openLightbox(i);
+        } else {
+          goTo(i);
+        }
+      });
+      
+      track.appendChild(item);
+      items.push(item);
+    }
+    
+    function updateCoverflow() {
+      items.forEach((item, i) => {
+        const offset = i - currentIndex;
+        const absOffset = Math.abs(offset);
+        const overlay = item.querySelector('.coverflow-overlay');
+        
+        let zIndex = totalItems - absOffset;
+        let translateX = offset * 60; // desktop spread
+        if(window.innerWidth < 768) translateX = offset * 40; // mobile spread
+        let translateZ = absOffset * -100;
+        let rotateY = offset > 0 ? -25 : offset < 0 ? 25 : 0;
+        let scale = absOffset === 0 ? 1 : 0.85;
+        let opacity = absOffset > 2 ? 0 : 1;
+        
+        item.style.zIndex = zIndex;
+        item.style.transform = `translateX(${translateX}%) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+        item.style.opacity = opacity;
+        
+        if(absOffset === 0) {
+          overlay.style.opacity = '0';
+          item.style.boxShadow = '0 25px 60px -15px rgba(0,0,0,0.9), 0 0 30px rgba(212,175,55,0.4)';
+          item.style.borderColor = 'rgba(212,175,55,0.8)';
+        } else {
+          overlay.style.opacity = (absOffset * 0.2).toString();
+          item.style.boxShadow = '0 15px 40px -12px rgba(0,0,0,0.7), 0 0 10px rgba(212,175,55,0.1)';
+          item.style.borderColor = 'rgba(212,175,55,0.3)';
+        }
+      });
+      
+      indicator.textContent = `${(currentIndex + 1).toString().padStart(2, '0')} / ${totalItems}`;
+    }
+    
+    function goTo(index) {
+      if(index >= 0 && index < totalItems) {
+        currentIndex = index;
+        updateCoverflow();
+      }
+    }
+    
+    document.getElementById('prev-btn').addEventListener('click', () => goTo(currentIndex - 1));
+    document.getElementById('next-btn').addEventListener('click', () => goTo(currentIndex + 1));
+    
+    // Swipe support
+    let startX = 0;
+    const container = document.getElementById('coverflow-container');
+    container.addEventListener('touchstart', e => startX = e.touches[0].clientX, {passive: true});
+    container.addEventListener('touchend', e => {
+      const diffX = startX - e.changedTouches[0].clientX;
+      if(diffX > 50) goTo(currentIndex + 1);
+      else if(diffX < -50) goTo(currentIndex - 1);
+    }, {passive: true});
+    
+    // Lightbox logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    function openLightbox(index) {
+      lightboxImg.src = items[index].querySelector('img').src;
+      lightbox.classList.remove('hidden');
+      setTimeout(() => {
+        lightbox.style.opacity = '1';
+        lightboxImg.classList.remove('scale-95');
+        lightboxImg.classList.add('scale-100');
+      }, 10);
+    }
+    
+    function closeLightbox() {
+      lightbox.style.opacity = '0';
+      lightboxImg.classList.remove('scale-100');
+      lightboxImg.classList.add('scale-95');
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+      }, 500);
+    }
+    
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev').addEventListener('click', () => {
+      if(currentIndex > 0) {
+        goTo(currentIndex - 1);
+        lightboxImg.src = items[currentIndex].querySelector('img').src;
+      }
+    });
+    document.getElementById('lightbox-next').addEventListener('click', () => {
+      if(currentIndex < totalItems - 1) {
+        goTo(currentIndex + 1);
+        lightboxImg.src = items[currentIndex].querySelector('img').src;
+      }
+    });
+    
+    // Init
+    updateCoverflow();
+    window.addEventListener('resize', updateCoverflow);
+  });
+</script>
+<!-- Contact CTA: Cinematic Consultation Portal -->
+<section class="py-24 relative overflow-hidden bg-brand-darker border-t border-brand-gold/20">
+<div class="absolute inset-0 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0VNsM0wX80bzSvbTOR489BcEFjL1kq6Ana5TSz17vJzdDbhMpj5wDSBzqa4CFFaUQxa0i3bk5W7LsKv88Hn9jD88m3jPXnVmgsTq_hZ52H_s_ihzkdv0KsPgxdiwhmXaWlnVTHudtmoPpiOfsOxn7SPNwrpLVG6FcMlR4q_XJRkyTSUVNSh6DdnGU2pYmaJJxIOCRECMXsPUx7vijuf3AtBNDEMKeyaaiBAmsbo6v2H0St0B8UAGtGQ')] bg-cover bg-center opacity-10"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-brand-darker via-brand-darker/90 to-transparent"></div>
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="glass-panel p-8 md:p-16 rounded-3xl border border-brand-gold/30 shadow-neon-gold bg-[#1c120a]/80 backdrop-blur-xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<h2 class="text-3xl lg:text-5xl font-serif text-brand-light leading-tight">
+        Take the Next Step in Your <span class="text-brand-gold italic">Journey</span>
+</h2>
+<p class="text-gray-300 font-light">
+        Schedule your private consultation to discuss your personalized treatment plan. Our team is dedicated to providing you with an exceptional experience.
+      </p>
+<div class="flex flex-col space-y-4">
+<a class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-widest uppercase bg-brand-gold text-brand-darker rounded-full hover:bg-white transition-colors duration-300 shadow-gold" href="#">
+          Book Consultation
+        </a>
+<div class="flex gap-4">
+<a class="flex-1 inline-flex items-center justify-center px-6 py-3 text-xs font-medium tracking-wider uppercase text-brand-light border border-brand-gold/40 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors duration-300 bg-brand-darker/50" href="#">
+<span class="material-symbols-outlined mr-2 text-sm">chat</span> WhatsApp
+  </a>
+<a class="flex-1 inline-flex items-center justify-center px-6 py-3 text-xs font-medium tracking-wider uppercase text-brand-light border border-brand-gold/40 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors duration-300 bg-brand-darker/50" href="#">
+<span class="material-symbols-outlined mr-2 text-sm">phone</span> Call Now
+  </a>
+</div>
+</div>
+</div>
+<div class="hidden lg:flex justify-center items-center">
+<div class="relative w-64 h-64">
+<!-- Abstract 3D elements (CSS representations) -->
+<div class="absolute inset-0 rounded-full border border-brand-gold/30 animate-[spin_10s_linear_infinite]"></div>
+<div class="absolute inset-4 rounded-full border border-brand-gold/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+<div class="absolute inset-8 rounded-full border-t border-b border-brand-gold/40 animate-[spin_8s_linear_infinite]"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-brand-gold/80 text-6xl drop-shadow-[0_0_15px_rgba(212,175,55,0.8)]">diamond</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 13: Premium Footer -->
+<footer class="bg-brand-darker pt-12 pb-12 relative overflow-hidden border-t border-brand-gold/30">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div class="col-span-1 md:col-span-1">
+<img alt="Logo" class="h-12 w-auto mb-6 opacity-80" src="https://lh3.googleusercontent.com/aida/AP1WRLs9iXfLy6rfYNrVIyz5Evr957eQ-aYI_9MCQvaxrCp4EkGoz48KVhHeZ6QVUSSV0tuzdVYrdvtRWQZMTrbJWj_4weLGV2hS7NRNGzlIZBJ1tBLXHizVBsB4pHo0aM7ZunpA6GjP49IFCi__oDU-rhNN3RvV2OAiCzI1sY5bSjocCpynO1z48ks3t7gGLPKyWFRv2nDqA91gdq4yKkZFlCcn-iSMR4sslMszTdTDz8U72ofj9_mCV1BScZtp">
+<p class="text-sm text-gray-400 font-light">Elevating plastic surgery to an art form. Delivering natural, beautiful results with uncompromising care.</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-gray-400 font-light">
+<li class=""><a class="hover:text-brand-gold transition" href="#">Home</a></li>
+<li class=""><a class="hover:text-brand-gold transition" href="#">About Dr. Gamal</a></li>
+<li class=""><a class="hover:text-brand-gold transition" href="#">Before &amp; After</a></li>
+<li class=""><a class="hover:text-brand-gold transition" href="#">Patient Reviews</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-4">Procedures</h4>
+<ul class="space-y-2 text-sm text-gray-400 font-light">
+<li class=""><a class="hover:text-brand-gold transition" href="#">Facial Procedures</a></li>
+<li class=""><a class="hover:text-brand-gold transition" href="#">Breast Surgery</a></li>
+<li class=""><a class="hover:text-brand-gold transition" href="#">Body Contouring</a></li>
+<li class=""><a class="hover:text-brand-gold transition" href="#">Non-Surgical</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-brand-gold font-serif text-lg mb-4">Contact Info</h4>
+<ul class="space-y-2 text-sm text-gray-400 font-light">
+<li class="flex items-start"><span class="material-symbols-outlined text-brand-gold text-sm mr-2 mt-0.5">location_on</span> 123 Luxury Med Blvd, Suite 100<br>Beverly Hills, CA 90210</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-brand-gold text-sm mr-2">phone</span> +1 (800) 123-4567</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-brand-gold text-sm mr-2">mail</span> info@drahmedgamal.com</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-brand-gold/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light gap-4">
+<p class="">© 2023 Dr. Ahmed Gamal Plastic Surgery. All Rights Reserved. | <a class="hover:text-brand-gold transition-colors" href="#">Privacy Policy</a> | <a class="hover:text-brand-gold transition-colors" href="#">Terms of Service</a></p>
+<p class="tracking-widest uppercase text-brand-gold/60">Developed by Transition</p>
+</div>
+</div>
+</footer>
+
+
+</body></html>

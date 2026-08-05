@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doctor Articles - Noon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#3c2f00",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#735c00",
+                        "primary-container": "#d4af37",
+                        "surface-variant": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "primary": "#f2ca50",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f1f",
+                        "background": "#131313",
+                        "tertiary-container": "#b4b2b2",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#353534",
+                        "surface-bright": "#3a3939",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-container": "#554300",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary": "#313030",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-tertiary-container": "#454544",
+                        "primary-fixed": "#ffe088",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "on-primary-fixed": "#241a00",
+                        "on-surface-variant": "#d0c5af",
+                        "on-secondary-fixed": "#2f1500",
+                        "tertiary": "#d0cdcd",
+                        "secondary": "#ffb77d",
+                        "secondary-container": "#fd8b00",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "on-secondary": "#4d2600",
+                        "outline": "#99907c",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#603100",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#e5e2e1",
+                        "outline-variant": "#4d4635"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": [
+                            "Archivo Narrow"
+                        ],
+                        "button": [
+                            "Libre Caslon Text"
+                        ],
+                        "body-md": [
+                            "Libre Caslon Text"
+                        ],
+                        "headline-md": [
+                            "Merriweather"
+                        ],
+                        "body-lg": [
+                            "Libre Caslon Text"
+                        ],
+                        "headline-lg": [
+                            "Merriweather"
+                        ],
+                        "headline-lg-mobile": [
+                            "Merriweather"
+                        ],
+                        "display-lg": [
+                            "Merriweather"
+                        ]
+                    },
+                    "fontSize": {
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "button": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-md": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "56px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-lg": [
+                            "72px",
+                            {
+                                "lineHeight": "80px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.05);
+        }
+        .gold-border-gradient {
+            border: 1px solid transparent;
+            background-image: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), linear-gradient(135deg, rgba(212, 175, 55, 0.8), transparent);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(10, 10, 10, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tighter">Noon</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Product</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Features</a>
+<a class="text-primary font-bold border-b border-primary pb-1 font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Methodology</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Case Studies</a>
+</nav>
+<div class="flex gap-4">
+<button class="hidden md:block text-primary font-button text-button uppercase tracking-wider hover:bg-primary-container/10 transition-all duration-300 px-4 py-2 rounded-lg scale-95 duration-200">Log In</button>
+<button class="bg-primary-container text-on-primary font-button text-button uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 px-6 py-2 rounded-lg shadow-[0_0_15px_rgba(212,175,55,0.3)] scale-95 duration-200">Get Started</button>
+</div>
+</header>
+<main class="pt-24 pb-section-gap relative">
+<div class="ambient-glow top-0 left-[-200px]"></div>
+<div class="ambient-glow top-[40%] right-[-200px]"></div>
+<div class="ambient-glow bottom-0 left-[20%]"></div>
+<!-- Articles Hero -->
+<section class="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center mb-section-gap">
+<div class="absolute inset-0 z-0">
+<img alt="Medical Articles Hero Background" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuprpW66lSnPpxBGRGrIko0U_ZUgAbLWADxxjSF5s2xfyhtrOWQhVXeV8GEFoxpfyYIM889aULmtLhuHFaeydGzfPpcuwtxTo06ugmp8kh0rv94NM_wZlC3DboAKAkHGCdZYhFRUc8UpnCZu4U918iaAcL6N410hWOxMeHTG9yDQu-G_ycijdMSHLVAKcVhhqY0AIc9-N7Sbt0ORAhGTuPdGFV3BWF0zxxJnBsPZYgzw5F6irz1gNSuw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-start text-left">
+<span class="text-primary font-label-sm tracking-widest uppercase mb-4 drop-shadow-md">MEDICAL ARTICLES</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-headline-lg-mobile text-on-surface mb-6 drop-shadow-2xl max-w-3xl">Insights That Help You Make <br/><span class="text-gold-gradient">Informed Decisions</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">Explore trusted articles from Dr. Ahmed Gamal El-Borhamy covering plastic-surgery procedures, preparation, recovery, safety, and expected outcomes.</p>
+<div class="flex flex-wrap gap-4 mb-20">
+<button class="bg-gradient-to-r from-primary-container to-primary text-on-primary font-button text-button uppercase tracking-wider px-10 py-4 rounded-full shadow-[0_10px_30px_rgba(212,175,55,0.25)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)] transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+<span class="">Contact Us</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="glass-panel text-on-surface font-button text-button uppercase tracking-wider px-10 py-4 rounded-full hover:bg-surface-container-high transition-all duration-300 flex items-center gap-2 border border-outline-variant/30 transform hover:-translate-y-1">
+<span class="">View Results</span>
+</button>
+</div>
+<!-- Floating Liquid Glass Capsule -->
+<div class="glass-panel gold-border-gradient rounded-full px-8 py-3 flex items-center gap-6 absolute bottom-10 left-margin-mobile md:left-margin-desktop animate-bounce" style="animation-duration: 3s;">
+<a class="text-primary hover:text-primary-fixed transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="call">call</span>
+<span class="font-label-sm text-label-sm">+1 (800) 555-NOON</span>
+</a>
+<div class="w-[1px] h-4 bg-outline-variant/50"></div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]" data-icon="share">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Hero Article -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="relative w-full rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] group min-h-[500px] flex items-end md:items-center">
+<img alt="Featured Article Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZilz3UDxroqaUmyv5HlRoyGiyO3uLg-H4N8sO81kB0GbSVPfjAib3wekjazPCKmeh6NCq79XHdMAi8ktpgG1Wjud9Xce4HiJ3aWbl3CMC8A32KA9_FkDFepr5NhD9iVutMWP3H6rjsNXxxnKv_IpymS44ZLA1MaACHE91JN4_k-E2YgDG-c1XXn4EVG_sIlNvWvBwaBEz2K_R1CDOGT97URBMogfvaLADzgJrdPT5rINGDMqpIfmkCA"/>
+<div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+<div class="relative z-10 glass-panel rounded-2xl p-8 md:p-12 m-6 md:m-12 max-w-2xl gold-border-gradient shadow-2xl backdrop-blur-xl bg-background/40">
+<span class="text-primary font-label-sm tracking-widest uppercase mb-4 inline-block">Featured Topic</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[40px] leading-tight text-on-surface mb-4">How to Choose the Right Plastic Surgery Procedure</h2>
+<p class="font-body-md text-on-surface-variant mb-8 line-clamp-3">Navigating the array of aesthetic options can be overwhelming. Discover the key factors to consider, the importance of aligning expectations with medical realities, and how expert consultation guides you to the optimal choice for your unique goals.</p>
+<button class="bg-primary/20 text-primary border border-primary/50 font-button text-button uppercase tracking-wider px-8 py-3 rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 flex items-center gap-2">
+                Learn More
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 6 Article Cards Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Article Card 1 -->
+<div class="glass-panel gold-border-gradient rounded-2xl flex flex-col overflow-hidden group hover:-translate-y-2 transition-transform duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Rhinoplasty" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_G3uRY2bmFRPzvI1uJvYbrYXvpEsVUaLXr3eFnT4oYS4JARSGuYM_96qQzcTvG2XPn3d79d_8L4JDB2Qn0WA9bTYqF1sRzJ7qwlI6XFhxOR66tMkwR1_A4UsqsDqILoAfwtVAtTgJqaoWxv2tfTuI2A9dlvWVmrNIViVGb6W5rat7H1YS5ABK5jWWEEYojZiQdFMnNzKRTaLkpzi51Eos3Sov5AHXD5V4v6ETMPcPa6BgmpUPJJit6Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 bg-background/60 backdrop-blur-md border border-outline-variant/30 px-3 py-1 rounded-full">
+<span class="text-primary font-label-sm uppercase tracking-wider">Face</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col bg-surface-container-low/50">
+<h3 class="font-headline-md text-[24px] leading-tight text-on-surface mb-3 group-hover:text-primary transition-colors">Rhinoplasty: What Patients Should Know</h3>
+<p class="font-body-md text-on-surface-variant mb-6 flex-1 line-clamp-3">A comprehensive guide to understanding nasal aesthetics, functional considerations, and the recovery process for rhinoplasty patients.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4 mt-auto">
+<div class="flex items-center gap-4 text-on-tertiary-fixed-variant font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Oct 12, 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 5 min read</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 2 -->
+<div class="glass-panel gold-border-gradient rounded-2xl flex flex-col overflow-hidden group hover:-translate-y-2 transition-transform duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Preparing for Surgery" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnUDrrAtWMty3YAl_TM3L8HN4WHKdSmvUapXjNXUzW0GbxRJdscxFEZOEa6O2cLTUWxOWnM0BoBOhCA-FaWCGkVBpqGaKiwme1QI9JAxxq_Pm5MTAZONzLbEAIuSJqf4vyBaeusLRZsBVsTQnQ4PZ78uiEy60OnzHjQSetUK6m5BZ-9kd6VwwFtM4_okNb_Kkg1a_O1Nq_bICsaJzTa2GvyMsEbEP2PnDjbpwfH4pRFDLAmzHW4U1Yuw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 bg-background/60 backdrop-blur-md border border-outline-variant/30 px-3 py-1 rounded-full">
+<span class="text-primary font-label-sm uppercase tracking-wider">Preparation</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col bg-surface-container-low/50">
+<h3 class="font-headline-md text-[24px] leading-tight text-on-surface mb-3 group-hover:text-primary transition-colors">Preparing for Plastic Surgery</h3>
+<p class="font-body-md text-on-surface-variant mb-6 flex-1 line-clamp-3">Essential physical and mental preparation steps to ensure optimal outcomes and a smoother recovery journey.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4 mt-auto">
+<div class="flex items-center gap-4 text-on-tertiary-fixed-variant font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Nov 05, 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 7 min read</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 3 -->
+<div class="glass-panel gold-border-gradient rounded-2xl flex flex-col overflow-hidden group hover:-translate-y-2 transition-transform duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Recovery" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqS0lL4ZptqHvHPSBZ9-4Jl_XJq0-ydVBtNbvklUBrgXfjtTR0S1p-MnzKsCVC4ap1WFiYJ35Bt9eOAvc-YbiXIcBizXyL6m896CvP-8_vYOn6pELror1Le5klncnjFgJugJe0zZXbqGN4n0Z9DcBx7fkBwWwZdbPe-gTZYh52jm5cjHxm9X6n9ARa7_aIYm8UWcnOg4r9xkOyUZLgeTWRQ8bgFGPx5pwaOdPuGwjDFXLpPThBfroBRw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 bg-background/60 backdrop-blur-md border border-outline-variant/30 px-3 py-1 rounded-full">
+<span class="text-primary font-label-sm uppercase tracking-wider">Recovery</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col bg-surface-container-low/50">
+<h3 class="font-headline-md text-[24px] leading-tight text-on-surface mb-3 group-hover:text-primary transition-colors">Recovery After Surgery</h3>
+<p class="font-body-md text-on-surface-variant mb-6 flex-1 line-clamp-3">What to expect during the healing phase, pain management strategies, and how to protect your results long-term.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4 mt-auto">
+<div class="flex items-center gap-4 text-on-tertiary-fixed-variant font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Dec 18, 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 6 min read</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 4 -->
+<div class="glass-panel gold-border-gradient rounded-2xl flex flex-col overflow-hidden group hover:-translate-y-2 transition-transform duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Body Contouring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYX1D_JYqmsSNWO1DlMPppK70UHs29JGQpCu5qmFbNMyIwviejuFN2hEuwxP4-4Ba8KHxlu4SVYwkZssFh7jrCBeMYXjhyhhXleIcEskyVB0mdIlpP3394L-QVDyCz2wC4QZl-ZCbL-cFLgCDBN0vSP6wAg1mYlrZbSonqLKVslszGQUGoURtkBuItLY9ybzA2uH00HQsfoHzA47twwIXW5-F7ZHqNC5BYrzpYupX-pgFnZBe1-X2_yQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 bg-background/60 backdrop-blur-md border border-outline-variant/30 px-3 py-1 rounded-full">
+<span class="text-primary font-label-sm uppercase tracking-wider">Body</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col bg-surface-container-low/50">
+<h3 class="font-headline-md text-[24px] leading-tight text-on-surface mb-3 group-hover:text-primary transition-colors">Liposuction and Body Contouring</h3>
+<p class="font-body-md text-on-surface-variant mb-6 flex-1 line-clamp-3">Exploring the science of proportion, advanced sculpting techniques, and defining realistic expectations for body contouring.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4 mt-auto">
+<div class="flex items-center gap-4 text-on-tertiary-fixed-variant font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Jan 22, 2024</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 8 min read</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 5 -->
+<div class="glass-panel gold-border-gradient rounded-2xl flex flex-col overflow-hidden group hover:-translate-y-2 transition-transform duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Natural Results" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_2Uj-2HDekhC8iGfU06qyNNGdBxjCjPwr6Gm0TX8acARP7ugFb2v1Ss3VMdluOWELdL8tUg4Ejl23H6IuC6yTeK9CQg7IEN16wIb59p77vPhb8o1vyp1dmeB9fzYd0r8KPwgYQ8gYk5Jv17yu7JU8qisLEqERBL8eYaw5KIxhI_fjPnf-hfHSxLG5B3JFn6qIDtOOJdXyp2uvS_3Ci6NAA9bEaF7NHiDcwzE6gc3KveJcTsVDDnsv-w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 bg-background/60 backdrop-blur-md border border-outline-variant/30 px-3 py-1 rounded-full">
+<span class="text-primary font-label-sm uppercase tracking-wider">Outcomes</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col bg-surface-container-low/50">
+<h3 class="font-headline-md text-[24px] leading-tight text-on-surface mb-3 group-hover:text-primary transition-colors">Understanding Natural-Looking Results</h3>
+<p class="font-body-md text-on-surface-variant mb-6 flex-1 line-clamp-3">The artistry behind preserving individual identity while enhancing aesthetic harmony in plastic surgery.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4 mt-auto">
+<div class="flex items-center gap-4 text-on-tertiary-fixed-variant font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Feb 10, 2024</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 5 min read</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 6 -->
+<div class="glass-panel gold-border-gradient rounded-2xl flex flex-col overflow-hidden group hover:-translate-y-2 transition-transform duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="FAQ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo7FjRDlOERBF5BT5yxgIgz4BLPoNiwgT8v4Z4cdP2qe1z3F8fiWVByBkH5aJZOnU8mZeaPh-J_2CBQ1XMJ7xOy0_NXWc4V-OkTLtD0hpRKanmAizeIyo0jjOOfUqUL_kwjT68Crp3mOCY_yx9frVat4s4rrPcOJNGrH2roPqPQoPuedhrKSxJqeMdC-I7g89Yd_hoXcfx-uH3-tzJnRKnZyW-k8F7i1I03zWQcR0Pr4Alkx40O2uUxg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 bg-background/60 backdrop-blur-md border border-outline-variant/30 px-3 py-1 rounded-full">
+<span class="text-primary font-label-sm uppercase tracking-wider">FAQ</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col bg-surface-container-low/50">
+<h3 class="font-headline-md text-[24px] leading-tight text-on-surface mb-3 group-hover:text-primary transition-colors">Frequently Asked Plastic Surgery Questions</h3>
+<p class="font-body-md text-on-surface-variant mb-6 flex-1 line-clamp-3">Dr. Ahmed addresses the most common concerns regarding safety, longevity of results, and choosing the right surgeon.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4 mt-auto">
+<div class="flex items-center gap-4 text-on-tertiary-fixed-variant font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Mar 02, 2024</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 9 min read</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Premium Contact CTA -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="glass-panel gold-border-gradient rounded-3xl p-8 md:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center gap-12 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+<!-- Background Shader/Glow -->
+<div class="absolute inset-0 opacity-20 z-0 mix-blend-screen pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary/40 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px]"></div>
+</div>
+<!-- Text Content -->
+<div class="relative z-10 flex-1 space-y-6">
+<span class="text-primary font-label-sm tracking-widest uppercase mb-2 inline-block">THE EXPERT GUIDANCE DESK</span>
+<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-headline-lg-mobile text-on-surface mb-2">Need an Answer <span class="text-gold-gradient">Specific to Your Case?</span></h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Connect directly with our patient coordination team for personalized guidance. Whether you're seeking clarity on a procedure or ready to take the next step, we're here to provide elite, confidential support.</p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-primary-container text-on-primary font-button text-button uppercase tracking-wider px-8 py-3 rounded-lg shadow-[0_5px_20px_rgba(212,175,55,0.2)] hover:shadow-[0_8px_25px_rgba(212,175,55,0.3)] transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="">Book Consultation</span>
+</button>
+<button class="glass-panel text-on-surface font-button text-button uppercase tracking-wider px-8 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-300 flex items-center justify-center gap-2 border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary" data-icon="chat">chat</span>
+<span class="">WhatsApp</span>
+</button>
+<button class="glass-panel text-on-surface font-button text-button uppercase tracking-wider px-8 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-300 flex items-center justify-center gap-2 border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">call</span>
+<span class="">Call Now</span>
+</button>
+</div>
+</div>
+<!-- 3D Composition Image -->
+<div class="relative z-10 w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-2xl">
+<img alt="Expert Guidance Desk" class="w-full h-auto object-cover rounded-2xl border border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYoJ-wk4rY8r-jx7oPQXGqk0VIt12ryKZm84xhbXz8ey_9XbRVcQRPFEVgPnM43vM9OUBjNLQQdLaJRn05JTNLa9a8es42QtmorWcg0_5H62EeqOOXT29eI0C9xjWDAje78DUz_Al6Zzidt3SByMIWcHeRYF6NM3ScpEtooDL2d7AG7SJ7YpTXEG1LgfsSQEc4799wVNbTWA1ptpEHkQqCBmWUViJdEOmyxVW9grjUHA8UBgTlErXnNw"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant/10 grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-desktop max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<div class="font-headline-md text-headline-md text-on-surface">Noon</div>
+<div class="flex flex-col md:items-end justify-between h-full gap-8">
+<nav class="flex flex-wrap gap-4 md:gap-6">
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Security</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Contact Support</a>
+</nav>
+<div class="font-body-md text-body-md text-primary-fixed-dim">© 2024 Noon AI. All rights reserved.</div>
+</div>
+</footer>
+</body></html>

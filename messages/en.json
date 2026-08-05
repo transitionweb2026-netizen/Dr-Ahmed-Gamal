@@ -1,0 +1,381 @@
+{
+  "site": {
+    "name": "Dr. Ahmed Gamal El-Borhamy",
+    "shortName": "Dr. Ahmed Gamal",
+    "tagline": "Artistry in Aesthetics"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "procedures": "Procedures",
+    "beforeAfter": "Before & After",
+    "patientStories": "Patient Stories",
+    "blog": "Blog",
+    "videos": "Videos",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu"
+  },
+  "languageSwitcher": {
+    "label": "Select language",
+    "en": "EN",
+    "ar": "AR"
+  },
+  "cta": {
+    "bookConsultation": "Book Consultation",
+    "bookNow": "Book Now",
+    "requestConsultation": "Request Consultation",
+    "viewResults": "View Results",
+    "contactUs": "Contact Us",
+    "callNow": "Call Now",
+    "whatsapp": "WhatsApp",
+    "continueOnWhatsapp": "Continue on WhatsApp",
+    "learnMore": "Learn More",
+    "showMore": "Show More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "getDirections": "Open in Google Maps",
+    "sendMessage": "Send Message",
+    "sending": "Sending…"
+  },
+  "common": {
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "play": "Play video",
+    "before": "Before",
+    "after": "After",
+    "minRead": "{minutes} min read",
+    "photoOf": "Photo {number} of {total}",
+    "viewLargerPhoto": "View larger photo {number} of {total}",
+    "skipToContent": "Skip to main content",
+    "comingSoon": {
+      "title": "Video coming soon",
+      "description": "This video is being prepared and will be available shortly."
+    }
+  },
+  "footer": {
+    "tagline": "Mastering the art of natural beauty with surgical precision and an artistic eye.",
+    "quickLinksTitle": "Quick Links",
+    "proceduresTitle": "Procedures",
+    "contactTitle": "Contact Info",
+    "hoursTitle": "Working Hours",
+    "rightsReserved": "© {year} Dr. Ahmed Gamal El-Borhamy Plastic Surgery. All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "developedBy": "Developed by Transition",
+    "categories": {
+      "facial": "Facial Procedures",
+      "breast": "Breast Surgery",
+      "body": "Body Contouring",
+      "nonSurgical": "Non-Surgical"
+    }
+  },
+  "procedures": {
+    "overview": "Overview",
+    "recovery": "Recovery",
+    "faqTitle": "Frequently Asked Questions",
+    "relatedProcedures": "Related Procedures",
+    "allProcedures": "All Procedures",
+    "category": {
+      "face": "Face",
+      "body": "Body",
+      "breast": "Breast",
+      "non-surgical": "Non-Surgical"
+    }
+  },
+  "form": {
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "age": "Age",
+    "procedure": "Procedure",
+    "procedurePlaceholder": "Select a procedure",
+    "date": "Preferred Date",
+    "time": "Preferred Time",
+    "message": "Message (Optional)",
+    "submit": "Continue on WhatsApp",
+    "errors": {
+      "required": "This field is required",
+      "invalidPhone": "Enter a valid phone number",
+      "invalidAge": "Enter a valid age",
+      "generic": "Please check the fields below"
+    },
+    "success": {
+      "title": "Message sent",
+      "description": "Thank you — our team will reach out to confirm your consultation shortly."
+    },
+    "error": {
+      "title": "We couldn't send your message",
+      "description": "Please try again, or reach us directly by phone or WhatsApp.",
+      "notConfigured": "Our online booking form is temporarily unavailable. Please contact us directly by phone or WhatsApp — we respond quickly."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or may have moved.",
+    "cta": "Back to Home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try Again"
+  },
+  "legal": {
+    "updated": "Last updated: {date}",
+    "privacy": {
+      "title": "Privacy Policy",
+      "intro": "Dr. Ahmed Gamal El-Borhamy's clinic (\"we\", \"us\") respects your privacy. This policy explains what information we collect through this website, how we use it, and the choices you have.",
+      "sections": [
+        {
+          "heading": "Information We Collect",
+          "body": "When you submit our consultation request form, we collect the details you provide — such as your name, phone number, age, procedure of interest, preferred date/time, and any message you include. We do not collect payment information through this website."
+        },
+        {
+          "heading": "How We Use Your Information",
+          "body": "We use the information you submit solely to respond to your inquiry, schedule a consultation, and communicate with you about your care. We do not sell or rent your personal information to third parties."
+        },
+        {
+          "heading": "Third-Party Services",
+          "body": "Consultation requests are delivered to our team using a trusted transactional email provider. This provider processes your submission only to deliver it to us and does not use it for any other purpose."
+        },
+        {
+          "heading": "Cookies",
+          "body": "This website uses only the minimal technical storage required for it to function correctly (such as remembering your selected language). We do not use advertising or third-party tracking cookies."
+        },
+        {
+          "heading": "Patient Confidentiality",
+          "body": "Any medical information you share with us in connection with a consultation is treated as confidential and handled in line with standard medical confidentiality practices."
+        },
+        {
+          "heading": "Your Rights",
+          "body": "You may ask us at any time to access, correct, or delete the information you have submitted to us. Contact us using the details on our Contact page to make a request."
+        },
+        {
+          "heading": "Contact Us",
+          "body": "If you have questions about this Privacy Policy, please reach out via the phone number or email address listed on our Contact page."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "intro": "By using this website, you agree to the following terms. Please read them carefully.",
+      "sections": [
+        {
+          "heading": "Use of This Website",
+          "body": "This website is provided for informational purposes to help you learn about our practice and request a consultation. You agree to use it only for lawful purposes."
+        },
+        {
+          "heading": "Not Medical Advice",
+          "body": "The content on this website — including procedure descriptions, before/after examples, and articles — is for general information only and does not constitute medical advice. Individual results vary, and every recommendation should be confirmed during an in-person consultation with Dr. Ahmed Gamal El-Borhamy."
+        },
+        {
+          "heading": "Consultation Requests",
+          "body": "Submitting the consultation form does not guarantee an appointment at the specific date or time requested. Our team will contact you to confirm availability."
+        },
+        {
+          "heading": "Intellectual Property",
+          "body": "All text, images, and design on this website are the property of the clinic or its licensors and may not be reproduced without permission."
+        },
+        {
+          "heading": "Limitation of Liability",
+          "body": "We make reasonable efforts to keep this website accurate and available, but we do not guarantee it will be error-free or uninterrupted, and we are not liable for decisions made solely on the basis of website content without a consultation."
+        },
+        {
+          "heading": "Changes to These Terms",
+          "body": "We may update these terms from time to time. Continued use of the website after changes are posted constitutes acceptance of the updated terms."
+        },
+        {
+          "heading": "Contact Us",
+          "body": "Questions about these terms can be directed to us via the details on our Contact page."
+        }
+      ]
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "eyebrow": "Artistry in Aesthetics",
+        "titleLine1": "Mastering the art of",
+        "titleLine2": "natural beauty.",
+        "paragraph": "Experience world-class plastic surgery tailored to your unique harmony. Dr. Ahmed Gamal combines surgical precision with an artistic eye to deliver elegant, transformative results."
+      },
+      "about": {
+        "heading": "Dr. Ahmed Gamal",
+        "subheading": "Board Certified Plastic Surgeon",
+        "paragraph1": "With over 20 years of dedicated practice, Dr. Gamal is renowned for his meticulous technique and commitment to patient safety and satisfaction.",
+        "paragraph2": "His philosophy centers on enhancing individual beauty through subtle, natural-looking refinements, ensuring every patient feels confident and empowered in their own skin."
+      },
+      "procedures": { "heading": "Featured Procedures" },
+      "beforeAfter": { "heading": "Before & After Gallery" },
+      "testimonials": { "heading": "What Our Patients Say" },
+      "milestones": { "heading": "Certifications & Professional Experience" },
+      "whyChooseUs": {
+        "heading": "Why Choose Dr. Ahmed Gamal El-Borhamy",
+        "paragraph": "With a commitment to excellence and a passion for aesthetic harmony, Dr. Gamal provides a transformative experience that prioritizes your safety, comfort, and natural beauty."
+      },
+      "videos": { "eyebrow": "Educational Series", "heading": "Featured Videos" },
+      "finalCta": {
+        "eyebrow": "Take The First Step",
+        "titleLine1": "Ready to reveal",
+        "titleLine2": "your best self?",
+        "paragraph": "Schedule a private consultation with Dr. Ahmed Gamal to discuss your aesthetic goals and discover a personalized treatment plan tailored just for you.",
+        "phoneOverline": "BEGIN YOUR TRANSFORMATION"
+      }
+    },
+    "about": {
+      "hero": {
+        "eyebrow": "Board Certified Plastic Surgeon",
+        "title": "Meet Dr. Ahmed Gamal El-Borhamy",
+        "paragraph": "Dedicated to the pursuit of aesthetic harmony through surgical excellence and artistic vision."
+      },
+      "message": {
+        "eyebrow": "A Message From The Doctor",
+        "titleLine1": "Beauty Begins With",
+        "titleLine2": "Understanding You.",
+        "paragraph1": "\"My philosophy has always been centered on the individual. Every face and body tells a unique story, and my goal is never to change that narrative, but to enhance its most beautiful chapters. We strive for results that whisper, rather than shout.",
+        "paragraph2": "Through years of refined technique and an unwavering commitment to safety, I approach each procedure as a collaboration between surgical precision and your personal aesthetic goals. Trust is the foundation of our practice.\"",
+        "signature": "Dr. Ahmed Gamal El-Borhamy"
+      },
+      "video": {
+        "titleLine1": "Precision, Experience, and an",
+        "titleLine2": "Artistic Perspective",
+        "paragraph": "Dr. Gamal brings over two decades of specialized expertise in aesthetic plastic surgery. His comprehensive approach integrates the latest advancements in medical technology with a deeply ingrained understanding of anatomical harmony. Since founding his premier practice in 2012, he has helped thousands of patients achieve subtle, elegant, and long-lasting results."
+      },
+      "procedures": { "heading": "Explore Our Procedures" },
+      "timeline": { "heading": "Professional Journey" },
+      "gallery": { "eyebrow": "Behind the Scenes", "heading": "The Doctor at Work" },
+      "cta": {
+        "titleLine1": "Take the Next Step in Your",
+        "titleLine2": "Journey",
+        "paragraph": "Schedule your private consultation to discuss your personalized treatment plan. Our team is dedicated to providing you with an exceptional experience."
+      }
+    },
+    "procedures": {
+      "hero": {
+        "eyebrow": "Our Procedures",
+        "title": "Advanced Plastic Surgery Procedures",
+        "paragraph": "Discover precision-driven aesthetic transformations. We combine cutting-edge medical technology with an artist's eye to deliver natural, refined results tailored to your unique anatomy."
+      },
+      "grid": {
+        "heading": "Our Procedures",
+        "paragraph": "Masterful precision meets aesthetic vision across our comprehensive suite of surgical excellence."
+      },
+      "cta": {
+        "eyebrow": "Private Consultation",
+        "heading": "Your Next Step Starts With a Personal Consultation",
+        "paragraph": "Discuss your aesthetic goals directly with our specialists. Receive a tailored, comprehensive treatment plan in a completely confidential environment."
+      }
+    },
+    "beforeAfter": {
+      "hero": {
+        "title": "Real Journeys. Refined Results.",
+        "paragraph": "Explore the transformative outcomes achieved through precision, artistry, and advanced medical expertise."
+      },
+      "sectionHeading": "Before & After Results",
+      "groups": {
+        "face": "Face Procedures",
+        "body": "Body Contouring",
+        "breast": "Breast & Combined"
+      },
+      "testimonials": { "heading": "What Our Patients Say" },
+      "cta": {
+        "eyebrow": "The Transformation Mirror",
+        "heading": "Plan Your Transformation With Confidence"
+      }
+    },
+    "patientStories": {
+      "hero": {
+        "eyebrow": "Real Experiences",
+        "titleLine1": "Real Stories.",
+        "titleLine2": "Personal Transformations.",
+        "paragraph": "Watch genuine patient stories and see the life-changing results. A journey of confidence begins here."
+      },
+      "intro": {
+        "heading": "Patient Stories",
+        "paragraph": "Explore the journeys of those who trusted us with their transformation."
+      },
+      "cta": {
+        "eyebrow": "The Story Continues",
+        "heading": "Your Story Can Begin With One Consultation",
+        "paragraph": "Take the first step towards your own transformation. Our expert team is ready to listen and guide you."
+      }
+    },
+    "blog": {
+      "hero": {
+        "eyebrow": "Medical Articles",
+        "titleLine1": "Insights That Help You Make",
+        "titleLine2": "Informed Decisions",
+        "paragraph": "Explore trusted articles from Dr. Ahmed Gamal El-Borhamy covering plastic-surgery procedures, preparation, recovery, safety, and expected outcomes."
+      },
+      "featuredLabel": "Featured Topic",
+      "backToArticles": "Back to Articles",
+      "cta": {
+        "eyebrow": "The Expert Guidance Desk",
+        "heading": "Need an Answer Specific to Your Case?",
+        "paragraph": "Connect directly with our patient coordination team for personalized guidance. Whether you're seeking clarity on a procedure or ready to take the next step, we're here to provide elite, confidential support."
+      }
+    },
+    "videos": {
+      "hero": {
+        "titleLine1": "Learn Directly From",
+        "titleLine2": "Dr. Ahmed",
+        "paragraph": "Watch educational videos from Dr. Ahmed Gamal El-Borhamy covering plastic-surgery procedures, safety, and outcomes."
+      },
+      "latestSection": {
+        "eyebrow": "Watch & Learn",
+        "heading": "Our Latest Videos",
+        "paragraph": "Explore our latest educational videos covering plastic surgery, patient care, recovery, and expert medical advice."
+      },
+      "cta": {
+        "titleLine1": "Ready to transform",
+        "titleLine2": "your future?",
+        "paragraph": "Connect with Dr. Ahmed's elite team to discuss your goals, schedule a private consultation, or ask specific questions regarding procedures and outcomes."
+      }
+    },
+    "faq": {
+      "hero": {
+        "eyebrow": "Frequently Asked Questions",
+        "title": "Clear Answers to Your Most Important Questions",
+        "paragraph": "Explore clear answers to common questions about plastic-surgery procedures, preparation, recovery, safety, and expected outcomes."
+      },
+      "intro": {
+        "eyebrow": "Common Questions",
+        "heading": "Frequently Asked Questions",
+        "paragraph": "Find clear, concise information about procedures, consultations, preparation, recovery, safety, and follow-up."
+      },
+      "cta": {
+        "eyebrow": "Still Have a Question?",
+        "heading": "Get an Answer Specific to Your Case",
+        "paragraph": "General answers can guide you, but every patient is different. Contact Dr. Ahmed Gamal El-Borhamy's clinic for personalized information and consultation guidance."
+      }
+    },
+    "contact": {
+      "hero": {
+        "title": "Let's Start With a Conversation",
+        "paragraph": "Reach out to schedule your private consultation — our team is ready to guide you through every step, from your first question to your treatment plan."
+      },
+      "formSection": {
+        "eyebrow": "The Consultation Desk",
+        "heading": "Request Your Consultation"
+      },
+      "location": {
+        "eyebrow": "Find Us",
+        "heading": "The Clinic Destination"
+      },
+      "contactGrid": {
+        "phoneTitle": "Phone Numbers",
+        "emailTitle": "Email Address",
+        "hoursTitle": "Working Hours",
+        "socialTitle": "Connect Socially",
+        "mainPhoneLabel": "Clinic",
+        "emergencyPhoneLabel": "Emergency"
+      },
+      "ctaBanner": {
+        "heading": "One Message Away",
+        "paragraph": "Start a conversation with our team today."
+      }
+    }
+  }
+}

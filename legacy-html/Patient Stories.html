@@ -1,0 +1,404 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Patient Stories - Noon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#d0cdcd",
+                        "surface-tint": "#e9c349",
+                        "primary-fixed-dim": "#e9c349",
+                        "outline-variant": "#4d4635",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary": "#313030",
+                        "secondary": "#ffb77d",
+                        "on-surface-variant": "#d0c5af",
+                        "on-primary-container": "#554300",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#735c00",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-container-highest": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-container": "#603100",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-container": "#d4af37",
+                        "tertiary-container": "#b4b2b2",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed": "#ffe088",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "surface-dim": "#131313",
+                        "outline": "#99907c",
+                        "on-secondary": "#4d2600",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-variant": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-container": "#454544",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#fd8b00",
+                        "on-primary-fixed-variant": "#574500",
+                        "background": "#131313",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary": "#f2ca50",
+                        "on-tertiary-fixed-variant": "#474746"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Merriweather"],
+                        "display-lg": ["Merriweather"],
+                        "label-sm": ["Archivo Narrow"],
+                        "headline-md": ["Merriweather"],
+                        "headline-lg-mobile": ["Merriweather"],
+                        "button": ["Libre Caslon Text"],
+                        "body-lg": ["Libre Caslon Text"],
+                        "body-md": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "button": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.05);
+        }
+        .gold-border-gradient {
+            border: 1px solid transparent;
+            background-image: linear-gradient(#0a0a0a, #0a0a0a), linear-gradient(135deg, rgba(212, 175, 55, 0.8), rgba(212, 175, 55, 0.1));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .glow-amber {
+            box-shadow: 0 0 24px rgba(212, 175, 55, 0.15);
+        }
+        .light-leak {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(10, 10, 10, 0) 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(to right, #f2ca50, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- 1. TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/20">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-on-surface tracking-tighter" href="#">Noon</a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-button text-button uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors hover:bg-primary-container/10 px-3 py-2 rounded" href="#">Product</a>
+<a class="font-button text-button uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors hover:bg-primary-container/10 px-3 py-2 rounded" href="#">Features</a>
+<a class="font-button text-button uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors hover:bg-primary-container/10 px-3 py-2 rounded" href="#">Methodology</a>
+<a class="font-button text-button uppercase tracking-wider text-primary font-bold border-b border-primary pb-1" href="#">Case Studies</a>
+</nav>
+<div class="hidden md:flex items-center gap-4">
+<button class="font-button text-button uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors">Log In</button>
+<button class="font-button text-button uppercase tracking-wider bg-primary-container text-on-primary-container px-6 py-2 rounded-full hover:bg-primary transition-colors scale-95 duration-200 glow-amber">Get Started</button>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-section-gap">
+<!-- 2. Hero Section -->
+<section class="relative min-h-[80vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop overflow-hidden mb-section-gap">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-background/60 backdrop-blur-[2px] z-10"></div>
+<img alt="Cinematic hero background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto w-full flex flex-col items-start justify-center text-left">
+<div class="max-w-2xl">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase mb-4 block text-gradient-gold">Real Experiences</span>
+<h1 class="font-display-lg text-display-lg md:text-[88px] text-on-surface mb-6 leading-tight">
+                        Real Stories. <br>
+<span class="text-on-surface-variant italic font-light">Personal Transformations.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                        Watch genuine patient stories and see the life-changing results. A journey of confidence begins here.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary-container font-button text-button px-8 py-4 rounded-full hover:bg-primary transition-all duration-300 glow-amber flex items-center justify-center gap-2">
+                            Contact Us
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="glass-card text-on-surface font-button text-button px-8 py-4 rounded-full hover:bg-surface-container-high transition-all duration-300 flex items-center justify-center gap-2">
+                            View Results
+                        </button>
+</div>
+</div>
+</div>
+<!-- Floating Liquid Glass capsule -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 glass-card rounded-full px-6 py-3 flex items-center gap-6 animate-pulse">
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span class="font-label-sm text-label-sm">Book Consultation</span>
+</a>
+<div class="w-px h-4 bg-outline-variant/50"></div>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span class="font-label-sm text-label-sm">WhatsApp</span>
+</a>
+</div>
+</section>
+<!-- 3. Introduction -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap text-center relative">
+<div class="light-leak top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+<div class="flex items-center justify-center gap-6 mb-4">
+<div class="h-px w-24 bg-gradient-to-r from-transparent to-primary/50"></div>
+<h2 class="font-headline-md text-headline-md text-gradient-gold uppercase tracking-widest">Patient Stories</h2>
+<div class="h-px w-24 bg-gradient-to-l from-transparent to-primary/50"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                Explore the journeys of those who trusted us with their transformation.
+            </p>
+</section>
+<!-- 4. Video Grid (9 cards, 3x3) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap relative">
+<div class="light-leak -top-20 -left-20"></div>
+<div class="light-leak bottom-0 right-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="gold-border-gradient rounded-2xl overflow-hidden group cursor-pointer relative aspect-[9/16] bg-surface-container flex flex-col shadow-2xl glow-amber">
+    <div class="absolute inset-0 z-0">
+        <div style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4')" class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+        <div class="w-16 h-16 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+            <span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+        </div>
+    </div>
+    <div class="mt-auto p-6 relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 class="font-headline-md text-[24px] text-on-surface mb-1">My Rhinoplasty Journey 1</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch full story</p>
+    </div>
+</div>
+<div class="gold-border-gradient rounded-2xl overflow-hidden group cursor-pointer relative aspect-[9/16] bg-surface-container flex flex-col shadow-2xl glow-amber">
+    <div class="absolute inset-0 z-0">
+        <div style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4')" class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+        <div class="w-16 h-16 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+            <span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+        </div>
+    </div>
+    <div class="mt-auto p-6 relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 class="font-headline-md text-[24px] text-on-surface mb-1">My Rhinoplasty Journey 2</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch full story</p>
+    </div>
+</div>
+<div class="gold-border-gradient rounded-2xl overflow-hidden group cursor-pointer relative aspect-[9/16] bg-surface-container flex flex-col shadow-2xl glow-amber">
+    <div class="absolute inset-0 z-0">
+        <div style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4')" class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+        <div class="w-16 h-16 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+            <span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+        </div>
+    </div>
+    <div class="mt-auto p-6 relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 class="font-headline-md text-[24px] text-on-surface mb-1">My Rhinoplasty Journey 3</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch full story</p>
+    </div>
+</div>
+<div class="gold-border-gradient rounded-2xl overflow-hidden group cursor-pointer relative aspect-[9/16] bg-surface-container flex flex-col shadow-2xl glow-amber">
+    <div class="absolute inset-0 z-0">
+        <div style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4')" class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+        <div class="w-16 h-16 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+            <span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+        </div>
+    </div>
+    <div class="mt-auto p-6 relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 class="font-headline-md text-[24px] text-on-surface mb-1">My Rhinoplasty Journey 4</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch full story</p>
+    </div>
+</div>
+<div class="gold-border-gradient rounded-2xl overflow-hidden group cursor-pointer relative aspect-[9/16] bg-surface-container flex flex-col shadow-2xl glow-amber">
+    <div class="absolute inset-0 z-0">
+        <div style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4')" class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+        <div class="w-16 h-16 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+            <span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+        </div>
+    </div>
+    <div class="mt-auto p-6 relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 class="font-headline-md text-[24px] text-on-surface mb-1">My Rhinoplasty Journey 5</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch full story</p>
+    </div>
+</div>
+<div class="gold-border-gradient rounded-2xl overflow-hidden group cursor-pointer relative aspect-[9/16] bg-surface-container flex flex-col shadow-2xl glow-amber">
+    <div class="absolute inset-0 z-0">
+        <div style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4')" class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+        <div class="w-16 h-16 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+            <span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+        </div>
+    </div>
+    <div class="mt-auto p-6 relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 class="font-headline-md text-[24px] text-on-surface mb-1">My Rhinoplasty Journey 6</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch full story</p>
+    </div>
+</div>
+<div class="gold-border-gradient rounded-2xl overflow-hidden group cursor-pointer relative aspect-[9/16] bg-surface-container flex flex-col shadow-2xl glow-amber">
+    <div class="absolute inset-0 z-0">
+        <div style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4')" class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+        <div class="w-16 h-16 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+            <span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+        </div>
+    </div>
+    <div class="mt-auto p-6 relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 class="font-headline-md text-[24px] text-on-surface mb-1">My Rhinoplasty Journey 7</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch full story</p>
+    </div>
+</div>
+<div class="gold-border-gradient rounded-2xl overflow-hidden group cursor-pointer relative aspect-[9/16] bg-surface-container flex flex-col shadow-2xl glow-amber">
+    <div class="absolute inset-0 z-0">
+        <div style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4')" class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+        <div class="w-16 h-16 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+            <span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+        </div>
+    </div>
+    <div class="mt-auto p-6 relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 class="font-headline-md text-[24px] text-on-surface mb-1">My Rhinoplasty Journey 8</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch full story</p>
+    </div>
+</div>
+<div class="gold-border-gradient rounded-2xl overflow-hidden group cursor-pointer relative aspect-[9/16] bg-surface-container flex flex-col shadow-2xl glow-amber">
+    <div class="absolute inset-0 z-0">
+        <div style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4')" class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+        <div class="w-16 h-16 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+            <span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+        </div>
+    </div>
+    <div class="mt-auto p-6 relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 class="font-headline-md text-[24px] text-on-surface mb-1">My Rhinoplasty Journey 9</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch full story</p>
+    </div>
+</div></div>
+</section>
+<!-- 5. Contact CTA -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap relative">
+<div class="glass-card rounded-2xl p-8 md:p-16 gold-border-gradient overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10 items-center">
+<div>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase mb-4 block">The Story Continues</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Your Story Can Begin With One Consultation</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                            Take the first step towards your own transformation. Our expert team is ready to listen and guide you.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary-container font-button text-button px-6 py-3 rounded-full hover:bg-primary transition-all duration-300 glow-amber flex items-center justify-center gap-2">
+                                Book Now
+                            </button>
+<button class="glass-card text-on-surface font-button text-button px-6 py-3 rounded-full hover:bg-surface-container-high transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+                            </button>
+<button class="glass-card text-on-surface font-button text-button px-6 py-3 rounded-full hover:bg-surface-container-high transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">call</span> Call
+                            </button>
+</div>
+</div>
+<div class="relative h-[400px] flex items-center justify-center">
+<!-- Abstract 3D composition representation -->
+<div class="absolute w-64 h-80 gold-border-gradient rounded-xl transform rotate-6 scale-95 opacity-50"></div>
+<div class="absolute w-64 h-80 gold-border-gradient rounded-xl transform -rotate-3 glass-card shadow-2xl flex items-center justify-center z-10">
+<div class="absolute inset-2 bg-cover bg-center rounded-lg opacity-80 mix-blend-overlay" data-alt="A stunning, surreal 3D composition of a floating cinematic film strip wrapping around a glowing bronze-gold consultation booking card. The background is a deep, warm espresso brown with soft, atmospheric light leaks creating a luxurious, high-end medical clinic vibe. The materials are glossy liquid glass and metallic gold, reflecting light elegantly. The mood is modern, sophisticated, and inviting, symbolizing the beginning of a transformational journey. 8k resolution, octane render style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT-c9b8UFaIaj-l96jox318wdY6K9zgzQDBoUDco8HXUgfXSqwOjBS5Jms_RBerFxx_92sAssBoOUvyxpKc_4R9d5gfR-TBH303mUjxUk_nqYnvAGVpy05ZMw8VNqpREK8OPuQkGF6H-mUGXA2eVJ3CboSS6o7ANPJcGwBDP4utIGlidAJjQl-tGDgFjZkPsufyI5MwDdjC8ufXJIDSqV2UOpV86jnt2Qr5X1U0G6UQaNG7mEqhwYD3g')"></div>
+<span class="material-symbols-outlined text-primary text-5xl z-20">movie</span>
+</div>
+<div class="absolute bottom-10 right-10 glass-card p-4 rounded-lg z-20 transform rotate-12">
+<span class="font-label-sm text-label-sm text-on-surface">Book Now</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 6. Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-on-surface">Noon</span>
+<p class="font-body-md text-body-md text-primary-fixed-dim">© 2024 Noon AI. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-4 md:justify-end items-center opacity-80 hover:opacity-100 transition-opacity">
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary" href="#">Security</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:text-primary" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>
