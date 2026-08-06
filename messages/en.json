@@ -362,7 +362,8 @@
       },
       "location": {
         "eyebrow": "Find Us",
-        "heading": "The Clinic Destination"
+        "heading": "The Clinic Destination",
+        "imageAlt": "Exterior view of the clinic building at dusk"
       },
       "contactGrid": {
         "phoneTitle": "Phone Numbers",

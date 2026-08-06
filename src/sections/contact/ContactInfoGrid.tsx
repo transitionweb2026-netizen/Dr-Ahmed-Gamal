@@ -12,8 +12,8 @@ const SOCIAL_ICONS: Record<string, IconName> = {
 
 function InfoCard({ icon, title, children }: { icon: IconName; title: string; children: React.ReactNode }) {
   return (
-    <div className="glass-panel flex flex-col gap-4 rounded-2xl p-8">
-      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold">
+    <div className="gold-glass-card flex flex-col gap-4 rounded-xl p-8 transition-transform hover:-translate-y-2">
+      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-gold/10 text-brand-gold">
         <Icon name={icon} className="h-5 w-5" />
       </div>
       <h3 className="font-serif text-xl text-brand-light">{title}</h3>
@@ -31,7 +31,7 @@ export async function ContactInfoGrid() {
   return (
     <section className="bg-brand-darker py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <InfoCard icon="call" title={t("phoneTitle")}>
             <p>
               <span className="text-xs uppercase tracking-wider text-brand-gold/70">
