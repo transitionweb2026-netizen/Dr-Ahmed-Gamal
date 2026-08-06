@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
+import { SectionKicker } from "@/components/SectionKicker";
 import { VideoModal } from "@/components/VideoModal";
 import { Icon } from "@/components/Icon";
 import { videos } from "@/content/videos";
@@ -19,41 +20,42 @@ export function VideosGrid() {
   return (
     <section className="bg-brand-darker py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold">
-            {t("eyebrow")}
-          </p>
-          <h2 className="mt-2 font-serif text-4xl text-brand-light">{t("heading")}</h2>
-          <p className="mt-4 leading-relaxed text-brand-light/70">{t("paragraph")}</p>
-        </div>
+        <SectionKicker
+          eyebrow={t("eyebrow")}
+          heading={t("heading")}
+          subtitle={t("paragraph")}
+          className="mb-16"
+        />
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {educational.map((video) => (
             <button
               key={video.id}
               type="button"
               onClick={() => setSelected(video)}
               aria-label={common("play")}
-              className="group relative block aspect-[9/16] w-full overflow-hidden rounded-2xl"
+              className="gold-glass-card group relative block aspect-[9/16] w-full overflow-hidden rounded-xl p-3 text-start shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-2"
             >
-              <Image
-                src={video.thumbnail}
-                alt={video.title[locale]}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/20 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-gold/70 bg-brand-darker/60 text-brand-gold transition-transform duration-300 group-hover:scale-110">
-                  <Icon name="play_arrow" className="h-6 w-6" />
+              <div className="absolute inset-2 overflow-hidden rounded-lg">
+                <Image
+                  src={video.thumbnail}
+                  alt={video.title[locale]}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-darker/90 via-brand-darker/20 to-transparent" />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-80 transition-opacity group-hover:opacity-100">
+                <div className="glass-panel flex h-16 w-16 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                  <Icon name="play_arrow" className="h-8 w-8" />
                 </div>
               </div>
-              <div className="absolute inset-x-0 bottom-0 p-4 text-start">
-                <p className="text-xs uppercase tracking-wider text-brand-gold">
+              <div className="absolute bottom-6 start-6 end-6">
+                <span className="mb-2 inline-block rounded border border-white/10 bg-brand-darker/80 px-2 py-1 text-xs uppercase tracking-wider text-brand-gold backdrop-blur-md">
                   {video.category[locale]}
-                </p>
-                <h3 className="mt-1 font-serif text-base text-brand-light">{video.title[locale]}</h3>
+                </span>
+                <h3 className="font-serif text-base font-bold text-brand-light">{video.title[locale]}</h3>
               </div>
             </button>
           ))}
