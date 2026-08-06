@@ -117,6 +117,63 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+/* Bespoke "luxury" card treatment restored from the legacy Procedures page
+   mockup (legacy-html/Services.html .luxury-card): warm gradient card face,
+   a gold hairline along the top edge, a layered box-shadow (drop shadow +
+   inset highlight + ambient gold glow using the brand-gold color), and a
+   radial light sweep that fades in and scales up on hover. Distinct from
+   .neon-card's border-gradient-mask technique — this one uses a real solid
+   gold border per the legacy recipe. */
+.luxury-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgb(42 33 24 / 0.9) 0%, rgb(24 18 12 / 0.95) 100%);
+  border: 1px solid rgb(212 175 55 / 0.3);
+  box-shadow:
+    0 10px 30px -10px rgb(0 0 0 / 0.8),
+    inset 0 1px 0 rgb(255 255 255 / 0.1),
+    0 0 20px rgb(212 175 55 / 0.05);
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    border-color 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.luxury-card::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(212 175 55 / 0.8), transparent);
+  opacity: 0.5;
+}
+.luxury-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  inset-inline-start: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgb(255 255 255 / 0.1) 0%, transparent 60%);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.6s, transform 0.6s;
+  pointer-events: none;
+  z-index: 1;
+}
+.luxury-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgb(212 175 55 / 0.6);
+  box-shadow:
+    0 20px 40px -10px rgb(0 0 0 / 0.9),
+    inset 0 1px 0 rgb(255 255 255 / 0.2),
+    0 0 30px rgb(212 175 55 / 0.15);
+}
+.luxury-card:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
