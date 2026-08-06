@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { Icon } from "@/components/Icon";
 import { articles } from "@/content/articles";
 
 export async function ArticleGrid() {
@@ -24,7 +25,7 @@ export async function ArticleGrid() {
               <Link
                 key={article.slug}
                 href={`/blog/${article.slug}`}
-                className="group flex flex-col overflow-hidden rounded-2xl glass-panel"
+                className="gold-glass-card group flex flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-2"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
                   <Image
@@ -47,9 +48,15 @@ export async function ArticleGrid() {
                     {article.excerpt[locale]}
                   </p>
                   <div className="mt-4 flex items-center gap-3 border-t border-brand-gold/10 pt-4 text-xs text-brand-light/65">
-                    <span>{formattedDate}</span>
+                    <span className="flex items-center gap-1">
+                      <Icon name="calendar_today" className="h-3.5 w-3.5" />
+                      {formattedDate}
+                    </span>
                     <span aria-hidden>•</span>
-                    <span>{common("minRead", { minutes: article.readTimeMinutes })}</span>
+                    <span className="flex items-center gap-1">
+                      <Icon name="schedule" className="h-3.5 w-3.5" />
+                      {common("minRead", { minutes: article.readTimeMinutes })}
+                    </span>
                   </div>
                 </div>
               </Link>
