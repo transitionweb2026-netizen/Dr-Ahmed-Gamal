@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { CTAButton } from "@/components/CTAButton";
+import { Icon } from "@/components/Icon";
 import { ProcedureModal } from "@/components/ProcedureModal";
 import { procedures } from "@/content/procedures";
 import type { Procedure } from "@/types/content";
@@ -32,24 +33,34 @@ export function AboutProcedures() {
               key={procedure.slug}
               type="button"
               onClick={() => setSelected(procedure)}
-              className="group text-start"
+              className="group flex flex-col overflow-hidden rounded-2xl neon-card text-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8),0_0_15px_rgba(212,175,55,0.15)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.9),0_0_30px_rgba(212,175,55,0.3)]"
             >
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+              <div className="relative h-48 w-full shrink-0 overflow-hidden">
                 <Image
                   src={procedure.image}
                   alt={procedure.name[locale]}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a120a] to-transparent" />
               </div>
-              <h3 className="mt-4 font-serif text-xl text-brand-light transition-colors group-hover:text-brand-gold">
-                {procedure.name[locale]}
-              </h3>
-              <p className="mt-1 text-sm leading-relaxed text-brand-light/60">
-                {procedure.shortDescription[locale]}
-              </p>
+
+              <div className="relative z-10 -mt-6 flex flex-1 flex-col items-center px-6 pb-6">
+                <span className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-brand-gold/30 bg-brand-darker text-brand-gold shadow-gold">
+                  <Icon name={procedure.icon} className="h-6 w-6" />
+                </span>
+                <h3 className="mb-3 font-serif text-xl text-brand-light">{procedure.name[locale]}</h3>
+                <p className="mb-6 flex-1 text-sm leading-relaxed text-brand-light/60">
+                  {procedure.shortDescription[locale]}
+                </p>
+                <span className="mt-auto flex w-full justify-end text-brand-gold/50 transition-colors group-hover:text-brand-gold">
+                  <Icon
+                    name="arrow_forward"
+                    className="h-5 w-5 rtl:rotate-180 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
+                  />
+                </span>
+              </div>
             </button>
           ))}
         </div>

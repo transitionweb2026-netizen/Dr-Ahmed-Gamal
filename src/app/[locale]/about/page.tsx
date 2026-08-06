@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { AboutHero } from "@/sections/about/AboutHero";
 import { PersonalMessage } from "@/sections/about/PersonalMessage";
 import { AboutVideoSplit } from "@/sections/about/AboutVideoSplit";
+import { AchievementStrip } from "@/sections/about/AchievementStrip";
 import { AboutProcedures } from "@/sections/about/AboutProcedures";
 import { JourneyTimeline } from "@/sections/about/JourneyTimeline";
 import { PhotoGallery } from "@/sections/about/PhotoGallery";
@@ -44,6 +45,7 @@ export default async function AboutPage({
       <AboutHero />
       <PersonalMessage />
       <AboutVideoSplit />
+      <AchievementStrip />
       <AboutProcedures />
       <JourneyTimeline />
       <PhotoGallery />
