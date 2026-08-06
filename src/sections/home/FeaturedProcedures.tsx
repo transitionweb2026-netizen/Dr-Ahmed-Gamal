@@ -34,22 +34,24 @@ export function FeaturedProcedures() {
               onClick={() => setSelected(procedure)}
               className="group text-start"
             >
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
-                <Image
-                  src={procedure.image}
-                  alt={procedure.name[locale]}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/10 to-transparent" />
+              <div className="neon-card relative h-[450px] overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-neon-gold-hover!">
+                <div className="absolute inset-x-0 top-0 h-[60%] overflow-hidden rounded-t-3xl">
+                  <Image
+                    src={procedure.image}
+                    alt={procedure.name[locale]}
+                    fill
+                    className="object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2a2015] via-[#2a2015]/40 to-transparent" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 flex h-[40%] flex-col justify-center p-6 text-center">
+                  <h3 className="mb-3 font-serif text-xl text-brand-light">{procedure.name[locale]}</h3>
+                  <p className="line-clamp-3 text-sm font-light text-gray-300">
+                    {procedure.shortDescription[locale]}
+                  </p>
+                </div>
               </div>
-              <h3 className="mt-4 font-serif text-xl text-brand-light transition-colors group-hover:text-brand-gold">
-                {procedure.name[locale]}
-              </h3>
-              <p className="mt-1 text-sm leading-relaxed text-brand-light/60">
-                {procedure.shortDescription[locale]}
-              </p>
             </button>
           ))}
         </div>

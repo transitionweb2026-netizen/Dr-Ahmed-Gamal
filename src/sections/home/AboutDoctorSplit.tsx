@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { CTAButton } from "@/components/CTAButton";
 import { VideoModal } from "@/components/VideoModal";
 import { Icon } from "@/components/Icon";
+import { SectionKicker } from "@/components/SectionKicker";
 import { videos } from "@/content/videos";
 
 const introVideo = videos.find((v) => v.id === "meet-dr-ahmed")!;
@@ -20,10 +21,7 @@ export function AboutDoctorSplit() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold">
-              {t("subheading")}
-            </p>
-            <h2 className="font-serif text-4xl text-brand-light">{t("heading")}</h2>
+            <SectionKicker eyebrow={t("subheading")} heading={t("heading")} align="start" />
             <p className="leading-relaxed text-brand-light/70">{t("paragraph1")}</p>
             <p className="leading-relaxed text-brand-light/70">{t("paragraph2")}</p>
             <CTAButton href="/about" variant="outline" showArrow>

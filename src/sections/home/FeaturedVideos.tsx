@@ -38,26 +38,21 @@ export function FeaturedVideos() {
               key={video.id}
               type="button"
               onClick={() => setSelected(video)}
-              className="group relative block aspect-[9/16] w-full overflow-hidden rounded-2xl"
+              aria-label={video.title[locale]}
+              className="group relative block aspect-[9/16] w-full overflow-hidden rounded-2xl border border-brand-gold/20 shadow-glass"
             >
               <Image
                 src={video.thumbnail}
-                alt={video.title[locale]}
+                alt=""
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
                 sizes="(min-width: 640px) 33vw, 100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/20 to-transparent" />
+              <div className="absolute inset-0 bg-brand-darker/30 transition duration-500 group-hover:bg-brand-darker/10" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-gold/70 bg-brand-darker/60 text-brand-gold transition-transform duration-300 group-hover:scale-110">
                   <Icon name="play_arrow" className="h-6 w-6" />
                 </div>
-              </div>
-              <div className="absolute inset-x-0 bottom-0 p-4 text-start">
-                <p className="text-xs uppercase tracking-wider text-brand-gold">
-                  {video.category[locale]}
-                </p>
-                <h3 className="mt-1 font-serif text-base text-brand-light">{video.title[locale]}</h3>
               </div>
             </button>
           ))}
