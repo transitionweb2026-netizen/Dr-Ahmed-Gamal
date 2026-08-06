@@ -19,8 +19,16 @@ export async function BeforeAfterTestimonials() {
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {pageTestimonials.map((testimonial) => (
-            <figure key={testimonial.id} className="glass-panel flex flex-col gap-4 rounded-2xl p-8">
-              <Icon name="format_quote" className="h-8 w-8 text-brand-gold/50" />
+            <figure
+              key={testimonial.id}
+              className="gold-glass-card card-glow-halo flex flex-col gap-4 rounded-2xl p-8 transition-transform hover:-translate-y-2"
+            >
+              <div className="flex items-start justify-between">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/30 bg-brand-gold/10">
+                  <Icon name="person" className="h-4 w-4 text-brand-gold/60" />
+                </div>
+                <Icon name="format_quote" className="h-8 w-8 text-brand-gold/50" />
+              </div>
               <blockquote className="flex-1 leading-relaxed text-brand-light/80">
                 &ldquo;{testimonial.quote[locale]}&rdquo;
               </blockquote>
