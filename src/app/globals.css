@@ -79,6 +79,44 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
 }
 
+/* Lighter card family: translucent glass base + solid gold border + ambient
+   glow, brightening on hover. Used for testimonial/review/article/FAQ/contact
+   cards — the counterpart to .neon-card's darker gradient treatment. */
+.gold-glass-card {
+  background: rgb(28 27 27 / 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgb(212 175 55 / 0.3);
+  box-shadow: var(--shadow-glass), var(--shadow-neon-gold);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.gold-glass-card:hover {
+  border-color: rgb(212 175 55 / 0.6);
+  box-shadow: var(--shadow-glass), var(--shadow-neon-gold-hover);
+}
+
+/* Outer blurred halo behind a card — pure-CSS pseudo-element, needs no extra
+   markup. Pair with a card that already sets border-radius. */
+.card-glow-halo {
+  position: relative;
+  isolation: isolate;
+}
+.card-glow-halo::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgb(212 175 55 / 0.35), rgb(212 175 55 / 0.05));
+  filter: blur(12px);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.card-glow-halo:hover::before {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

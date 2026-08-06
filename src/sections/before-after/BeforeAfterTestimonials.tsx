@@ -3,6 +3,11 @@ import { Icon } from "@/components/Icon";
 import { StarRating } from "@/components/StarRating";
 import { testimonials } from "@/content/testimonials";
 
+// Cases & Reviews.html's own 8-reviewer set — excludes the 3 testimonials
+// that are scoped to the Home page (`featuredOnHome`) so this page shows the
+// same 8 reviewers the legacy mockup did, not the merged 11.
+const pageTestimonials = testimonials.filter((testimonial) => !testimonial.featuredOnHome);
+
 export async function BeforeAfterTestimonials() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.beforeAfter.testimonials");
@@ -13,7 +18,7 @@ export async function BeforeAfterTestimonials() {
         <h2 className="mb-12 text-center font-serif text-4xl text-brand-light">{t("heading")}</h2>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {testimonials.map((testimonial) => (
+          {pageTestimonials.map((testimonial) => (
             <figure key={testimonial.id} className="glass-panel flex flex-col gap-4 rounded-2xl p-8">
               <Icon name="format_quote" className="h-8 w-8 text-brand-gold/50" />
               <blockquote className="flex-1 leading-relaxed text-brand-light/80">

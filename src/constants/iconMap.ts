@@ -42,6 +42,7 @@ import {
   ChevronsUpDown,
   Video,
   GraduationCap,
+  Store,
   type LucideIcon,
 } from "lucide-react";
 
@@ -93,6 +94,7 @@ export const iconMap = {
   share: Share2,
   spa: Flower2,
   star: Star,
+  storefront: Store,
   support_agent: Headset,
   unfold_more: ChevronsUpDown,
   video_library: Video,

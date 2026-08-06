@@ -44,6 +44,13 @@ export const contactInfo = {
       hours: { en: "Closed", ar: "مغلق" },
     },
   ] satisfies { days: Bilingual; hours: Bilingual }[],
-  /** Populate once real accounts exist — header/footer only render icons present here. */
-  social: {} as Partial<Record<"instagram" | "facebook" | "tiktok" | "youtube", string>>,
+  /**
+   * PLACEHOLDER social links — no real accounts were supplied, but the
+   * legacy mockups always showed a "Connect Socially" row/card, so these
+   * stand in until real handles are provided. Swap before launch.
+   */
+  social: {
+    instagram: "https://instagram.com/drahmedgamal",
+    facebook: "https://facebook.com/drahmedgamal",
+  } as Partial<Record<"instagram" | "facebook" | "tiktok" | "youtube", string>>,
 };

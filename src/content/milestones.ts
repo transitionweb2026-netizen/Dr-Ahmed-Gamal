@@ -1,10 +1,11 @@
 import type { Milestone } from "@/types/content";
 
 /**
- * Canonical 8-item milestone set — reconciles Home.html's 8-card carousel
+ * Canonical 9-item milestone set — reconciles Home.html's 8-card carousel
  * (categories, no years) with About.html's 4-item dated timeline (years, no
  * categories beyond 4) into one dataset with both, consumed by both a
- * carousel (Home) and a timeline (About).
+ * carousel (Home) and a timeline (About). Includes "Private Practice
+ * Founded" (2012), the one topic unique to About.html's timeline.
  */
 export const milestones: Milestone[] = [
   {
@@ -46,6 +47,16 @@ export const milestones: Milestone[] = [
       ar: "أتم زمالة دولية أتقن خلالها أحدث تقنيات الجراحة الترميمية والتجميلية في الخارج.",
     },
     icon: "public",
+  },
+  {
+    id: "private-practice-founded",
+    year: "2012",
+    title: { en: "Private Practice Founded", ar: "تأسيس العيادة الخاصة" },
+    description: {
+      en: "Opened an independent practice dedicated to personalized, artistry-driven surgical care.",
+      ar: "افتتح عيادة خاصة مستقلة مكرَّسة لتقديم رعاية جراحية شخصية تقوم على الحرفية الفنية.",
+    },
+    icon: "storefront",
   },
   {
     id: "professional-membership",
