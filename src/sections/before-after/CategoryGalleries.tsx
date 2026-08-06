@@ -35,7 +35,7 @@ export function CategoryGalleries() {
                   slideBasisClassName="basis-full sm:basis-1/2 lg:basis-1/3"
                 >
                   {cases.map((item) => (
-                    <div key={item.id}>
+                    <div key={item.id} className="card-glow-halo rounded-2xl">
                       <BeforeAfterSlider
                         beforeImage={item.beforeImage}
                         afterImage={item.afterImage}
