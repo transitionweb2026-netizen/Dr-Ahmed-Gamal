@@ -49,7 +49,7 @@ export function ProceduresGrid() {
                 <h3 className="font-serif text-xl text-brand-light drop-shadow-md transition-colors group-hover:text-brand-gold">
                   {procedure.name[locale]}
                 </h3>
-                <p className="mt-2 mb-4 line-clamp-2 flex-grow text-sm leading-relaxed text-brand-light/60">
+                <p className="mt-2 mb-4 line-clamp-2 text-sm leading-relaxed text-brand-light/60">
                   {procedure.shortDescription[locale]}
                 </p>
                 <span className="mt-auto inline-flex w-fit items-center gap-2 text-sm font-semibold uppercase tracking-wider text-brand-gold">
