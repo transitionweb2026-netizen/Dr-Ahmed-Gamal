@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Icon } from "@/components/Icon";
+import { SectionKicker } from "@/components/SectionKicker";
 import { whyChooseUs } from "@/content/whyChooseUs";
 
 const SECTION_IMAGE =
@@ -13,6 +14,10 @@ export async function WhyChooseUs() {
   return (
     <section className="bg-brand-darker py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16">
+          <SectionKicker eyebrow={t("eyebrow")} heading={t("heading")} />
+        </div>
+
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
             <Image
@@ -25,8 +30,7 @@ export async function WhyChooseUs() {
           </div>
 
           <div>
-            <h2 className="font-serif text-4xl text-brand-light">{t("heading")}</h2>
-            <p className="mt-4 leading-relaxed text-brand-light/70">{t("paragraph")}</p>
+            <p className="leading-relaxed text-brand-light/70">{t("paragraph")}</p>
 
             <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {whyChooseUs.map((item) => (

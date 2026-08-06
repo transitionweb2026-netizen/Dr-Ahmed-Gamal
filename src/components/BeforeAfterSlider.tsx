@@ -34,7 +34,7 @@ export function BeforeAfterSlider({
   return (
     <div
       className={cn(
-        "group relative aspect-[4/5] w-full select-none overflow-hidden rounded-2xl bg-brand-dark",
+        "group relative aspect-[4/5] w-full select-none overflow-hidden rounded-2xl border border-brand-gold bg-brand-dark shadow-[0_0_15px_rgba(212,175,55,0.3),inset_0_1px_2px_rgba(255,255,255,0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(212,175,55,0.6),inset_0_1px_2px_rgba(255,255,255,0.5)]",
         className,
       )}
     >
