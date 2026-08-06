@@ -362,7 +362,8 @@
       },
       "location": {
         "eyebrow": "موقعنا",
-        "heading": "وجهة العيادة"
+        "heading": "وجهة العيادة",
+        "imageAlt": "منظر خارجي لمبنى العيادة عند الغسق"
       },
       "contactGrid": {
         "phoneTitle": "أرقام الهاتف",
