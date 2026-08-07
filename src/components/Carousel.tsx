@@ -15,6 +15,8 @@ interface CarouselProps {
   slideBasisClassName?: string;
   showDots?: boolean;
   ariaLabel?: string;
+  /** Override the default nav-button size/treatment for this usage. */
+  navButtonClassName?: string;
 }
 
 export function Carousel({
@@ -24,6 +26,7 @@ export function Carousel({
   slideBasisClassName = "basis-full sm:basis-1/2 lg:basis-1/3",
   showDots = true,
   ariaLabel,
+  navButtonClassName,
 }: CarouselProps) {
   const dir = useDirection();
   const t = useTranslations("common");
@@ -78,7 +81,10 @@ export function Carousel({
           onClick={() => emblaApi?.scrollPrev()}
           disabled={!canPrev}
           aria-label={t("previous")}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10 disabled:opacity-30"
+          className={cn(
+            "glass-panel flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold shadow-neon-gold transition-all duration-300 hover:scale-110 hover:border-brand-gold disabled:opacity-30 disabled:hover:scale-100",
+            navButtonClassName,
+          )}
         >
           <Icon name="chevron_left" className="h-5 w-5 rtl:rotate-180" />
         </button>
@@ -111,7 +117,10 @@ export function Carousel({
           onClick={() => emblaApi?.scrollNext()}
           disabled={!canNext}
           aria-label={t("next")}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10 disabled:opacity-30"
+          className={cn(
+            "glass-panel flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold shadow-neon-gold transition-all duration-300 hover:scale-110 hover:border-brand-gold disabled:opacity-30 disabled:hover:scale-100",
+            navButtonClassName,
+          )}
         >
           <Icon name="chevron_right" className="h-5 w-5 rtl:rotate-180" />
         </button>

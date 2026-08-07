@@ -11,7 +11,7 @@ export async function FaqList() {
 
   return (
     <section className="bg-brand-darker pb-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold">{t("eyebrow")}</p>
           <h2 className="mt-4 font-serif text-4xl text-brand-light">{t("heading")}</h2>

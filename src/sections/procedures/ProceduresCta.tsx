@@ -31,7 +31,7 @@ export function ProceduresCta() {
 
   return (
     <section className="bg-brand-dark py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="neon-card relative overflow-hidden rounded-[2rem]">
           <div className="grid grid-cols-1 items-center gap-12 p-8 sm:p-12 lg:grid-cols-2 lg:p-16">
             {/* Copy + buttons */}

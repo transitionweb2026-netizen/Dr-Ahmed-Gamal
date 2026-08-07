@@ -17,7 +17,7 @@ export async function BeforeAfterCta() {
 
   return (
     <section className="bg-brand-dark py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="gold-glass-card card-glow-halo flex flex-col items-center gap-12 rounded-2xl p-8 md:flex-row md:p-12">
           <div className="flex justify-center md:w-1/2">
             <div className="relative h-80 w-64 overflow-hidden rounded-full border border-brand-gold/50 shadow-[0_0_40px_rgba(212,175,55,0.25)]">

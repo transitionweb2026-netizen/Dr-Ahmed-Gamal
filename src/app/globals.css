@@ -28,6 +28,56 @@
   }
 }
 
+/* Exact typography scale from the reference design system (DESIGN.md,
+   identical across all 9 page mockups) — replaces ad-hoc text-3xl/4xl/5xl
+   sizing so headings/eyebrows/body copy land on the reference's literal
+   px values. Each is a full "text style" (size+line-height+tracking+weight)
+   as a single utility class, usable with responsive/state variants like any
+   other Tailwind utility (e.g. `md:text-display-lg`). */
+@utility text-display-lg {
+  font-size: 72px;
+  line-height: 80px;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+@utility text-headline-lg-mobile {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+}
+@utility text-headline-lg {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 400;
+}
+@utility text-headline-md {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+}
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+@utility text-body-md {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+@utility text-label-sm {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+@utility text-button {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
 :root[dir="rtl"] {
   --font-serif: var(--font-serif-ar), serif;
   --font-sans: var(--font-sans-ar), sans-serif;

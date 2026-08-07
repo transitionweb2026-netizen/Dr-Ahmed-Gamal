@@ -8,9 +8,9 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   solid:
-    "text-white bg-gradient-to-b from-[#a67c00] to-[#5c4000] border border-brand-gold/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),0_0_25px_rgba(212,175,55,0.6)] hover:-translate-y-0.5",
+    "text-white bg-gradient-to-b from-[#a67c00] to-[#5c4000] border border-brand-gold/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),0_0_25px_rgba(212,175,55,0.6)] hover:-translate-y-1",
   outline:
-    "text-brand-gold bg-[#5c4000]/20 backdrop-blur-md border border-brand-gold/40 hover:border-brand-gold/80 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:-translate-y-0.5",
+    "text-brand-gold bg-[#5c4000]/20 backdrop-blur-md border border-brand-gold/40 hover:border-brand-gold/80 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:-translate-y-1",
   flat: "text-brand-darker bg-brand-gold hover:bg-white shadow-gold",
   ghost:
     "text-brand-gold normal-case tracking-normal font-normal rounded-none px-0 py-0 hover:gap-3",

@@ -16,7 +16,7 @@ export async function LocationBlock() {
 
   return (
     <section className="bg-brand-dark py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="gold-glass-card grid grid-cols-1 overflow-hidden rounded-2xl md:grid-cols-2">
           <div className="relative h-64 md:h-auto">
             <Image

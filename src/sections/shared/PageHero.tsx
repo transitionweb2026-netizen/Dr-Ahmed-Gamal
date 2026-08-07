@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { cn } from "@/utils/cn";
 
 interface PageHeroProps {
   image: string;
@@ -7,27 +8,89 @@ interface PageHeroProps {
   title: ReactNode;
   paragraph?: string;
   children?: ReactNode;
+  /** Text/content alignment — most pages are centered, some are left-aligned. */
+  align?: "center" | "start";
+  /** Reference hero is 80vh/600px on most pages, 60vh/500px on Contact. */
+  short?: boolean;
+  /** Background image opacity — reference is 60 on most pages, 40 on Contact. */
+  imageOpacity?: 40 | 60;
+  /** The floating glass "quick contact" capsule (see HeroContactCapsule), or a
+   * bespoke variant (e.g. Cases & Reviews' fixed vertical edge capsule). */
+  capsule?: ReactNode;
 }
 
-export function PageHero({ image, eyebrow, title, paragraph, children }: PageHeroProps) {
+const imageOpacityClass = { 40: "opacity-40", 60: "opacity-60" } as const;
+
+export function PageHero({
+  image,
+  eyebrow,
+  title,
+  paragraph,
+  children,
+  align = "center",
+  short = false,
+  imageOpacity = 60,
+  capsule,
+}: PageHeroProps) {
+  const isCenter = align === "center";
+
   return (
-    <section className="relative overflow-hidden bg-brand-darker pb-20 pt-40">
+    <section
+      className={cn(
+        "relative flex items-center justify-center overflow-hidden bg-brand-darker pt-24",
+        short ? "min-h-[500px] sm:min-h-[60vh]" : "min-h-[600px] sm:min-h-[80vh]",
+      )}
+    >
       <div className="absolute inset-0 z-0">
-        <Image src={image} alt="" fill priority className="object-cover opacity-40" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/70 to-brand-darker/40" />
+        <Image
+          src={image}
+          alt=""
+          fill
+          priority
+          className={cn("object-cover", imageOpacityClass[imageOpacity])}
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-darker/80 via-brand-darker/50 to-brand-darker" />
       </div>
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        {eyebrow && (
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold">{eyebrow}</p>
+      <div
+        className={cn(
+          "relative z-10 mx-auto max-w-4xl px-5 py-16 md:px-16",
+          isCenter ? "text-center" : "text-start",
         )}
-        <h1 className="mt-4 font-serif text-4xl text-brand-light sm:text-5xl lg:text-6xl">{title}</h1>
+      >
+        {eyebrow && (
+          <p className="text-label-sm uppercase tracking-widest text-brand-gold">{eyebrow}</p>
+        )}
+        <h1
+          className={cn(
+            "mt-4 text-headline-lg-mobile font-serif text-brand-light md:text-display-lg",
+            !isCenter && "max-w-3xl",
+          )}
+        >
+          {title}
+        </h1>
         {paragraph && (
-          <p className="mt-6 text-lg leading-relaxed text-brand-light/70">{paragraph}</p>
+          <p
+            className={cn(
+              "mt-6 text-body-lg leading-relaxed text-brand-light/70",
+              !isCenter && "max-w-lg",
+            )}
+          >
+            {paragraph}
+          </p>
         )}
         {children && (
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">{children}</div>
+          <div
+            className={cn(
+              "mt-10 flex flex-wrap items-center gap-4",
+              isCenter ? "justify-center" : "justify-start",
+            )}
+          >
+            {children}
+          </div>
         )}
       </div>
+      {capsule}
     </section>
   );
 }
