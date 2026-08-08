@@ -303,6 +303,9 @@
         "heading": "Patient Stories",
         "paragraph": "Explore the journeys of those who trusted us with their transformation."
       },
+      "grid": {
+        "watchFullStory": "Watch full story"
+      },
       "cta": {
         "eyebrow": "The Story Continues",
         "heading": "Your Story Can Begin With One Consultation",

@@ -14,11 +14,12 @@ export function StoriesGrid() {
   const [selected, setSelected] = useState<Video | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("common");
+  const tGrid = useTranslations("pages.patientStories.grid");
 
   return (
     <section className="bg-brand-darker py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {stories.map((video) => (
             <div
               key={video.id}
@@ -28,7 +29,7 @@ export function StoriesGrid() {
                 type="button"
                 onClick={() => setSelected(video)}
                 aria-label={`${t("play")}: ${video.title[locale]}`}
-                className="group relative block aspect-[9/16] w-full overflow-hidden rounded-2xl"
+                className="group relative flex aspect-[9/16] w-full flex-col overflow-hidden rounded-2xl"
               >
                 <Image
                   src={video.thumbnail}
@@ -39,15 +40,15 @@ export function StoriesGrid() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/20 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-gold/70 bg-brand-darker/60 text-brand-gold transition-transform duration-300 group-hover:scale-110">
-                    <Icon name="play_arrow" className="h-6 w-6" />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-brand-gold/30 bg-brand-darker/60 text-brand-gold transition-transform duration-300 group-hover:scale-110">
+                    <Icon name="play_arrow" className="ms-1 h-[30px] w-[30px]" />
                   </div>
                 </div>
-                <div className="absolute inset-x-0 bottom-0 translate-y-2 p-4 text-start opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
-                  <p className="text-xs uppercase tracking-wider text-brand-gold">
-                    {video.category[locale]}
+                <div className="relative z-10 mt-auto translate-y-2 p-6 text-start transition-transform duration-300 group-hover:translate-y-0 group-focus-visible:translate-y-0">
+                  <h3 className="mb-1 text-[24px] font-serif text-brand-light">{video.title[locale]}</h3>
+                  <p className="text-body-md text-brand-light/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    {tGrid("watchFullStory")}
                   </p>
-                  <h3 className="mt-1 font-serif text-base text-brand-light">{video.title[locale]}</h3>
                 </div>
               </button>
             </div>
