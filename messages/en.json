@@ -342,7 +342,9 @@
       "hero": {
         "eyebrow": "Frequently Asked Questions",
         "title": "Clear Answers to Your Most Important Questions",
-        "paragraph": "Explore clear answers to common questions about plastic-surgery procedures, preparation, recovery, safety, and expected outcomes."
+        "paragraph": "Explore clear answers to common questions about plastic-surgery procedures, preparation, recovery, safety, and expected outcomes.",
+        "shareAriaLabel": "Share this page",
+        "emailAriaLabel": "Email us"
       },
       "intro": {
         "eyebrow": "Common Questions",
