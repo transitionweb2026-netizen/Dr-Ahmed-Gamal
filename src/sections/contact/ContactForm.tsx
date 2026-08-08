@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useLocale, useTranslations } from "next-intl";
 import { Icon } from "@/components/Icon";
-import { buttonVariants } from "@/components/ui/buttonStyles";
 import { procedures } from "@/content/procedures";
 import { contactFormSchema, type ContactFormValues } from "@/types/forms";
 import { cn } from "@/utils/cn";
@@ -14,7 +13,7 @@ import { submitContactAction } from "@/app/[locale]/contact/actions";
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
 const fieldClasses =
-  "w-full rounded-lg border border-brand-gold/20 bg-brand-dark/50 px-4 py-3 text-brand-light placeholder:text-brand-light/40 transition-colors focus:border-brand-gold focus:outline-none";
+  "w-full rounded-lg border border-white/10 bg-[#050505] px-4 py-3 text-brand-light placeholder:text-brand-light/40 transition-colors focus:border-brand-gold focus:outline-none";
 
 export function ContactForm() {
   const locale = useLocale() as "en" | "ar";
@@ -72,7 +71,7 @@ export function ContactForm() {
         </div>
       )}
 
-      <form onSubmit={onSubmit} noValidate className="space-y-5">
+      <form onSubmit={onSubmit} noValidate className="space-y-4">
         <div>
           <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-brand-light/80">
             {t("fullName")}
@@ -111,54 +110,56 @@ export function ContactForm() {
           )}
         </div>
 
-        <div>
-          <label htmlFor="age" className="mb-2 block text-sm font-medium text-brand-light/80">
-            {t("age")}
-          </label>
-          <input
-            id="age"
-            type="number"
-            className={fieldClasses}
-            aria-invalid={errors.age ? "true" : undefined}
-            aria-describedby={errors.age ? "age-error" : undefined}
-            {...register("age")}
-          />
-          {errors.age && (
-            <p id="age-error" role="alert" className="mt-1.5 text-sm text-red-400">
-              {t("errors.invalidAge")}
-            </p>
-          )}
-        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <label htmlFor="age" className="mb-2 block text-sm font-medium text-brand-light/80">
+              {t("age")}
+            </label>
+            <input
+              id="age"
+              type="number"
+              className={fieldClasses}
+              aria-invalid={errors.age ? "true" : undefined}
+              aria-describedby={errors.age ? "age-error" : undefined}
+              {...register("age")}
+            />
+            {errors.age && (
+              <p id="age-error" role="alert" className="mt-1.5 text-sm text-red-400">
+                {t("errors.invalidAge")}
+              </p>
+            )}
+          </div>
 
-        <div>
-          <label htmlFor="procedure" className="mb-2 block text-sm font-medium text-brand-light/80">
-            {t("procedure")}
-          </label>
-          <select
-            id="procedure"
-            defaultValue=""
-            className={cn(fieldClasses, "appearance-none")}
-            aria-invalid={errors.procedure ? "true" : undefined}
-            aria-describedby={errors.procedure ? "procedure-error" : undefined}
-            {...register("procedure")}
-          >
-            <option value="" disabled>
-              {t("procedurePlaceholder")}
-            </option>
-            {procedures.map((procedure) => (
-              <option key={procedure.slug} value={procedure.slug}>
-                {procedure.name[locale]}
+          <div>
+            <label htmlFor="procedure" className="mb-2 block text-sm font-medium text-brand-light/80">
+              {t("procedure")}
+            </label>
+            <select
+              id="procedure"
+              defaultValue=""
+              className={cn(fieldClasses, "appearance-none")}
+              aria-invalid={errors.procedure ? "true" : undefined}
+              aria-describedby={errors.procedure ? "procedure-error" : undefined}
+              {...register("procedure")}
+            >
+              <option value="" disabled>
+                {t("procedurePlaceholder")}
               </option>
-            ))}
-          </select>
-          {errors.procedure && (
-            <p id="procedure-error" role="alert" className="mt-1.5 text-sm text-red-400">
-              {t("errors.required")}
-            </p>
-          )}
+              {procedures.map((procedure) => (
+                <option key={procedure.slug} value={procedure.slug}>
+                  {procedure.name[locale]}
+                </option>
+              ))}
+            </select>
+            {errors.procedure && (
+              <p id="procedure-error" role="alert" className="mt-1.5 text-sm text-red-400">
+                {t("errors.required")}
+              </p>
+            )}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="date" className="mb-2 block text-sm font-medium text-brand-light/80">
               {t("date")}
@@ -202,13 +203,13 @@ export function ContactForm() {
           <label htmlFor="message" className="mb-2 block text-sm font-medium text-brand-light/80">
             {t("message")}
           </label>
-          <textarea id="message" rows={4} className={fieldClasses} {...register("message")} />
+          <textarea id="message" rows={3} className={fieldClasses} {...register("message")} />
         </div>
 
         <button
           type="submit"
           disabled={status === "submitting"}
-          className={cn(buttonVariants({ variant: "solid", size: "lg" }), "w-full")}
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-brand-gold py-4 text-button uppercase text-brand-darker shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-colors hover:bg-brand-gold/90 disabled:pointer-events-none disabled:opacity-50"
         >
           {status === "submitting" ? cta("sending") : cta("sendMessage")}
         </button>

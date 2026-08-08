@@ -355,15 +355,20 @@
     "contact": {
       "hero": {
         "title": "Let's Start With a Conversation",
-        "paragraph": "Reach out to schedule your private consultation — our team is ready to guide you through every step, from your first question to your treatment plan."
+        "paragraph": "Reach out to schedule your private consultation — our team is ready to guide you through every step, from your first question to your treatment plan.",
+        "capsule": {
+          "call": "Call Us",
+          "email": "Email",
+          "directions": "Directions"
+        }
       },
       "formSection": {
-        "eyebrow": "The Consultation Desk",
-        "heading": "Request Your Consultation"
+        "heading": "Request Your Consultation",
+        "paragraph": "Fill out the details below to initiate a priority connection."
       },
       "location": {
-        "eyebrow": "Find Us",
         "heading": "The Clinic Destination",
+        "tagline": "Elite Aesthetics Center",
         "imageAlt": "Exterior view of the clinic building at dusk"
       },
       "contactGrid": {
@@ -371,7 +376,6 @@
         "emailTitle": "Email Address",
         "hoursTitle": "Working Hours",
         "socialTitle": "Connect Socially",
-        "mainPhoneLabel": "Clinic",
         "emergencyPhoneLabel": "Emergency"
       },
       "ctaBanner": {
