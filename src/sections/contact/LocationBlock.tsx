@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
-import { CTAButton } from "@/components/CTAButton";
 import { Icon } from "@/components/Icon";
 import { contactInfo } from "@/constants/contactInfo";
 
@@ -15,7 +14,7 @@ export async function LocationBlock() {
   const cta = await getTranslations("cta");
 
   return (
-    <section className="bg-brand-dark py-24">
+    <section className="bg-brand-darker py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="gold-glass-card grid grid-cols-1 overflow-hidden rounded-2xl md:grid-cols-2">
           <div className="relative h-64 md:h-auto">
@@ -28,20 +27,25 @@ export async function LocationBlock() {
             />
           </div>
 
-          <div className="flex flex-col justify-center p-8 md:p-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold">{t("eyebrow")}</p>
-            <h2 className="mt-2 font-serif text-3xl text-brand-light sm:text-4xl">{t("heading")}</h2>
+          <div className="flex flex-col justify-center bg-brand-dark/40 p-8 backdrop-blur-md md:p-12">
+            <h2 className="mb-2 text-headline-md font-serif text-brand-light">{t("heading")}</h2>
 
-            <div className="mt-6 flex items-center gap-3 text-lg text-brand-light/80">
-              <Icon name="location_on" className="h-5 w-5 shrink-0 text-brand-gold" />
-              <span>{contactInfo.address[locale]}</span>
-            </div>
+            <p className="mb-6 flex items-center gap-2 text-body-md text-brand-gold">
+              <Icon name="location_on" className="h-5 w-5 shrink-0" />
+              {t("tagline")}
+            </p>
 
-            <div className="mt-8">
-              <CTAButton href={contactInfo.mapsUrl} variant="outline" size="lg">
-                {cta("getDirections")}
-              </CTAButton>
-            </div>
+            <p className="mb-8 text-body-md text-brand-light/70">{contactInfo.address[locale]}</p>
+
+            <a
+              href={contactInfo.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center gap-2 self-start rounded-full border border-brand-gold px-6 py-3 text-button uppercase text-brand-gold transition-colors hover:bg-brand-gold/10"
+            >
+              <Icon name="map" className="h-4 w-4" />
+              {cta("getDirections")}
+            </a>
           </div>
         </div>
       </div>

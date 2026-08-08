@@ -12,11 +12,11 @@ const SOCIAL_ICONS: Record<string, IconName> = {
 
 function InfoCard({ icon, title, children }: { icon: IconName; title: string; children: React.ReactNode }) {
   return (
-    <div className="gold-glass-card flex flex-col gap-4 rounded-xl p-8 transition-transform hover:-translate-y-2">
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-gold/10 text-brand-gold">
-        <Icon name={icon} className="h-5 w-5" />
+    <div className="group gold-glass-card flex flex-col rounded-xl p-8 text-center transition-transform hover:-translate-y-2">
+      <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-brand-gold/10 text-brand-gold transition-colors group-hover:bg-brand-gold/20">
+        <Icon name={icon} className="h-7 w-7" />
       </div>
-      <h3 className="font-serif text-xl text-brand-light">{title}</h3>
+      <h3 className="mb-2 text-label-sm uppercase tracking-wider text-brand-light/50">{title}</h3>
       <div className="space-y-2 text-brand-light/70">{children}</div>
     </div>
   );
@@ -31,26 +31,20 @@ export async function ContactInfoGrid() {
   return (
     <section className="bg-brand-darker py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           <InfoCard icon="call" title={t("phoneTitle")}>
-            <p>
-              <span className="text-xs uppercase tracking-wider text-brand-gold/70">
-                {t("mainPhoneLabel")}
-              </span>
-              <br />
-              <a href={contactInfo.phone.href} className="transition-colors hover:text-brand-gold">
-                {contactInfo.phone.display}
-              </a>
-            </p>
-            <p>
-              <span className="text-xs uppercase tracking-wider text-brand-gold/70">
-                {t("emergencyPhoneLabel")}
-              </span>
-              <br />
-              <a href={contactInfo.emergencyPhone.href} className="transition-colors hover:text-brand-gold">
-                {contactInfo.emergencyPhone.display}
-              </a>
-            </p>
+            <a
+              href={contactInfo.phone.href}
+              className="block text-body-lg text-brand-light transition-colors hover:text-brand-gold"
+            >
+              {contactInfo.phone.display}
+            </a>
+            <a
+              href={contactInfo.emergencyPhone.href}
+              className="block text-body-md text-brand-light/70 transition-colors hover:text-brand-gold"
+            >
+              {t("emergencyPhoneLabel")}: {contactInfo.emergencyPhone.display}
+            </a>
           </InfoCard>
 
           <InfoCard icon="mail" title={t("emailTitle")}>
@@ -70,17 +64,17 @@ export async function ContactInfoGrid() {
 
           {hasSocial && (
             <InfoCard icon="share" title={t("socialTitle")}>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center justify-center gap-4">
                 {socialEntries.map(([platform, url]) => (
                   <a
                     key={platform}
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:text-brand-light"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-brand-light/60 transition-colors hover:border-brand-gold hover:text-brand-gold"
                     aria-label={platform}
                   >
-                    <Icon name={SOCIAL_ICONS[platform] ?? "public"} className="h-4 w-4" />
+                    <Icon name={SOCIAL_ICONS[platform] ?? "public"} className="h-5 w-5" />
                   </a>
                 ))}
               </div>

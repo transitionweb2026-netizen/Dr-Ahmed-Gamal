@@ -9,19 +9,27 @@ export async function ContactFormSection() {
   const t = await getTranslations("pages.contact.formSection");
 
   return (
-    <section className="bg-brand-darker py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold">{t("eyebrow")}</p>
-            <h2 className="mt-4 font-serif text-4xl text-brand-light">{t("heading")}</h2>
-            <div className="mt-8">
-              <ContactForm />
-            </div>
+    <section className="relative overflow-hidden bg-brand-darker py-[120px]">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-0 start-[-100px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.08)_0%,rgba(0,0,0,0)_70%)]"
+      />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          <div className="gold-glass-card relative z-10 mx-auto w-full max-w-md rounded-xl p-8 lg:mx-0">
+            <h2 className="mb-2 text-headline-md font-serif text-brand-light">{t("heading")}</h2>
+            <p className="mb-8 text-body-md text-brand-light/70">{t("paragraph")}</p>
+            <ContactForm />
           </div>
 
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
-            <Image src={PORTRAIT_IMAGE} alt="" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+          <div className="gold-glass-card relative hidden h-[500px] w-full overflow-hidden rounded-xl lg:block">
+            <Image
+              src={PORTRAIT_IMAGE}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
           </div>
         </div>
       </div>
