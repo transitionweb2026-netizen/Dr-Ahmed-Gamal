@@ -43,8 +43,10 @@ import {
   Video,
   GraduationCap,
   Store,
-  type LucideIcon,
+  type LucideProps,
 } from "lucide-react";
+import type { ComponentType } from "react";
+import { FacebookIcon, InstagramIcon, TiktokIcon } from "@/components/icons/BrandIcons";
 
 /**
  * Maps the 46 Material Symbols Outlined icon names used across the legacy
@@ -68,8 +70,10 @@ export const iconMap = {
   diamond: Gem,
   event_available: CalendarCheck,
   face: Smile,
+  facebook: FacebookIcon,
   format_quote: Quote,
   groups: Users,
+  instagram: InstagramIcon,
   location_on: MapPin,
   mail: Mail,
   map: Map,
@@ -96,9 +100,10 @@ export const iconMap = {
   star: Star,
   storefront: Store,
   support_agent: Headset,
+  tiktok: TiktokIcon,
   unfold_more: ChevronsUpDown,
   video_library: Video,
   workspace_premium: Award,
-} satisfies Record<string, LucideIcon>;
+} satisfies Record<string, ComponentType<LucideProps>>;
 
 export type IconName = keyof typeof iconMap;
