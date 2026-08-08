@@ -1,22 +1,16 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
-import { CTAButton } from "@/components/CTAButton";
+import { Link } from "@/i18n/navigation";
+import { Icon } from "@/components/Icon";
 import { articles } from "@/content/articles";
 
 export async function FeaturedArticle() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.blog");
   const cta = await getTranslations("cta");
-  const common = await getTranslations("common");
 
   const featured = articles.find((article) => article.featured);
   if (!featured) return null;
-
-  const formattedDate = new Intl.DateTimeFormat(locale, {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  }).format(new Date(featured.publishedAt));
 
   return (
     <section className="bg-brand-darker pb-24">
@@ -32,26 +26,26 @@ export async function FeaturedArticle() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/80 to-transparent md:from-brand-darker md:via-brand-darker/70 md:to-transparent md:ltr:bg-gradient-to-r md:rtl:bg-gradient-to-l" />
 
-          <div className="gold-glass-card relative z-10 w-full rounded-t-2xl p-6 backdrop-blur-xl sm:p-8 md:my-12 md:ms-12 md:w-auto md:max-w-xl md:rounded-2xl md:p-12">
-            <span className="inline-block rounded-full border border-brand-gold/40 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-brand-gold">
+          <div className="gold-glass-card relative z-10 m-6 w-full max-w-2xl rounded-2xl p-6 backdrop-blur-xl sm:p-8 md:m-12 md:p-12">
+            <span className="mb-4 inline-block text-label-sm uppercase tracking-widest text-brand-gold">
               {t("featuredLabel")}
             </span>
-            <h2 className="mt-4 font-serif text-3xl leading-tight text-brand-light sm:text-4xl">
+            <h2 className="mb-4 font-serif text-headline-lg leading-tight text-brand-light md:text-[40px]">
               {featured.title[locale]}
             </h2>
-            <p className="mt-4 line-clamp-3 leading-relaxed text-brand-light/70">
+            <p className="mb-8 line-clamp-3 text-body-md text-brand-light/70">
               {featured.excerpt[locale]}
             </p>
-            <div className="mt-4 flex items-center gap-3 text-sm text-brand-light/65">
-              <span>{formattedDate}</span>
-              <span aria-hidden>•</span>
-              <span>{common("minRead", { minutes: featured.readTimeMinutes })}</span>
-            </div>
-            <div className="mt-8">
-              <CTAButton href={`/blog/${featured.slug}`} showArrow>
-                {cta("readMore")}
-              </CTAButton>
-            </div>
+            <Link
+              href={`/blog/${featured.slug}`}
+              className="inline-flex items-center gap-2 rounded-lg border border-brand-gold/50 bg-brand-gold/20 px-8 py-3 text-button uppercase tracking-wider text-brand-gold transition-all duration-300 hover:bg-brand-gold hover:text-brand-darker"
+            >
+              {cta("learnMore")}
+              <Icon
+                name="arrow_forward"
+                className="h-[18px] w-[18px] rtl:rotate-180"
+              />
+            </Link>
           </div>
         </div>
       </div>

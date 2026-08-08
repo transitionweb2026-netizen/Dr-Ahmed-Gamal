@@ -314,14 +314,17 @@
         "eyebrow": "Medical Articles",
         "titleLine1": "Insights That Help You Make",
         "titleLine2": "Informed Decisions",
-        "paragraph": "Explore trusted articles from Dr. Ahmed Gamal El-Borhamy covering plastic-surgery procedures, preparation, recovery, safety, and expected outcomes."
+        "paragraph": "Explore trusted articles from Dr. Ahmed Gamal El-Borhamy covering plastic-surgery procedures, preparation, recovery, safety, and expected outcomes.",
+        "shareAriaLabel": "Share",
+        "mailAriaLabel": "Email us"
       },
       "featuredLabel": "Featured Topic",
       "backToArticles": "Back to Articles",
       "cta": {
         "eyebrow": "The Expert Guidance Desk",
         "heading": "Need an Answer Specific to Your Case?",
-        "paragraph": "Connect directly with our patient coordination team for personalized guidance. Whether you're seeking clarity on a procedure or ready to take the next step, we're here to provide elite, confidential support."
+        "paragraph": "Connect directly with our patient coordination team for personalized guidance. Whether you're seeking clarity on a procedure or ready to take the next step, we're here to provide elite, confidential support.",
+        "imageAlt": "Expert Guidance Desk"
       }
     },
     "videos": {
