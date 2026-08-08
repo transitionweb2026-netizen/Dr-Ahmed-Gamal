@@ -12,8 +12,8 @@ export const navLinks: NavLink[] = [
   { href: "/procedures", label: { en: "Procedures", ar: "الإجراءات" } },
   { href: "/before-after", label: { en: "Before & After", ar: "قبل وبعد" } },
   { href: "/patient-stories", label: { en: "Patient Stories", ar: "قصص المرضى" } },
-  { href: "/blog", label: { en: "Blog", ar: "المقالات" } },
   { href: "/videos", label: { en: "Videos", ar: "الفيديوهات" } },
+  { href: "/articles", label: { en: "Articles", ar: "المقالات" } },
   { href: "/faq", label: { en: "FAQ", ar: "الأسئلة الشائعة" } },
   { href: "/contact", label: { en: "Contact", ar: "تواصل معنا" } },
 ];

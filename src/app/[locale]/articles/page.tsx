@@ -19,13 +19,13 @@ export async function generateMetadata({
 
   return buildMetadata({
     locale,
-    path: "/blog",
+    path: "/articles",
     title: `${t("titleLine1")} ${t("titleLine2")}`,
     description: t("paragraph"),
   });
 }
 
-export default async function BlogPage({
+export default async function ArticlesPage({
   params,
 }: {
   params: Promise<{ locale: string }>;

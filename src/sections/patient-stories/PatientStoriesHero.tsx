@@ -1,8 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/sections/shared/PageHero";
 import { CTAButton } from "@/components/CTAButton";
-import { HeroContactCapsule } from "@/components/HeroContactCapsule";
-import { getContactInfo } from "@/services/contactInfo";
+import { HeroFloatingContact } from "@/components/HeroFloatingContact";
 
 const HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida/AP1WRLs7JGqjVEkh-UYy-fHLzZvDwKy_VFdbH9qjvgO1_FDrKAhZpW-rqaQqsINVDbsYtpu2lJI9APGpbFpS0UQwAqiFZSyQq-_hYBlLoI3058MDrhqo4NcZC124V6PcMw6Q654UjCwkTnSigmTh18nJbNZ0bv_pR7dCGqeyUqkALVX6gDKybS7OxdA3txiLgqxGBKrhGN0CSignxOf3E_kHZ6YtMm7djV13AorO4s-1Ik7GiTfWRv6XI1YcnL4";
@@ -10,7 +9,6 @@ const HERO_IMAGE =
 export async function PatientStoriesHero() {
   const t = await getTranslations("pages.patientStories.hero");
   const cta = await getTranslations("cta");
-  const contactInfo = await getContactInfo();
 
   // PageHero's `eyebrow` prop is intentionally typed as a plain string so
   // every other page can hand it a translated string with no ceremony. This
@@ -36,14 +34,7 @@ export async function PatientStoriesHero() {
         </>
       }
       paragraph={t("paragraph")}
-      capsule={
-        <HeroContactCapsule
-          groups={[
-            [{ icon: "call", href: contactInfo.phone.href, label: cta("bookConsultation") }],
-            [{ icon: "chat", href: contactInfo.whatsapp.href, label: cta("whatsapp") }],
-          ]}
-        />
-      }
+      capsule={<HeroFloatingContact />}
     >
       <CTAButton href="/contact" size="lg" showArrow className="px-8 py-4">
         {cta("contactUs")}

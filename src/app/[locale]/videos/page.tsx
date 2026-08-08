@@ -4,7 +4,6 @@ import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { VideosHero } from "@/sections/videos/VideosHero";
-import { VideosIntroGrid } from "@/sections/videos/VideosIntroGrid";
 import { VideosGrid } from "@/sections/videos/VideosGrid";
 import { VideosCta } from "@/sections/videos/VideosCta";
 import { getVideos } from "@/services/videos";
@@ -39,7 +38,6 @@ export default async function VideosPage({
   return (
     <main>
       <VideosHero />
-      <VideosIntroGrid videos={videos} />
       <VideosGrid videos={videos} />
       <VideosCta contactInfo={contactInfo} videos={videos} />
     </main>

@@ -38,7 +38,7 @@ export async function FeaturedArticle() {
               {featured.excerpt[locale]}
             </p>
             <Link
-              href={`/blog/${featured.slug}`}
+              href={`/articles/${featured.slug}`}
               className="inline-flex items-center gap-2 rounded-lg border border-brand-gold/50 bg-brand-gold/20 px-8 py-3 text-button uppercase tracking-wider text-brand-gold transition-all duration-300 hover:bg-brand-gold hover:text-brand-darker"
             >
               {cta("learnMore")}

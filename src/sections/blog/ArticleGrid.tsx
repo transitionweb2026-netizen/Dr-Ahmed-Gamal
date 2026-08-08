@@ -25,7 +25,7 @@ export async function ArticleGrid() {
             return (
               <Link
                 key={article.slug}
-                href={`/blog/${article.slug}`}
+                href={`/articles/${article.slug}`}
                 className="gold-glass-card group flex flex-col overflow-hidden rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.5)]! transition-transform duration-500 hover:-translate-y-2"
               >
                 <div className="relative h-64 w-full overflow-hidden">

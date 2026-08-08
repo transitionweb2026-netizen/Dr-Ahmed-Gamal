@@ -12,6 +12,13 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" },
     ],
   },
+  async redirects() {
+    return [
+      // The Blog page was renamed to Articles — preserve old links/bookmarks.
+      { source: "/:locale/blog", destination: "/:locale/articles", permanent: true },
+      { source: "/:locale/blog/:slug", destination: "/:locale/articles/:slug", permanent: true },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

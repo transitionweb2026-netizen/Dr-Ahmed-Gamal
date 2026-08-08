@@ -13,7 +13,8 @@ export interface CapsuleLink {
 interface HeroContactCapsuleProps {
   /** Consecutive groups of links, separated by a vertical divider. */
   groups: CapsuleLink[][];
-  align?: "center" | "start";
+  /** "end" = bottom-right in LTR / bottom-left in RTL (logical, auto-flips). */
+  align?: "center" | "start" | "end";
   className?: string;
 }
 
@@ -26,7 +27,11 @@ export function HeroContactCapsule({ groups, align = "center", className }: Hero
     <div
       className={cn(
         "absolute bottom-8 z-30 w-auto max-w-[90vw] sm:bottom-12",
-        align === "center" ? "start-1/2 -translate-x-1/2 rtl:translate-x-1/2" : "start-5 md:start-16",
+        align === "center"
+          ? "start-1/2 -translate-x-1/2 rtl:translate-x-1/2"
+          : align === "start"
+            ? "start-5 md:start-16"
+            : "end-5 md:end-16",
         className,
       )}
     >

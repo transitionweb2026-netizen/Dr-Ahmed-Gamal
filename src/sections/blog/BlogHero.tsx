@@ -1,8 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/sections/shared/PageHero";
 import { CTAButton } from "@/components/CTAButton";
-import { HeroContactCapsule } from "@/components/HeroContactCapsule";
-import { getContactInfo } from "@/services/contactInfo";
+import { HeroFloatingContact } from "@/components/HeroFloatingContact";
 
 const HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBuprpW66lSnPpxBGRGrIko0U_ZUgAbLWADxxjSF5s2xfyhtrOWQhVXeV8GEFoxpfyYIM889aULmtLhuHFaeydGzfPpcuwtxTo06ugmp8kh0rv94NM_wZlC3DboAKAkHGCdZYhFRUc8UpnCZu4U918iaAcL6N410hWOxMeHTG9yDQu-G_ycijdMSHLVAKcVhhqY0AIc9-N7Sbt0ORAhGTuPdGFV3BWF0zxxJnBsPZYgzw5F6irz1gNSuw";
@@ -10,7 +9,6 @@ const HERO_IMAGE =
 export async function BlogHero() {
   const t = await getTranslations("pages.blog.hero");
   const cta = await getTranslations("cta");
-  const contactInfo = await getContactInfo();
 
   return (
     <PageHero
@@ -24,18 +22,7 @@ export async function BlogHero() {
         </>
       }
       paragraph={t("paragraph")}
-      capsule={
-        <HeroContactCapsule
-          align="start"
-          groups={[
-            [{ icon: "call", href: contactInfo.phone.href, label: contactInfo.phone.display }],
-            [
-              { icon: "share", href: "#", ariaLabel: t("shareAriaLabel") },
-              { icon: "mail", href: contactInfo.email.href, ariaLabel: t("mailAriaLabel") },
-            ],
-          ]}
-        />
-      }
+      capsule={<HeroFloatingContact />}
     >
       <CTAButton href="/contact" size="lg">
         {cta("contactUs")}

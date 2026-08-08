@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/sections/shared/PageHero";
-import { HeroContactCapsule } from "@/components/HeroContactCapsule";
+import { HeroFloatingContact } from "@/components/HeroFloatingContact";
 import { CTAButton } from "@/components/CTAButton";
 import { Icon } from "@/components/Icon";
 import { getContactInfo } from "@/services/contactInfo";
@@ -16,19 +16,12 @@ export async function ContactHero() {
   return (
     <PageHero
       image={HERO_IMAGE}
+      align="start"
       title={<span className="text-display-lg">{t("title")}</span>}
       paragraph={t("paragraph")}
       short
       imageOpacity={40}
-      capsule={
-        <HeroContactCapsule
-          groups={[
-            [{ icon: "call", href: contactInfo.phone.href, label: t("capsule.call") }],
-            [{ icon: "mail", href: contactInfo.email.href, label: t("capsule.email") }],
-            [{ icon: "location_on", href: contactInfo.mapsUrl, label: t("capsule.directions") }],
-          ]}
-        />
-      }
+      capsule={<HeroFloatingContact />}
     >
       <CTAButton
         href={contactInfo.whatsapp.href}

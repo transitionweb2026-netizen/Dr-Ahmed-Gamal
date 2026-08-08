@@ -8,7 +8,10 @@ import { Icon } from "@/components/Icon";
 import type { Video } from "@/types/content";
 
 export function VideosGrid({ videos }: { videos: Video[] }) {
-  const educational = videos.filter((v) => v.category.en !== "Patient Story");
+  // Exactly 9 videos in this section, per the approved page structure —
+  // slice, don't drop, so the remaining educational videos stay available
+  // to the CMS/other pages.
+  const educational = videos.filter((v) => v.category.en !== "Patient Story").slice(0, 9);
   const [selected, setSelected] = useState<Video | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.videos.latestSection");

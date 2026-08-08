@@ -10,7 +10,7 @@ const staticPaths = [
   "/procedures",
   "/before-after",
   "/patient-stories",
-  "/blog",
+  "/articles",
   "/videos",
   "/faq",
   "/contact",
@@ -29,7 +29,7 @@ function languageAlternates(path: string) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const dynamicPaths = [
     ...procedures.map((p) => `/procedures/${p.slug}`),
-    ...articles.map((a) => `/blog/${a.slug}`),
+    ...articles.map((a) => `/articles/${a.slug}`),
   ];
 
   const allPaths = [...staticPaths, ...dynamicPaths];

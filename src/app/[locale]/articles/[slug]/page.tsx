@@ -35,7 +35,7 @@ export async function generateMetadata({
   const loc = locale as "en" | "ar";
   return buildMetadata({
     locale,
-    path: `/blog/${slug}`,
+    path: `/articles/${slug}`,
     title: article.title[loc],
     description: article.excerpt[loc],
     image: article.image,
@@ -73,7 +73,7 @@ export default async function ArticleDetailPage({
       <article className="bg-brand-darker pb-24 pt-32">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Link
-            href="/blog"
+            href="/articles"
             className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-brand-gold transition-colors hover:text-brand-light"
           >
             <Icon name="chevron_left" className="h-4 w-4 rtl:rotate-180" />

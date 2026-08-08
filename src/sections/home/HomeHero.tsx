@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { CTAButton } from "@/components/CTAButton";
-import { HeroContactCapsule, type CapsuleLink } from "@/components/HeroContactCapsule";
-import { getContactInfo } from "@/services/contactInfo";
+import { HeroFloatingContact } from "@/components/HeroFloatingContact";
 
 const HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida/AP1WRLsKTDbZxHRsaT25USZB8tnpvgDm6cOt2UPaz0pdYsfv0S9Ed6osIicMDfZToOeYT7dgyHap-6Tw-OegxF45GOWyD63Qo3uNjrxnuoHfYDyVskpN3ASQk0DoqQTugZuj8tLJWTyKUgvh9UTicHp5Is9Rf4B52KUmdKcKqAl7YFlZQB8qUUit0ATmsUFuNDlnSgeo1KO2lfnaqVr7I-VEobiaMkaKBPYm3hOPFxtHG3H-iypEyJpTb0DD4w8";
@@ -10,22 +9,6 @@ const HERO_IMAGE =
 export async function HomeHero() {
   const t = await getTranslations("pages.home.hero");
   const cta = await getTranslations("cta");
-  const social = await getTranslations("social");
-  const contactInfo = await getContactInfo();
-
-  // No literal Facebook/Instagram/TikTok/YouTube icons exist in the icon
-  // map — these are the closest available stand-ins, icon-only (labelled
-  // via ariaLabel). Real handles only exist for facebook/instagram today;
-  // tiktok/youtube fall back to "#" until those accounts are supplied.
-  const socialLinks: CapsuleLink[] = [
-    { icon: "share", href: contactInfo.social.facebook ?? "#", ariaLabel: social("facebook") },
-    { icon: "public", href: contactInfo.social.instagram ?? "#", ariaLabel: social("instagram") },
-    { icon: "camera_alt", href: contactInfo.social.tiktok ?? "#", ariaLabel: social("tiktok") },
-    { icon: "video_library", href: contactInfo.social.youtube ?? "#", ariaLabel: social("youtube") },
-  ];
-  const phoneLink: CapsuleLink[] = [
-    { icon: "call", href: contactInfo.phone.href, label: contactInfo.phone.display },
-  ];
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-darker pb-16 pt-24">
@@ -65,7 +48,7 @@ export async function HomeHero() {
         </div>
       </div>
 
-      <HeroContactCapsule groups={[socialLinks, phoneLink]} align="center" className="bottom-12" />
+      <HeroFloatingContact />
     </section>
   );
 }

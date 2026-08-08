@@ -68,7 +68,7 @@ export function buildBlogPostingSchema(article: Article, locale: Locale): JsonLd
       name: site.name,
       logo: { "@type": "ImageObject", url: site.logoUrl },
     },
-    mainEntityOfPage: absoluteUrl(`/${locale}/blog/${article.slug}`),
+    mainEntityOfPage: absoluteUrl(`/${locale}/articles/${article.slug}`),
   };
 }
 
