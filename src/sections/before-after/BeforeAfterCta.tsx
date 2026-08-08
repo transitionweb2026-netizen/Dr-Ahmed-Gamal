@@ -31,12 +31,12 @@ export async function BeforeAfterCta() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-6 text-center md:w-1/2 md:items-start md:text-start">
+          <div className="flex flex-col items-start gap-6 text-start md:w-1/2">
             <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold">
               {t("eyebrow")}
             </p>
             <h2 className="font-serif text-3xl text-brand-light sm:text-4xl">{t("heading")}</h2>
-            <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
+            <div className="flex flex-wrap items-center justify-start gap-4">
               <CTAButton href="/contact" size="lg">
                 {cta("bookConsultation")}
               </CTAButton>

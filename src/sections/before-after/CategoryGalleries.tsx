@@ -13,11 +13,15 @@ export function CategoryGalleries() {
   const t = useTranslations("pages.beforeAfter");
 
   return (
-    <section className="bg-brand-dark py-24">
+    <section id="results" className="bg-brand-darker py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mb-16 text-center font-serif text-4xl text-brand-light">
-          {t("sectionHeading")}
-        </h2>
+        <div className="mb-16 flex items-center justify-center gap-6">
+          <div className="h-px w-24 bg-gradient-to-r from-transparent to-brand-gold" />
+          <h2 className="text-headline-lg-mobile font-serif bg-gradient-to-b from-brand-gold via-[#a67c00] to-[#5c4000] bg-clip-text text-transparent md:text-headline-lg">
+            {t("sectionHeading")}
+          </h2>
+          <div className="h-px w-24 bg-gradient-to-l from-transparent to-brand-gold" />
+        </div>
 
         <div className="space-y-20">
           {CATEGORIES.map((category) => {
@@ -27,12 +31,18 @@ export function CategoryGalleries() {
 
             return (
               <div key={category}>
-                <h3 className="mb-8 font-serif text-2xl text-brand-gold">
+                <h3 className="mb-10 text-headline-md font-serif uppercase text-brand-light">
                   {t(`groups.${category}`)}
                 </h3>
+                {/* Reference puts dedicated prev/next buttons beside this heading
+                    (top-right of the row); Carousel doesn't expose its embla API
+                    for external control, so its own centered-below-content nav
+                    is kept here (functional) rather than forked/relocated. */}
                 <Carousel
                   ariaLabel={t(`groups.${category}`)}
-                  slideBasisClassName="basis-full sm:basis-1/2 lg:basis-1/3"
+                  slideBasisClassName="basis-full md:basis-1/3"
+                  showDots={false}
+                  navButtonClassName="border-brand-gold/40 bg-black/60"
                 >
                   {cases.map((item) => (
                     <div key={item.id} className="card-glow-halo rounded-2xl">

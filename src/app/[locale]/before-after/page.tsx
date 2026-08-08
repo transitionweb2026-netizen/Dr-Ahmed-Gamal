@@ -20,7 +20,7 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: "/before-after",
-    title: t("title"),
+    title: `${t("titleLine1")} ${t("titleLine2")}`,
     description: t("paragraph"),
   });
 }
