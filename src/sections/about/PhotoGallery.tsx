@@ -24,13 +24,13 @@ export async function PhotoGallery() {
   const t = await getTranslations("pages.about.gallery");
 
   return (
-    <section className="bg-brand-dark py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold">
+    <section className="relative overflow-hidden bg-brand-darker py-24">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-brand-gold">
             {t("eyebrow")}
           </p>
-          <h2 className="mt-2 font-serif text-4xl text-brand-light">{t("heading")}</h2>
+          <h2 className="font-serif text-4xl text-brand-light">{t("heading")}</h2>
         </div>
 
         <CoverflowGallery images={images} />
