@@ -84,8 +84,16 @@ export function PageHero({
       </div>
       <div
         className={cn(
-          "relative z-10 mx-auto max-w-4xl px-5 py-16 md:px-16",
-          isCenter ? "text-center" : "text-start",
+          "relative z-10 mx-auto px-5 py-16 md:px-16",
+          // Centered heroes keep a narrow, page-centered reading column.
+          // Start-aligned heroes need the same wide (max-w-7xl) container
+          // Home uses — a narrow max-w-4xl column would itself sit centered
+          // on the page via mx-auto, pulling the (correctly start-aligned)
+          // text toward the middle instead of the actual left edge. `w-full`
+          // is required too: as a flex item with no explicit width, the div
+          // otherwise shrinks-to-fit its content instead of growing out to
+          // the max-w-7xl cap.
+          isCenter ? "max-w-4xl text-center" : "w-full max-w-7xl text-start",
         )}
       >
         {eyebrow && (
