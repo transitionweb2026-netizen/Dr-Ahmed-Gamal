@@ -224,6 +224,22 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1);
 }
 
+/* "Liquid glass" CTA panel treatment restored from the legacy Procedures
+   page mockup (legacy-html/Services.html .liquid-glass-cta): a warm
+   diagonal gradient glass base with a heavy blur, a gold hairline border,
+   a deep ambient drop shadow, and a soft inner top highlight. Used for the
+   consultation-gateway CTA panel and its floating appointment-confirmation
+   card. Additive only — distinct from .neon-card's lighter gradient. */
+.liquid-glass-cta {
+  background: linear-gradient(135deg, rgb(35 25 18 / 0.85) 0%, rgb(18 12 8 / 0.95) 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgb(212 175 55 / 0.4);
+  box-shadow:
+    0 30px 60px -15px rgb(0 0 0 / 0.9),
+    inset 0 1px 2px rgb(255 255 255 / 0.1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

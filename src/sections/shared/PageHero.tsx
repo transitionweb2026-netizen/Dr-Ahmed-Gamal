@@ -4,7 +4,9 @@ import { cn } from "@/utils/cn";
 
 interface PageHeroProps {
   image: string;
-  eyebrow?: string;
+  /** Plain string on most pages; pass a styled node (e.g. a pill badge) when
+   * a page's reference eyebrow isn't bare text — see Procedures' hero. */
+  eyebrow?: ReactNode;
   title: ReactNode;
   paragraph?: string;
   children?: ReactNode;
