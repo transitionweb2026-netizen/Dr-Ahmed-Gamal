@@ -2,13 +2,14 @@ import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
-import { articles } from "@/content/articles";
+import { getArticles } from "@/services/articles";
 
 export async function FeaturedArticle() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.blog");
   const cta = await getTranslations("cta");
 
+  const articles = await getArticles();
   const featured = articles.find((article) => article.featured);
   if (!featured) return null;
 

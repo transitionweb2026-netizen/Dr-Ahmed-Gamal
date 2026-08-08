@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { VideoModal } from "@/components/VideoModal";
 import { Icon } from "@/components/Icon";
-import { videos } from "@/content/videos";
 import type { Video } from "@/types/content";
 
 // Legacy Videos.html's header-less "Introduction Heading" section — a
@@ -14,9 +13,8 @@ import type { Video } from "@/types/content";
 // educational entries VideosGrid shows, with a distinct full-bleed card
 // treatment (see restoration notes there) rather than legacy's literal
 // copy-paste duplicate cards.
-const educational = videos.filter((v) => v.category.en !== "Patient Story");
-
-export function VideosIntroGrid() {
+export function VideosIntroGrid({ videos }: { videos: Video[] }) {
+  const educational = videos.filter((v) => v.category.en !== "Patient Story");
   const [selected, setSelected] = useState<Video | null>(null);
   const locale = useLocale() as "en" | "ar";
   const common = useTranslations("common");

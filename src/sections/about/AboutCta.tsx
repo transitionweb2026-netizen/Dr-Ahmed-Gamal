@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 
 // Same hero portrait used behind About's hero — reused here at low opacity
 // as the "Cinematic Consultation Portal" section's backdrop image.
@@ -11,6 +11,7 @@ const BACKGROUND_IMAGE =
 export async function AboutCta() {
   const t = await getTranslations("pages.about.cta");
   const cta = await getTranslations("cta");
+  const contactInfo = await getContactInfo();
 
   return (
     <section className="relative overflow-hidden border-t border-brand-gold/20 bg-brand-darker py-24">

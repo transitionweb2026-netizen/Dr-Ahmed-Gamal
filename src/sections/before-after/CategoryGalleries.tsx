@@ -3,12 +3,11 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Carousel } from "@/components/Carousel";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import { beforeAfterCases } from "@/content/beforeAfterCases";
-import type { CaseCategory } from "@/types/content";
+import type { BeforeAfterCase, CaseCategory } from "@/types/content";
 
 const CATEGORIES: CaseCategory[] = ["face", "body", "breast"];
 
-export function CategoryGalleries() {
+export function CategoryGalleries({ cases: beforeAfterCases }: { cases: BeforeAfterCase[] }) {
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.beforeAfter");
 

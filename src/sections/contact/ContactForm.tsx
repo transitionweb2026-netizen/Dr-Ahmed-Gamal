@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useLocale, useTranslations } from "next-intl";
 import { Icon } from "@/components/Icon";
-import { procedures } from "@/content/procedures";
+import type { Procedure } from "@/types/content";
 import { contactFormSchema, type ContactFormValues } from "@/types/forms";
 import { cn } from "@/utils/cn";
 import { submitContactAction } from "@/app/[locale]/contact/actions";
@@ -15,7 +15,7 @@ type SubmitStatus = "idle" | "submitting" | "success" | "error";
 const fieldClasses =
   "w-full rounded-lg border border-white/10 bg-[#050505] px-4 py-3 text-brand-light placeholder:text-brand-light/40 transition-colors focus:border-brand-gold focus:outline-none";
 
-export function ContactForm() {
+export function ContactForm({ procedures }: { procedures: Procedure[] }) {
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("form");
   const cta = useTranslations("cta");

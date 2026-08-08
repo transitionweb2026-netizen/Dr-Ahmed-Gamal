@@ -7,6 +7,7 @@ import { BeforeAfterHero } from "@/sections/before-after/BeforeAfterHero";
 import { CategoryGalleries } from "@/sections/before-after/CategoryGalleries";
 import { BeforeAfterTestimonials } from "@/sections/before-after/BeforeAfterTestimonials";
 import { BeforeAfterCta } from "@/sections/before-after/BeforeAfterCta";
+import { getBeforeAfterCases } from "@/services/beforeAfterCases";
 
 export async function generateMetadata({
   params,
@@ -32,11 +33,12 @@ export default async function BeforeAfterPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const cases = await getBeforeAfterCases();
 
   return (
     <main>
       <BeforeAfterHero />
-      <CategoryGalleries />
+      <CategoryGalleries cases={cases} />
       <BeforeAfterTestimonials />
       <BeforeAfterCta />
     </main>

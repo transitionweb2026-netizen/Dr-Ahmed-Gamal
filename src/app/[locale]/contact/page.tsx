@@ -10,6 +10,7 @@ import { ContactFormSection } from "@/sections/contact/ContactFormSection";
 import { LocationBlock } from "@/sections/contact/LocationBlock";
 import { ContactInfoGrid } from "@/sections/contact/ContactInfoGrid";
 import { ContactClosingCta } from "@/sections/contact/ContactClosingCta";
+import { getProcedures } from "@/services/procedures";
 
 export async function generateMetadata({
   params,
@@ -35,12 +36,13 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const procedures = await getProcedures();
 
   return (
     <main>
       <JsonLd data={buildPhysicianSchema(locale as Locale)} />
       <ContactHero />
-      <ContactFormSection />
+      <ContactFormSection procedures={procedures} />
       <LocationBlock />
       <ContactInfoGrid />
       <ContactClosingCta />

@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import { getTranslations } from "next-intl/server";
-import { procedures } from "@/content/procedures";
-import { videos } from "@/content/videos";
+import { getProcedures } from "@/services/procedures";
+import { getVideos } from "@/services/videos";
 import { getGalleryImages } from "@/utils/images";
 
 // Below-the-fold and Framer-Motion-heavy (3D transforms) — split into its own
@@ -15,13 +15,14 @@ const CoverflowGallery = dynamic(
   },
 );
 
-const pool = Array.from(
-  new Set([...procedures.map((p) => p.image), ...videos.map((v) => v.thumbnail)]),
-);
-const images = getGalleryImages(pool, 20);
-
 export async function PhotoGallery() {
   const t = await getTranslations("pages.about.gallery");
+  const [procedures, videos] = await Promise.all([getProcedures(), getVideos()]);
+
+  const pool = Array.from(
+    new Set([...procedures.map((p) => p.image), ...videos.map((v) => v.thumbnail)]),
+  );
+  const images = getGalleryImages(pool, 20);
 
   return (
     <section className="relative overflow-hidden bg-brand-darker py-24">

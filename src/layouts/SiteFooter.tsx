@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { site } from "@/constants/site";
-import { contactInfo } from "@/constants/contactInfo";
+import { getSiteSettings } from "@/services/siteSettings";
+import { getContactInfo } from "@/services/contactInfo";
 import { Icon } from "@/components/Icon";
 
 const quickLinks = [
@@ -18,6 +18,8 @@ export async function SiteFooter() {
   const t = await getTranslations("footer");
   const tNav = await getTranslations("nav");
   const year = new Date().getFullYear();
+  const site = await getSiteSettings();
+  const contactInfo = await getContactInfo();
 
   const categories = [
     t("categories.facial"),

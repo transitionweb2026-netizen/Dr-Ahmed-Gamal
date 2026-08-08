@@ -1,5 +1,5 @@
 import { getResendClient } from "@/lib/resend";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 import type { ContactFormValues } from "@/types/forms";
 
 interface SendResult {
@@ -20,6 +20,7 @@ export async function sendContactEmail(values: ContactFormValues): Promise<SendR
   }
 
   try {
+    const contactInfo = await getContactInfo();
     const { error } = await resend.emails.send({
       from: FROM_ADDRESS,
       to: contactInfo.email.display,

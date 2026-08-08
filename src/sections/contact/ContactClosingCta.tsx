@@ -1,11 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import { CTAButton } from "@/components/CTAButton";
 import { Icon } from "@/components/Icon";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 
 export async function ContactClosingCta() {
   const t = await getTranslations("pages.contact.ctaBanner");
   const cta = await getTranslations("cta");
+  const contactInfo = await getContactInfo();
 
   return (
     <section className="px-4 pb-[120px] sm:px-6 lg:px-8">

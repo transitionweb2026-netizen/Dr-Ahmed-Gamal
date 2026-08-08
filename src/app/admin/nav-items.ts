@@ -1,0 +1,17 @@
+export const adminNavItems = [
+  { href: "/admin", label: "Dashboard" },
+  { href: "/admin/procedures", label: "Procedures" },
+  { href: "/admin/articles", label: "Articles" },
+  { href: "/admin/testimonials", label: "Testimonials" },
+  { href: "/admin/milestones", label: "Milestones" },
+  { href: "/admin/stats", label: "Stats" },
+  { href: "/admin/videos", label: "Videos" },
+  { href: "/admin/faq", label: "FAQ" },
+  { href: "/admin/before-after", label: "Before / After Cases" },
+  { href: "/admin/why-choose-us", label: "Why Choose Us" },
+  { href: "/admin/nav-links", label: "Navigation" },
+  { href: "/admin/contact-info", label: "Contact Info" },
+  { href: "/admin/site-settings", label: "Site Settings" },
+  { href: "/admin/seo", label: "SEO Metadata" },
+  { href: "/admin/translations", label: "Site Text" },
+] as const;

@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 import { cn } from "@/utils/cn";
 
 interface ContactCtaBannerProps {
@@ -21,6 +21,7 @@ export async function ContactCtaBanner({
   imageAlt,
 }: ContactCtaBannerProps) {
   const cta = await getTranslations("cta");
+  const contactInfo = await getContactInfo();
 
   return (
     <section className="bg-brand-darker px-5 py-[120px] md:px-16">

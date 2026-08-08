@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { CTAButton } from "@/components/CTAButton";
-import { videos } from "@/content/videos";
-
-const phoneImage = videos.find((v) => v.id === "patient-journey")!;
+import { getVideos } from "@/services/videos";
 
 export async function FinalCta() {
   const t = await getTranslations("pages.home.finalCta");
   const cta = await getTranslations("cta");
+  const videos = await getVideos();
+  const phoneImage = videos.find((v) => v.id === "patient-journey")!;
 
   return (
     <section className="bg-brand-darker py-24">

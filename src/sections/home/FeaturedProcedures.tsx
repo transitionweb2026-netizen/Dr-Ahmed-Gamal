@@ -5,18 +5,16 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ProcedureModal } from "@/components/ProcedureModal";
-import { procedures } from "@/content/procedures";
 import type { Procedure } from "@/types/content";
-
-const featured = procedures.filter((p) => p.featuredOnHome);
 
 const SECTION_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBv-SnW2a4Ve_EW2zgmgHusw41ygAfCSV_RROJul1BEEaJ-YnF1NjpN9lB7yr4PktjFoIUv4RKte4U5aYGNIXgcr90L9PlnDN20xIkQXcjg9v-Pk1WHCMdiehuQNX6LiSx8T5eSER6FZOWnRTsOvk0Vp8-PLVyzzi8afjcxwLHkisnspR0-h0Rxv_QG6n-OQovE_LdvGLQizdWJsu3KbeDn2fEXqrjvsGsWrbzSE8UMw4z8IuBHBBNSUzQ8trPe6jdSKKE";
 
-export function FeaturedProcedures() {
+export function FeaturedProcedures({ procedures }: { procedures: Procedure[] }) {
   const [selected, setSelected] = useState<Procedure | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.home.procedures");
+  const featured = procedures.filter((p) => p.featuredOnHome);
 
   return (
     <section className="relative py-24">

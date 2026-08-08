@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/sections/shared/PageHero";
 import { HeroContactCapsule } from "@/components/HeroContactCapsule";
 import { CTAButton } from "@/components/CTAButton";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 
 const HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBbfwXVr3GsatDscK-Cy0c4KRhRPBQT7vxMc7rv8iTdTzzSdcwyHo-kjTCsAKpHaBl8C5bbADWIrNt87fRDcB4ONulCXsaq0a3RVl3o79J7YZMp9KdcqUfz315Nr4ylapY_6A6g89oc25dErurGuARUmB9SK0KQMpItQXUUQ_gYypAnX4Hc7hWLwdrNsh98_qznmmFokUpHdwj7-2BZFE4MvtDIf9_YVbdvD8CPoGm74x_t_QiJPhnk2w";
@@ -10,6 +10,7 @@ const HERO_IMAGE =
 export async function ProceduresHero() {
   const t = await getTranslations("pages.procedures.hero");
   const cta = await getTranslations("cta");
+  const contactInfo = await getContactInfo();
 
   return (
     <PageHero

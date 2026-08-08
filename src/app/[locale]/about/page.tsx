@@ -5,6 +5,8 @@ import { routing, type Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { buildPhysicianSchema } from "@/lib/jsonld";
 import { JsonLd } from "@/components/JsonLd";
+import { getProcedures } from "@/services/procedures";
+import { getVideos } from "@/services/videos";
 import { AboutHero } from "@/sections/about/AboutHero";
 import { PersonalMessage } from "@/sections/about/PersonalMessage";
 import { AboutVideoSplit } from "@/sections/about/AboutVideoSplit";
@@ -39,14 +41,16 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const [procedures, videos] = await Promise.all([getProcedures(), getVideos()]);
+
   return (
     <main>
       <JsonLd data={buildPhysicianSchema(locale as Locale)} />
       <AboutHero />
       <PersonalMessage />
-      <AboutVideoSplit />
+      <AboutVideoSplit videos={videos} />
       <AchievementStrip />
-      <AboutProcedures />
+      <AboutProcedures procedures={procedures} />
       <JourneyTimeline />
       <PhotoGallery />
       <AboutCta />

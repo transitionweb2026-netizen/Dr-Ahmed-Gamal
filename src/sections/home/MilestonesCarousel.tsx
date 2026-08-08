@@ -1,15 +1,16 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Carousel } from "@/components/Carousel";
 import { Icon } from "@/components/Icon";
-import { milestones } from "@/content/milestones";
-
-// Home.html's carousel shows 8 category cards with no year — it omits
-// "Private Practice Founded" (2012), which is About.html-timeline-specific.
-const homeMilestones = milestones.filter((m) => m.id !== "private-practice-founded");
+import { getMilestones } from "@/services/milestones";
 
 export async function MilestonesCarousel() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.home.milestones");
+  const milestones = await getMilestones();
+
+  // Home.html's carousel shows 8 category cards with no year — it omits
+  // "Private Practice Founded" (2012), which is About.html-timeline-specific.
+  const homeMilestones = milestones.filter((m) => m.id !== "private-practice-founded");
 
   return (
     <section

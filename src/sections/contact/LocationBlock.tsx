@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Icon } from "@/components/Icon";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 
 // Reused from the "A Tour of Our Elite Clinic" thumbnail in src/content/videos.ts
 // (THUMB_CLINIC) — the existing placeholder that reads as a clinic building shot.
@@ -12,6 +12,7 @@ export async function LocationBlock() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.contact.location");
   const cta = await getTranslations("cta");
+  const contactInfo = await getContactInfo();
 
   return (
     <section className="bg-brand-darker py-24">

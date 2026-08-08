@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
-import { contactInfo } from "@/constants/contactInfo";
+import type { getContactInfo } from "@/services/contactInfo";
 import { cn } from "@/utils/cn";
 
 const SILHOUETTE_IMAGE =
@@ -20,7 +20,11 @@ const SILHOUETTE_IMAGE =
  * silhouette background), with a Framer Motion float disabled under
  * reduced motion.
  */
-export function ProceduresCta() {
+interface ProceduresCtaProps {
+  contactInfo: Awaited<ReturnType<typeof getContactInfo>>;
+}
+
+export function ProceduresCta({ contactInfo }: ProceduresCtaProps) {
   const t = useTranslations("pages.procedures.cta");
   const cta = useTranslations("cta");
   const siteT = useTranslations("site");

@@ -6,18 +6,16 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { VideoModal } from "@/components/VideoModal";
 import { Icon } from "@/components/Icon";
-import { videos } from "@/content/videos";
 import type { Video } from "@/types/content";
-
-const featured = videos.slice(0, 3);
 
 const SECTION_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCC0Lmu6MSExsDHPDKpPgM8SVJ18mH02nnwCsotlB5m-QZBkU7QnivoSsBWjBiv2yg0zgej9pbFjP6RfQLYVC76xnPzeEbY9h5cRoCZVnUwt3jkQme6J2BoiKXjsOBagJG9eoqzJf0WLME6qAF3Bq2aEkjRW9Kidth9phH0A0bpsLOc8RstEGnYygd20msm_SoHs-Q9pzYuDO0MQPHEXRFSljVw26n-tFsoJBabDJVRtb7e0towZAI_WClWsW-oM34nHWs";
 
-export function FeaturedVideos() {
+export function FeaturedVideos({ videos }: { videos: Video[] }) {
   const [selected, setSelected] = useState<Video | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.home.videos");
+  const featured = videos.slice(0, 3);
 
   return (
     <section className="relative bg-brand-darker py-24">

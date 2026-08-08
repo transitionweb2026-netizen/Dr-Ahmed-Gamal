@@ -1,6 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Icon } from "@/components/Icon";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 import type { IconName } from "@/constants/iconMap";
 
 const SOCIAL_ICONS: Record<string, IconName> = {
@@ -25,6 +25,7 @@ function InfoCard({ icon, title, children }: { icon: IconName; title: string; ch
 export async function ContactInfoGrid() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.contact.contactGrid");
+  const contactInfo = await getContactInfo();
   const socialEntries = Object.entries(contactInfo.social);
   const hasSocial = socialEntries.length > 0;
 

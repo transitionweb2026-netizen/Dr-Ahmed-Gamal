@@ -6,6 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 import { ProceduresHero } from "@/sections/procedures/ProceduresHero";
 import { ProceduresGrid } from "@/sections/procedures/ProceduresGrid";
 import { ProceduresCta } from "@/sections/procedures/ProceduresCta";
+import { getProcedures } from "@/services/procedures";
+import { getContactInfo } from "@/services/contactInfo";
 
 export async function generateMetadata({
   params,
@@ -32,11 +34,14 @@ export default async function ProceduresPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const procedures = await getProcedures();
+  const contactInfo = await getContactInfo();
+
   return (
     <main>
       <ProceduresHero />
-      <ProceduresGrid />
-      <ProceduresCta />
+      <ProceduresGrid procedures={procedures} />
+      <ProceduresCta contactInfo={contactInfo} />
     </main>
   );
 }

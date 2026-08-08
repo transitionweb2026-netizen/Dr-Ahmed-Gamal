@@ -10,10 +10,11 @@ import { buildBlogPostingSchema } from "@/lib/jsonld";
 import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
-import { articles } from "@/content/articles";
+import { getArticles } from "@/services/articles";
 import { ContactCtaBanner } from "@/sections/shared/ContactCtaBanner";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const articles = await getArticles();
   return articles.map((article) => ({ slug: article.slug }));
 }
 
@@ -24,6 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale, slug } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
+  const articles = await getArticles();
   const article = articles.find((item) => item.slug === slug);
 
   if (!article) {
@@ -48,6 +50,7 @@ export default async function ArticleDetailPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
+  const articles = await getArticles();
   const article = articles.find((item) => item.slug === slug);
   if (!article) {
     notFound();

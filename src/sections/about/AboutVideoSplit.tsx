@@ -6,14 +6,13 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { VideoModal } from "@/components/VideoModal";
 import { Icon } from "@/components/Icon";
-import { videos } from "@/content/videos";
+import type { Video } from "@/types/content";
 
-const introVideo = videos.find((v) => v.id === "meet-dr-ahmed")!;
-
-export function AboutVideoSplit() {
+export function AboutVideoSplit({ videos }: { videos: Video[] }) {
   const [videoOpen, setVideoOpen] = useState(false);
   const t = useTranslations("pages.about.video");
   const cta = useTranslations("cta");
+  const introVideo = videos.find((v) => v.id === "meet-dr-ahmed")!;
 
   return (
     <section className="relative border-y border-brand-gold/10 bg-brand-dark py-24">

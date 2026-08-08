@@ -3,17 +3,22 @@
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { navLinks } from "@/constants/nav";
+import type { NavLink } from "@/constants/nav";
 import { Icon } from "@/components/Icon";
 import { CTAButton } from "@/components/CTAButton";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useDirection } from "@/lib/rtl";
 import { cn } from "@/utils/cn";
 
-export function MobileNavDrawer() {
+interface MobileNavDrawerProps {
+  navLinks: NavLink[];
+}
+
+export function MobileNavDrawer({ navLinks }: MobileNavDrawerProps) {
   const [open, setOpen] = useState(false);
+  const locale = useLocale() as "en" | "ar";
   const t = useTranslations("nav");
   const cta = useTranslations("cta");
   const pathname = usePathname();
@@ -82,7 +87,7 @@ export function MobileNavDrawer() {
                           active ? "text-brand-gold" : "text-brand-light/80 hover:text-brand-gold",
                         )}
                       >
-                        {t(link.labelKey)}
+                        {link.label[locale]}
                       </Link>
                     );
                   })}

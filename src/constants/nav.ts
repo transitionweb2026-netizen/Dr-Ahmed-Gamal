@@ -1,25 +1,19 @@
+import type { Bilingual } from "@/types/content";
+
 export interface NavLink {
   href: string;
-  labelKey:
-    | "home"
-    | "about"
-    | "procedures"
-    | "beforeAfter"
-    | "patientStories"
-    | "blog"
-    | "videos"
-    | "faq"
-    | "contact";
+  label: Bilingual;
 }
 
+/** Static fallback used when the CMS is unreachable — see src/services/navLinks.ts. */
 export const navLinks: NavLink[] = [
-  { href: "/", labelKey: "home" },
-  { href: "/about", labelKey: "about" },
-  { href: "/procedures", labelKey: "procedures" },
-  { href: "/before-after", labelKey: "beforeAfter" },
-  { href: "/patient-stories", labelKey: "patientStories" },
-  { href: "/blog", labelKey: "blog" },
-  { href: "/videos", labelKey: "videos" },
-  { href: "/faq", labelKey: "faq" },
-  { href: "/contact", labelKey: "contact" },
+  { href: "/", label: { en: "Home", ar: "الرئيسية" } },
+  { href: "/about", label: { en: "About", ar: "عن الطبيب" } },
+  { href: "/procedures", label: { en: "Procedures", ar: "الإجراءات" } },
+  { href: "/before-after", label: { en: "Before & After", ar: "قبل وبعد" } },
+  { href: "/patient-stories", label: { en: "Patient Stories", ar: "قصص المرضى" } },
+  { href: "/blog", label: { en: "Blog", ar: "المقالات" } },
+  { href: "/videos", label: { en: "Videos", ar: "الفيديوهات" } },
+  { href: "/faq", label: { en: "FAQ", ar: "الأسئلة الشائعة" } },
+  { href: "/contact", label: { en: "Contact", ar: "تواصل معنا" } },
 ];

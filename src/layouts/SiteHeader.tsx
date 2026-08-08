@@ -1,17 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { navLinks } from "@/constants/nav";
-import { site } from "@/constants/site";
+import type { NavLink } from "@/constants/nav";
+import type { site as staticSite } from "@/constants/site";
 import { CTAButton } from "@/components/CTAButton";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileNavDrawer } from "@/components/MobileNavDrawer";
 import { cn } from "@/utils/cn";
 
-export function SiteHeader() {
-  const t = useTranslations("nav");
+interface SiteHeaderProps {
+  navLinks: NavLink[];
+  site: typeof staticSite;
+}
+
+export function SiteHeader({ navLinks, site }: SiteHeaderProps) {
+  const locale = useLocale() as "en" | "ar";
   const cta = useTranslations("cta");
   const pathname = usePathname();
 
@@ -43,7 +48,7 @@ export function SiteHeader() {
                   active ? "text-brand-gold" : "text-gray-300 hover:text-brand-gold",
                 )}
               >
-                {t(link.labelKey)}
+                {link.label[locale]}
               </Link>
             );
           })}
@@ -58,7 +63,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2 lg:hidden">
           <LanguageSwitcher />
-          <MobileNavDrawer />
+          <MobileNavDrawer navLinks={navLinks} />
         </div>
       </div>
     </header>

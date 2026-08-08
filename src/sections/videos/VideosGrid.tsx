@@ -5,12 +5,10 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { VideoModal } from "@/components/VideoModal";
 import { Icon } from "@/components/Icon";
-import { videos } from "@/content/videos";
 import type { Video } from "@/types/content";
 
-const educational = videos.filter((v) => v.category.en !== "Patient Story");
-
-export function VideosGrid() {
+export function VideosGrid({ videos }: { videos: Video[] }) {
+  const educational = videos.filter((v) => v.category.en !== "Patient Story");
   const [selected, setSelected] = useState<Video | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.videos.latestSection");

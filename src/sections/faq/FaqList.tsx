@@ -1,13 +1,14 @@
 import { getTranslations } from "next-intl/server";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { faqItems } from "@/content/faqItems";
-
-const midpoint = Math.ceil(faqItems.length / 2);
-const firstHalf = faqItems.slice(0, midpoint);
-const secondHalf = faqItems.slice(midpoint);
+import { getFaqItems } from "@/services/faqItems";
 
 export async function FaqList() {
   const t = await getTranslations("pages.faq.intro");
+  const faqItems = await getFaqItems();
+
+  const midpoint = Math.ceil(faqItems.length / 2);
+  const firstHalf = faqItems.slice(0, midpoint);
+  const secondHalf = faqItems.slice(midpoint);
 
   return (
     <section className="bg-brand-darker pb-24">

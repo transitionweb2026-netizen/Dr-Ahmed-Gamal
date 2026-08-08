@@ -2,12 +2,13 @@ import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
-import { articles } from "@/content/articles";
+import { getArticles } from "@/services/articles";
 
 export async function ArticleGrid() {
   const locale = (await getLocale()) as "en" | "ar";
   const common = await getTranslations("common");
 
+  const articles = await getArticles();
   const rest = articles.filter((article) => !article.featured);
 
   return (

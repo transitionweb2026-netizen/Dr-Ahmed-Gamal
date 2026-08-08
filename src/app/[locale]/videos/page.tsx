@@ -7,6 +7,8 @@ import { VideosHero } from "@/sections/videos/VideosHero";
 import { VideosIntroGrid } from "@/sections/videos/VideosIntroGrid";
 import { VideosGrid } from "@/sections/videos/VideosGrid";
 import { VideosCta } from "@/sections/videos/VideosCta";
+import { getVideos } from "@/services/videos";
+import { getContactInfo } from "@/services/contactInfo";
 
 export async function generateMetadata({
   params,
@@ -32,13 +34,14 @@ export default async function VideosPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const [videos, contactInfo] = await Promise.all([getVideos(), getContactInfo()]);
 
   return (
     <main>
       <VideosHero />
-      <VideosIntroGrid />
-      <VideosGrid />
-      <VideosCta />
+      <VideosIntroGrid videos={videos} />
+      <VideosGrid videos={videos} />
+      <VideosCta contactInfo={contactInfo} videos={videos} />
     </main>
   );
 }

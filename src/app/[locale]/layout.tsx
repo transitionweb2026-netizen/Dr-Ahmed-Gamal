@@ -6,6 +6,8 @@ import { DirectionProvider } from "@radix-ui/react-direction";
 import { routing } from "@/i18n/routing";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/constants/site";
+import { getNavLinks } from "@/services/navLinks";
+import { getSiteSettings } from "@/services/siteSettings";
 import { SiteHeader } from "@/layouts/SiteHeader";
 import { SiteFooter } from "@/layouts/SiteFooter";
 import "../globals.css";
@@ -13,6 +15,11 @@ import "../globals.css";
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+// Every page under [locale] is statically generated; ISR re-runs the
+// CMS-backed data fetches (translations, services/*) on this interval so
+// admin edits reach the live site without a full rebuild/redeploy.
+export const revalidate = 60;
 
 export async function generateMetadata({
   params,
@@ -48,6 +55,8 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const dir = locale === "ar" ? "rtl" : "ltr";
   const t = await getTranslations({ locale, namespace: "common" });
+  const navLinks = await getNavLinks();
+  const siteSettings = await getSiteSettings();
 
   return (
     <html
@@ -65,7 +74,7 @@ export default async function LocaleLayout({
         </a>
         <NextIntlClientProvider>
           <DirectionProvider dir={dir}>
-            <SiteHeader />
+            <SiteHeader navLinks={navLinks} site={siteSettings} />
             <div id="main-content" className="flex-1">
               {children}
             </div>

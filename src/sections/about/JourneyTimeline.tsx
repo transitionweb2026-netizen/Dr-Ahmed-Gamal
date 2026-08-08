@@ -1,5 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { milestones } from "@/content/milestones";
+import { getMilestones } from "@/services/milestones";
 import { cn } from "@/utils/cn";
 import type { Milestone } from "@/types/content";
 
@@ -13,10 +13,6 @@ const JOURNEY_MILESTONE_IDS = [
   "international-fellowship",
   "private-practice-founded",
 ] as const;
-
-const journeyMilestones = JOURNEY_MILESTONE_IDS.map((id) =>
-  milestones.find((milestone) => milestone.id === id),
-).filter((milestone): milestone is Milestone => Boolean(milestone));
 
 function MilestoneCard({
   milestone,
@@ -43,6 +39,11 @@ function MilestoneCard({
 export async function JourneyTimeline() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.about.timeline");
+  const milestones = await getMilestones();
+
+  const journeyMilestones = JOURNEY_MILESTONE_IDS.map((id) =>
+    milestones.find((milestone) => milestone.id === id),
+  ).filter((milestone): milestone is Milestone => Boolean(milestone));
 
   return (
     <section className="relative overflow-hidden border-t border-brand-gold/10 bg-brand-dark py-24">

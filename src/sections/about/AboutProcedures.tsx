@@ -6,18 +6,16 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
 import { ProcedureModal } from "@/components/ProcedureModal";
-import { procedures } from "@/content/procedures";
 import type { Procedure } from "@/types/content";
-
-const featured = procedures.filter((p) => p.featuredOnHome);
 
 const SECTION_BACKGROUND =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuC0WgM_rg_waaEBMCdhv5XDCqHeU6U_FOqXabijXUaOm8QMZ_o7p11xukV2J94x4nEW-H8f3cTOQfMQe6cvf8ttRSxtpUkklcjIjTDL9e-G8p_gYNed5m67UcLpwucrYLg64Nv6xpsm9LRIVflrBkFi1_BekJ4S4zAx3jDRoTwdQhuf7_IavEhnEc051z-LLfzIyeK9ihNcnQQgW3ZU41T6N1yDH1XOuKmNwa2ml6kNRC-iT82qyFsXNeFTY6NTWNm_pUg";
 
-export function AboutProcedures() {
+export function AboutProcedures({ procedures }: { procedures: Procedure[] }) {
   const [selected, setSelected] = useState<Procedure | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.about.procedures");
+  const featured = procedures.filter((p) => p.featuredOnHome);
 
   return (
     <section

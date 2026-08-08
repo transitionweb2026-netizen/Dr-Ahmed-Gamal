@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { CTAButton } from "@/components/CTAButton";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 
 // Legacy's "Transformation Mirror" CTA pairs the eyebrow/heading/buttons with
 // a circular-cropped doctor portrait — reusing the same placeholder portrait
@@ -14,6 +14,7 @@ export async function BeforeAfterCta() {
   const t = await getTranslations("pages.beforeAfter.cta");
   const about = await getTranslations("pages.about.message");
   const cta = await getTranslations("cta");
+  const contactInfo = await getContactInfo();
 
   return (
     <section className="bg-brand-dark py-24">

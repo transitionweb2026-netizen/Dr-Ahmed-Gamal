@@ -7,6 +7,7 @@ import { PatientStoriesHero } from "@/sections/patient-stories/PatientStoriesHer
 import { StoriesIntro } from "@/sections/patient-stories/StoriesIntro";
 import { StoriesGrid } from "@/sections/patient-stories/StoriesGrid";
 import { StoriesCta } from "@/sections/patient-stories/StoriesCta";
+import { getVideos } from "@/services/videos";
 
 export async function generateMetadata({
   params,
@@ -32,12 +33,13 @@ export default async function PatientStoriesPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const videos = await getVideos();
 
   return (
     <main>
       <PatientStoriesHero />
       <StoriesIntro />
-      <StoriesGrid />
+      <StoriesGrid videos={videos} />
       <StoriesCta />
     </main>
   );

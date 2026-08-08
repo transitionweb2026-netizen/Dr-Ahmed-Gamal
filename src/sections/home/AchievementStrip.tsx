@@ -1,13 +1,14 @@
 import { getLocale } from "next-intl/server";
-import { stats } from "@/content/stats";
-
-// Home.html's own 4-stat set (years / procedures / happy patients / patient
-// rating) — About.html's set uses a different 4th stat, see
-// src/sections/about/AchievementStrip.tsx.
-const homeStats = stats.filter((stat) => stat.id !== "advanced-trainings");
+import { getStats } from "@/services/stats";
 
 export async function AchievementStrip() {
   const locale = (await getLocale()) as "en" | "ar";
+  const stats = await getStats();
+
+  // Home.html's own 4-stat set (years / procedures / happy patients / patient
+  // rating) — About.html's set uses a different 4th stat, see
+  // src/sections/about/AchievementStrip.tsx.
+  const homeStats = stats.filter((stat) => stat.id !== "advanced-trainings");
 
   return (
     <section className="border-y border-brand-gold/10 bg-brand-dark py-16">

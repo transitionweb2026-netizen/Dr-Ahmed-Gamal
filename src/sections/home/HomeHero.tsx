@@ -2,7 +2,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { CTAButton } from "@/components/CTAButton";
 import { HeroContactCapsule, type CapsuleLink } from "@/components/HeroContactCapsule";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 
 const HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida/AP1WRLsKTDbZxHRsaT25USZB8tnpvgDm6cOt2UPaz0pdYsfv0S9Ed6osIicMDfZToOeYT7dgyHap-6Tw-OegxF45GOWyD63Qo3uNjrxnuoHfYDyVskpN3ASQk0DoqQTugZuj8tLJWTyKUgvh9UTicHp5Is9Rf4B52KUmdKcKqAl7YFlZQB8qUUit0ATmsUFuNDlnSgeo1KO2lfnaqVr7I-VEobiaMkaKBPYm3hOPFxtHG3H-iypEyJpTb0DD4w8";
@@ -11,6 +11,7 @@ export async function HomeHero() {
   const t = await getTranslations("pages.home.hero");
   const cta = await getTranslations("cta");
   const social = await getTranslations("social");
+  const contactInfo = await getContactInfo();
 
   // No literal Facebook/Instagram/TikTok/YouTube icons exist in the icon
   // map — these are the closest available stand-ins, icon-only (labelled

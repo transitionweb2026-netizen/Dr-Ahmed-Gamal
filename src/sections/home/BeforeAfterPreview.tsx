@@ -4,13 +4,12 @@ import { useLocale, useTranslations } from "next-intl";
 import { CTAButton } from "@/components/CTAButton";
 import { Carousel } from "@/components/Carousel";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import { beforeAfterCases } from "@/content/beforeAfterCases";
+import type { BeforeAfterCase } from "@/types/content";
 
-const featured = beforeAfterCases.filter((c) => c.featuredOnHome);
-
-export function BeforeAfterPreview() {
+export function BeforeAfterPreview({ cases }: { cases: BeforeAfterCase[] }) {
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.home.beforeAfter");
+  const featured = cases.filter((c) => c.featuredOnHome);
 
   return (
     <section className="overflow-hidden border-y border-brand-gold/10 bg-brand-darker py-24">

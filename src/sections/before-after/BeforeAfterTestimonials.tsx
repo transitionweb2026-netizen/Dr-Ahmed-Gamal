@@ -1,16 +1,17 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Icon } from "@/components/Icon";
 import { StarRating } from "@/components/StarRating";
-import { testimonials } from "@/content/testimonials";
-
-// Cases & Reviews.html's own 8-reviewer set — excludes the 3 testimonials
-// that are scoped to the Home page (`featuredOnHome`) so this page shows the
-// same 8 reviewers the legacy mockup did, not the merged 11.
-const pageTestimonials = testimonials.filter((testimonial) => !testimonial.featuredOnHome);
+import { getTestimonials } from "@/services/testimonials";
 
 export async function BeforeAfterTestimonials() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.beforeAfter.testimonials");
+  const testimonials = await getTestimonials();
+
+  // Cases & Reviews.html's own 8-reviewer set — excludes the 3 testimonials
+  // that are scoped to the Home page (`featuredOnHome`) so this page shows the
+  // same 8 reviewers the legacy mockup did, not the merged 11.
+  const pageTestimonials = testimonials.filter((testimonial) => !testimonial.featuredOnHome);
 
   return (
     <section className="relative overflow-hidden border-y border-brand-gold/10 bg-brand-dark py-24">

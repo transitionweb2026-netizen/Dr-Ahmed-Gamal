@@ -5,12 +5,14 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { ProcedureModal } from "@/components/ProcedureModal";
 import { Icon } from "@/components/Icon";
-import { procedures } from "@/content/procedures";
 import type { Procedure } from "@/types/content";
 
-const sorted = [...procedures].sort((a, b) => a.order - b.order);
+interface ProceduresGridProps {
+  procedures: Procedure[];
+}
 
-export function ProceduresGrid() {
+export function ProceduresGrid({ procedures }: ProceduresGridProps) {
+  const sorted = [...procedures].sort((a, b) => a.order - b.order);
   const [selected, setSelected] = useState<Procedure | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.procedures.grid");

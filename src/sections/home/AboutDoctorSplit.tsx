@@ -6,17 +6,16 @@ import { useTranslations } from "next-intl";
 import { CTAButton } from "@/components/CTAButton";
 import { VideoModal } from "@/components/VideoModal";
 import { Icon } from "@/components/Icon";
-import { videos } from "@/content/videos";
-
-const introVideo = videos.find((v) => v.id === "meet-dr-ahmed")!;
+import type { Video } from "@/types/content";
 
 const SECTION_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBuAAUmUYG5XKxUXhZPyCNb-QSxjsXwJzLMhOKkgPFYrb98sTxfjqdeA_laU20oROd_TmKHhmeCE0aSNPJRC4kVoxzW5km73cIgz-Sfr-1oam0e78jWFk3JsD2E2nVRKsS-oYcJbZntRruP4bJ-wgCVC4Qb0fFF8Q-3FFI87sGWbem9ysuhUwIUmnpJfc14xUEqgmAnMN_OfnVXgxx7dayXtJEAXJhJZncwViVsIQ1kuo7pxMkkElCCydeB_sNrTq1wRLI";
 
-export function AboutDoctorSplit() {
+export function AboutDoctorSplit({ videos }: { videos: Video[] }) {
   const [videoOpen, setVideoOpen] = useState(false);
   const t = useTranslations("pages.home.about");
   const cta = useTranslations("cta");
+  const introVideo = videos.find((v) => v.id === "meet-dr-ahmed")!;
 
   return (
     <section className="relative py-24">

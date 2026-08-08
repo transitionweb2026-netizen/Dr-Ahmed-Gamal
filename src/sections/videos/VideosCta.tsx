@@ -5,14 +5,14 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { CTAButton } from "@/components/CTAButton";
 import { Icon } from "@/components/Icon";
-import { contactInfo } from "@/constants/contactInfo";
+import type { getContactInfo } from "@/services/contactInfo";
 import { useDirection, dirX } from "@/lib/rtl";
-import { videos } from "@/content/videos";
+import type { Video } from "@/types/content";
 
-// Reference's "Premium 3D Mobile Contact CTA" phone screenshot stands in for
-// a bespoke booking-app mockup — reusing a video thumbnail the same way
-// Home's FinalCta does for its own phone mockup (see src/sections/home/FinalCta.tsx).
-const phoneImage = videos.find((v) => v.id === "clinic-tour")!;
+interface VideosCtaProps {
+  contactInfo: Awaited<ReturnType<typeof getContactInfo>>;
+  videos: Video[];
+}
 
 /**
  * Bespoke rebuild of the reference's 2-column glass CTA: text column (heading,
@@ -22,7 +22,11 @@ const phoneImage = videos.find((v) => v.id === "clinic-tour")!;
  * 3 buttons, but this section needs only 2 (Book + WhatsApp) and an
  * illustrative phone mockup, not a photo.
  */
-export function VideosCta() {
+export function VideosCta({ contactInfo, videos }: VideosCtaProps) {
+  // Reference's "Premium 3D Mobile Contact CTA" phone screenshot stands in for
+  // a bespoke booking-app mockup — reusing a video thumbnail the same way
+  // Home's FinalCta does for its own phone mockup (see src/sections/home/FinalCta.tsx).
+  const phoneImage = videos.find((v) => v.id === "clinic-tour")!;
   const t = useTranslations("pages.videos.cta");
   const cta = useTranslations("cta");
   const dir = useDirection();

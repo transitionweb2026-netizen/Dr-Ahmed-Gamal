@@ -5,7 +5,7 @@ import { routing } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { buildFaqPageSchema } from "@/lib/jsonld";
 import { JsonLd } from "@/components/JsonLd";
-import { faqItems } from "@/content/faqItems";
+import { getFaqItems } from "@/services/faqItems";
 import { FaqHero } from "@/sections/faq/FaqHero";
 import { FaqList } from "@/sections/faq/FaqList";
 import { FaqCta } from "@/sections/faq/FaqCta";
@@ -34,6 +34,7 @@ export default async function FaqPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const faqItems = await getFaqItems();
 
   return (
     <main>

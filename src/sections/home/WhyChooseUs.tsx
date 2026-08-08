@@ -2,7 +2,7 @@ import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Icon } from "@/components/Icon";
 import { SectionKicker } from "@/components/SectionKicker";
-import { whyChooseUs } from "@/content/whyChooseUs";
+import { getWhyChooseUs } from "@/services/whyChooseUs";
 
 const SECTION_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuAR43twscyrMv2G1Bf4MA9DLstqAnDaGnCOeoSFWtcL9ZBdILxqxp_dOsyQKHWSMAz9R03-S7QczfNxnHLvhRpCZesSw_rr8DmxlX_Sm6pvnh9XQ8jCLgukp1-sX2LKXY0D2TEQSm4W1mo03xulzf4_eGOeN_QIfQQZwy4tiHp0NzoaTL7dgwaXPOTnBn6tEyrS4X0O2RaiC-6g8lDGIi06y0Adf0iV-o9RC2mjlkAkaIS_H4u88VltsA";
@@ -10,6 +10,7 @@ const SECTION_IMAGE =
 export async function WhyChooseUs() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.home.whyChooseUs");
+  const whyChooseUs = await getWhyChooseUs();
 
   return (
     <section className="bg-brand-darker py-24">

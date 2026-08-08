@@ -2,13 +2,13 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
 import { StarRating } from "@/components/StarRating";
-import { testimonials } from "@/content/testimonials";
-
-const featured = testimonials.filter((t) => t.featuredOnHome);
+import { getTestimonials } from "@/services/testimonials";
 
 export async function TestimonialsPreview() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.home.testimonials");
+  const testimonials = await getTestimonials();
+  const featured = testimonials.filter((t) => t.featuredOnHome);
 
   return (
     <section className="bg-brand-darker py-24">

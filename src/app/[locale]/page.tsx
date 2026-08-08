@@ -15,6 +15,9 @@ import { MilestonesCarousel } from "@/sections/home/MilestonesCarousel";
 import { WhyChooseUs } from "@/sections/home/WhyChooseUs";
 import { FeaturedVideos } from "@/sections/home/FeaturedVideos";
 import { FinalCta } from "@/sections/home/FinalCta";
+import { getProcedures } from "@/services/procedures";
+import { getVideos } from "@/services/videos";
+import { getBeforeAfterCases } from "@/services/beforeAfterCases";
 
 export async function generateMetadata({
   params,
@@ -44,18 +47,24 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const [procedures, videos, beforeAfterCases] = await Promise.all([
+    getProcedures(),
+    getVideos(),
+    getBeforeAfterCases(),
+  ]);
+
   return (
     <main>
       <JsonLd data={buildPhysicianSchema(locale as Locale)} />
       <HomeHero />
-      <AboutDoctorSplit />
+      <AboutDoctorSplit videos={videos} />
       <AchievementStrip />
-      <FeaturedProcedures />
-      <BeforeAfterPreview />
+      <FeaturedProcedures procedures={procedures} />
+      <BeforeAfterPreview cases={beforeAfterCases} />
       <TestimonialsPreview />
       <MilestonesCarousel />
       <WhyChooseUs />
-      <FeaturedVideos />
+      <FeaturedVideos videos={videos} />
       <FinalCta />
     </main>
   );

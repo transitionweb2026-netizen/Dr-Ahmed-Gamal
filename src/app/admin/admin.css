@@ -1,0 +1,4 @@
+/* Admin-only stylesheet — deliberately does NOT import the public site's
+   src/app/globals.css (dark brand theme, .neon-card, etc.). The CMS admin
+   is a separate internal tool with its own light UI. */
+@import "tailwindcss";

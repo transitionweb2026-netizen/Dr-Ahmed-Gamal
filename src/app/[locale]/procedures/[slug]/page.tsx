@@ -9,9 +9,10 @@ import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ContactCtaBanner } from "@/sections/shared/ContactCtaBanner";
-import { procedures } from "@/content/procedures";
+import { getProcedures } from "@/services/procedures";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const procedures = await getProcedures();
   return procedures.map((p) => ({ slug: p.slug }));
 }
 
@@ -22,6 +23,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale, slug } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
+  const procedures = await getProcedures();
   const procedure = procedures.find((p) => p.slug === slug);
   if (!procedure) return {};
 
@@ -44,6 +46,7 @@ export default async function ProcedureDetailPage({
   setRequestLocale(locale);
   const loc = locale as "en" | "ar";
 
+  const procedures = await getProcedures();
   const procedure = procedures.find((p) => p.slug === slug);
   if (!procedure) {
     notFound();

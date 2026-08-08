@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/sections/shared/PageHero";
 import { CTAButton } from "@/components/CTAButton";
 import { Icon } from "@/components/Icon";
-import { contactInfo } from "@/constants/contactInfo";
+import { getContactInfo } from "@/services/contactInfo";
 import type { IconName } from "@/constants/iconMap";
 
 const HERO_IMAGE =
@@ -11,6 +11,7 @@ const HERO_IMAGE =
 export async function BeforeAfterHero() {
   const t = await getTranslations("pages.beforeAfter.hero");
   const cta = await getTranslations("cta");
+  const contactInfo = await getContactInfo();
 
   // Legacy's "Floating Social Capsule" (fixed right-6 top-1/2, flex-col) — a
   // page-specific vertical variant of the standard bottom-center
