@@ -52,5 +52,5 @@ export const contactInfo = {
   social: {
     instagram: "https://instagram.com/drahmedgamal",
     facebook: "https://facebook.com/drahmedgamal",
-  } as Partial<Record<"instagram" | "facebook" | "tiktok" | "youtube", string>>,
+  } as Partial<Record<"instagram" | "facebook" | "tiktok", string>>,
 };

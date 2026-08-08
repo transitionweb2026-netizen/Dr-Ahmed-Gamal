@@ -4,10 +4,9 @@ import { getContactInfo } from "@/services/contactInfo";
 import type { IconName } from "@/constants/iconMap";
 
 const SOCIAL_ICONS: Record<string, IconName> = {
-  instagram: "camera_alt",
   facebook: "groups",
+  instagram: "camera_alt",
   tiktok: "video_library",
-  youtube: "play_circle",
 };
 
 function InfoCard({ icon, title, children }: { icon: IconName; title: string; children: React.ReactNode }) {

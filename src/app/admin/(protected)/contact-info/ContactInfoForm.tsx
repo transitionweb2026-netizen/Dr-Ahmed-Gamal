@@ -22,7 +22,7 @@ interface ContactInfoFormProps {
     address: { en: string; ar: string };
     maps_url: string;
     working_hours: WorkingHourRow[];
-    social: { instagram?: string; facebook?: string; tiktok?: string; youtube?: string };
+    social: { facebook?: string; instagram?: string; tiktok?: string };
   };
 }
 
@@ -159,11 +159,13 @@ export function ContactInfoForm({ defaultValues }: ContactInfoFormProps) {
         <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
           Social links <span className="font-normal normal-case text-slate-400">(leave blank to hide)</span>
         </h2>
+        <p className="text-xs text-slate-400">
+          Shown in this order on the site&apos;s floating contact widget: Facebook, Instagram, TikTok.
+        </p>
         <div className="grid grid-cols-2 gap-4">
-          <TextFieldOptional label="Instagram URL" name="social_instagram" defaultValue={defaultValues.social.instagram} />
           <TextFieldOptional label="Facebook URL" name="social_facebook" defaultValue={defaultValues.social.facebook} />
+          <TextFieldOptional label="Instagram URL" name="social_instagram" defaultValue={defaultValues.social.instagram} />
           <TextFieldOptional label="TikTok URL" name="social_tiktok" defaultValue={defaultValues.social.tiktok} />
-          <TextFieldOptional label="YouTube URL" name="social_youtube" defaultValue={defaultValues.social.youtube} />
         </div>
       </section>
 

@@ -10,10 +10,9 @@ const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.stri
 const workingHourRowSchema = z.object({ days: bilingualSchema, hours: bilingualSchema });
 
 const socialSchema = z.object({
-  instagram: z.string().url().optional().or(z.literal("")),
   facebook: z.string().url().optional().or(z.literal("")),
+  instagram: z.string().url().optional().or(z.literal("")),
   tiktok: z.string().url().optional().or(z.literal("")),
-  youtube: z.string().url().optional().or(z.literal("")),
 });
 
 const contactInfoSchema = z.object({
@@ -51,10 +50,9 @@ export async function updateContactInfoAction(
   }
 
   const rawSocial = {
-    instagram: String(formData.get("social_instagram") ?? "").trim(),
     facebook: String(formData.get("social_facebook") ?? "").trim(),
+    instagram: String(formData.get("social_instagram") ?? "").trim(),
     tiktok: String(formData.get("social_tiktok") ?? "").trim(),
-    youtube: String(formData.get("social_youtube") ?? "").trim(),
   };
 
   const parsed = contactInfoSchema.safeParse({
