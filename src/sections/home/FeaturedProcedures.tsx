@@ -3,30 +3,37 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { CTAButton } from "@/components/CTAButton";
+import { Link } from "@/i18n/navigation";
 import { ProcedureModal } from "@/components/ProcedureModal";
 import { procedures } from "@/content/procedures";
 import type { Procedure } from "@/types/content";
 
 const featured = procedures.filter((p) => p.featuredOnHome);
 
+const SECTION_IMAGE =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuBv-SnW2a4Ve_EW2zgmgHusw41ygAfCSV_RROJul1BEEaJ-YnF1NjpN9lB7yr4PktjFoIUv4RKte4U5aYGNIXgcr90L9PlnDN20xIkQXcjg9v-Pk1WHCMdiehuQNX6LiSx8T5eSER6FZOWnRTsOvk0Vp8-PLVyzzi8afjcxwLHkisnspR0-h0Rxv_QG6n-OQovE_LdvGLQizdWJsu3KbeDn2fEXqrjvsGsWrbzSE8UMw4z8IuBHBBNSUzQ8trPe6jdSKKE";
+
 export function FeaturedProcedures() {
   const [selected, setSelected] = useState<Procedure | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.home.procedures");
-  const cta = useTranslations("cta");
 
   return (
-    <section className="bg-brand-darker py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+    <section className="relative py-24">
+      <div className="absolute inset-0 z-0">
+        <Image src={SECTION_IMAGE} alt="" fill className="object-cover" sizes="100vw" />
+        <div className="absolute inset-0 bg-brand-darker/80" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-brand-gold">
+            {t("eyebrow")}
+          </p>
           <h2 className="font-serif text-4xl text-brand-light">{t("heading")}</h2>
-          <CTAButton href="/procedures" variant="ghost" showArrow>
-            {cta("showMore")}
-          </CTAButton>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((procedure) => (
             <button
               key={procedure.slug}
@@ -54,6 +61,15 @@ export function FeaturedProcedures() {
               </div>
             </button>
           ))}
+        </div>
+
+        <div className="text-center">
+          <Link
+            href="/procedures"
+            className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-brand-gold transition-colors duration-300 hover:text-white"
+          >
+            {t("cta")} <span className="ms-2">→</span>
+          </Link>
         </div>
       </div>
 

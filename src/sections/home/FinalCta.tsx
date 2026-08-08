@@ -13,12 +13,12 @@ export async function FinalCta() {
     <section className="bg-brand-darker py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="order-2 flex justify-center lg:order-1 lg:justify-end">
-          <div className="relative h-[500px] w-64 overflow-hidden rounded-[2.5rem] border-4 border-gray-800 bg-black p-2 shadow-2xl lg:-rotate-6">
+          <div className="relative h-[500px] w-64 -rotate-6 overflow-hidden rounded-[3rem] border-4 border-gray-800 bg-black p-2 shadow-2xl">
             <span
               aria-hidden="true"
-              className="absolute inset-x-0 top-0 z-20 h-6 rounded-t-[2rem] bg-black"
+              className="absolute inset-x-0 top-0 z-20 h-6 rounded-t-[2.5rem] bg-black"
             />
-            <div className="relative h-full w-full overflow-hidden rounded-[2rem] bg-brand-dark">
+            <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] bg-brand-dark">
               <Image
                 src={phoneImage.thumbnail}
                 alt=""
@@ -31,7 +31,7 @@ export async function FinalCta() {
                 <h4 className="mb-4 font-serif text-lg leading-tight text-white">
                   {t("phoneOverline")}
                 </h4>
-                <CTAButton href="/contact" size="md">
+                <CTAButton href="/contact" variant="flat" size="sm" className="px-6 py-3 font-bold">
                   {cta("bookNow")}
                 </CTAButton>
               </div>
@@ -48,7 +48,7 @@ export async function FinalCta() {
             <span className="italic text-brand-gold">{t("titleLine2")}</span>
           </h2>
           <p className="leading-relaxed text-brand-light/70">{t("paragraph")}</p>
-          <CTAButton href="/contact" size="lg">
+          <CTAButton href="/contact" variant="flat" size="lg" className="px-8 font-bold">
             {cta("requestConsultation")}
           </CTAButton>
         </div>
