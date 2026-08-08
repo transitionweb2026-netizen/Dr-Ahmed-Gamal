@@ -25,9 +25,9 @@ export async function ArticleGrid() {
               <Link
                 key={article.slug}
                 href={`/blog/${article.slug}`}
-                className="gold-glass-card group flex flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-2"
+                className="gold-glass-card group flex flex-col overflow-hidden rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.5)]! transition-transform duration-500 hover:-translate-y-2"
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                <div className="relative h-64 w-full overflow-hidden">
                   <Image
                     src={article.image}
                     alt={article.title[locale]}
@@ -36,25 +36,25 @@ export async function ArticleGrid() {
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-transparent to-transparent" />
-                  <span className="absolute start-4 top-4 rounded-full bg-brand-darker/70 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-gold backdrop-blur-sm">
+                  <span className="absolute start-4 top-4 rounded-full border border-white/10 bg-brand-darker/60 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-gold backdrop-blur-md">
                     {article.category[locale]}
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-serif text-xl text-brand-light transition-colors group-hover:text-brand-gold">
+                <div className="flex flex-1 flex-col bg-brand-dark/50 p-6">
+                  <h3 className="mb-3 font-serif text-[24px] leading-tight text-brand-light transition-colors group-hover:text-brand-gold">
                     {article.title[locale]}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-light/60">
+                  <p className="flex-1 text-body-md leading-relaxed text-brand-light/60">
                     {article.excerpt[locale]}
                   </p>
-                  <div className="mt-4 flex items-center gap-3 border-t border-brand-gold/10 pt-4 text-xs text-brand-light/65">
+                  <div className="mt-4 flex items-center gap-3 border-t border-white/10 pt-4 text-xs text-brand-light/65">
                     <span className="flex items-center gap-1">
-                      <Icon name="calendar_today" className="h-3.5 w-3.5" />
+                      <Icon name="calendar_today" className="h-4 w-4" />
                       {formattedDate}
                     </span>
                     <span aria-hidden>•</span>
                     <span className="flex items-center gap-1">
-                      <Icon name="schedule" className="h-3.5 w-3.5" />
+                      <Icon name="schedule" className="h-4 w-4" />
                       {common("minRead", { minutes: article.readTimeMinutes })}
                     </span>
                   </div>
