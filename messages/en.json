@@ -46,6 +46,12 @@
     "tiktok": "TikTok",
     "youtube": "YouTube"
   },
+  "floatingContact": {
+    "open": "Contact options",
+    "close": "Close contact options",
+    "whatsapp": "Chat on WhatsApp",
+    "call": "Call us"
+  },
   "common": {
     "close": "Close",
     "next": "Next",

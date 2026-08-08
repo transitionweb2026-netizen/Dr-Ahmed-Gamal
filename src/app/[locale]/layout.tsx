@@ -8,8 +8,10 @@ import { fontVariables } from "@/lib/fonts";
 import { site } from "@/constants/site";
 import { getNavLinks } from "@/services/navLinks";
 import { getSiteSettings } from "@/services/siteSettings";
+import { getContactInfo } from "@/services/contactInfo";
 import { SiteHeader } from "@/layouts/SiteHeader";
 import { SiteFooter } from "@/layouts/SiteFooter";
+import { FloatingActionButtons } from "@/components/FloatingActionButtons";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -57,6 +59,7 @@ export default async function LocaleLayout({
   const t = await getTranslations({ locale, namespace: "common" });
   const navLinks = await getNavLinks();
   const siteSettings = await getSiteSettings();
+  const contactInfo = await getContactInfo();
 
   return (
     <html
@@ -79,6 +82,7 @@ export default async function LocaleLayout({
               {children}
             </div>
             <SiteFooter />
+            <FloatingActionButtons whatsappHref={contactInfo.whatsapp.href} phoneHref={contactInfo.phone.href} />
           </DirectionProvider>
         </NextIntlClientProvider>
       </body>

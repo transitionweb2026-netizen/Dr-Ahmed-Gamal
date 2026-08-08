@@ -46,7 +46,7 @@ import {
   type LucideProps,
 } from "lucide-react";
 import type { ComponentType } from "react";
-import { FacebookIcon, InstagramIcon, TiktokIcon } from "@/components/icons/BrandIcons";
+import { FacebookIcon, InstagramIcon, TiktokIcon, WhatsappIcon } from "@/components/icons/BrandIcons";
 
 /**
  * Maps the 46 Material Symbols Outlined icon names used across the legacy
@@ -103,6 +103,7 @@ export const iconMap = {
   tiktok: TiktokIcon,
   unfold_more: ChevronsUpDown,
   video_library: Video,
+  whatsapp: WhatsappIcon,
   workspace_premium: Award,
 } satisfies Record<string, ComponentType<LucideProps>>;
 
