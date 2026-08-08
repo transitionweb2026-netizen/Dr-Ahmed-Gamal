@@ -244,8 +244,12 @@
         "titleLine2": "Artistic Perspective",
         "paragraph": "Dr. Gamal brings over two decades of specialized expertise in aesthetic plastic surgery. His comprehensive approach integrates the latest advancements in medical technology with a deeply ingrained understanding of anatomical harmony. Since founding his premier practice in 2012, he has helped thousands of patients achieve subtle, elegant, and long-lasting results."
       },
-      "procedures": { "heading": "Explore Our Procedures" },
-      "timeline": { "heading": "Professional Journey" },
+      "procedures": {
+        "eyebrow": "Specialized Care",
+        "heading": "Featured Procedures",
+        "viewAllCta": "View All Procedures"
+      },
+      "timeline": { "eyebrow": "Milestones", "heading": "Professional Journey" },
       "gallery": { "eyebrow": "Behind the Scenes", "heading": "The Doctor at Work" },
       "cta": {
         "titleLine1": "Take the Next Step in Your",

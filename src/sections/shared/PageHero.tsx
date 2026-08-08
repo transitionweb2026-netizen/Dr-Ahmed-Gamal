@@ -20,6 +20,17 @@ interface PageHeroProps {
   /** The floating glass "quick contact" capsule (see HeroContactCapsule), or a
    * bespoke variant (e.g. Cases & Reviews' fixed vertical edge capsule). */
   capsule?: ReactNode;
+  /** Escape hatch for a page whose reference min-height doesn't fit the
+   * short/default two-step scale (e.g. About's literal `min-h-[90vh]`).
+   * Overrides `short` entirely when set. */
+  minHeightClassName?: string;
+  /** Extra classes appended to the background <Image> (e.g. a custom
+   * `object-[…]` focal point for a page whose reference crops differently). */
+  imageClassName?: string;
+  /** Reference default is a single top-to-bottom gradient; About's hero uses
+   * a horizontal + vertical pair instead (image bleeds in from one side,
+   * darkening to transparent) — pass "directional" to swap in that pair. */
+  gradientVariant?: "default" | "directional";
 }
 
 const imageOpacityClass = { 40: "opacity-40", 60: "opacity-60" } as const;
@@ -35,6 +46,9 @@ export function PageHero({
   fullHeight = false,
   imageOpacity = 60,
   capsule,
+  minHeightClassName,
+  imageClassName,
+  gradientVariant = "default",
 }: PageHeroProps) {
   const isCenter = align === "center";
 
@@ -44,9 +58,8 @@ export function PageHero({
         "relative flex items-center justify-center overflow-hidden bg-brand-darker pt-24",
         fullHeight
           ? "min-h-screen"
-          : short
-            ? "min-h-[500px] sm:min-h-[60vh]"
-            : "min-h-[600px] sm:min-h-[80vh]",
+          : (minHeightClassName ??
+            (short ? "min-h-[500px] sm:min-h-[60vh]" : "min-h-[600px] sm:min-h-[80vh]")),
       )}
     >
       <div className="absolute inset-0 z-0">
@@ -55,10 +68,17 @@ export function PageHero({
           alt=""
           fill
           priority
-          className={cn("object-cover", imageOpacityClass[imageOpacity])}
+          className={cn("object-cover", imageOpacityClass[imageOpacity], imageClassName)}
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-darker/80 via-brand-darker/50 to-brand-darker" />
+        {gradientVariant === "default" ? (
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-darker/80 via-brand-darker/50 to-brand-darker" />
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-darker via-brand-darker/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-transparent to-transparent" />
+          </>
+        )}
       </div>
       <div
         className={cn(
