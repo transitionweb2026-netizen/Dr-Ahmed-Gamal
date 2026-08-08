@@ -4,7 +4,7 @@ export async function StoriesIntro() {
   const t = await getTranslations("pages.patientStories.intro");
 
   return (
-    <section className="relative bg-brand-dark py-20">
+    <section className="relative overflow-hidden bg-brand-dark py-20">
       <div
         aria-hidden
         className="light-leak top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2"

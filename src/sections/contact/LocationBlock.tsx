@@ -22,7 +22,7 @@ export async function LocationBlock() {
               src={CLINIC_IMAGE}
               alt={t("imageAlt")}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(min-width: 768px) 50vw, 100vw"
             />
           </div>
