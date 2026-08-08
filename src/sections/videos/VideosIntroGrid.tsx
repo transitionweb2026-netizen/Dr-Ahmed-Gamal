@@ -42,10 +42,10 @@ export function VideosIntroGrid() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-transparent to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end gap-2 p-6">
-                <p className="text-xs uppercase tracking-widest text-brand-gold">
+                <p className="text-label-sm uppercase tracking-widest text-brand-gold">
                   {video.category[locale]}
                 </p>
-                <h3 className="font-serif text-xl leading-tight text-brand-light">
+                <h3 className="font-serif text-[20px] leading-tight text-brand-light">
                   {video.title[locale]}
                 </h3>
                 <div className="mt-4 flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold/30 bg-brand-gold/20 text-brand-gold backdrop-blur-md transition-colors duration-300 group-hover:bg-brand-gold group-hover:text-brand-darker">

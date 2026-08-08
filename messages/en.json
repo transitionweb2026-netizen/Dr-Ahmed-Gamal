@@ -322,7 +322,9 @@
       "hero": {
         "titleLine1": "Learn Directly From",
         "titleLine2": "Dr. Ahmed",
-        "paragraph": "Watch educational videos from Dr. Ahmed Gamal El-Borhamy covering plastic-surgery procedures, safety, and outcomes."
+        "paragraph": "Watch educational videos from Dr. Ahmed Gamal El-Borhamy covering plastic-surgery procedures, safety, and outcomes.",
+        "shareAriaLabel": "Share",
+        "mailAriaLabel": "Email us"
       },
       "latestSection": {
         "eyebrow": "Watch & Learn",
@@ -332,7 +334,8 @@
       "cta": {
         "titleLine1": "Ready to transform",
         "titleLine2": "your future?",
-        "paragraph": "Connect with Dr. Ahmed's elite team to discuss your goals, schedule a private consultation, or ask specific questions regarding procedures and outcomes."
+        "paragraph": "Connect with Dr. Ahmed's elite team to discuss your goals, schedule a private consultation, or ask specific questions regarding procedures and outcomes.",
+        "directLine": "Direct Line"
       }
     },
     "faq": {
