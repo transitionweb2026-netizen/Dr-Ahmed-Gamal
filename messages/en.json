@@ -40,6 +40,12 @@
     "sendMessage": "Send Message",
     "sending": "Sending…"
   },
+  "social": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "youtube": "YouTube"
+  },
   "common": {
     "close": "Close",
     "next": "Next",
@@ -202,21 +208,42 @@
         "paragraph": "Experience world-class plastic surgery tailored to your unique harmony. Dr. Ahmed Gamal combines surgical precision with an artistic eye to deliver elegant, transformative results."
       },
       "about": {
+        "kicker": "About The Doctor",
         "heading": "Dr. Ahmed Gamal",
         "subheading": "Board Certified Plastic Surgeon",
         "paragraph1": "With over 20 years of dedicated practice, Dr. Gamal is renowned for his meticulous technique and commitment to patient safety and satisfaction.",
         "paragraph2": "His philosophy centers on enhancing individual beauty through subtle, natural-looking refinements, ensuring every patient feels confident and empowered in their own skin."
       },
-      "procedures": { "heading": "Featured Procedures" },
-      "beforeAfter": { "heading": "Before & After Gallery" },
-      "testimonials": { "heading": "What Our Patients Say" },
-      "milestones": { "heading": "Certifications & Professional Experience" },
+      "procedures": {
+        "eyebrow": "Our Expertise",
+        "heading": "Featured Procedures",
+        "cta": "Show More Procedures"
+      },
+      "beforeAfter": {
+        "eyebrow": "Real Results",
+        "heading": "Before & After Gallery",
+        "cta": "Show More Cases"
+      },
+      "testimonials": {
+        "eyebrow": "Patient Experiences",
+        "heading": "Words of Praise",
+        "cta": "Show More Reviews"
+      },
+      "milestones": {
+        "eyebrow": "Expertise & Recognition",
+        "heading": "Certifications & Professional Experience",
+        "subtitle": "Advanced training, continuous education, and professional excellence."
+      },
       "whyChooseUs": {
         "eyebrow": "Why Choose Us",
         "heading": "Why Choose Dr. Ahmed Gamal El-Borhamy",
         "paragraph": "With a commitment to excellence and a passion for aesthetic harmony, Dr. Gamal provides a transformative experience that prioritizes your safety, comfort, and natural beauty."
       },
-      "videos": { "eyebrow": "Educational Series", "heading": "Featured Videos" },
+      "videos": {
+        "eyebrow": "Educational Series",
+        "heading": "Featured Videos",
+        "cta": "Show More Videos"
+      },
       "finalCta": {
         "eyebrow": "Take The First Step",
         "titleLine1": "Ready to reveal",

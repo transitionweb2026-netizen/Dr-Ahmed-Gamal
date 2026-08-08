@@ -11,16 +11,15 @@ const featured = beforeAfterCases.filter((c) => c.featuredOnHome);
 export function BeforeAfterPreview() {
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.home.beforeAfter");
-  const cta = useTranslations("cta");
 
   return (
-    <section className="bg-brand-dark py-24">
+    <section className="overflow-hidden border-y border-brand-gold/10 bg-brand-darker py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-brand-gold">
+            {t("eyebrow")}
+          </p>
           <h2 className="font-serif text-4xl text-brand-light">{t("heading")}</h2>
-          <CTAButton href="/before-after" variant="ghost" showArrow>
-            {cta("showMore")}
-          </CTAButton>
         </div>
 
         <Carousel ariaLabel={t("heading")}>
@@ -37,6 +36,10 @@ export function BeforeAfterPreview() {
             </div>
           ))}
         </Carousel>
+
+        <div className="mt-16 text-center">
+          <CTAButton href="/before-after">{t("cta")}</CTAButton>
+        </div>
       </div>
     </section>
   );

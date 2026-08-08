@@ -1,5 +1,4 @@
 import { getLocale } from "next-intl/server";
-import { Icon } from "@/components/Icon";
 import { stats } from "@/content/stats";
 
 // Home.html's own 4-stat set (years / procedures / happy patients / patient
@@ -11,16 +10,15 @@ export async function AchievementStrip() {
   const locale = (await getLocale()) as "en" | "ar";
 
   return (
-    <section className="border-y border-brand-gold/10 bg-brand-darker py-16">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
+    <section className="border-y border-brand-gold/10 bg-brand-dark py-16">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
         {homeStats.map((stat) => (
           <div
             key={stat.id}
-            className="glass-panel flex flex-col items-center gap-2 rounded-2xl px-4 py-8 text-center"
+            className="glass-panel rounded-lg p-8 text-center shadow-glass transition duration-500 hover:-translate-y-2"
           >
-            <Icon name={stat.icon} className="h-6 w-6 text-brand-gold" />
-            <p className="font-serif text-3xl text-brand-light sm:text-4xl">{stat.value}</p>
-            <p className="text-xs uppercase tracking-wider text-brand-light/60 sm:text-sm">
+            <p className="mb-2 font-serif text-4xl text-brand-gold lg:text-5xl">{stat.value}</p>
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">
               {stat.label[locale]}
             </p>
           </div>
