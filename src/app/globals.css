@@ -99,6 +99,20 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgb(212 175 55 / 0.1);
 }
 
+/* Soft ambient glow orb — a blurred radial amber gradient dropped behind
+   section content for depth (reference: Patient Stories' `.light-leak`).
+   Sized/positioned per usage via Tailwind utilities on the element. */
+.light-leak {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgb(212 175 55 / 0.15) 0%, rgb(10 10 10 / 0) 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .card-gradient {
   background: linear-gradient(180deg, rgb(28 27 27 / 0) 0%, rgb(19 19 19 / 1) 100%);
 }
