@@ -271,8 +271,14 @@
     },
     "beforeAfter": {
       "hero": {
-        "title": "Real Journeys. Refined Results.",
-        "paragraph": "Explore the transformative outcomes achieved through precision, artistry, and advanced medical expertise."
+        "titleLine1": "Real Journeys.",
+        "titleLine2": "Refined Results.",
+        "paragraph": "Explore the transformative outcomes achieved through precision, artistry, and advanced medical expertise.",
+        "capsule": {
+          "share": "Share",
+          "gallery": "View gallery",
+          "videos": "Watch patient videos"
+        }
       },
       "sectionHeading": "Before & After Results",
       "groups": {

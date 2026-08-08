@@ -12,6 +12,9 @@ interface PageHeroProps {
   align?: "center" | "start";
   /** Reference hero is 80vh/600px on most pages, 60vh/500px on Contact. */
   short?: boolean;
+  /** Cases & Reviews' reference hero is min-h-screen — taller than every
+   * other page's 80vh. Takes precedence over `short` when set. */
+  fullHeight?: boolean;
   /** Background image opacity — reference is 60 on most pages, 40 on Contact. */
   imageOpacity?: 40 | 60;
   /** The floating glass "quick contact" capsule (see HeroContactCapsule), or a
@@ -29,6 +32,7 @@ export function PageHero({
   children,
   align = "center",
   short = false,
+  fullHeight = false,
   imageOpacity = 60,
   capsule,
 }: PageHeroProps) {
@@ -38,7 +42,11 @@ export function PageHero({
     <section
       className={cn(
         "relative flex items-center justify-center overflow-hidden bg-brand-darker pt-24",
-        short ? "min-h-[500px] sm:min-h-[60vh]" : "min-h-[600px] sm:min-h-[80vh]",
+        fullHeight
+          ? "min-h-screen"
+          : short
+            ? "min-h-[500px] sm:min-h-[60vh]"
+            : "min-h-[600px] sm:min-h-[80vh]",
       )}
     >
       <div className="absolute inset-0 z-0">
