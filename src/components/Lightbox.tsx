@@ -53,7 +53,7 @@ export function Lightbox({ images, index, open, onOpenChange, onIndexChange }: L
                   <button
                     type="button"
                     aria-label={t("close")}
-                    className="absolute end-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-brand-dark/70 text-brand-light transition-colors hover:text-brand-gold"
+                    className="absolute end-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-brand-dark/70 text-brand-light transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
                   >
                     <Icon name="close" className="h-6 w-6" />
                   </button>
@@ -75,7 +75,7 @@ export function Lightbox({ images, index, open, onOpenChange, onIndexChange }: L
                     type="button"
                     onClick={() => go(index - 1)}
                     aria-label={t("previous")}
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
                   >
                     <Icon name="chevron_left" className="h-5 w-5 rtl:rotate-180" />
                   </button>
@@ -86,7 +86,7 @@ export function Lightbox({ images, index, open, onOpenChange, onIndexChange }: L
                     type="button"
                     onClick={() => go(index + 1)}
                     aria-label={t("next")}
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
                   >
                     <Icon name="chevron_right" className="h-5 w-5 rtl:rotate-180" />
                   </button>

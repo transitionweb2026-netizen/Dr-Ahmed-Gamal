@@ -92,6 +92,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
 }
 
+/* Browsers default <button> to cursor:default, not the hand cursor <a>
+   gets — every button on this site is genuinely clickable (cards, modal
+   triggers, carousel controls, accordions), so this closes that gap. */
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 .glass-panel {
   background: rgb(28 27 27 / 0.7);
   backdrop-filter: blur(10px);

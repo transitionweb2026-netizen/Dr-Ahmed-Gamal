@@ -38,7 +38,7 @@ export function ProceduresGrid({ procedures }: ProceduresGridProps) {
               key={procedure.slug}
               type="button"
               onClick={() => setSelected(procedure)}
-              className="luxury-card group flex h-full min-h-[400px] flex-col rounded-2xl text-start"
+              className="luxury-card group flex h-full min-h-[400px] flex-col rounded-2xl text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
             >
               <div className="relative h-[55%] w-full shrink-0 overflow-hidden rounded-t-2xl">
                 <Image

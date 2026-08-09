@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useLocale } from "next-intl";
 import { Icon } from "@/components/Icon";
 import type { FaqItem } from "@/types/content";
@@ -16,6 +16,7 @@ interface FaqAccordionProps {
 export function FaqAccordion({ items, className }: FaqAccordionProps) {
   const locale = useLocale() as "en" | "ar";
   const [openValue, setOpenValue] = useState<string>("");
+  const reduceMotion = useReducedMotion();
 
   return (
     <Accordion.Root
@@ -54,7 +55,7 @@ export function FaqAccordion({ items, className }: FaqAccordionProps) {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    transition={{ duration: reduceMotion ? 0.01 : 0.25, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
                     <p className="pb-6 pt-2 leading-relaxed text-brand-light/70">{item.answer[locale]}</p>

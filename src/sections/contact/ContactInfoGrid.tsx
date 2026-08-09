@@ -24,9 +24,15 @@ function InfoCard({ icon, title, children }: { icon: IconName; title: string; ch
 export async function ContactInfoGrid() {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.contact.contactGrid");
+  const social = await getTranslations("social");
   const contactInfo = await getContactInfo();
   const socialEntries = Object.entries(contactInfo.social);
   const hasSocial = socialEntries.length > 0;
+  const socialLabels: Record<string, string> = {
+    facebook: social("facebook"),
+    instagram: social("instagram"),
+    tiktok: social("tiktok"),
+  };
 
   return (
     <section className="bg-brand-darker py-24">
@@ -35,20 +41,23 @@ export async function ContactInfoGrid() {
           <InfoCard icon="call" title={t("phoneTitle")}>
             <a
               href={contactInfo.phone.href}
-              className="block text-body-lg text-brand-light transition-colors hover:text-brand-gold"
+              className="block rounded text-body-lg text-brand-light transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
             >
               {contactInfo.phone.display}
             </a>
             <a
               href={contactInfo.emergencyPhone.href}
-              className="block text-body-md text-brand-light/70 transition-colors hover:text-brand-gold"
+              className="block rounded text-body-md text-brand-light/70 transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
             >
               {t("emergencyPhoneLabel")}: {contactInfo.emergencyPhone.display}
             </a>
           </InfoCard>
 
           <InfoCard icon="mail" title={t("emailTitle")}>
-            <a href={contactInfo.email.href} className="transition-colors hover:text-brand-gold">
+            <a
+              href={contactInfo.email.href}
+              className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
+            >
               {contactInfo.email.display}
             </a>
           </InfoCard>
@@ -71,8 +80,8 @@ export async function ContactInfoGrid() {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-brand-light/60 transition-colors hover:border-brand-gold hover:text-brand-gold"
-                    aria-label={platform}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-brand-light/60 transition-colors hover:border-brand-gold hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
+                    aria-label={socialLabels[platform] ?? platform}
                   >
                     <Icon name={SOCIAL_ICONS[platform] ?? "public"} className="h-5 w-5" />
                   </a>

@@ -23,7 +23,11 @@ export function SiteHeader({ navLinks, site }: SiteHeaderProps) {
   return (
     <header className="glass-panel fixed inset-x-0 top-0 z-40 border-b border-brand-gold/10">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex flex-shrink-0 items-center" aria-label={site.name}>
+        <Link
+          href="/"
+          className="flex flex-shrink-0 items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
+          aria-label={site.name}
+        >
           <Image
             src={site.logoUrl}
             alt={site.name}
@@ -44,7 +48,7 @@ export function SiteHeader({ navLinks, site }: SiteHeaderProps) {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "text-sm font-medium tracking-wide transition-colors",
+                  "rounded text-sm font-medium tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark",
                   active ? "text-brand-gold" : "text-gray-300 hover:text-brand-gold",
                 )}
               >

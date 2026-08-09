@@ -50,7 +50,7 @@ export function Modal({ open, onOpenChange, title, children, contentClassName }:
                     <button
                       type="button"
                       aria-label={t("close")}
-                      className="absolute end-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-brand-darker/70 text-brand-light transition-colors hover:text-brand-gold"
+                      className="absolute end-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-brand-darker/70 text-brand-light transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
                     >
                       <Icon name="close" className="h-5 w-5" />
                     </button>

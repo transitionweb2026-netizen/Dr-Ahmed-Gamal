@@ -27,7 +27,7 @@ export function StoriesGrid({ videos }: { videos: Video[] }) {
                 type="button"
                 onClick={() => setSelected(video)}
                 aria-label={`${t("play")}: ${video.title[locale]}`}
-                className="group relative flex aspect-[9/16] w-full flex-col overflow-hidden rounded-2xl"
+                className="group relative flex aspect-[9/16] w-full flex-col overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
               >
                 <Image
                   src={video.thumbnail}

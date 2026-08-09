@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/utils/cn";
@@ -10,6 +10,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
   const locale = useLocale();
   const pathname = usePathname();
   const t = useTranslations("languageSwitcher");
+  const reduceMotion = useReducedMotion();
 
   return (
     <div
@@ -38,7 +39,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
               <motion.span
                 layoutId="lang-switch-indicator"
                 className="absolute inset-0 -z-10 rounded-full bg-brand-gold"
-                transition={{ type: "spring", stiffness: 500, damping: 35 }}
+                transition={reduceMotion ? { duration: 0.01 } : { type: "spring", stiffness: 500, damping: 35 }}
               />
             )}
             {t(l)}

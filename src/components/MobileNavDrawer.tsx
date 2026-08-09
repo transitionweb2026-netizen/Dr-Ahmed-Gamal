@@ -32,7 +32,7 @@ export function MobileNavDrawer({ navLinks }: MobileNavDrawerProps) {
         <button
           type="button"
           aria-label={t("openMenu")}
-          className="inline-flex items-center justify-center rounded-full p-2 text-brand-light transition-colors hover:text-brand-gold lg:hidden"
+          className="inline-flex items-center justify-center rounded-full p-2 text-brand-light transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker lg:hidden"
         >
           <Icon name="menu" className="h-7 w-7" />
         </button>
@@ -65,7 +65,7 @@ export function MobileNavDrawer({ navLinks }: MobileNavDrawerProps) {
                     <button
                       type="button"
                       aria-label={t("closeMenu")}
-                      className="rounded-full p-2 text-brand-light transition-colors hover:text-brand-gold"
+                      className="rounded-full p-2 text-brand-light transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
                     >
                       <Icon name="close" className="h-6 w-6" />
                     </button>
@@ -83,7 +83,7 @@ export function MobileNavDrawer({ navLinks }: MobileNavDrawerProps) {
                         onClick={() => setOpen(false)}
                         aria-current={active ? "page" : undefined}
                         className={cn(
-                          "rounded-lg px-3 py-3 font-serif text-lg transition-colors",
+                          "rounded-lg px-3 py-3 font-serif text-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark",
                           active ? "text-brand-gold" : "text-brand-light/80 hover:text-brand-gold",
                         )}
                       >

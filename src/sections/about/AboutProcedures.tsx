@@ -40,7 +40,7 @@ export function AboutProcedures({ procedures }: { procedures: Procedure[] }) {
               key={procedure.slug}
               type="button"
               onClick={() => setSelected(procedure)}
-              className="group flex flex-col overflow-hidden rounded-2xl neon-card bg-[#231a11] text-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8),0_0_15px_rgba(212,175,55,0.15)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.9),0_0_30px_rgba(212,175,55,0.3)]"
+              className="group flex flex-col overflow-hidden rounded-2xl neon-card bg-[#231a11] text-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8),0_0_15px_rgba(212,175,55,0.15)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.9),0_0_30px_rgba(212,175,55,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
             >
               <div className="relative h-48 w-full shrink-0 overflow-hidden">
                 <Image

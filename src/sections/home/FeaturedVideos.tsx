@@ -39,7 +39,7 @@ export function FeaturedVideos({ videos }: { videos: Video[] }) {
               type="button"
               onClick={() => setSelected(video)}
               aria-label={video.title[locale]}
-              className="group relative block aspect-[9/16] w-full overflow-hidden rounded-2xl border border-brand-gold/20 shadow-glass"
+              className="group relative block aspect-[9/16] w-full overflow-hidden rounded-2xl border border-brand-gold/20 shadow-glass focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
             >
               <Image
                 src={video.thumbnail}

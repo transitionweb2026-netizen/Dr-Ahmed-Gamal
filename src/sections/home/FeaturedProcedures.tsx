@@ -37,7 +37,7 @@ export function FeaturedProcedures({ procedures }: { procedures: Procedure[] }) 
               key={procedure.slug}
               type="button"
               onClick={() => setSelected(procedure)}
-              className="group text-start"
+              className="group rounded-3xl text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
             >
               <div className="neon-card relative h-[450px] overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-neon-gold-hover!">
                 <div className="absolute inset-x-0 top-0 h-[60%] overflow-hidden rounded-t-3xl">

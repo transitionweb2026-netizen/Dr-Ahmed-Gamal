@@ -58,7 +58,7 @@ export function AboutDoctorSplit({ videos }: { videos: Video[] }) {
             <button
               type="button"
               onClick={() => setVideoOpen(true)}
-              className="relative block aspect-video w-full overflow-hidden rounded-lg border border-brand-gold/20 shadow-glass shadow-2xl"
+              className="relative block aspect-video w-full overflow-hidden rounded-lg border border-brand-gold/20 shadow-glass shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
               aria-label={introVideo.title.en}
             >
               <Image

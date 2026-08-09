@@ -56,7 +56,7 @@ export function CoverflowGallery({ images, className }: CoverflowGalleryProps) {
               type="button"
               key={i}
               onClick={() => (isActive ? setLightboxOpen(true) : goTo(i))}
-              className="absolute top-1/2 start-1/2 h-64 w-48 overflow-hidden rounded-xl border border-brand-gold/20 shadow-glass sm:h-80 sm:w-60"
+              className="absolute top-1/2 start-1/2 h-64 w-48 overflow-hidden rounded-xl border border-brand-gold/20 shadow-glass focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker sm:h-80 sm:w-60"
               style={{ zIndex }}
               animate={
                 reduceMotion
@@ -90,7 +90,7 @@ export function CoverflowGallery({ images, className }: CoverflowGalleryProps) {
           type="button"
           onClick={() => goTo(index - 1)}
           aria-label={t("previous")}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
         >
           <Icon name="chevron_left" className="h-5 w-5 rtl:rotate-180" />
         </button>
@@ -101,7 +101,7 @@ export function CoverflowGallery({ images, className }: CoverflowGalleryProps) {
           type="button"
           onClick={() => goTo(index + 1)}
           aria-label={t("next")}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors hover:border-brand-gold hover:bg-brand-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
         >
           <Icon name="chevron_right" className="h-5 w-5 rtl:rotate-180" />
         </button>

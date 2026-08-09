@@ -21,7 +21,7 @@ export function AboutVideoSplit({ videos }: { videos: Video[] }) {
           <button
             type="button"
             onClick={() => setVideoOpen(true)}
-            className="group relative order-2 block w-full lg:order-1"
+            className="group relative order-2 block w-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark lg:order-1"
             aria-label={introVideo.title.en}
           >
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-gold to-brand-darker opacity-30 blur transition duration-1000 group-hover:opacity-50" />

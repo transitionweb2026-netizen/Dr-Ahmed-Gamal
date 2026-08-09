@@ -52,7 +52,7 @@ export async function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-brand-light/70 transition-colors hover:text-brand-gold"
+                    className="rounded text-sm text-brand-light/70 transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
                   >
                     {tNav(link.labelKey)}
                   </Link>
@@ -70,7 +70,7 @@ export async function SiteFooter() {
                 <li key={label}>
                   <Link
                     href="/procedures"
-                    className="text-sm text-brand-light/70 transition-colors hover:text-brand-gold"
+                    className="rounded text-sm text-brand-light/70 transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
                   >
                     {label}
                   </Link>
@@ -90,13 +90,13 @@ export async function SiteFooter() {
               </li>
               <li className="flex items-center gap-2">
                 <Icon name="call" className="h-4 w-4 shrink-0 text-brand-gold" />
-                <a href={contactInfo.phone.href} className="transition-colors hover:text-brand-gold">
+                <a href={contactInfo.phone.href} className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark">
                   {contactInfo.phone.display}
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Icon name="mail" className="h-4 w-4 shrink-0 text-brand-gold" />
-                <a href={contactInfo.email.href} className="transition-colors hover:text-brand-gold">
+                <a href={contactInfo.email.href} className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark">
                   {contactInfo.email.display}
                 </a>
               </li>
@@ -107,10 +107,10 @@ export async function SiteFooter() {
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-brand-gold/10 pt-8 text-xs text-brand-light/65 sm:flex-row">
           <p>{t("rightsReserved", { year })}</p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="transition-colors hover:text-brand-gold">
+            <Link href="/privacy" className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark">
               {t("privacyPolicy")}
             </Link>
-            <Link href="/terms" className="transition-colors hover:text-brand-gold">
+            <Link href="/terms" className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark">
               {t("termsOfService")}
             </Link>
             <span>{t("developedBy")}</span>

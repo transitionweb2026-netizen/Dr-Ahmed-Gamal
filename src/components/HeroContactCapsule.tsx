@@ -52,7 +52,7 @@ export function HeroContactCapsule({ groups, align = "center", className }: Hero
                   <a
                     key={link.href + link.label}
                     href={link.href}
-                    className="group/link flex items-center gap-2 text-brand-light transition-colors hover:text-brand-gold"
+                    className="group/link flex items-center gap-2 rounded-full text-brand-light transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
                   >
                     <Icon
                       name={link.icon}
@@ -67,7 +67,7 @@ export function HeroContactCapsule({ groups, align = "center", className }: Hero
                     key={link.href + link.icon}
                     href={link.href}
                     aria-label={link.ariaLabel}
-                    className="flex items-center text-brand-light transition-all duration-300 hover:scale-110 hover:text-brand-gold"
+                    className="flex items-center rounded-full text-brand-light transition-all duration-300 hover:scale-110 hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
                   >
                     <Icon name={link.icon} className="h-5 w-5" />
                   </a>

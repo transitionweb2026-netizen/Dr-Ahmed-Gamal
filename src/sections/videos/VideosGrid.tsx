@@ -44,7 +44,7 @@ export function VideosGrid({ videos }: { videos: Video[] }) {
               type="button"
               onClick={() => setSelected(video)}
               aria-label={common("play")}
-              className="gold-glass-card group relative block aspect-[9/16] w-full overflow-hidden rounded-xl p-3 text-start shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-2"
+              className="gold-glass-card group relative block aspect-[9/16] w-full overflow-hidden rounded-xl p-3 text-start shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-darker"
             >
               <div className="absolute inset-2 overflow-hidden rounded-lg">
                 <Image
