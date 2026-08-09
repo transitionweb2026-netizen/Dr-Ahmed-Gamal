@@ -6,7 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
-import { buildBlogPostingSchema } from "@/lib/jsonld";
+import { buildBlogPostingSchema, buildBreadcrumbSchema } from "@/lib/jsonld";
 import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
@@ -60,6 +60,16 @@ export default async function ArticleDetailPage({
   const t = await getTranslations("pages.blog");
   const ctaT = await getTranslations("pages.blog.cta");
   const common = await getTranslations("common");
+  const nav = await getTranslations("nav");
+
+  const breadcrumb = buildBreadcrumbSchema(
+    [
+      { name: nav("home"), path: "/" },
+      { name: nav("blog"), path: "/articles" },
+      { name: article.title[loc], path: `/articles/${article.slug}` },
+    ],
+    loc,
+  );
 
   const formattedDate = new Intl.DateTimeFormat(loc, {
     year: "numeric",
@@ -70,6 +80,7 @@ export default async function ArticleDetailPage({
   return (
     <main>
       <JsonLd data={buildBlogPostingSchema(article, loc)} />
+      <JsonLd data={breadcrumb} />
       <article className="bg-brand-darker pb-24 pt-32">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Link

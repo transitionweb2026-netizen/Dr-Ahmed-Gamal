@@ -3,12 +3,14 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { DirectionProvider } from "@radix-ui/react-direction";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/constants/site";
 import { getNavLinks } from "@/services/navLinks";
 import { getSiteSettings } from "@/services/siteSettings";
 import { getContactInfo } from "@/services/contactInfo";
+import { buildPhysicianSchema } from "@/lib/jsonld";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteHeader } from "@/layouts/SiteHeader";
 import { SiteFooter } from "@/layouts/SiteFooter";
 import { FloatingActionButtons } from "@/components/FloatingActionButtons";
@@ -69,6 +71,7 @@ export default async function LocaleLayout({
       className={`${fontVariables} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-brand-darker font-sans text-brand-light">
+        <JsonLd data={buildPhysicianSchema(locale as Locale, contactInfo)} />
         <a
           href="#main-content"
           className="sr-only rounded-full bg-brand-gold px-6 py-3 text-sm font-semibold text-brand-darker focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[100]"

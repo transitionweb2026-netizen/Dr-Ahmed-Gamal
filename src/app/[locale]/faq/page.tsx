@@ -6,6 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 import { buildFaqPageSchema } from "@/lib/jsonld";
 import { JsonLd } from "@/components/JsonLd";
 import { getFaqItems } from "@/services/faqItems";
+import { getSeoMetadata } from "@/services/seoMetadata";
 import { FaqHero } from "@/sections/faq/FaqHero";
 import { FaqList } from "@/sections/faq/FaqList";
 import { FaqCta } from "@/sections/faq/FaqCta";
@@ -17,13 +18,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
-  const t = await getTranslations({ locale, namespace: "pages.faq.hero" });
+  const [t, seo] = await Promise.all([
+    getTranslations({ locale, namespace: "pages.faq.hero" }),
+    getSeoMetadata("faq"),
+  ]);
 
   return buildMetadata({
     locale,
     path: "/faq",
-    title: t("title"),
-    description: t("paragraph"),
+    title: seo?.metaTitle[locale] || t("title"),
+    description: seo?.metaDescription[locale] || t("paragraph"),
+    image: seo?.ogImage ?? undefined,
   });
 }
 

@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
-import { routing, type Locale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
-import { buildPhysicianSchema } from "@/lib/jsonld";
-import { JsonLd } from "@/components/JsonLd";
 import { ContactHero } from "@/sections/contact/ContactHero";
 import { ContactFormSection } from "@/sections/contact/ContactFormSection";
 import { LocationBlock } from "@/sections/contact/LocationBlock";
 import { ContactInfoGrid } from "@/sections/contact/ContactInfoGrid";
 import { ContactClosingCta } from "@/sections/contact/ContactClosingCta";
 import { getProcedures } from "@/services/procedures";
+import { getSeoMetadata } from "@/services/seoMetadata";
 
 export async function generateMetadata({
   params,
@@ -19,13 +18,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
-  const t = await getTranslations({ locale, namespace: "pages.contact.hero" });
+  const [t, seo] = await Promise.all([
+    getTranslations({ locale, namespace: "pages.contact.hero" }),
+    getSeoMetadata("contact"),
+  ]);
 
   return buildMetadata({
     locale,
     path: "/contact",
-    title: t("title"),
-    description: t("paragraph"),
+    title: seo?.metaTitle[locale] || t("title"),
+    description: seo?.metaDescription[locale] || t("paragraph"),
+    image: seo?.ogImage ?? undefined,
   });
 }
 
@@ -40,7 +43,6 @@ export default async function ContactPage({
 
   return (
     <main>
-      <JsonLd data={buildPhysicianSchema(locale as Locale)} />
       <ContactHero />
       <ContactFormSection procedures={procedures} />
       <LocationBlock />

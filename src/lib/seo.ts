@@ -29,7 +29,11 @@ export function buildMetadata({
   const ogImage = image ?? localizedPath(locale, "/opengraph-image");
 
   return {
-    title,
+    // `absolute` bypasses the root layout's `title.template` — every
+    // caller here already builds a complete, final title (CMS-edited or
+    // translation-derived), so it must not get "%s | shortName" appended
+    // a second time on top.
+    title: { absolute: title },
     description,
     alternates: {
       canonical,

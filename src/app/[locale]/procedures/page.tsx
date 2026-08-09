@@ -8,6 +8,7 @@ import { ProceduresGrid } from "@/sections/procedures/ProceduresGrid";
 import { ProceduresCta } from "@/sections/procedures/ProceduresCta";
 import { getProcedures } from "@/services/procedures";
 import { getContactInfo } from "@/services/contactInfo";
+import { getSeoMetadata } from "@/services/seoMetadata";
 
 export async function generateMetadata({
   params,
@@ -16,13 +17,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
-  const t = await getTranslations({ locale, namespace: "pages.procedures.hero" });
+  const [t, seo] = await Promise.all([
+    getTranslations({ locale, namespace: "pages.procedures.hero" }),
+    getSeoMetadata("procedures"),
+  ]);
 
   return buildMetadata({
     locale,
     path: "/procedures",
-    title: t("title"),
-    description: t("paragraph"),
+    title: seo?.metaTitle[locale] || t("title"),
+    description: seo?.metaDescription[locale] || t("paragraph"),
+    image: seo?.ogImage ?? undefined,
   });
 }
 

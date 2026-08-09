@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
-import { routing, type Locale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
-import { buildPhysicianSchema } from "@/lib/jsonld";
-import { JsonLd } from "@/components/JsonLd";
 import { getProcedures } from "@/services/procedures";
 import { getVideos } from "@/services/videos";
+import { getSeoMetadata } from "@/services/seoMetadata";
 import { AboutHero } from "@/sections/about/AboutHero";
 import { PersonalMessage } from "@/sections/about/PersonalMessage";
 import { AboutVideoSplit } from "@/sections/about/AboutVideoSplit";
@@ -23,13 +22,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
-  const t = await getTranslations({ locale, namespace: "pages.about.hero" });
+  const [t, seo] = await Promise.all([
+    getTranslations({ locale, namespace: "pages.about.hero" }),
+    getSeoMetadata("about"),
+  ]);
 
   return buildMetadata({
     locale,
     path: "/about",
-    title: t("title"),
-    description: t("paragraph"),
+    title: seo?.metaTitle[locale] || t("title"),
+    description: seo?.metaDescription[locale] || t("paragraph"),
+    image: seo?.ogImage ?? undefined,
   });
 }
 
@@ -45,7 +48,6 @@ export default async function AboutPage({
 
   return (
     <main>
-      <JsonLd data={buildPhysicianSchema(locale as Locale)} />
       <AboutHero />
       <PersonalMessage />
       <AboutVideoSplit videos={videos} />

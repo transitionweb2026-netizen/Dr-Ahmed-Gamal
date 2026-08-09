@@ -5,6 +5,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema } from "@/lib/jsonld";
+import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -54,6 +56,16 @@ export default async function ProcedureDetailPage({
 
   const t = await getTranslations("procedures");
   const cta = await getTranslations("pages.procedures.cta");
+  const nav = await getTranslations("nav");
+
+  const breadcrumb = buildBreadcrumbSchema(
+    [
+      { name: nav("home"), path: "/" },
+      { name: nav("procedures"), path: "/procedures" },
+      { name: procedure.name[loc], path: `/procedures/${procedure.slug}` },
+    ],
+    loc,
+  );
 
   const related = [
     ...procedures.filter((p) => p.slug !== procedure.slug && p.category === procedure.category),
@@ -62,6 +74,7 @@ export default async function ProcedureDetailPage({
 
   return (
     <main>
+      <JsonLd data={breadcrumb} />
       <section className="relative h-72 w-full sm:h-96">
         <Image
           src={procedure.image}

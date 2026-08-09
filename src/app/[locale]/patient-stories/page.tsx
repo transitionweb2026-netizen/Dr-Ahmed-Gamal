@@ -8,6 +8,7 @@ import { StoriesIntro } from "@/sections/patient-stories/StoriesIntro";
 import { StoriesGrid } from "@/sections/patient-stories/StoriesGrid";
 import { StoriesCta } from "@/sections/patient-stories/StoriesCta";
 import { getVideos } from "@/services/videos";
+import { getSeoMetadata } from "@/services/seoMetadata";
 
 export async function generateMetadata({
   params,
@@ -16,13 +17,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
-  const t = await getTranslations({ locale, namespace: "pages.patientStories.hero" });
+  const [t, seo] = await Promise.all([
+    getTranslations({ locale, namespace: "pages.patientStories.hero" }),
+    getSeoMetadata("patient-stories"),
+  ]);
 
   return buildMetadata({
     locale,
     path: "/patient-stories",
-    title: `${t("titleLine1")} ${t("titleLine2")}`,
-    description: t("paragraph"),
+    title: seo?.metaTitle[locale] || `${t("titleLine1")} ${t("titleLine2")}`,
+    description: seo?.metaDescription[locale] || t("paragraph"),
+    image: seo?.ogImage ?? undefined,
   });
 }
 

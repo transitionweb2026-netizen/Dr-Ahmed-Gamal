@@ -7,6 +7,7 @@ import { BlogHero } from "@/sections/blog/BlogHero";
 import { FeaturedArticle } from "@/sections/blog/FeaturedArticle";
 import { ArticleGrid } from "@/sections/blog/ArticleGrid";
 import { BlogCta } from "@/sections/blog/BlogCta";
+import { getSeoMetadata } from "@/services/seoMetadata";
 
 export async function generateMetadata({
   params,
@@ -15,13 +16,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
-  const t = await getTranslations({ locale, namespace: "pages.blog.hero" });
+  const [t, seo] = await Promise.all([
+    getTranslations({ locale, namespace: "pages.blog.hero" }),
+    getSeoMetadata("articles"),
+  ]);
 
   return buildMetadata({
     locale,
     path: "/articles",
-    title: `${t("titleLine1")} ${t("titleLine2")}`,
-    description: t("paragraph"),
+    title: seo?.metaTitle[locale] || `${t("titleLine1")} ${t("titleLine2")}`,
+    description: seo?.metaDescription[locale] || t("paragraph"),
+    image: seo?.ogImage ?? undefined,
   });
 }
 

@@ -1,5 +1,5 @@
 import { site } from "@/constants/site";
-import { contactInfo } from "@/constants/contactInfo";
+import type { getContactInfo } from "@/services/contactInfo";
 import type { Article, FaqItem, Video } from "@/types/content";
 
 type Locale = "en" | "ar";
@@ -10,8 +10,14 @@ function absoluteUrl(path: string): string {
   return `${site.url}${path}`;
 }
 
-/** Combined Physician + MedicalBusiness schema for Home/About/Contact. */
-export function buildPhysicianSchema(locale: Locale): JsonLd {
+/** Combined Physician + MedicalBusiness schema, rendered site-wide from the
+ * root layout — takes the already-CMS-resolved contact info (with its own
+ * static-fallback baked in) rather than importing the static constant
+ * directly, so this stays in sync with whatever's edited in the CMS. */
+export function buildPhysicianSchema(
+  locale: Locale,
+  contactInfo: Awaited<ReturnType<typeof getContactInfo>>,
+): JsonLd {
   return {
     "@context": "https://schema.org",
     "@type": ["Physician", "MedicalBusiness"],
@@ -33,6 +39,19 @@ export function buildPhysicianSchema(locale: Locale): JsonLd {
         dayOfWeek: entry.days.en,
         description: entry.hours[locale],
       })),
+  };
+}
+
+export function buildBreadcrumbSchema(items: { name: string; path: string }[], locale: Locale): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(`/${locale}${item.path}`),
+    })),
   };
 }
 

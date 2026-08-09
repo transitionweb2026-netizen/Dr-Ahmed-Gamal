@@ -8,6 +8,7 @@ import { CategoryGalleries } from "@/sections/before-after/CategoryGalleries";
 import { BeforeAfterTestimonials } from "@/sections/before-after/BeforeAfterTestimonials";
 import { BeforeAfterCta } from "@/sections/before-after/BeforeAfterCta";
 import { getBeforeAfterCases } from "@/services/beforeAfterCases";
+import { getSeoMetadata } from "@/services/seoMetadata";
 
 export async function generateMetadata({
   params,
@@ -16,13 +17,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
-  const t = await getTranslations({ locale, namespace: "pages.beforeAfter.hero" });
+  const [t, seo] = await Promise.all([
+    getTranslations({ locale, namespace: "pages.beforeAfter.hero" }),
+    getSeoMetadata("before-after"),
+  ]);
 
   return buildMetadata({
     locale,
     path: "/before-after",
-    title: `${t("titleLine1")} ${t("titleLine2")}`,
-    description: t("paragraph"),
+    title: seo?.metaTitle[locale] || `${t("titleLine1")} ${t("titleLine2")}`,
+    description: seo?.metaDescription[locale] || t("paragraph"),
+    image: seo?.ogImage ?? undefined,
   });
 }
 
