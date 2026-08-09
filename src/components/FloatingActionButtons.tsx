@@ -23,11 +23,7 @@ const actionButtonClass =
 /**
  * Site-wide dual-action FAB (WhatsApp + Call) — both always visible with
  * their real icons, no click-to-reveal step (an earlier hidden-trigger
- * version proved undiscoverable). Deliberately anchored at the *opposite*
- * bottom corner from HeroContactCapsule/HeroFloatingContact — this widget
- * is `fixed` (always on screen), while the hero capsule is only `absolute`
- * within each page's hero, so pinning both to the same corner would
- * overlap for the whole first viewport of every page.
+ * version proved undiscoverable).
  */
 export function FloatingActionButtons({ whatsappHref, phoneHref }: FloatingActionButtonsProps) {
   const t = useTranslations("floatingContact");
@@ -40,7 +36,7 @@ export function FloatingActionButtons({ whatsappHref, phoneHref }: FloatingActio
 
   return (
     <div
-      className="fixed start-4 z-40 flex flex-col items-center gap-3 sm:start-6"
+      className="fixed end-4 z-40 flex flex-col items-center gap-3 sm:end-6"
       style={{ bottom: "max(1.25rem, calc(env(safe-area-inset-bottom) + 0.75rem))" }}
     >
       {actions.map((action, index) => (
