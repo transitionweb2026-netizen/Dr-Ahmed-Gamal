@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
+import { getPageImages } from "@/services/pageImages";
 import { getContentBlock } from "../../../content-blocks";
 import { ContentBlockForm } from "./ContentBlockForm";
 import enMessages from "../../../../../../messages/en.json";
@@ -22,17 +23,24 @@ export default async function EditContentBlockPage({ params }: { params: Promise
 
   const supabase = await getSupabaseServerClient();
   const keys = block.fields.map((f) => f.key);
-  const { data: rows } = ((await supabase?.from("translations").select("key, locale, value").in("key", keys)) ?? {
-    data: [],
-  }) as { data: { key: string; locale: string; value: string }[] };
+  const [translationsResult, pageImages] = await Promise.all([
+    supabase?.from("translations").select("key, locale, value").in("key", keys),
+    getPageImages(),
+  ]);
+  const rows = (translationsResult?.data ?? []) as { key: string; locale: string; value: string }[];
 
   const values = Object.fromEntries(
     block.fields.map((field) => {
-      const en = rows?.find((r) => r.key === field.key && r.locale === "en")?.value ?? getDeep(enMessages, field.key);
-      const ar = rows?.find((r) => r.key === field.key && r.locale === "ar")?.value ?? getDeep(arMessages, field.key);
+      const en = rows.find((r) => r.key === field.key && r.locale === "en")?.value ?? getDeep(enMessages, field.key);
+      const ar = rows.find((r) => r.key === field.key && r.locale === "ar")?.value ?? getDeep(arMessages, field.key);
       return [field.key, { en, ar }];
     }),
   );
+
+  // getPageImages() already falls back to the static bundled URLs (same
+  // service the live frontend uses) when the page_images table doesn't
+  // exist yet, so this always shows the image that's actually live.
+  const imageValues = Object.fromEntries((block.images ?? []).map((img) => [img.slug, pageImages[img.slug]]));
 
   return (
     <div>
@@ -53,7 +61,13 @@ export default async function EditContentBlockPage({ params }: { params: Promise
         </p>
       )}
       <div className="mt-6">
-        <ContentBlockForm blockId={blockId} fields={block.fields} values={values} />
+        <ContentBlockForm
+          blockId={blockId}
+          fields={block.fields}
+          values={values}
+          images={block.images ?? []}
+          imageValues={imageValues}
+        />
       </div>
     </div>
   );

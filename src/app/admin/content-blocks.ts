@@ -24,6 +24,13 @@ export interface ContentField {
   multiline?: boolean;
 }
 
+export interface ContentImageField {
+  /** Slug in the page_images table, e.g. "home-hero". */
+  slug: string;
+  /** Human-readable label shown in the admin form. */
+  label: string;
+}
+
 export interface ContentBlock {
   /** URL slug, e.g. "home-hero". */
   id: string;
@@ -32,6 +39,8 @@ export interface ContentBlock {
   /** Section name within that page. */
   section: string;
   fields: ContentField[];
+  /** Images that live in this same section — edited in this same form. */
+  images?: ContentImageField[];
   /** Buttons/CTAs this section displays that are shared site-wide and edited elsewhere. */
   sharedButtons?: string[];
 }
@@ -50,6 +59,7 @@ export const contentBlocks: ContentBlock[] = [
     page: "Home",
     section: "Hero",
     fields: homeHero,
+    images: [{ slug: "home-hero", label: "Hero background image" }],
     sharedButtons: ["Book Consultation", "View Results"],
   },
   {
@@ -63,6 +73,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.home.about.paragraph1", label: "Paragraph 1", multiline: true },
       { key: "pages.home.about.paragraph2", label: "Paragraph 2", multiline: true },
     ],
+    images: [{ slug: "home-about", label: "About section background image" }],
     sharedButtons: ["Learn More"],
   },
   {
@@ -74,6 +85,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.home.procedures.heading", label: "Heading" },
       { key: "pages.home.procedures.cta", label: "“Show more” link text" },
     ],
+    images: [{ slug: "home-specialties", label: "Specialties section background image" }],
   },
   {
     id: "home-before-after",
@@ -114,6 +126,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.home.whyChooseUs.heading", label: "Heading" },
       { key: "pages.home.whyChooseUs.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "home-why-choose-us", label: "Why Choose Us background image" }],
   },
   {
     id: "home-videos",
@@ -124,6 +137,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.home.videos.heading", label: "Heading" },
       { key: "pages.home.videos.cta", label: "“Show more” link text" },
     ],
+    images: [{ slug: "home-videos", label: "Featured Videos background image" }],
   },
   {
     id: "home-final-cta",
@@ -149,6 +163,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.about.hero.title", label: "Title" },
       { key: "pages.about.hero.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "about-hero", label: "Hero background image" }],
     sharedButtons: ["Book Consultation", "View Results"],
   },
   {
@@ -163,6 +178,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.about.message.paragraph2", label: "Quote — paragraph 2", multiline: true },
       { key: "pages.about.message.signature", label: "Signature line" },
     ],
+    images: [{ slug: "about-message-portrait", label: "Personal message portrait" }],
   },
   {
     id: "about-video",
@@ -184,6 +200,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.about.procedures.heading", label: "Heading" },
       { key: "pages.about.procedures.viewAllCta", label: "“View all” link text" },
     ],
+    images: [{ slug: "about-procedures", label: "Procedures section background image" }],
   },
   {
     id: "about-timeline",
@@ -212,6 +229,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.about.cta.titleLine2", label: "Title — line 2 (styled in gold italic)" },
       { key: "pages.about.cta.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "about-cta", label: "CTA background image" }],
     sharedButtons: ["Book Consultation", "WhatsApp", "Call Now"],
   },
 
@@ -225,6 +243,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.procedures.hero.title", label: "Title" },
       { key: "pages.procedures.hero.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "procedures-hero", label: "Hero background image" }],
     sharedButtons: ["Book Consultation", "View Results"],
   },
   {
@@ -245,6 +264,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.procedures.cta.heading", label: "Heading" },
       { key: "pages.procedures.cta.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "procedures-cta", label: "CTA silhouette image" }],
     sharedButtons: ["Book Consultation", "WhatsApp", "Call Now"],
   },
 
@@ -261,6 +281,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.beforeAfter.hero.capsule.gallery", label: "Floating capsule — “View gallery” label" },
       { key: "pages.beforeAfter.hero.capsule.videos", label: "Floating capsule — “Watch patient videos” label" },
     ],
+    images: [{ slug: "before-after-hero", label: "Hero background image" }],
     sharedButtons: ["Book Now"],
   },
   {
@@ -288,6 +309,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.beforeAfter.cta.eyebrow", label: "Eyebrow" },
       { key: "pages.beforeAfter.cta.heading", label: "Heading" },
     ],
+    images: [{ slug: "before-after-cta", label: "CTA portrait image" }],
     sharedButtons: ["Book Consultation", "WhatsApp", "Call Now"],
   },
 
@@ -302,6 +324,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.patientStories.hero.titleLine2", label: "Title — line 2 (styled in gold italic)" },
       { key: "pages.patientStories.hero.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "patient-stories-hero", label: "Hero background image" }],
     sharedButtons: ["Contact Us", "View Results"],
   },
   {
@@ -341,6 +364,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.blog.hero.titleLine2", label: "Title — line 2 (styled in gold italic)" },
       { key: "pages.blog.hero.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "articles-hero", label: "Hero background image" }],
     sharedButtons: ["Contact Us", "View Results"],
   },
   {
@@ -361,6 +385,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.blog.cta.heading", label: "Heading" },
       { key: "pages.blog.cta.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "articles-cta", label: "CTA image" }],
   },
 
   // -------------------------------------------------------------- Videos
@@ -373,6 +398,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.videos.hero.titleLine2", label: "Title — line 2 (styled in gold gradient)" },
       { key: "pages.videos.hero.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "videos-hero", label: "Hero background image" }],
     sharedButtons: ["Contact Us"],
   },
   {
@@ -408,6 +434,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.faq.hero.title", label: "Title" },
       { key: "pages.faq.hero.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "faq-hero", label: "Hero background image" }],
     sharedButtons: ["Contact Us", "View Results"],
   },
   {
@@ -443,6 +470,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.contact.hero.capsule.email", label: "Floating capsule — “Email” label" },
       { key: "pages.contact.hero.capsule.directions", label: "Floating capsule — “Directions” label" },
     ],
+    images: [{ slug: "contact-hero", label: "Hero background image" }],
     sharedButtons: ["WhatsApp"],
   },
   {
@@ -453,6 +481,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.contact.formSection.heading", label: "Heading" },
       { key: "pages.contact.formSection.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "contact-form-portrait", label: "Form section portrait" }],
   },
   {
     id: "contact-location",
@@ -463,6 +492,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.contact.location.tagline", label: "Tagline" },
       { key: "pages.contact.location.imageAlt", label: "Location image description (for accessibility)" },
     ],
+    images: [{ slug: "contact-location", label: "Clinic location image" }],
   },
   {
     id: "contact-info-grid",
