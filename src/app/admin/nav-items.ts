@@ -36,7 +36,7 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/milestones", label: "Milestones carousel", hint: "Toggle “Featured on Home”" },
       { href: "/admin/why-choose-us", label: "Why Choose Us checklist" },
       { href: "/admin/videos", label: "Featured videos", hint: "First 3 videos by Display Order" },
-      { href: "/admin/page-images#home", label: "Page images", hint: "Hero & section background images" },
+      { href: "/admin/page-images/home", label: "Page images", hint: "Hero & section background images" },
     ],
   },
   {
@@ -55,7 +55,7 @@ export const adminNavGroups: AdminNavGroup[] = [
       },
       { href: "/admin/milestones", label: "Professional journey timeline", hint: "Toggle “Featured on About”" },
       { href: "/admin/videos", label: "Introduction video", hint: "The “meet-dr-ahmed” entry" },
-      { href: "/admin/page-images#about", label: "Page images", hint: "Hero & section background images" },
+      { href: "/admin/page-images/about", label: "Page images", hint: "Hero & section background images" },
     ],
   },
   {
@@ -67,7 +67,7 @@ export const adminNavGroups: AdminNavGroup[] = [
         hint: "Name, description, image, category, icon, overview, recovery, FAQ",
       },
       { href: "/admin/translations", label: "Hero & section text", hint: "Search keys starting with “pages.procedures.”" },
-      { href: "/admin/page-images#procedures", label: "Page images", hint: "Hero & CTA background images" },
+      { href: "/admin/page-images/procedures", label: "Page images", hint: "Hero & CTA background images" },
     ],
   },
   {
@@ -80,7 +80,7 @@ export const adminNavGroups: AdminNavGroup[] = [
       },
       { href: "/admin/testimonials", label: "Testimonials", hint: "Testimonials not featured on Home appear here" },
       { href: "/admin/translations", label: "Hero & section text", hint: "Search keys starting with “pages.beforeAfter.”" },
-      { href: "/admin/page-images#before-after", label: "Page images", hint: "Hero & CTA background images" },
+      { href: "/admin/page-images/before-after", label: "Page images", hint: "Hero & CTA background images" },
     ],
   },
   {
@@ -92,7 +92,7 @@ export const adminNavGroups: AdminNavGroup[] = [
         label: "Hero & section text",
         hint: "Search keys starting with “pages.patientStories.”",
       },
-      { href: "/admin/page-images#patient-stories", label: "Page images", hint: "Hero background image" },
+      { href: "/admin/page-images/patient-stories", label: "Page images", hint: "Hero background image" },
     ],
   },
   {
@@ -100,7 +100,7 @@ export const adminNavGroups: AdminNavGroup[] = [
     items: [
       { href: "/admin/videos", label: "All videos", hint: "Set Video Type = “Educational” to show here" },
       { href: "/admin/translations", label: "Hero & section text", hint: "Search keys starting with “pages.videos.”" },
-      { href: "/admin/page-images#videos", label: "Page images", hint: "Hero background image" },
+      { href: "/admin/page-images/videos", label: "Page images", hint: "Hero background image" },
     ],
   },
   {
@@ -108,7 +108,7 @@ export const adminNavGroups: AdminNavGroup[] = [
     items: [
       { href: "/admin/articles", label: "All articles", hint: "Toggle “Featured” for the hero article" },
       { href: "/admin/translations", label: "Hero & section text", hint: "Search keys starting with “pages.blog.”" },
-      { href: "/admin/page-images#articles", label: "Page images", hint: "Hero & CTA background images" },
+      { href: "/admin/page-images/articles", label: "Page images", hint: "Hero & CTA background images" },
     ],
   },
   {
@@ -116,7 +116,7 @@ export const adminNavGroups: AdminNavGroup[] = [
     items: [
       { href: "/admin/faq", label: "FAQ items" },
       { href: "/admin/translations", label: "Hero & section text", hint: "Search keys starting with “pages.faq.”" },
-      { href: "/admin/page-images#faq", label: "Page images", hint: "Hero background image" },
+      { href: "/admin/page-images/faq", label: "Page images", hint: "Hero background image" },
     ],
   },
   {
@@ -125,7 +125,7 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/contact-info", label: "Contact details", hint: "Phone, WhatsApp, email, address, hours, social" },
       { href: "/admin/procedures", label: "Procedure dropdown", hint: "Populates the contact form's procedure selector" },
       { href: "/admin/translations", label: "Hero & section text", hint: "Search keys starting with “pages.contact.”" },
-      { href: "/admin/page-images#contact", label: "Page images", hint: "Hero, portrait & location images" },
+      { href: "/admin/page-images/contact", label: "Page images", hint: "Hero, portrait & location images" },
     ],
   },
   {

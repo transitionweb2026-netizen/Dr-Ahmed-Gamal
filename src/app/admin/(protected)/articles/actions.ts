@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { bilingualFromForm } from "@/lib/admin/formHelpers";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
 
@@ -59,6 +60,7 @@ export async function createArticleAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/articles");
+  revalidatePublicSite();
   redirect("/admin/articles");
 }
 
@@ -77,6 +79,7 @@ export async function updateArticleAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/articles");
+  revalidatePublicSite();
   redirect("/admin/articles");
 }
 
@@ -86,4 +89,5 @@ export async function deleteArticleAction(id: string) {
 
   await supabase.from("articles").delete().eq("id", id);
   revalidatePath("/admin/articles");
+  revalidatePublicSite();
 }

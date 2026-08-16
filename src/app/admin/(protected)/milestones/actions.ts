@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { bilingualFromForm } from "@/lib/admin/formHelpers";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
 
@@ -57,6 +58,7 @@ export async function createMilestoneAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/milestones");
+  revalidatePublicSite();
   redirect("/admin/milestones");
 }
 
@@ -75,6 +77,7 @@ export async function updateMilestoneAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/milestones");
+  revalidatePublicSite();
   redirect("/admin/milestones");
 }
 
@@ -84,4 +87,5 @@ export async function deleteMilestoneAction(id: string) {
 
   await supabase.from("milestones").delete().eq("id", id);
   revalidatePath("/admin/milestones");
+  revalidatePublicSite();
 }

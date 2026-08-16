@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { bilingualFromForm } from "@/lib/admin/formHelpers";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
 
@@ -59,6 +60,7 @@ export async function createTestimonialAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/testimonials");
+  revalidatePublicSite();
   redirect("/admin/testimonials");
 }
 
@@ -77,6 +79,7 @@ export async function updateTestimonialAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/testimonials");
+  revalidatePublicSite();
   redirect("/admin/testimonials");
 }
 
@@ -86,4 +89,5 @@ export async function deleteTestimonialAction(id: string) {
 
   await supabase.from("testimonials").delete().eq("id", id);
   revalidatePath("/admin/testimonials");
+  revalidatePublicSite();
 }

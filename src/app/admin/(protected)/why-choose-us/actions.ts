@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { bilingualFromForm } from "@/lib/admin/formHelpers";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
 
@@ -49,6 +50,7 @@ export async function createChecklistItemAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/why-choose-us");
+  revalidatePublicSite();
   redirect("/admin/why-choose-us");
 }
 
@@ -67,6 +69,7 @@ export async function updateChecklistItemAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/why-choose-us");
+  revalidatePublicSite();
   redirect("/admin/why-choose-us");
 }
 
@@ -76,4 +79,5 @@ export async function deleteChecklistItemAction(id: string) {
 
   await supabase.from("checklist_items").delete().eq("id", id);
   revalidatePath("/admin/why-choose-us");
+  revalidatePublicSite();
 }

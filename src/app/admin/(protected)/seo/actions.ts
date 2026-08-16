@@ -4,6 +4,7 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { bilingualFromForm } from "@/lib/admin/formHelpers";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
 
@@ -45,5 +46,6 @@ export async function updateSeoMetadataAction(
 
   revalidatePath("/admin/seo");
   revalidatePath(`/admin/seo/${pageSlug}`);
+  revalidatePublicSite();
   return { ok: true };
 }

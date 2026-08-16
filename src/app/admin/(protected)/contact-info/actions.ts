@@ -4,6 +4,7 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { bilingualFromForm } from "@/lib/admin/formHelpers";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
 
@@ -83,5 +84,6 @@ export async function updateContactInfoAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/contact-info");
+  revalidatePublicSite();
   return { ok: true };
 }

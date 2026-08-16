@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { bilingualFromForm } from "@/lib/admin/formHelpers";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
 
@@ -75,6 +76,7 @@ export async function createProcedureAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/procedures");
+  revalidatePublicSite();
   redirect("/admin/procedures");
 }
 
@@ -93,6 +95,7 @@ export async function updateProcedureAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/procedures");
+  revalidatePublicSite();
   redirect("/admin/procedures");
 }
 
@@ -102,4 +105,5 @@ export async function deleteProcedureAction(id: string) {
 
   await supabase.from("procedures").delete().eq("id", id);
   revalidatePath("/admin/procedures");
+  revalidatePublicSite();
 }

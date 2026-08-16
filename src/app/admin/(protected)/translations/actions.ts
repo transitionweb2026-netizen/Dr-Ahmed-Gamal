@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const translationSchema = z.object({
   value_en: z.string().min(1, "Required"),
@@ -36,5 +37,6 @@ export async function updateTranslationAction(
 
   revalidatePath("/admin/translations");
   revalidatePath(`/admin/translations/${encodeURIComponent(key)}`);
+  revalidatePublicSite();
   return { ok: true };
 }

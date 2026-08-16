@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { bilingualFromForm } from "@/lib/admin/formHelpers";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
 
@@ -49,6 +50,7 @@ export async function createFaqItemAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/faq");
+  revalidatePublicSite();
   redirect("/admin/faq");
 }
 
@@ -67,6 +69,7 @@ export async function updateFaqItemAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/faq");
+  revalidatePublicSite();
   redirect("/admin/faq");
 }
 
@@ -76,4 +79,5 @@ export async function deleteFaqItemAction(id: string) {
 
   await supabase.from("faq_items").delete().eq("id", id);
   revalidatePath("/admin/faq");
+  revalidatePublicSite();
 }

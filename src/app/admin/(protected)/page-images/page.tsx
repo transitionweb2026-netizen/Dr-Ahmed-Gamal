@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
-
-function pageAnchor(page: string) {
-  return page.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-}
+import { pageSlugify } from "./pageSlugify";
 
 interface PageImageRow {
   slug: string;
@@ -28,7 +25,7 @@ export default async function AdminPageImagesPage() {
     <div>
       <h1 className="text-xl font-semibold text-slate-900">Page Images</h1>
       <p className="mt-1 text-sm text-slate-500">
-        Hero and section background images, grouped by the page they appear on.
+        Hero and section background images, one form per page — edit and save all of a page&apos;s images together.
       </p>
 
       {groups.size === 0 && (
@@ -39,31 +36,29 @@ export default async function AdminPageImagesPage() {
         </p>
       )}
 
-      <div className="mt-6 flex flex-col gap-8">
+      <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from(groups.entries()).map(([page, items]) => (
-          <section key={page} id={pageAnchor(page)}>
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{page}</h2>
-            <div className="mt-3 overflow-hidden rounded-lg border border-slate-200 bg-white">
-              <table className="w-full text-start text-sm">
-                <tbody className="divide-y divide-slate-100">
-                  {items?.map((row) => (
-                    <tr key={row.slug}>
-                      <td className="w-20 px-4 py-3">
-                        {/* eslint-disable-next-line @next/next/no-img-element -- admin-only thumbnail of an arbitrary external URL */}
-                        <img src={row.url} alt="" className="h-12 w-12 rounded-md border border-slate-200 object-cover" />
-                      </td>
-                      <td className="px-4 py-3 font-medium text-slate-900">{row.label}</td>
-                      <td className="px-4 py-3 text-end">
-                        <Link href={`/admin/page-images/${row.slug}`} className="text-slate-600 hover:text-slate-900">
-                          Edit
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          <Link
+            key={page}
+            href={`/admin/page-images/${pageSlugify(page)}`}
+            className="rounded-lg border border-slate-200 bg-white p-4 transition-colors hover:border-slate-300 hover:bg-slate-50"
+          >
+            <p className="text-sm font-medium text-slate-700">{page}</p>
+            <p className="mt-1 text-xs text-slate-400">
+              {items.length} image{items.length === 1 ? "" : "s"}
+            </p>
+            <div className="mt-3 flex gap-2">
+              {items.slice(0, 4).map((item) => (
+                // eslint-disable-next-line @next/next/no-img-element -- admin-only thumbnail of an arbitrary external URL
+                <img
+                  key={item.slug}
+                  src={item.url}
+                  alt=""
+                  className="h-10 w-10 rounded border border-slate-200 object-cover"
+                />
+              ))}
             </div>
-          </section>
+          </Link>
         ))}
       </div>
     </div>

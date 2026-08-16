@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
+import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const siteSettingsSchema = z.object({
   name: z.string().min(1, "Required"),
@@ -33,5 +34,6 @@ export async function updateSiteSettingsAction(
   if (error) return { ok: false, error: error.message };
 
   revalidatePath("/admin/site-settings");
+  revalidatePublicSite();
   return { ok: true };
 }
