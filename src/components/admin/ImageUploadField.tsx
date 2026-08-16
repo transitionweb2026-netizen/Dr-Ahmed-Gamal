@@ -56,28 +56,29 @@ export function ImageUploadField({ label, name, defaultValue, required }: ImageU
         {required && <span className="text-red-500"> *</span>}
       </label>
 
-      <div className="mt-1 flex items-start gap-3">
+      <div className="mt-1 space-y-3">
         {url && (
           // eslint-disable-next-line @next/next/no-img-element -- admin-only preview of an arbitrary external/uploaded URL
-          <img src={url} alt="" className="h-20 w-20 shrink-0 rounded-md border border-slate-200 object-cover" />
+          <img src={url} alt="" className="h-40 w-full max-w-xs rounded-md border border-slate-200 object-cover" />
         )}
-        <div className="flex-1 space-y-2">
-          <input
-            id={id}
-            name={name}
-            type="url"
-            required={required}
-            value={url}
-            onChange={(event) => setUrl(event.target.value)}
-            placeholder="https://…"
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500"
-          />
-          <div className="flex items-center gap-2">
+        <input
+          id={id}
+          name={name}
+          type="url"
+          required={required}
+          value={url}
+          onChange={(event) => setUrl(event.target.value)}
+          placeholder="https://…"
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500"
+        />
+        <div>
+          <label className="block text-xs font-medium text-slate-500">Or upload a new image</label>
+          <div className="mt-1 flex items-center gap-2">
             <input type="file" accept="image/*" onChange={handleFileChange} className="text-xs text-slate-500" />
             {uploading && <span className="text-xs text-slate-400">Uploading…</span>}
           </div>
-          {error && <p className="text-xs text-red-600">{error}</p>}
         </div>
+        {error && <p className="text-xs text-red-600">{error}</p>}
       </div>
     </div>
   );
