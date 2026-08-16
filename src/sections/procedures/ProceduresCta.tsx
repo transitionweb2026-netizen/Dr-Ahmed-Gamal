@@ -8,9 +8,6 @@ import { Icon } from "@/components/Icon";
 import type { getContactInfo } from "@/services/contactInfo";
 import { cn } from "@/utils/cn";
 
-const SILHOUETTE_IMAGE =
-  "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1000";
-
 /**
  * Restores the legacy mockup's "liquid glass" consultation-gateway panel:
  * the .liquid-glass-cta card treatment (see globals.css), the rounded-xl
@@ -22,12 +19,13 @@ const SILHOUETTE_IMAGE =
  */
 interface ProceduresCtaProps {
   contactInfo: Awaited<ReturnType<typeof getContactInfo>>;
+  shortName: string;
+  image: string;
 }
 
-export function ProceduresCta({ contactInfo }: ProceduresCtaProps) {
+export function ProceduresCta({ contactInfo, shortName, image }: ProceduresCtaProps) {
   const t = useTranslations("pages.procedures.cta");
   const cta = useTranslations("cta");
-  const siteT = useTranslations("site");
   const reduceMotion = useReducedMotion();
 
   const floatAnimation = (offset: number, duration: number, delay: number) =>
@@ -104,7 +102,7 @@ export function ProceduresCta({ contactInfo }: ProceduresCtaProps) {
             {/* Right 3D composition — decorative only */}
             <div aria-hidden="true" className="relative hidden overflow-hidden lg:block lg:h-[400px]">
               <Image
-                src={SILHOUETTE_IMAGE}
+                src={image}
                 alt=""
                 fill
                 className="object-cover opacity-10 mix-blend-luminosity"
@@ -170,7 +168,7 @@ export function ProceduresCta({ contactInfo }: ProceduresCtaProps) {
                       <p className="mb-1 text-xs font-bold uppercase tracking-wider text-brand-gold">
                         {t("eyebrow")}
                       </p>
-                      <p className="font-serif text-sm text-white">{siteT("shortName")}</p>
+                      <p className="font-serif text-sm text-white">{shortName}</p>
                     </div>
                   </motion.div>
 

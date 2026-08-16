@@ -3,17 +3,6 @@ import { getMilestones } from "@/services/milestones";
 import { cn } from "@/utils/cn";
 import type { Milestone } from "@/types/content";
 
-// About.html's "Professional Journey" timeline is its own dated 4-item
-// subset of the canonical 9-item milestone pool (Home's carousel uses a
-// different 8-item subset) — filtered and ordered explicitly here rather
-// than in src/content/milestones.ts itself.
-const JOURNEY_MILESTONE_IDS = [
-  "medical-degree",
-  "board-certification",
-  "international-fellowship",
-  "private-practice-founded",
-] as const;
-
 function MilestoneCard({
   milestone,
   locale,
@@ -41,9 +30,11 @@ export async function JourneyTimeline() {
   const t = await getTranslations("pages.about.timeline");
   const milestones = await getMilestones();
 
-  const journeyMilestones = JOURNEY_MILESTONE_IDS.map((id) =>
-    milestones.find((milestone) => milestone.id === id),
-  ).filter((milestone): milestone is Milestone => Boolean(milestone));
+  // CMS-controlled per milestone ("Featured on About" checkbox, admin:
+  // /admin/milestones), already in chronological order via order_index —
+  // Home's carousel uses its own "Featured on Home" checkbox, see
+  // src/sections/home/MilestonesCarousel.tsx.
+  const journeyMilestones = milestones.filter((milestone) => milestone.featuredOnAbout);
 
   return (
     <section className="relative overflow-hidden border-t border-brand-gold/10 bg-brand-dark py-24">

@@ -23,6 +23,7 @@ export async function getBeforeAfterCases(): Promise<BeforeAfterCase[]> {
       beforeImage: row.before_image,
       afterImage: row.after_image,
       featuredOnHome: row.featured_on_home,
+      showInCategoryGallery: row.show_in_category_gallery,
     }),
   );
 }

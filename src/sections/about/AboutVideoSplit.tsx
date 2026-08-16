@@ -12,7 +12,7 @@ export function AboutVideoSplit({ videos }: { videos: Video[] }) {
   const [videoOpen, setVideoOpen] = useState(false);
   const t = useTranslations("pages.about.video");
   const cta = useTranslations("cta");
-  const introVideo = videos.find((v) => v.id === "meet-dr-ahmed")!;
+  const introVideo = videos.find((v) => v.id === "meet-dr-ahmed") ?? videos[0];
 
   return (
     <section className="relative border-y border-brand-gold/10 bg-brand-dark py-24">

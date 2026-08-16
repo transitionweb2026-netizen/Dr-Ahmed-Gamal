@@ -10,6 +10,7 @@ import { ContactInfoGrid } from "@/sections/contact/ContactInfoGrid";
 import { ContactClosingCta } from "@/sections/contact/ContactClosingCta";
 import { getProcedures } from "@/services/procedures";
 import { getSeoMetadata } from "@/services/seoMetadata";
+import { getPageImages } from "@/services/pageImages";
 
 export async function generateMetadata({
   params,
@@ -39,13 +40,13 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const procedures = await getProcedures();
+  const [procedures, images] = await Promise.all([getProcedures(), getPageImages()]);
 
   return (
     <main>
-      <ContactHero />
-      <ContactFormSection procedures={procedures} />
-      <LocationBlock />
+      <ContactHero image={images["contact-hero"]} />
+      <ContactFormSection procedures={procedures} image={images["contact-form-portrait"]} />
+      <LocationBlock image={images["contact-location"]} />
       <ContactInfoGrid />
       <ContactClosingCta />
     </main>

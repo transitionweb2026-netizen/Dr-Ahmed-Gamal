@@ -3,14 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { CTAButton } from "@/components/CTAButton";
 import { getContactInfo } from "@/services/contactInfo";
 
-// Legacy's "Transformation Mirror" CTA pairs the eyebrow/heading/buttons with
-// a circular-cropped doctor portrait — reusing the same placeholder portrait
-// used on the About page's PersonalMessage section rather than introducing a
-// new image asset.
-const PORTRAIT_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A";
-
-export async function BeforeAfterCta() {
+export async function BeforeAfterCta({ image }: { image: string }) {
   const t = await getTranslations("pages.beforeAfter.cta");
   const about = await getTranslations("pages.about.message");
   const cta = await getTranslations("cta");
@@ -23,7 +16,7 @@ export async function BeforeAfterCta() {
           <div className="flex justify-center md:w-1/2">
             <div className="relative h-80 w-64 overflow-hidden rounded-full border border-brand-gold/50 shadow-[0_0_40px_rgba(212,175,55,0.25)]">
               <Image
-                src={PORTRAIT_IMAGE}
+                src={image}
                 alt={about("signature")}
                 fill
                 className="object-cover"

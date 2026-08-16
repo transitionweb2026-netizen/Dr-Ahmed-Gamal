@@ -9,6 +9,7 @@ import { BeforeAfterTestimonials } from "@/sections/before-after/BeforeAfterTest
 import { BeforeAfterCta } from "@/sections/before-after/BeforeAfterCta";
 import { getBeforeAfterCases } from "@/services/beforeAfterCases";
 import { getSeoMetadata } from "@/services/seoMetadata";
+import { getPageImages } from "@/services/pageImages";
 
 export async function generateMetadata({
   params,
@@ -38,14 +39,14 @@ export default async function BeforeAfterPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const cases = await getBeforeAfterCases();
+  const [cases, images] = await Promise.all([getBeforeAfterCases(), getPageImages()]);
 
   return (
     <main>
-      <BeforeAfterHero />
+      <BeforeAfterHero image={images["before-after-hero"]} />
       <CategoryGalleries cases={cases} />
       <BeforeAfterTestimonials />
-      <BeforeAfterCta />
+      <BeforeAfterCta image={images["before-after-cta"]} />
     </main>
   );
 }

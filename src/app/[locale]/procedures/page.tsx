@@ -9,6 +9,8 @@ import { ProceduresCta } from "@/sections/procedures/ProceduresCta";
 import { getProcedures } from "@/services/procedures";
 import { getContactInfo } from "@/services/contactInfo";
 import { getSeoMetadata } from "@/services/seoMetadata";
+import { getSiteSettings } from "@/services/siteSettings";
+import { getPageImages } from "@/services/pageImages";
 
 export async function generateMetadata({
   params,
@@ -39,14 +41,18 @@ export default async function ProceduresPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const procedures = await getProcedures();
-  const contactInfo = await getContactInfo();
+  const [procedures, contactInfo, siteSettings, images] = await Promise.all([
+    getProcedures(),
+    getContactInfo(),
+    getSiteSettings(),
+    getPageImages(),
+  ]);
 
   return (
     <main>
-      <ProceduresHero />
+      <ProceduresHero image={images["procedures-hero"]} />
       <ProceduresGrid procedures={procedures} />
-      <ProceduresCta contactInfo={contactInfo} />
+      <ProceduresCta contactInfo={contactInfo} shortName={siteSettings.shortName} image={images["procedures-cta"]} />
     </main>
   );
 }

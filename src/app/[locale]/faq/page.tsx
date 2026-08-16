@@ -7,6 +7,7 @@ import { buildFaqPageSchema } from "@/lib/jsonld";
 import { JsonLd } from "@/components/JsonLd";
 import { getFaqItems } from "@/services/faqItems";
 import { getSeoMetadata } from "@/services/seoMetadata";
+import { getPageImages } from "@/services/pageImages";
 import { FaqHero } from "@/sections/faq/FaqHero";
 import { FaqList } from "@/sections/faq/FaqList";
 import { FaqCta } from "@/sections/faq/FaqCta";
@@ -39,12 +40,12 @@ export default async function FaqPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const faqItems = await getFaqItems();
+  const [faqItems, images] = await Promise.all([getFaqItems(), getPageImages()]);
 
   return (
     <main>
       <JsonLd data={buildFaqPageSchema(faqItems, locale as "en" | "ar")} />
-      <FaqHero />
+      <FaqHero image={images["faq-hero"]} />
       <FaqList />
       <FaqCta />
     </main>

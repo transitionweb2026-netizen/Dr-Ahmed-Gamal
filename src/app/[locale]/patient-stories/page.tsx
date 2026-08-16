@@ -9,6 +9,7 @@ import { StoriesGrid } from "@/sections/patient-stories/StoriesGrid";
 import { StoriesCta } from "@/sections/patient-stories/StoriesCta";
 import { getVideos } from "@/services/videos";
 import { getSeoMetadata } from "@/services/seoMetadata";
+import { getPageImages } from "@/services/pageImages";
 
 export async function generateMetadata({
   params,
@@ -38,11 +39,11 @@ export default async function PatientStoriesPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const videos = await getVideos();
+  const [videos, images] = await Promise.all([getVideos(), getPageImages()]);
 
   return (
     <main>
-      <PatientStoriesHero />
+      <PatientStoriesHero image={images["patient-stories-hero"]} />
       <StoriesIntro />
       <StoriesGrid videos={videos} />
       <StoriesCta />

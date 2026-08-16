@@ -38,6 +38,7 @@ export interface BeforeAfterCase {
   beforeImage: string;
   afterImage: string;
   featuredOnHome?: boolean;
+  showInCategoryGallery?: boolean;
 }
 
 export interface Testimonial {
@@ -46,6 +47,7 @@ export interface Testimonial {
   quote: Bilingual;
   rating: number;
   procedureSlug?: string;
+  procedureName?: Bilingual;
   featuredOnHome?: boolean;
 }
 
@@ -55,6 +57,8 @@ export interface Milestone {
   title: Bilingual;
   description: Bilingual;
   icon: IconName;
+  featuredOnHome?: boolean;
+  featuredOnAbout?: boolean;
 }
 
 export interface Article {
@@ -69,6 +73,8 @@ export interface Article {
   featured?: boolean;
 }
 
+export type VideoType = "educational" | "patient_story";
+
 export interface Video {
   id: string;
   title: Bilingual;
@@ -77,6 +83,7 @@ export interface Video {
   youtubeId?: string;
   vimeoId?: string;
   aspect?: "9:16" | "16:9";
+  videoType?: VideoType;
 }
 
 export interface FaqItem {
@@ -90,6 +97,8 @@ export interface Stat {
   value: string;
   label: Bilingual;
   icon: IconName;
+  featuredOnHome?: boolean;
+  featuredOnAbout?: boolean;
 }
 
 export interface ChecklistItem {

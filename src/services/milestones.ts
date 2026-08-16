@@ -21,6 +21,8 @@ export async function getMilestones(): Promise<Milestone[]> {
       title: row.title,
       description: row.description,
       icon: row.icon,
+      featuredOnHome: row.featured_on_home,
+      featuredOnAbout: row.featured_on_about,
     }),
   );
 }

@@ -3,10 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { ContactForm } from "@/sections/contact/ContactForm";
 import type { Procedure } from "@/types/content";
 
-const PORTRAIT_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A";
-
-export async function ContactFormSection({ procedures }: { procedures: Procedure[] }) {
+export async function ContactFormSection({ procedures, image }: { procedures: Procedure[]; image: string }) {
   const t = await getTranslations("pages.contact.formSection");
 
   return (
@@ -25,7 +22,7 @@ export async function ContactFormSection({ procedures }: { procedures: Procedure
 
           <div className="gold-glass-card relative hidden h-[500px] w-full overflow-hidden rounded-xl lg:block">
             <Image
-              src={PORTRAIT_IMAGE}
+              src={image}
               alt=""
               fill
               className="object-cover"

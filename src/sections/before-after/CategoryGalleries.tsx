@@ -25,7 +25,7 @@ export function CategoryGalleries({ cases: beforeAfterCases }: { cases: BeforeAf
         <div className="space-y-20">
           {CATEGORIES.map((category) => {
             const cases = beforeAfterCases.filter(
-              (c) => c.category === category && c.id.startsWith("gallery-"),
+              (c) => c.category === category && c.showInCategoryGallery,
             );
 
             return (

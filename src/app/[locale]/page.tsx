@@ -17,6 +17,8 @@ import { getProcedures } from "@/services/procedures";
 import { getVideos } from "@/services/videos";
 import { getBeforeAfterCases } from "@/services/beforeAfterCases";
 import { getSeoMetadata } from "@/services/seoMetadata";
+import { getSiteSettings } from "@/services/siteSettings";
+import { getPageImages } from "@/services/pageImages";
 
 export async function generateMetadata({
   params,
@@ -25,8 +27,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
-  const [site, hero, seo] = await Promise.all([
-    getTranslations({ locale, namespace: "site" }),
+  const [siteSettings, hero, seo] = await Promise.all([
+    getSiteSettings(),
     getTranslations({ locale, namespace: "pages.home.hero" }),
     getSeoMetadata("home"),
   ]);
@@ -34,7 +36,7 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: "/",
-    title: seo?.metaTitle[locale] || site("name"),
+    title: seo?.metaTitle[locale] || siteSettings.name,
     description: seo?.metaDescription[locale] || hero("paragraph"),
     image: seo?.ogImage ?? undefined,
   });
@@ -48,23 +50,24 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const [procedures, videos, beforeAfterCases] = await Promise.all([
+  const [procedures, videos, beforeAfterCases, images] = await Promise.all([
     getProcedures(),
     getVideos(),
     getBeforeAfterCases(),
+    getPageImages(),
   ]);
 
   return (
     <main>
-      <HomeHero />
-      <AboutDoctorSplit videos={videos} />
+      <HomeHero image={images["home-hero"]} />
+      <AboutDoctorSplit videos={videos} image={images["home-about"]} />
       <AchievementStrip />
-      <FeaturedProcedures procedures={procedures} />
+      <FeaturedProcedures procedures={procedures} image={images["home-specialties"]} />
       <BeforeAfterPreview cases={beforeAfterCases} />
       <TestimonialsPreview />
       <MilestonesCarousel />
-      <WhyChooseUs />
-      <FeaturedVideos videos={videos} />
+      <WhyChooseUs image={images["home-why-choose-us"]} />
+      <FeaturedVideos videos={videos} image={images["home-videos"]} />
       <FinalCta />
     </main>
   );

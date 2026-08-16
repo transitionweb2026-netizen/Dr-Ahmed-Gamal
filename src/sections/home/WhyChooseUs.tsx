@@ -4,10 +4,7 @@ import { Icon } from "@/components/Icon";
 import { SectionKicker } from "@/components/SectionKicker";
 import { getWhyChooseUs } from "@/services/whyChooseUs";
 
-const SECTION_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAR43twscyrMv2G1Bf4MA9DLstqAnDaGnCOeoSFWtcL9ZBdILxqxp_dOsyQKHWSMAz9R03-S7QczfNxnHLvhRpCZesSw_rr8DmxlX_Sm6pvnh9XQ8jCLgukp1-sX2LKXY0D2TEQSm4W1mo03xulzf4_eGOeN_QIfQQZwy4tiHp0NzoaTL7dgwaXPOTnBn6tEyrS4X0O2RaiC-6g8lDGIi06y0Adf0iV-o9RC2mjlkAkaIS_H4u88VltsA";
-
-export async function WhyChooseUs() {
+export async function WhyChooseUs({ image }: { image: string }) {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.home.whyChooseUs");
   const whyChooseUs = await getWhyChooseUs();
@@ -24,7 +21,7 @@ export async function WhyChooseUs() {
             <div className="absolute -inset-1 rounded-2xl bg-brand-gold/20 opacity-30 blur transition duration-1000 group-hover:opacity-50" />
             <div className="relative aspect-[4/5] w-full transform overflow-hidden rounded-2xl border border-brand-gold/30 shadow-2xl shadow-black/80 transition-transform duration-700 group-hover:scale-[1.02]">
               <Image
-                src={SECTION_IMAGE}
+                src={image}
                 alt=""
                 fill
                 className="object-cover"

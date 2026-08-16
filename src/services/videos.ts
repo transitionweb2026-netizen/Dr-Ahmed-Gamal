@@ -19,6 +19,7 @@ export async function getVideos(): Promise<Video[]> {
       youtubeId: row.youtube_id ?? undefined,
       vimeoId: row.vimeo_id ?? undefined,
       aspect: row.aspect,
+      videoType: row.video_type,
     }),
   );
 }

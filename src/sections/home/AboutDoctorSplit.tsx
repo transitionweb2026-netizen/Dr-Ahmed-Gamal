@@ -8,19 +8,16 @@ import { VideoModal } from "@/components/VideoModal";
 import { Icon } from "@/components/Icon";
 import type { Video } from "@/types/content";
 
-const SECTION_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBuAAUmUYG5XKxUXhZPyCNb-QSxjsXwJzLMhOKkgPFYrb98sTxfjqdeA_laU20oROd_TmKHhmeCE0aSNPJRC4kVoxzW5km73cIgz-Sfr-1oam0e78jWFk3JsD2E2nVRKsS-oYcJbZntRruP4bJ-wgCVC4Qb0fFF8Q-3FFI87sGWbem9ysuhUwIUmnpJfc14xUEqgmAnMN_OfnVXgxx7dayXtJEAXJhJZncwViVsIQ1kuo7pxMkkElCCydeB_sNrTq1wRLI";
-
-export function AboutDoctorSplit({ videos }: { videos: Video[] }) {
+export function AboutDoctorSplit({ videos, image }: { videos: Video[]; image: string }) {
   const [videoOpen, setVideoOpen] = useState(false);
   const t = useTranslations("pages.home.about");
   const cta = useTranslations("cta");
-  const introVideo = videos.find((v) => v.id === "meet-dr-ahmed")!;
+  const introVideo = videos.find((v) => v.id === "meet-dr-ahmed") ?? videos[0];
 
   return (
     <section className="relative py-24">
       <div className="absolute inset-0 z-0">
-        <Image src={SECTION_IMAGE} alt="" fill className="object-cover" sizes="100vw" />
+        <Image src={image} alt="" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(26, 18, 11, 0.7)" }} />
       </div>
 

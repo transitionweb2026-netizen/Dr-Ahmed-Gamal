@@ -37,9 +37,16 @@ export async function TestimonialsPreview() {
                     >
                       <Icon name="person" className="h-7 w-7" />
                     </span>
-                    <figcaption className="font-serif text-lg tracking-wider text-brand-light">
-                      {testimonial.name}
-                    </figcaption>
+                    <div>
+                      <figcaption className="font-serif text-lg tracking-wider text-brand-light">
+                        {testimonial.name}
+                      </figcaption>
+                      {testimonial.procedureName && (
+                        <p className="text-xs uppercase tracking-wide text-brand-gold/60">
+                          {testimonial.procedureName[locale]}
+                        </p>
+                      )}
+                    </div>
                   </div>
                   <StarRating rating={testimonial.rating} />
                 </div>

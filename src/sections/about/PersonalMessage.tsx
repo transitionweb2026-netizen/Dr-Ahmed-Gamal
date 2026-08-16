@@ -1,10 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
-const PORTRAIT_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuDOODoWObUH7MnELpTvoPb3O4NdeEoZ3oKMZlqC0uC6ycIDSqbeJQIQtxcvc55I3Y9KmgVoeTNR15eRIFvMXufvIZ4AeyjkLVninKL4CMDRMdvjxg_FU_HEHAOZoIde0o2abYKGDiJVL6VBUNlfG9UYcx3IFzFzyTuPtYXzzW_r8iWcyj2gtzEfX_YopLWqVOSUvIFxl3S3HffazB543kPiIQIAJ2gCOPNXslByKx1SRjFz9oQMwimQ4A";
-
-export async function PersonalMessage() {
+export async function PersonalMessage({ image }: { image: string }) {
   const t = await getTranslations("pages.about.message");
 
   return (
@@ -22,7 +19,7 @@ export async function PersonalMessage() {
             <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-brand-gold/20 to-brand-darker opacity-40 blur-lg transition duration-1000 group-hover:opacity-60" />
             <div className="relative aspect-[3/4] h-full overflow-hidden rounded-2xl border border-brand-gold/30 shadow-2xl">
               <Image
-                src={PORTRAIT_IMAGE}
+                src={image}
                 alt={t("signature")}
                 fill
                 className="object-cover"

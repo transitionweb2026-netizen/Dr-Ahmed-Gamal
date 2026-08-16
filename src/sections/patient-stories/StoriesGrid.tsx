@@ -8,7 +8,7 @@ import { Icon } from "@/components/Icon";
 import type { Video } from "@/types/content";
 
 export function StoriesGrid({ videos }: { videos: Video[] }) {
-  const stories = videos.filter((v) => v.category.en === "Patient Story");
+  const stories = videos.filter((v) => v.videoType === "patient_story");
   const [selected, setSelected] = useState<Video | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("common");

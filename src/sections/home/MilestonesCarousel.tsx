@@ -8,9 +8,10 @@ export async function MilestonesCarousel() {
   const t = await getTranslations("pages.home.milestones");
   const milestones = await getMilestones();
 
-  // Home.html's carousel shows 8 category cards with no year — it omits
-  // "Private Practice Founded" (2012), which is About.html-timeline-specific.
-  const homeMilestones = milestones.filter((m) => m.id !== "private-practice-founded");
+  // CMS-controlled per milestone ("Featured on Home" checkbox, admin:
+  // /admin/milestones) — About's timeline uses its own "Featured on About"
+  // checkbox, see src/sections/about/JourneyTimeline.tsx.
+  const homeMilestones = milestones.filter((m) => m.featuredOnHome);
 
   return (
     <section

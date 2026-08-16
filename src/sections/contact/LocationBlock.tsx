@@ -3,12 +3,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Icon } from "@/components/Icon";
 import { getContactInfo } from "@/services/contactInfo";
 
-// Reused from the "A Tour of Our Elite Clinic" thumbnail in src/content/videos.ts
-// (THUMB_CLINIC) — the existing placeholder that reads as a clinic building shot.
-const CLINIC_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuB4iLCApbgxorz0O9XzZAaEllbJ5NWmQaI2XAB5XDFX05_1Efd5Ir1HCBxPH1eA-5VY0PJkyy29dnl5ZJxHJabaYp068eNu-TuEMVXcbUivqRYma7Fp4fPJ5CrClYSUFVLk_lJjZvtezIqKavSNPv9JYdpc-97HX8jWraWUNgvOurl2hMh6KmOce_B-aZBNmNc7_-ljBeHMVYaqFaCbSJElAfyC7oWwZJ4mH_r_eBYIEstKIFwW7AA5BQ";
-
-export async function LocationBlock() {
+export async function LocationBlock({ image }: { image: string }) {
   const locale = (await getLocale()) as "en" | "ar";
   const t = await getTranslations("pages.contact.location");
   const cta = await getTranslations("cta");
@@ -20,7 +15,7 @@ export async function LocationBlock() {
         <div className="gold-glass-card grid grid-cols-1 overflow-hidden rounded-2xl md:grid-cols-2">
           <div className="relative h-64 md:h-auto">
             <Image
-              src={CLINIC_IMAGE}
+              src={image}
               alt={t("imageAlt")}
               fill
               className="object-cover object-top"

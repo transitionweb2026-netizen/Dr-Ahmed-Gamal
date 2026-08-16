@@ -92,6 +92,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-face-rhinoplasty",
     category: "face",
+    showInCategoryGallery: true,
     beforeImage: F1_BEFORE,
     afterImage: F1_AFTER,
     title: { en: "Rhinoplasty", ar: "تجميل الأنف" },
@@ -103,6 +104,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-face-facelift",
     category: "face",
+    showInCategoryGallery: true,
     beforeImage: F2_BEFORE,
     afterImage: F2_AFTER,
     title: { en: "Facelift", ar: "شد الوجه" },
@@ -114,6 +116,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-face-jawline",
     category: "face",
+    showInCategoryGallery: true,
     beforeImage: F3_BEFORE,
     afterImage: F3_AFTER,
     title: { en: "Jawline", ar: "خط الفك" },
@@ -125,6 +128,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-face-blepharoplasty",
     category: "face",
+    showInCategoryGallery: true,
     beforeImage: F4_BEFORE,
     afterImage: F4_AFTER,
     title: { en: "Blepharoplasty", ar: "جراحة الجفون" },
@@ -136,6 +140,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-face-brow-lift",
     category: "face",
+    showInCategoryGallery: true,
     beforeImage: F5_BEFORE,
     afterImage: F5_AFTER,
     title: { en: "Brow Lift", ar: "شد الحاجب" },
@@ -147,6 +152,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-face-neck-contouring",
     category: "face",
+    showInCategoryGallery: true,
     beforeImage: F6_BEFORE,
     afterImage: F6_AFTER,
     title: { en: "Neck Contouring", ar: "نحت الرقبة" },
@@ -160,6 +166,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-body-liposuction",
     category: "body",
+    showInCategoryGallery: true,
     beforeImage: B1_BEFORE,
     afterImage: B1_AFTER,
     title: { en: "Liposuction", ar: "شفط الدهون" },
@@ -171,6 +178,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-body-tummy-tuck",
     category: "body",
+    showInCategoryGallery: true,
     beforeImage: B2_BEFORE,
     afterImage: B2_AFTER,
     title: { en: "Tummy Tuck", ar: "شد البطن" },
@@ -182,6 +190,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-body-mommy-makeover",
     category: "body",
+    showInCategoryGallery: true,
     beforeImage: B1_BEFORE,
     afterImage: B1_AFTER,
     title: { en: "Mommy Makeover", ar: "تجديد ما بعد الولادة" },
@@ -193,6 +202,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-body-thigh-lift",
     category: "body",
+    showInCategoryGallery: true,
     beforeImage: B2_BEFORE,
     afterImage: B2_AFTER,
     title: { en: "Thigh Lift", ar: "شد الفخذين" },
@@ -204,6 +214,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-body-arm-lift",
     category: "body",
+    showInCategoryGallery: true,
     beforeImage: B1_BEFORE,
     afterImage: B1_AFTER,
     title: { en: "Arm Lift", ar: "شد الذراعين" },
@@ -215,6 +226,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-body-bbl",
     category: "body",
+    showInCategoryGallery: true,
     beforeImage: B2_BEFORE,
     afterImage: B2_AFTER,
     title: { en: "BBL", ar: "شفط ونقل الدهون" },
@@ -228,6 +240,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-breast-augmentation",
     category: "breast",
+    showInCategoryGallery: true,
     beforeImage: R1_BEFORE,
     afterImage: R1_AFTER,
     title: { en: "Augmentation", ar: "تكبير الثدي" },
@@ -239,6 +252,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-breast-reduction",
     category: "breast",
+    showInCategoryGallery: true,
     beforeImage: R1_BEFORE,
     afterImage: R1_AFTER,
     title: { en: "Reduction", ar: "تصغير الثدي" },
@@ -250,6 +264,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-breast-mastopexy",
     category: "breast",
+    showInCategoryGallery: true,
     beforeImage: R1_BEFORE,
     afterImage: R1_AFTER,
     title: { en: "Mastopexy", ar: "شد الثدي" },
@@ -261,6 +276,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-breast-implant-exchange",
     category: "breast",
+    showInCategoryGallery: true,
     beforeImage: R1_BEFORE,
     afterImage: R1_AFTER,
     title: { en: "Implant Exchange", ar: "استبدال الحشوات" },
@@ -272,6 +288,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-breast-fat-transfer",
     category: "breast",
+    showInCategoryGallery: true,
     beforeImage: R1_BEFORE,
     afterImage: R1_AFTER,
     title: { en: "Fat Transfer", ar: "نقل الدهون" },
@@ -283,6 +300,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   {
     id: "gallery-breast-combined",
     category: "breast",
+    showInCategoryGallery: true,
     beforeImage: R1_BEFORE,
     afterImage: R1_AFTER,
     title: { en: "Combined", ar: "إجراء مركب" },

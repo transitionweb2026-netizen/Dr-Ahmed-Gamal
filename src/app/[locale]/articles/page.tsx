@@ -8,6 +8,7 @@ import { FeaturedArticle } from "@/sections/blog/FeaturedArticle";
 import { ArticleGrid } from "@/sections/blog/ArticleGrid";
 import { BlogCta } from "@/sections/blog/BlogCta";
 import { getSeoMetadata } from "@/services/seoMetadata";
+import { getPageImages } from "@/services/pageImages";
 
 export async function generateMetadata({
   params,
@@ -37,13 +38,14 @@ export default async function ArticlesPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const images = await getPageImages();
 
   return (
     <main>
-      <BlogHero />
+      <BlogHero image={images["articles-hero"]} />
       <FeaturedArticle />
       <ArticleGrid />
-      <BlogCta />
+      <BlogCta image={images["articles-cta"]} />
     </main>
   );
 }

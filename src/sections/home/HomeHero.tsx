@@ -3,10 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { CTAButton } from "@/components/CTAButton";
 import { HeroFloatingContact } from "@/components/HeroFloatingContact";
 
-const HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida/AP1WRLsKTDbZxHRsaT25USZB8tnpvgDm6cOt2UPaz0pdYsfv0S9Ed6osIicMDfZToOeYT7dgyHap-6Tw-OegxF45GOWyD63Qo3uNjrxnuoHfYDyVskpN3ASQk0DoqQTugZuj8tLJWTyKUgvh9UTicHp5Is9Rf4B52KUmdKcKqAl7YFlZQB8qUUit0ATmsUFuNDlnSgeo1KO2lfnaqVr7I-VEobiaMkaKBPYm3hOPFxtHG3H-iypEyJpTb0DD4w8";
-
-export async function HomeHero() {
+export async function HomeHero({ image }: { image: string }) {
   const t = await getTranslations("pages.home.hero");
   const cta = await getTranslations("cta");
 
@@ -14,7 +11,7 @@ export async function HomeHero() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-darker pb-16 pt-24">
       <div className="absolute inset-0 z-0">
         <Image
-          src={HERO_IMAGE}
+          src={image}
           alt=""
           fill
           priority

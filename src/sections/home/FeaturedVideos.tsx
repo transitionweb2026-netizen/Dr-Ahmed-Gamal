@@ -8,10 +8,7 @@ import { VideoModal } from "@/components/VideoModal";
 import { Icon } from "@/components/Icon";
 import type { Video } from "@/types/content";
 
-const SECTION_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCC0Lmu6MSExsDHPDKpPgM8SVJ18mH02nnwCsotlB5m-QZBkU7QnivoSsBWjBiv2yg0zgej9pbFjP6RfQLYVC76xnPzeEbY9h5cRoCZVnUwt3jkQme6J2BoiKXjsOBagJG9eoqzJf0WLME6qAF3Bq2aEkjRW9Kidth9phH0A0bpsLOc8RstEGnYygd20msm_SoHs-Q9pzYuDO0MQPHEXRFSljVw26n-tFsoJBabDJVRtb7e0towZAI_WClWsW-oM34nHWs";
-
-export function FeaturedVideos({ videos }: { videos: Video[] }) {
+export function FeaturedVideos({ videos, image }: { videos: Video[]; image: string }) {
   const [selected, setSelected] = useState<Video | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.home.videos");
@@ -20,7 +17,7 @@ export function FeaturedVideos({ videos }: { videos: Video[] }) {
   return (
     <section className="relative bg-brand-darker py-24">
       <div className="absolute inset-0 z-0">
-        <Image src={SECTION_IMAGE} alt="" fill className="object-cover" sizes="100vw" />
+        <Image src={image} alt="" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 

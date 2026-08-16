@@ -1,15 +1,13 @@
 import { getLocale } from "next-intl/server";
 import { getStats } from "@/services/stats";
 
-// About.html's own 4-stat set (years / procedures / happy patients /
-// advanced trainings) — Home.html's set swaps in "Patient Rating" for the
-// 4th stat instead, see src/sections/home/AchievementStrip.tsx.
-const ABOUT_STAT_IDS = ["years-experience", "procedures", "happy-patients", "advanced-trainings"];
-
 export async function AchievementStrip() {
   const locale = (await getLocale()) as "en" | "ar";
   const stats = await getStats();
-  const aboutStats = stats.filter((stat) => ABOUT_STAT_IDS.includes(stat.id));
+  // CMS-controlled per stat ("Featured on About" checkbox, admin: /admin/stats)
+  // — Home's own set is controlled by its own "Featured on Home" checkbox,
+  // see src/sections/home/AchievementStrip.tsx.
+  const aboutStats = stats.filter((stat) => stat.featuredOnAbout);
 
   return (
     // Overlaps the section above by design (reference: -mt-12), sitting on

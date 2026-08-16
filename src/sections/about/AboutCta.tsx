@@ -3,12 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/Icon";
 import { getContactInfo } from "@/services/contactInfo";
 
-// Same hero portrait used behind About's hero — reused here at low opacity
-// as the "Cinematic Consultation Portal" section's backdrop image.
-const BACKGROUND_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuD0VNsM0wX80bzSvbTOR489BcEFjL1kq6Ana5TSz17vJzdDbhMpj5wDSBzqa4CFFaUQxa0i3bk5W7LsKv88Hn9jD88m3jPXnVmgsTq_hZ52H_s_ihzkdv0KsPgxdiwhmXaWlnVTHudtmoPpiOfsOxn7SPNwrpLVG6FcMlR4q_XJRkyTSUVNSh6DdnGU2pYmaJJxIOCRECMXsPUx7vijuf3AtBNDEMKeyaaiBAmsbo6v2H0St0B8UAGtGQ";
-
-export async function AboutCta() {
+export async function AboutCta({ image }: { image: string }) {
   const t = await getTranslations("pages.about.cta");
   const cta = await getTranslations("cta");
   const contactInfo = await getContactInfo();
@@ -18,7 +13,7 @@ export async function AboutCta() {
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center opacity-10"
-        style={{ backgroundImage: `url(${BACKGROUND_IMAGE})` }}
+        style={{ backgroundImage: `url(${image})` }}
       />
       <div
         aria-hidden

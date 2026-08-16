@@ -11,6 +11,7 @@ import { VideosCta } from "@/sections/videos/VideosCta";
 import { getVideos } from "@/services/videos";
 import { getContactInfo } from "@/services/contactInfo";
 import { getSeoMetadata } from "@/services/seoMetadata";
+import { getPageImages } from "@/services/pageImages";
 
 export async function generateMetadata({
   params,
@@ -40,18 +41,18 @@ export default async function VideosPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const [videos, contactInfo] = await Promise.all([getVideos(), getContactInfo()]);
+  const [videos, contactInfo, images] = await Promise.all([getVideos(), getContactInfo(), getPageImages()]);
 
   // Structured data must match what's actually visible — same filter/limit
   // as VideosGrid's "Watch & Learn" section (exactly 9 educational videos).
-  const structuredDataVideos = videos.filter((v) => v.category.en !== "Patient Story").slice(0, 9);
+  const structuredDataVideos = videos.filter((v) => v.videoType !== "patient_story").slice(0, 9);
 
   return (
     <main>
       {structuredDataVideos.map((video) => (
         <JsonLd key={video.id} data={buildVideoObjectSchema(video, locale as Locale)} />
       ))}
-      <VideosHero />
+      <VideosHero image={images["videos-hero"]} />
       <VideosGrid videos={videos} />
       <VideosCta contactInfo={contactInfo} videos={videos} />
     </main>

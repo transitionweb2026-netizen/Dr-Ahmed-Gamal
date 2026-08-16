@@ -12,7 +12,7 @@ export async function StoriesCta() {
   // (no children/decorative-overlay API), so that composition is simplified
   // to this one placeholder image rather than forking the shared banner for
   // a single page — see report for details.
-  const storyImage = videos.find((v) => v.id === "story-rania-transformation")!;
+  const storyImage = videos.find((v) => v.id === "story-rania-transformation") ?? videos[0];
 
   return (
     <ContactCtaBanner

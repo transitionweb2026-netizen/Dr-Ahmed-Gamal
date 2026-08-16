@@ -6,6 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 import { getProcedures } from "@/services/procedures";
 import { getVideos } from "@/services/videos";
 import { getSeoMetadata } from "@/services/seoMetadata";
+import { getPageImages } from "@/services/pageImages";
 import { AboutHero } from "@/sections/about/AboutHero";
 import { PersonalMessage } from "@/sections/about/PersonalMessage";
 import { AboutVideoSplit } from "@/sections/about/AboutVideoSplit";
@@ -44,18 +45,18 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const [procedures, videos] = await Promise.all([getProcedures(), getVideos()]);
+  const [procedures, videos, images] = await Promise.all([getProcedures(), getVideos(), getPageImages()]);
 
   return (
     <main>
-      <AboutHero />
-      <PersonalMessage />
+      <AboutHero image={images["about-hero"]} />
+      <PersonalMessage image={images["about-message-portrait"]} />
       <AboutVideoSplit videos={videos} />
       <AchievementStrip />
-      <AboutProcedures procedures={procedures} />
+      <AboutProcedures procedures={procedures} image={images["about-procedures"]} />
       <JourneyTimeline />
       <PhotoGallery />
-      <AboutCta />
+      <AboutCta image={images["about-cta"]} />
     </main>
   );
 }

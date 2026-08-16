@@ -16,6 +16,8 @@ export async function getStats(): Promise<Stat[]> {
       value: row.value,
       label: row.label,
       icon: row.icon,
+      featuredOnHome: row.featured_on_home,
+      featuredOnAbout: row.featured_on_about,
     }),
   );
 }

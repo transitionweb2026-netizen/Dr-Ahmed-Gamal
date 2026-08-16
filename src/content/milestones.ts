@@ -17,6 +17,8 @@ export const milestones: Milestone[] = [
       ar: "تخرج بمرتبة الشرف الأولى، ليضع الأساس لمسيرة مهنية في التميز الجراحي.",
     },
     icon: "school",
+    featuredOnHome: true,
+    featuredOnAbout: true,
   },
   {
     id: "advanced-surgical-training",
@@ -27,6 +29,8 @@ export const milestones: Milestone[] = [
       ar: "أتم تدريبًا مكثفًا في تقنيات الجراحة المجهرية الدقيقة لأكثر العمليات الترميمية دقة.",
     },
     icon: "medical_services",
+    featuredOnHome: true,
+    featuredOnAbout: false,
   },
   {
     id: "board-certification",
@@ -37,6 +41,8 @@ export const milestones: Milestone[] = [
       ar: "حصل على البورد في الجراحة التجميلية والترميمية.",
     },
     icon: "workspace_premium",
+    featuredOnHome: true,
+    featuredOnAbout: true,
   },
   {
     id: "international-fellowship",
@@ -47,6 +53,8 @@ export const milestones: Milestone[] = [
       ar: "أتم زمالة دولية أتقن خلالها أحدث تقنيات الجراحة الترميمية والتجميلية في الخارج.",
     },
     icon: "public",
+    featuredOnHome: true,
+    featuredOnAbout: true,
   },
   {
     id: "private-practice-founded",
@@ -57,6 +65,8 @@ export const milestones: Milestone[] = [
       ar: "افتتح عيادة خاصة مستقلة مكرَّسة لتقديم رعاية جراحية شخصية تقوم على الحرفية الفنية.",
     },
     icon: "storefront",
+    featuredOnHome: false,
+    featuredOnAbout: true,
   },
   {
     id: "professional-membership",
@@ -67,6 +77,8 @@ export const milestones: Milestone[] = [
       ar: "حصل على عضوية الجمعية الأمريكية لجراحي التجميل، التزامًا بأعلى معايير رعاية المرضى.",
     },
     icon: "groups",
+    featuredOnHome: true,
+    featuredOnAbout: false,
   },
   {
     id: "facial-surgery-training",
@@ -77,6 +89,8 @@ export const milestones: Milestone[] = [
       ar: "خضع لتدريب متقدم متخصص في تشريح الوجه وتقنيات تجديد الشباب.",
     },
     icon: "face",
+    featuredOnHome: true,
+    featuredOnAbout: false,
   },
   {
     id: "body-contouring-training",
@@ -87,6 +101,8 @@ export const milestones: Milestone[] = [
       ar: "أتقن أساليب نحت الجسم عالية الدقة للحصول على قوام طبيعي المظهر.",
     },
     icon: "body_fat",
+    featuredOnHome: true,
+    featuredOnAbout: false,
   },
   {
     id: "award-recognition",
@@ -97,5 +113,7 @@ export const milestones: Milestone[] = [
       ar: "حصل على تكريم تقديرًا لالتزامه الدائم بتقديم رعاية ونتائج استثنائية للمرضى.",
     },
     icon: "military_tech",
+    featuredOnHome: true,
+    featuredOnAbout: false,
   },
 ];

@@ -3,15 +3,22 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getSiteSettings } from "@/services/siteSettings";
 import { getContactInfo } from "@/services/contactInfo";
+import { getNavLinks } from "@/services/navLinks";
 import { Icon } from "@/components/Icon";
 
-const quickLinks = [
-  { href: "/", labelKey: "home" },
-  { href: "/about", labelKey: "about" },
-  { href: "/before-after", labelKey: "beforeAfter" },
-  { href: "/patient-stories", labelKey: "patientStories" },
-  { href: "/contact", labelKey: "contact" },
-] as const;
+// Curated subset of the site's nav — intentionally not every nav_links entry
+// (footer keeps a compact link list). Labels are resolved from the CMS
+// nav_links data below (falling back to the nav.* translation) so editing a
+// label in the admin's Navigation section updates the header AND the footer
+// from the same source, instead of the footer keeping its own copy.
+const quickLinkHrefs = ["/", "/about", "/before-after", "/patient-stories", "/contact"] as const;
+const quickLinkFallbackKeys: Record<(typeof quickLinkHrefs)[number], string> = {
+  "/": "home",
+  "/about": "about",
+  "/before-after": "beforeAfter",
+  "/patient-stories": "patientStories",
+  "/contact": "contact",
+};
 
 export async function SiteFooter() {
   const locale = (await getLocale()) as "en" | "ar";
@@ -20,6 +27,15 @@ export async function SiteFooter() {
   const year = new Date().getFullYear();
   const site = await getSiteSettings();
   const contactInfo = await getContactInfo();
+  const navLinks = await getNavLinks();
+
+  const quickLinks = quickLinkHrefs.map((href) => {
+    const cmsLink = navLinks.find((link) => link.href === href);
+    return {
+      href,
+      label: cmsLink ? cmsLink.label[locale] : tNav(quickLinkFallbackKeys[href]),
+    };
+  });
 
   const categories = [
     t("categories.facial"),
@@ -54,7 +70,7 @@ export async function SiteFooter() {
                     href={link.href}
                     className="rounded text-sm text-brand-light/70 transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
                   >
-                    {tNav(link.labelKey)}
+                    {link.label}
                   </Link>
                 </li>
               ))}

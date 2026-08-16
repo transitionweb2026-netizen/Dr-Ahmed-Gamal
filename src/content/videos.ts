@@ -35,6 +35,7 @@ export const videos: Video[] = [
     category: { en: "Introduction", ar: "تعريفي" },
     thumbnail: THUMB_INTRO,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "clinic-tour",
@@ -42,6 +43,7 @@ export const videos: Video[] = [
     category: { en: "Facility", ar: "المنشأة" },
     thumbnail: THUMB_CLINIC,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "patient-journey",
@@ -49,6 +51,7 @@ export const videos: Video[] = [
     category: { en: "Experience", ar: "التجربة" },
     thumbnail: THUMB_JOURNEY,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "first-visit",
@@ -56,6 +59,7 @@ export const videos: Video[] = [
     category: { en: "Consultation", ar: "الاستشارة" },
     thumbnail: THUMB_FIRST_VISIT,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "facial-harmony",
@@ -63,6 +67,7 @@ export const videos: Video[] = [
     category: { en: "Rhinoplasty", ar: "تجميل الأنف" },
     thumbnail: THUMB_HARMONY,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "steps-before-procedure",
@@ -70,6 +75,7 @@ export const videos: Video[] = [
     category: { en: "Preparation", ar: "التحضير" },
     thumbnail: THUMB_STEPS,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "preparing-for-surgery",
@@ -77,6 +83,7 @@ export const videos: Video[] = [
     category: { en: "Preparation", ar: "التحضير" },
     thumbnail: THUMB_PREP_A,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "recovery-after-surgery",
@@ -84,6 +91,7 @@ export const videos: Video[] = [
     category: { en: "Recovery", ar: "التعافي" },
     thumbnail: THUMB_RECOVERY_B,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "body-contouring-explained",
@@ -91,6 +99,7 @@ export const videos: Video[] = [
     category: { en: "Body", ar: "الجسم" },
     thumbnail: THUMB_ARTISTRY,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "natural-looking-results",
@@ -98,6 +107,7 @@ export const videos: Video[] = [
     category: { en: "Artistry", ar: "الحرفية الفنية" },
     thumbnail: THUMB_RESULTS_B,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "plastic-surgery-safety",
@@ -105,6 +115,7 @@ export const videos: Video[] = [
     category: { en: "Safety", ar: "السلامة" },
     thumbnail: THUMB_SAFETY,
     aspect: "9:16",
+    videoType: "educational",
   },
   {
     id: "common-patient-questions",
@@ -112,6 +123,7 @@ export const videos: Video[] = [
     category: { en: "FAQ", ar: "الأسئلة الشائعة" },
     thumbnail: THUMB_QA,
     aspect: "9:16",
+    videoType: "educational",
   },
 
   // --- Patient story videos (Patient Stories page) ---
@@ -121,6 +133,7 @@ export const videos: Video[] = [
     category: { en: "Patient Story", ar: "قصة مريضة" },
     thumbnail: THUMB_QA_B,
     aspect: "9:16",
+    videoType: "patient_story",
   },
   {
     id: "story-mariam-facelift",
@@ -128,6 +141,7 @@ export const videos: Video[] = [
     category: { en: "Patient Story", ar: "قصة مريضة" },
     thumbnail: THUMB_RESULTS_B,
     aspect: "9:16",
+    videoType: "patient_story",
   },
   {
     id: "story-yasmin-body-contouring",
@@ -135,6 +149,7 @@ export const videos: Video[] = [
     category: { en: "Patient Story", ar: "قصة مريضة" },
     thumbnail: THUMB_BODY_B,
     aspect: "9:16",
+    videoType: "patient_story",
   },
   {
     id: "story-farida-rhinoplasty",
@@ -142,6 +157,7 @@ export const videos: Video[] = [
     category: { en: "Patient Story", ar: "قصة مريضة" },
     thumbnail: THUMB_SAFETY_B,
     aspect: "9:16",
+    videoType: "patient_story",
   },
   {
     id: "story-salma-breast-augmentation",
@@ -149,6 +165,7 @@ export const videos: Video[] = [
     category: { en: "Patient Story", ar: "قصة مريضة" },
     thumbnail: THUMB_PATIENT_STORIES_HERO,
     aspect: "9:16",
+    videoType: "patient_story",
   },
   {
     id: "story-heba-tummy-tuck",
@@ -156,6 +173,7 @@ export const videos: Video[] = [
     category: { en: "Patient Story", ar: "قصة مريضة" },
     thumbnail: THUMB_INTRO,
     aspect: "9:16",
+    videoType: "patient_story",
   },
   {
     id: "story-layla-rhinoplasty",
@@ -163,6 +181,7 @@ export const videos: Video[] = [
     category: { en: "Patient Story", ar: "قصة مريضة" },
     thumbnail: THUMB_CLINIC,
     aspect: "9:16",
+    videoType: "patient_story",
   },
   {
     id: "story-mona-facial-rejuvenation",
@@ -170,6 +189,7 @@ export const videos: Video[] = [
     category: { en: "Patient Story", ar: "قصة مريضة" },
     thumbnail: THUMB_JOURNEY,
     aspect: "9:16",
+    videoType: "patient_story",
   },
   {
     id: "story-rania-transformation",
@@ -177,5 +197,6 @@ export const videos: Video[] = [
     category: { en: "Patient Story", ar: "قصة مريضة" },
     thumbnail: THUMB_FIRST_VISIT,
     aspect: "9:16",
+    videoType: "patient_story",
   },
 ];

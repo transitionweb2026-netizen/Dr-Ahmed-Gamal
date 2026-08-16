@@ -8,7 +8,7 @@ export async function getTestimonials(): Promise<Testimonial[]> {
 
   const { data, error } = await supabase
     .from("testimonials")
-    .select("*")
+    .select("*, procedure:procedures!testimonials_procedure_slug_fkey(name)")
     .eq("is_published", true)
     .order("order_index");
 
@@ -21,6 +21,7 @@ export async function getTestimonials(): Promise<Testimonial[]> {
       quote: row.quote,
       rating: row.rating,
       procedureSlug: row.procedure_slug ?? undefined,
+      procedureName: row.procedure?.name ?? undefined,
       featuredOnHome: row.featured_on_home,
     }),
   );

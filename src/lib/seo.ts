@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/constants/site";
+import { getSiteSettings } from "@/services/siteSettings";
 import type { Locale } from "@/i18n/routing";
 
 interface BuildMetadataOptions {
@@ -17,16 +18,17 @@ function localizedPath(locale: Locale, path: string): string {
   return `/${locale}${normalized}`;
 }
 
-export function buildMetadata({
+export async function buildMetadata({
   locale,
   path,
   title,
   description,
   image,
   noIndex,
-}: BuildMetadataOptions): Metadata {
+}: BuildMetadataOptions): Promise<Metadata> {
   const canonical = localizedPath(locale, path);
   const ogImage = image ?? localizedPath(locale, "/opengraph-image");
+  const siteSettings = await getSiteSettings();
 
   return {
     // `absolute` bypasses the root layout's `title.template` — every
@@ -47,7 +49,7 @@ export function buildMetadata({
       title,
       description,
       url: canonical,
-      siteName: site.name,
+      siteName: siteSettings.name,
       locale: locale === "ar" ? "ar_EG" : "en_US",
       type: "website",
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],

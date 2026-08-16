@@ -39,9 +39,14 @@ export async function BeforeAfterTestimonials() {
                 &ldquo;{testimonial.quote[locale]}&rdquo;
               </blockquote>
               <div className="mt-auto flex items-center justify-between border-t border-brand-gold/10 pt-4">
-                <figcaption className="text-label-sm uppercase tracking-widest text-brand-gold">
-                  {testimonial.name}
-                </figcaption>
+                <div>
+                  <figcaption className="text-label-sm uppercase tracking-widest text-brand-gold">
+                    {testimonial.name}
+                  </figcaption>
+                  {testimonial.procedureName && (
+                    <p className="mt-0.5 text-xs text-brand-light/50">{testimonial.procedureName[locale]}</p>
+                  )}
+                </div>
                 <div className="h-2 w-2 rounded-full bg-brand-gold/40 shadow-[0_0_8px_rgba(212,175,55,0.6)]" />
               </div>
             </figure>

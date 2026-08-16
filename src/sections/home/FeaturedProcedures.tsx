@@ -7,10 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { ProcedureModal } from "@/components/ProcedureModal";
 import type { Procedure } from "@/types/content";
 
-const SECTION_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBv-SnW2a4Ve_EW2zgmgHusw41ygAfCSV_RROJul1BEEaJ-YnF1NjpN9lB7yr4PktjFoIUv4RKte4U5aYGNIXgcr90L9PlnDN20xIkQXcjg9v-Pk1WHCMdiehuQNX6LiSx8T5eSER6FZOWnRTsOvk0Vp8-PLVyzzi8afjcxwLHkisnspR0-h0Rxv_QG6n-OQovE_LdvGLQizdWJsu3KbeDn2fEXqrjvsGsWrbzSE8UMw4z8IuBHBBNSUzQ8trPe6jdSKKE";
-
-export function FeaturedProcedures({ procedures }: { procedures: Procedure[] }) {
+export function FeaturedProcedures({ procedures, image }: { procedures: Procedure[]; image: string }) {
   const [selected, setSelected] = useState<Procedure | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.home.procedures");
@@ -19,7 +16,7 @@ export function FeaturedProcedures({ procedures }: { procedures: Procedure[] }) 
   return (
     <section className="relative py-24">
       <div className="absolute inset-0 z-0">
-        <Image src={SECTION_IMAGE} alt="" fill className="object-cover" sizes="100vw" />
+        <Image src={image} alt="" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-brand-darker/80" />
       </div>
 

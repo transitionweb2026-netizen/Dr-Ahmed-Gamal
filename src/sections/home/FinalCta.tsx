@@ -7,7 +7,7 @@ export async function FinalCta() {
   const t = await getTranslations("pages.home.finalCta");
   const cta = await getTranslations("cta");
   const videos = await getVideos();
-  const phoneImage = videos.find((v) => v.id === "patient-journey")!;
+  const phoneImage = videos.find((v) => v.id === "patient-journey") ?? videos[0];
 
   return (
     <section className="bg-brand-darker py-24">

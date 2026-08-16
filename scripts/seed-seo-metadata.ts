@@ -42,7 +42,7 @@ async function main() {
     { slug: "procedures", navKey: "procedures", paragraphKey: "pages.procedures.hero.paragraph" },
     { slug: "before-after", navKey: "beforeAfter", paragraphKey: "pages.beforeAfter.hero.paragraph" },
     { slug: "patient-stories", navKey: "patientStories", paragraphKey: "pages.patientStories.hero.paragraph" },
-    { slug: "blog", navKey: "blog", paragraphKey: "pages.blog.hero.paragraph" },
+    { slug: "articles", navKey: "blog", paragraphKey: "pages.blog.hero.paragraph" },
     { slug: "videos", navKey: "videos", paragraphKey: "pages.videos.hero.paragraph" },
     { slug: "faq", navKey: "faq", paragraphKey: "pages.faq.hero.paragraph" },
     { slug: "contact", navKey: "contact", paragraphKey: "pages.contact.hero.paragraph" },

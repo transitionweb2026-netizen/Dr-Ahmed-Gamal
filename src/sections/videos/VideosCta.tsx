@@ -26,7 +26,7 @@ export function VideosCta({ contactInfo, videos }: VideosCtaProps) {
   // Reference's "Premium 3D Mobile Contact CTA" phone screenshot stands in for
   // a bespoke booking-app mockup — reusing a video thumbnail the same way
   // Home's FinalCta does for its own phone mockup (see src/sections/home/FinalCta.tsx).
-  const phoneImage = videos.find((v) => v.id === "clinic-tour")!;
+  const phoneImage = videos.find((v) => v.id === "clinic-tour") ?? videos[0];
   const t = useTranslations("pages.videos.cta");
   const cta = useTranslations("cta");
   const dir = useDirection();

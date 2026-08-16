@@ -8,10 +8,7 @@ import { Icon } from "@/components/Icon";
 import { ProcedureModal } from "@/components/ProcedureModal";
 import type { Procedure } from "@/types/content";
 
-const SECTION_BACKGROUND =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuC0WgM_rg_waaEBMCdhv5XDCqHeU6U_FOqXabijXUaOm8QMZ_o7p11xukV2J94x4nEW-H8f3cTOQfMQe6cvf8ttRSxtpUkklcjIjTDL9e-G8p_gYNed5m67UcLpwucrYLg64Nv6xpsm9LRIVflrBkFi1_BekJ4S4zAx3jDRoTwdQhuf7_IavEhnEc051z-LLfzIyeK9ihNcnQQgW3ZU41T6N1yDH1XOuKmNwa2ml6kNRC-iT82qyFsXNeFTY6NTWNm_pUg";
-
-export function AboutProcedures({ procedures }: { procedures: Procedure[] }) {
+export function AboutProcedures({ procedures, image }: { procedures: Procedure[]; image: string }) {
   const [selected, setSelected] = useState<Procedure | null>(null);
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.about.procedures");
@@ -21,7 +18,7 @@ export function AboutProcedures({ procedures }: { procedures: Procedure[] }) {
     <section
       className="relative bg-brand-darker py-24"
       style={{
-        backgroundImage: `linear-gradient(rgba(19, 19, 19, 0.85), rgba(19, 19, 19, 0.85)), url(${SECTION_BACKGROUND})`,
+        backgroundImage: `linear-gradient(rgba(19, 19, 19, 0.85), rgba(19, 19, 19, 0.85)), url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
       }}
