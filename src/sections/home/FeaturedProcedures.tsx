@@ -28,7 +28,7 @@ export function FeaturedProcedures({ procedures, image }: { procedures: Procedur
           <h2 className="font-serif text-4xl text-brand-light">{t("heading")}</h2>
         </div>
 
-        <div className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {featured.map((procedure) => (
             <button
               key={procedure.slug}
