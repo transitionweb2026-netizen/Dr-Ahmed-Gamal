@@ -32,7 +32,7 @@ export function ProceduresGrid({ procedures }: ProceduresGridProps) {
           <p className="mx-auto max-w-2xl text-body-lg text-brand-light/70">{t("paragraph")}</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           {sorted.map((procedure) => (
             <button
               key={procedure.slug}
