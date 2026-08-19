@@ -15,23 +15,22 @@ export async function HomeHero({ image }: { image: string }) {
           alt=""
           fill
           priority
-          className="object-cover object-center opacity-50"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-darker via-brand-darker/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-darker" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-darker/70 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="space-y-8">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             {t("eyebrow")}
           </p>
-          <h1 className="font-serif text-5xl leading-tight text-brand-light lg:text-7xl">
+          <h1 className="font-serif text-5xl leading-tight text-brand-light drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] lg:text-7xl">
             {t("titleLine1")} <br />
             <span className="italic text-brand-gold">{t("titleLine2")}</span>
           </h1>
-          <p className="max-w-xl text-lg font-light leading-relaxed text-gray-300">
+          <p className="max-w-xl text-lg font-light leading-relaxed text-gray-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             {t("paragraph")}
           </p>
           <div className="flex flex-col items-start gap-6 sm:flex-row">

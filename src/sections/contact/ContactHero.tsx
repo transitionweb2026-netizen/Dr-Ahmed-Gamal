@@ -17,7 +17,6 @@ export async function ContactHero({ image }: { image: string }) {
       title={<span className="text-display-lg">{t("title")}</span>}
       paragraph={t("paragraph")}
       short
-      imageOpacity={40}
       capsule={<HeroFloatingContact />}
     >
       <CTAButton

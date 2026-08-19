@@ -17,8 +17,8 @@ interface PageHeroProps {
   /** Cases & Reviews' reference hero is min-h-screen — taller than every
    * other page's 80vh. Takes precedence over `short` when set. */
   fullHeight?: boolean;
-  /** Background image opacity — reference is 60 on most pages, 40 on Contact. */
-  imageOpacity?: 40 | 60;
+  /** Background image opacity — 80 on every page. */
+  imageOpacity?: 40 | 60 | 80;
   /** The floating glass "quick contact" capsule (see HeroContactCapsule), or a
    * bespoke variant (e.g. Cases & Reviews' fixed vertical edge capsule). */
   capsule?: ReactNode;
@@ -35,7 +35,7 @@ interface PageHeroProps {
   gradientVariant?: "default" | "directional";
 }
 
-const imageOpacityClass = { 40: "opacity-40", 60: "opacity-60" } as const;
+const imageOpacityClass = { 40: "opacity-40", 60: "opacity-60", 80: "opacity-80" } as const;
 
 export function PageHero({
   image,
@@ -46,7 +46,7 @@ export function PageHero({
   align = "center",
   short = false,
   fullHeight = false,
-  imageOpacity = 60,
+  imageOpacity = 80,
   capsule,
   minHeightClassName,
   imageClassName,

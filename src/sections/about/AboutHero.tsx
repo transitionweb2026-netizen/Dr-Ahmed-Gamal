@@ -14,7 +14,6 @@ export async function AboutHero({ image }: { image: string }) {
       title={t("title")}
       paragraph={t("paragraph")}
       align="start"
-      imageOpacity={60}
       imageClassName="object-[70%_20%]"
       gradientVariant="directional"
       minHeightClassName="min-h-[600px] pb-16 sm:min-h-[90vh]"
