@@ -23,7 +23,7 @@ export async function HomeHero({ image }: { image: string }) {
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="space-y-8">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-gold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          <p className="inline-block rounded-full border border-brand-gold/30 bg-brand-dark/50 px-4 py-1 text-sm font-semibold uppercase tracking-[0.2em] text-brand-gold backdrop-blur-md">
             {t("eyebrow")}
           </p>
           <h1 className="font-serif text-5xl leading-tight text-brand-light drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] lg:text-7xl">

@@ -11,11 +11,7 @@ export async function VideosHero({ image }: { image: string }) {
     <PageHero
       image={image}
       align="start"
-      eyebrow={
-        <span className="inline-block rounded-full border border-brand-gold/30 bg-brand-dark/50 px-4 py-1 tracking-[0.2em] backdrop-blur-md">
-          {t("eyebrow")}
-        </span>
-      }
+      eyebrow={t("eyebrow")}
       title={
         <span className="drop-shadow-2xl">
           {t("titleLine1")} <br />

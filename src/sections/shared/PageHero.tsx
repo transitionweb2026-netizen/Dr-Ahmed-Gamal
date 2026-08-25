@@ -4,8 +4,8 @@ import { cn } from "@/utils/cn";
 
 interface PageHeroProps {
   image: string;
-  /** Plain string on most pages; pass a styled node (e.g. a pill badge) when
-   * a page's reference eyebrow isn't bare text — see Procedures' hero. */
+  /** Rendered as the standard gold pill badge (border + translucent fill +
+   * blur) — every hero across the site uses this same chrome. */
   eyebrow?: ReactNode;
   title: ReactNode;
   paragraph?: string;
@@ -97,7 +97,9 @@ export function PageHero({
         )}
       >
         {eyebrow && (
-          <p className="text-label-sm uppercase tracking-widest text-brand-gold">{eyebrow}</p>
+          <p className="inline-block rounded-full border border-brand-gold/30 bg-brand-dark/50 px-4 py-1 text-label-sm uppercase tracking-[0.2em] text-brand-gold backdrop-blur-md">
+            {eyebrow}
+          </p>
         )}
         <h1
           className={cn(

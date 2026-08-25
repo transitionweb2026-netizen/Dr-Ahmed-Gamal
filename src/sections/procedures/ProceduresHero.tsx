@@ -11,15 +11,7 @@ export async function ProceduresHero({ image }: { image: string }) {
     <PageHero
       image={image}
       align="start"
-      eyebrow={
-        // Reference eyebrow is a pill badge (border + translucent fill +
-        // blur), not bare text. PageHero already wraps eyebrow in the
-        // correct label typography/color, so only the pill "chrome" needs
-        // adding here.
-        <span className="inline-block rounded-full border border-brand-gold/30 bg-brand-dark/50 px-4 py-1 tracking-[0.2em] backdrop-blur-md">
-          {t("eyebrow")}
-        </span>
-      }
+      eyebrow={t("eyebrow")}
       title={t("title")}
       paragraph={t("paragraph")}
       capsule={<HeroFloatingContact />}
