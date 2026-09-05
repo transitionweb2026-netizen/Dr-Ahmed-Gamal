@@ -13,7 +13,6 @@ import { AboutVideoSplit } from "@/sections/about/AboutVideoSplit";
 import { AchievementStrip } from "@/sections/about/AchievementStrip";
 import { AboutProcedures } from "@/sections/about/AboutProcedures";
 import { JourneyTimeline } from "@/sections/about/JourneyTimeline";
-import { PhotoGallery } from "@/sections/about/PhotoGallery";
 import { AboutCta } from "@/sections/about/AboutCta";
 
 export async function generateMetadata({
@@ -55,7 +54,6 @@ export default async function AboutPage({
       <AchievementStrip />
       <AboutProcedures procedures={procedures} image={images["about-procedures"]} />
       <JourneyTimeline />
-      <PhotoGallery />
       <AboutCta image={images["about-cta"]} />
     </main>
   );

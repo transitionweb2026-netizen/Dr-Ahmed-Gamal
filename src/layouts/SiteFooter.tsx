@@ -99,17 +99,28 @@ export async function SiteFooter() {
             <h3 className="font-serif text-sm uppercase tracking-wider text-brand-gold">
               {t("contactTitle")}
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-brand-light/70">
-              <li className="flex items-start gap-2">
-                <Icon name="location_on" className="mt-0.5 h-4 w-4 shrink-0 text-brand-gold" />
-                <span>{contactInfo.address[locale]}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Icon name="call" className="h-4 w-4 shrink-0 text-brand-gold" />
-                <a href={contactInfo.phone.href} className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark">
-                  {contactInfo.phone.display}
-                </a>
-              </li>
+            <ul className="mt-4 space-y-4 text-sm text-brand-light/70">
+              {contactInfo.locations.length > 0 ? (
+                contactInfo.locations.map((location, i) => (
+                  <li key={i} className="space-y-1.5">
+                    <p className="flex items-start gap-2">
+                      <Icon name="location_on" className="mt-0.5 h-4 w-4 shrink-0 text-brand-gold" />
+                      <span>{location.address[locale]}</span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Icon name="call" className="h-4 w-4 shrink-0 text-brand-gold" />
+                      <a href={location.phone.href} className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark">
+                        {location.phone.display}
+                      </a>
+                    </p>
+                  </li>
+                ))
+              ) : (
+                <li className="flex items-start gap-2">
+                  <Icon name="location_on" className="mt-0.5 h-4 w-4 shrink-0 text-brand-gold" />
+                  <span>{contactInfo.address[locale]}</span>
+                </li>
+              )}
               <li className="flex items-center gap-2">
                 <Icon name="mail" className="h-4 w-4 shrink-0 text-brand-gold" />
                 <a href={contactInfo.email.href} className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark">

@@ -1,13 +1,10 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { CTAButton } from "@/components/CTAButton";
-import { getVideos } from "@/services/videos";
 
-export async function FinalCta() {
+export async function FinalCta({ image }: { image: string }) {
   const t = await getTranslations("pages.home.finalCta");
   const cta = await getTranslations("cta");
-  const videos = await getVideos();
-  const phoneImage = videos.find((v) => v.id === "patient-journey") ?? videos[0];
 
   return (
     <section className="bg-brand-darker py-24">
@@ -19,13 +16,7 @@ export async function FinalCta() {
               className="absolute inset-x-0 top-0 z-20 h-6 rounded-t-[2.5rem] bg-black"
             />
             <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] bg-brand-dark">
-              <Image
-                src={phoneImage.thumbnail}
-                alt=""
-                fill
-                className="object-cover opacity-60"
-                sizes="256px"
-              />
+              <Image src={image} alt="" fill className="object-cover opacity-60" sizes="256px" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-brand-darker/80 to-transparent" />
               <div className="absolute inset-x-0 bottom-10 px-4 text-center">
                 <h4 className="mb-4 font-serif text-lg leading-tight text-white">

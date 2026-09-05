@@ -17,5 +17,11 @@ export async function getContactInfo(): Promise<typeof staticContactInfo> {
     mapsUrl: row.maps_url,
     workingHours: row.working_hours ?? [],
     social: row.social ?? {},
+    locations: (row.locations ?? []).map(
+      (loc: { address: { en: string; ar: string }; phone_display: string; phone_href: string }) => ({
+        address: loc.address,
+        phone: { display: loc.phone_display, href: loc.phone_href },
+      }),
+    ),
   };
 }

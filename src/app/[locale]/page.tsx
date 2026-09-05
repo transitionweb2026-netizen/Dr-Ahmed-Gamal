@@ -68,7 +68,7 @@ export default async function HomePage({
       <MilestonesCarousel />
       <WhyChooseUs image={images["home-why-choose-us"]} />
       <FeaturedVideos videos={videos} image={images["home-videos"]} />
-      <FinalCta />
+      <FinalCta image={images["home-final-cta-phone"]} />
     </main>
   );
 }

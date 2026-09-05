@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
       // Supabase Storage — admin-uploaded CMS images (src/components/admin/ImageUploadField.tsx).
       { protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" },
     ],
+    // Vercel's Image Optimization has a monthly source-image quota on this
+    // plan; once exhausted, every new (uncached) optimized image request
+    // 402s and renders blank. Serving images unoptimized bypasses that
+    // limit entirely — no resizing/AVIF-WebP conversion, but every image
+    // (old and new) always loads.
+    unoptimized: true,
   },
   async redirects() {
     return [

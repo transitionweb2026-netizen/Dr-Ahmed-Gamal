@@ -30,6 +30,10 @@ export const contactInfo = {
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent("Street 90, Fifth Settlement, New Cairo, Egypt"),
+  locations: [] as {
+    address: Bilingual;
+    phone: { display: string; href: string };
+  }[],
   workingHours: [
     {
       days: { en: "Sunday – Thursday", ar: "الأحد – الخميس" },

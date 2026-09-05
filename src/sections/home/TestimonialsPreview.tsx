@@ -57,7 +57,7 @@ export async function TestimonialsPreview() {
 
         <div className="text-center">
           <Link
-            href="/before-after"
+            href="/before-after#reviews"
             className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-brand-gold transition-colors duration-300 hover:text-white"
           >
             {t("cta")} <span className="ms-2">→</span>

@@ -14,7 +14,7 @@ export async function BeforeAfterTestimonials() {
   const pageTestimonials = testimonials.filter((testimonial) => !testimonial.featuredOnHome);
 
   return (
-    <section className="relative overflow-hidden border-y border-brand-gold/10 bg-brand-dark py-24">
+    <section id="reviews" className="relative overflow-hidden border-y border-brand-gold/10 bg-brand-dark py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-gold/10 opacity-50 blur-[120px]"

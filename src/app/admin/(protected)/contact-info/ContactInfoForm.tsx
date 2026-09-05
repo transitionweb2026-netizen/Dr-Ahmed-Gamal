@@ -9,6 +9,12 @@ interface WorkingHourRow {
   hours: { en: string; ar: string };
 }
 
+interface LocationRow {
+  address: { en: string; ar: string };
+  phone_display: string;
+  phone_href: string;
+}
+
 interface ContactInfoFormProps {
   defaultValues: {
     phone_display: string;
@@ -22,11 +28,13 @@ interface ContactInfoFormProps {
     address: { en: string; ar: string };
     maps_url: string;
     working_hours: WorkingHourRow[];
+    locations: LocationRow[];
     social: { facebook?: string; instagram?: string; tiktok?: string };
   };
 }
 
 const EMPTY_ROW: WorkingHourRow = { days: { en: "", ar: "" }, hours: { en: "", ar: "" } };
+const EMPTY_LOCATION: LocationRow = { address: { en: "", ar: "" }, phone_display: "", phone_href: "" };
 
 function TextField({ label, name, defaultValue }: { label: string; name: string; defaultValue?: string }) {
   return (
@@ -52,6 +60,7 @@ export function ContactInfoForm({ defaultValues }: ContactInfoFormProps) {
     null,
   );
   const [hours, setHours] = useState<WorkingHourRow[]>(defaultValues.working_hours);
+  const [locations, setLocations] = useState<LocationRow[]>(defaultValues.locations);
 
   return (
     <form action={formAction} className="max-w-2xl space-y-8">
@@ -95,6 +104,80 @@ export function ContactInfoForm({ defaultValues }: ContactInfoFormProps) {
         <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">Address</h2>
         <BilingualField label="Address" name="address" defaultValue={defaultValues.address} multiline required />
         <TextField label="Google Maps URL" name="maps_url" defaultValue={defaultValues.maps_url} />
+      </section>
+
+      <section>
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">Branch locations</h2>
+          <button
+            type="button"
+            onClick={() => setLocations((l) => [...l, EMPTY_LOCATION])}
+            className="text-xs font-medium text-slate-600 underline hover:text-slate-900"
+          >
+            + Add location
+          </button>
+        </div>
+        <p className="mt-1 text-xs text-slate-400">
+          Shown in the footer as one address + phone number per branch, in this order. Leave empty to fall back to
+          the single Address above.
+        </p>
+        <div className="mt-2 space-y-3">
+          {locations.map((location, i) => (
+            <div key={i} className="rounded-md border border-slate-200 p-3">
+              <div className="mb-2 flex items-center justify-between">
+                <p className="text-xs font-medium text-slate-500">Location {i + 1}</p>
+                <button
+                  type="button"
+                  onClick={() => setLocations((l) => l.filter((_, idx) => idx !== i))}
+                  className="text-xs text-red-600 hover:underline"
+                >
+                  Remove
+                </button>
+              </div>
+              <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-2">
+                  <HoursSubField
+                    label="Address (EN)"
+                    value={location.address.en}
+                    onChange={(v) =>
+                      setLocations((l) =>
+                        l.map((r, idx) => (idx === i ? { ...r, address: { ...r.address, en: v } } : r)),
+                      )
+                    }
+                  />
+                  <HoursSubField
+                    label="Address (AR)"
+                    dir="rtl"
+                    value={location.address.ar}
+                    onChange={(v) =>
+                      setLocations((l) =>
+                        l.map((r, idx) => (idx === i ? { ...r, address: { ...r.address, ar: v } } : r)),
+                      )
+                    }
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <HoursSubField
+                    label="Phone (display)"
+                    value={location.phone_display}
+                    onChange={(v) =>
+                      setLocations((l) => l.map((r, idx) => (idx === i ? { ...r, phone_display: v } : r)))
+                    }
+                  />
+                  <HoursSubField
+                    label="Phone (tel: link)"
+                    value={location.phone_href}
+                    onChange={(v) =>
+                      setLocations((l) => l.map((r, idx) => (idx === i ? { ...r, phone_href: v } : r)))
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+          {locations.length === 0 && <p className="text-xs text-slate-400">No branch locations yet.</p>}
+        </div>
+        <input type="hidden" name="locations" value={JSON.stringify(locations)} />
       </section>
 
       <section>

@@ -47,7 +47,7 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/content/home-why-choose-us", label: "Why Choose Us (section intro + image)" },
       { href: "/admin/videos", label: "Featured videos", hint: "First 3 videos by Display Order" },
       { href: "/admin/content/home-videos", label: "Featured Videos (section intro + image)" },
-      { href: "/admin/content/home-final-cta", label: "Final CTA text" },
+      { href: "/admin/content/home-final-cta", label: "Final CTA", hint: "Text & phone mockup image" },
     ],
   },
   {
@@ -65,7 +65,6 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/content/about-procedures", label: "Featured Procedures (section intro + image)" },
       { href: "/admin/milestones", label: "Professional journey timeline", hint: "Toggle “Featured on About”" },
       { href: "/admin/content/about-timeline", label: "Professional journey section text" },
-      { href: "/admin/content/about-gallery", label: "Photo gallery section text" },
       { href: "/admin/content/about-cta", label: "Closing CTA", hint: "Heading, description & background image" },
     ],
   },
@@ -139,7 +138,11 @@ export const adminNavGroups: AdminNavGroup[] = [
     items: [
       { href: "/admin/content/contact-hero", label: "Hero", hint: "Title, description, capsule labels & background image" },
       { href: "/admin/content/contact-form-section", label: "Form Section", hint: "Heading, description & portrait image" },
-      { href: "/admin/contact-info", label: "Contact details", hint: "Phone, WhatsApp, email, address, hours, social" },
+      {
+        href: "/admin/contact-info",
+        label: "Contact details",
+        hint: "Phone, WhatsApp, email, address, branch locations, hours, social",
+      },
       { href: "/admin/content/contact-location", label: "Location", hint: "Heading, tagline & clinic image" },
       { href: "/admin/procedures", label: "Procedure dropdown", hint: "Populates the contact form's procedure selector" },
       { href: "/admin/content/contact-info-grid", label: "Contact info grid — labels" },

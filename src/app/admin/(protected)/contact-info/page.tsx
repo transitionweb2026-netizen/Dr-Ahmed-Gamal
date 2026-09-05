@@ -28,6 +28,7 @@ export default async function AdminContactInfoPage() {
               address: row.address,
               maps_url: row.maps_url,
               working_hours: row.working_hours ?? [],
+              locations: row.locations ?? [],
               social: row.social ?? {},
             }}
           />

@@ -150,6 +150,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.home.finalCta.paragraph", label: "Description", multiline: true },
       { key: "pages.home.finalCta.phoneOverline", label: "Phone mockup overline text" },
     ],
+    images: [{ slug: "home-final-cta-phone", label: "Phone mockup image" }],
     sharedButtons: ["Book Now", "Request Consultation"],
   },
 
@@ -209,15 +210,6 @@ export const contentBlocks: ContentBlock[] = [
     fields: [
       { key: "pages.about.timeline.eyebrow", label: "Eyebrow" },
       { key: "pages.about.timeline.heading", label: "Heading" },
-    ],
-  },
-  {
-    id: "about-gallery",
-    page: "About",
-    section: "Photo Gallery (section text)",
-    fields: [
-      { key: "pages.about.gallery.eyebrow", label: "Eyebrow" },
-      { key: "pages.about.gallery.heading", label: "Heading" },
     ],
   },
   {

@@ -10,6 +10,12 @@ const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.stri
 
 const workingHourRowSchema = z.object({ days: bilingualSchema, hours: bilingualSchema });
 
+const locationRowSchema = z.object({
+  address: bilingualSchema,
+  phone_display: z.string().min(1, "Required"),
+  phone_href: z.string().min(1, "Required"),
+});
+
 const socialSchema = z.object({
   facebook: z.string().url().optional().or(z.literal("")),
   instagram: z.string().url().optional().or(z.literal("")),
@@ -28,6 +34,7 @@ const contactInfoSchema = z.object({
   address: bilingualSchema,
   maps_url: z.string().min(1, "Required"),
   working_hours: z.array(workingHourRowSchema),
+  locations: z.array(locationRowSchema),
   social: socialSchema,
 });
 
@@ -50,6 +57,13 @@ export async function updateContactInfoAction(
     workingHours = [];
   }
 
+  let locations: unknown = [];
+  try {
+    locations = JSON.parse(String(formData.get("locations") ?? "[]"));
+  } catch {
+    locations = [];
+  }
+
   const rawSocial = {
     facebook: String(formData.get("social_facebook") ?? "").trim(),
     instagram: String(formData.get("social_instagram") ?? "").trim(),
@@ -68,6 +82,7 @@ export async function updateContactInfoAction(
     address: bilingualFromForm(formData, "address"),
     maps_url: formData.get("maps_url"),
     working_hours: workingHours,
+    locations,
     social: rawSocial,
   });
 
