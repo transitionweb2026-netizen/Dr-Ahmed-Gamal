@@ -46,7 +46,7 @@ export default async function PatientStoriesPage({
       <PatientStoriesHero image={images["patient-stories-hero"]} />
       <StoriesIntro />
       <StoriesGrid videos={videos} />
-      <StoriesCta />
+      <StoriesCta image={images["patient-stories-cta-image"]} />
     </main>
   );
 }

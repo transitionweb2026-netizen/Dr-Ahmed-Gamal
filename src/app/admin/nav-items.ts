@@ -32,6 +32,11 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/stats", label: "Statistics strip", hint: "4 numbers — toggle “Featured on Home”" },
       { href: "/admin/content/home-about", label: "About", hint: "Heading, description & background image" },
       {
+        href: "/admin/videos",
+        label: "About section video",
+        hint: "Edit the video titled “Meet Dr. Ahmed Gamal” — plays when this section's thumbnail is clicked",
+      },
+      {
         href: "/admin/procedures",
         label: "Specialties (featured procedures)",
         hint: "Cards — toggle “Featured on Home”, ordered by Display Order",
@@ -56,6 +61,11 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/content/about-hero", label: "Hero", hint: "Title, description, buttons & background image" },
       { href: "/admin/content/about-message", label: "Personal Message", hint: "Quote, signature & portrait image" },
       { href: "/admin/content/about-video", label: "Introduction video text" },
+      {
+        href: "/admin/videos",
+        label: "Introduction video",
+        hint: "Edit the video titled “Meet Dr. Ahmed Gamal” — same one shown on Home's About section",
+      },
       { href: "/admin/stats", label: "Statistics strip", hint: "Toggle “Featured on About”" },
       {
         href: "/admin/procedures",
@@ -103,7 +113,7 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/content/patient-stories-intro", label: "Intro section text" },
       { href: "/admin/videos", label: "Patient story videos", hint: "Set Video Type = “Patient Story”" },
       { href: "/admin/content/patient-stories-grid", label: "Story grid text" },
-      { href: "/admin/content/patient-stories-cta", label: "Closing CTA text" },
+      { href: "/admin/content/patient-stories-cta", label: "Closing CTA", hint: "Text & image" },
     ],
   },
   {
@@ -112,7 +122,7 @@ export const adminNavGroups: AdminNavGroup[] = [
       { href: "/admin/content/videos-hero", label: "Hero", hint: "Title, description & background image" },
       { href: "/admin/videos", label: "All videos", hint: "Set Video Type = “Educational” to show here" },
       { href: "/admin/content/videos-latest", label: "Latest videos section text" },
-      { href: "/admin/content/videos-cta", label: "Closing CTA text" },
+      { href: "/admin/content/videos-cta", label: "Closing CTA", hint: "Text & phone mockup image" },
     ],
   },
   {

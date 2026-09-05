@@ -54,7 +54,7 @@ export default async function VideosPage({
       ))}
       <VideosHero image={images["videos-hero"]} />
       <VideosGrid videos={videos} />
-      <VideosCta contactInfo={contactInfo} videos={videos} />
+      <VideosCta contactInfo={contactInfo} image={images["videos-cta-phone"]} />
     </main>
   );
 }

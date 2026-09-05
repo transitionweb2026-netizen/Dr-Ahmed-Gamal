@@ -7,11 +7,10 @@ import { CTAButton } from "@/components/CTAButton";
 import { Icon } from "@/components/Icon";
 import type { getContactInfo } from "@/services/contactInfo";
 import { useDirection, dirX } from "@/lib/rtl";
-import type { Video } from "@/types/content";
 
 interface VideosCtaProps {
   contactInfo: Awaited<ReturnType<typeof getContactInfo>>;
-  videos: Video[];
+  image: string;
 }
 
 /**
@@ -22,11 +21,7 @@ interface VideosCtaProps {
  * 3 buttons, but this section needs only 2 (Book + WhatsApp) and an
  * illustrative phone mockup, not a photo.
  */
-export function VideosCta({ contactInfo, videos }: VideosCtaProps) {
-  // Reference's "Premium 3D Mobile Contact CTA" phone screenshot stands in for
-  // a bespoke booking-app mockup — reusing a video thumbnail the same way
-  // Home's FinalCta does for its own phone mockup (see src/sections/home/FinalCta.tsx).
-  const phoneImage = videos.find((v) => v.id === "clinic-tour") ?? videos[0];
+export function VideosCta({ contactInfo, image }: VideosCtaProps) {
   const t = useTranslations("pages.videos.cta");
   const cta = useTranslations("cta");
   const dir = useDirection();
@@ -76,7 +71,7 @@ export function VideosCta({ contactInfo, videos }: VideosCtaProps) {
             className="relative aspect-[3/4] overflow-hidden rounded-[40px] border-[8px] border-brand-dark bg-brand-darker shadow-[20px_20px_60px_rgba(0,0,0,0.8),-5px_-5px_20px_rgba(255,255,255,0.05)]"
           >
             <Image
-              src={phoneImage.thumbnail}
+              src={image}
               alt=""
               fill
               className="object-cover opacity-70"

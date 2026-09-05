@@ -345,6 +345,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.patientStories.cta.heading", label: "Heading" },
       { key: "pages.patientStories.cta.paragraph", label: "Description", multiline: true },
     ],
+    images: [{ slug: "patient-stories-cta-image", label: "Closing CTA image" }],
   },
 
   // ------------------------------------------------------------ Articles
@@ -415,6 +416,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.videos.cta.paragraph", label: "Description", multiline: true },
       { key: "pages.videos.cta.directLine", label: "“Direct Line” card label" },
     ],
+    images: [{ slug: "videos-cta-phone", label: "Phone mockup image" }],
     sharedButtons: ["Book Consultation", "WhatsApp"],
   },
 
