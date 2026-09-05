@@ -85,7 +85,7 @@ export default async function ArticleDetailPage({
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/articles"
-            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-brand-gold transition-colors hover:text-brand-light"
+            className="flex w-fit items-center gap-2 text-sm font-semibold uppercase tracking-widest text-brand-gold transition-colors hover:text-brand-light"
           >
             <Icon name="chevron_left" className="h-4 w-4 rtl:rotate-180" />
             {t("backToArticles")}
