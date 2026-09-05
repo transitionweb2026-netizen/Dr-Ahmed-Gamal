@@ -5,7 +5,7 @@ import { Carousel } from "@/components/Carousel";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import type { BeforeAfterCase, CaseCategory } from "@/types/content";
 
-const CATEGORIES: CaseCategory[] = ["face", "body", "breast"];
+const CATEGORIES: CaseCategory[] = ["nose", "gynecomastia", "arm-lift", "cleft-lip", "otoplasty"];
 
 export function CategoryGalleries({ cases: beforeAfterCases }: { cases: BeforeAfterCase[] }) {
   const locale = useLocale() as "en" | "ar";

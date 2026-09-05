@@ -59,9 +59,11 @@ export function CaseForm({ action, submitLabel, defaultValues }: CaseFormProps) 
           className="mt-1 w-full max-w-xs rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500"
         >
           <option value="">Select…</option>
-          <option value="face">Face</option>
-          <option value="body">Body</option>
-          <option value="breast">Breast</option>
+          <option value="nose">Nose</option>
+          <option value="gynecomastia">Gynecomastia</option>
+          <option value="arm-lift">Arm Lift</option>
+          <option value="cleft-lip">Cleft Lip</option>
+          <option value="otoplasty">Otoplasty (Bat Ears)</option>
         </select>
       </div>
 

@@ -28,7 +28,7 @@ export interface Procedure {
   };
 }
 
-export type CaseCategory = "face" | "body" | "breast";
+export type CaseCategory = "nose" | "gynecomastia" | "arm-lift" | "cleft-lip" | "otoplasty";
 
 export interface BeforeAfterCase {
   id: string;

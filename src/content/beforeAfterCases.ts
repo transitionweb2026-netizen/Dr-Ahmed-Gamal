@@ -23,19 +23,17 @@ const B1_AFTER = "https://lh3.googleusercontent.com/aida/AP1WRLvWGHraHbJV88T6daP
 const B2_BEFORE = "https://lh3.googleusercontent.com/aida-public/AB6AXuBeZgbac4ojzj2byKokz2-WDtMKBYFln99iEd_OVQulqZkM1wkx_x2CFDe4SS8HAppXdBfDJ5huG7kg_tGFY_KMX7vHLNZEXW8ir12hVXZZFpN7MUCOdO99yHZD5cApTHDl1YMNtueRXvI2FeWbBADU_GhKij4U3K2AgWB3CiOoNDTgkkhCB-u3EbhR0aRzn6v3MEE9GDiNTTr5sKKteeXnoT8dy3K0Bz-V-Mix-cAjNLaQ6_KZsQmqOw";
 const B2_AFTER = "https://lh3.googleusercontent.com/aida-public/AB6AXuCJQnCxSidxFk5u3Z1usoeb8TPHiPAUvlNhPQeqUdpMZZM13ie5e3f7nd8BxeS0Wl7HYY-iJ0-NYXiE2iqFnroDn7pgBpWrUf38xmvPvx7LWaYXFof_BJCRXHGW-_Xl-I1OrDvkcf_CWB8jNsYcLH0bEjSIGQZzvCAo9upUXkGvUjy-NcKarqN5V9tSi76gJt4Y5xPCy7YK8Q4ep-IymFsbGg-vki1FvPJ6xoBLPpb50YHeOMrVYwbY6w";
 
-// Breast-category pair — the only "breast" pair on the legacy site turned out to be a
-// broken asset (the "before" was a 3-panel collage with unrelated procedure captions
-// baked in, and the "after" was the raw 12-procedure sprite sheet meant only for
-// CSS-cropped backgrounds, per Services.html — not a real photo pair). Reusing the
-// verified-clean body pair here instead of shipping a visibly broken placeholder.
-const R1_BEFORE = B1_BEFORE;
-const R1_AFTER = B1_AFTER;
-
+// Category → 5 named procedures (nose, gynecomastia, arm-lift, cleft-lip,
+// otoplasty), replacing the old 3 broad regions (face/body/breast). Category
+// here is unrelated to the "Featured on Home" cases below — it's only used
+// to group cards into the Before & After page's category carousels — so
+// reusing this same small pool of stock pairs across categories is fine
+// (see scripts/seed-before-after-cases.mjs, the source of truth these mirror).
 export const beforeAfterCases: BeforeAfterCase[] = [
   // --- Home page featured preview (6) ---
   {
     id: "home-facelift-neck-lift",
-    category: "face",
+    category: "arm-lift",
     beforeImage: F4_BEFORE,
     afterImage: F4_AFTER,
     featuredOnHome: true,
@@ -44,7 +42,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   },
   {
     id: "home-rhinoplasty-1",
-    category: "face",
+    category: "nose",
     beforeImage: F5_BEFORE,
     afterImage: F5_AFTER,
     featuredOnHome: true,
@@ -53,7 +51,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   },
   {
     id: "home-body-contouring",
-    category: "body",
+    category: "gynecomastia",
     beforeImage: B2_BEFORE,
     afterImage: B2_AFTER,
     featuredOnHome: true,
@@ -62,7 +60,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   },
   {
     id: "home-facelift",
-    category: "face",
+    category: "cleft-lip",
     beforeImage: F6_BEFORE,
     afterImage: F6_AFTER,
     featuredOnHome: true,
@@ -71,7 +69,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   },
   {
     id: "home-rhinoplasty-2",
-    category: "face",
+    category: "nose",
     beforeImage: F7_BEFORE,
     afterImage: F7_AFTER,
     featuredOnHome: true,
@@ -80,7 +78,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   },
   {
     id: "home-jawline-sculpting",
-    category: "face",
+    category: "otoplasty",
     beforeImage: F3_BEFORE,
     afterImage: F3_AFTER,
     featuredOnHome: true,
@@ -88,225 +86,193 @@ export const beforeAfterCases: BeforeAfterCase[] = [
     subtitle: { en: "Defined jawline", ar: "خط فك محدد المعالم" },
   },
 
-  // --- Before & After page: Face Procedures carousel (6) ---
+  // --- Before & After page: Nose Cases carousel (3) ---
   {
-    id: "gallery-face-rhinoplasty",
-    category: "face",
+    id: "nose-1",
+    category: "nose",
     showInCategoryGallery: true,
     beforeImage: F1_BEFORE,
     afterImage: F1_AFTER,
     title: { en: "Rhinoplasty", ar: "تجميل الأنف" },
     subtitle: {
-      en: "Refined structural contouring for balanced facial harmony.",
-      ar: "إعادة تشكيل هيكلي دقيق لتحقيق تناسق طبيعي للوجه.",
+      en: "Refined nasal profile for balanced facial harmony.",
+      ar: "تحسين ملامح الأنف لتحقيق تناسق طبيعي للوجه.",
     },
   },
   {
-    id: "gallery-face-facelift",
-    category: "face",
+    id: "nose-2",
+    category: "nose",
     showInCategoryGallery: true,
     beforeImage: F2_BEFORE,
     afterImage: F2_AFTER,
-    title: { en: "Facelift", ar: "شد الوجه" },
+    title: { en: "Nasal Tip Refinement", ar: "تحسين طرف الأنف" },
     subtitle: {
-      en: "Comprehensive rejuvenation of lower face and neck regions.",
-      ar: "تجديد شامل لمنطقتي أسفل الوجه والرقبة.",
+      en: "Subtle reshaping for a naturally elegant tip.",
+      ar: "إعادة تشكيل دقيقة للحصول على طرف أنف أنيق وطبيعي.",
     },
   },
   {
-    id: "gallery-face-jawline",
-    category: "face",
+    id: "nose-3",
+    category: "nose",
     showInCategoryGallery: true,
     beforeImage: F3_BEFORE,
     afterImage: F3_AFTER,
-    title: { en: "Jawline", ar: "خط الفك" },
+    title: { en: "Nasal Bridge Contouring", ar: "نحت قصبة الأنف" },
     subtitle: {
-      en: "Crisp definition and sculpting of the mandibular profile.",
-      ar: "تحديد ونحت دقيق لملامح الفك.",
-    },
-  },
-  {
-    id: "gallery-face-blepharoplasty",
-    category: "face",
-    showInCategoryGallery: true,
-    beforeImage: F4_BEFORE,
-    afterImage: F4_AFTER,
-    title: { en: "Blepharoplasty", ar: "جراحة الجفون" },
-    subtitle: {
-      en: "Upper and lower eyelid rejuvenation for a rested appearance.",
-      ar: "تجديد الجفنين العلوي والسفلي لمظهر مرتاح.",
-    },
-  },
-  {
-    id: "gallery-face-brow-lift",
-    category: "face",
-    showInCategoryGallery: true,
-    beforeImage: F5_BEFORE,
-    afterImage: F5_AFTER,
-    title: { en: "Brow Lift", ar: "شد الحاجب" },
-    subtitle: {
-      en: "Elevating the brow line to restore youthful vibrancy.",
-      ar: "رفع خط الحاجب لاستعادة حيوية الشباب.",
-    },
-  },
-  {
-    id: "gallery-face-neck-contouring",
-    category: "face",
-    showInCategoryGallery: true,
-    beforeImage: F6_BEFORE,
-    afterImage: F6_AFTER,
-    title: { en: "Neck Contouring", ar: "نحت الرقبة" },
-    subtitle: {
-      en: "Targeted removal of excess tissue for a sculpted neckline.",
-      ar: "إزالة موضعية للأنسجة الزائدة للحصول على خط رقبة منحوت.",
+      en: "Smoothing the bridge for a refined side profile.",
+      ar: "تنعيم القصبة لملف جانبي أكثر دقة.",
     },
   },
 
-  // --- Before & After page: Body Contouring carousel (6) ---
+  // --- Before & After page: Gynecomastia Cases carousel (3) ---
   {
-    id: "gallery-body-liposuction",
-    category: "body",
+    id: "gynecomastia-1",
+    category: "gynecomastia",
     showInCategoryGallery: true,
-    beforeImage: B1_BEFORE,
-    afterImage: B1_AFTER,
-    title: { en: "Liposuction", ar: "شفط الدهون" },
+    beforeImage: F4_BEFORE,
+    afterImage: F4_AFTER,
+    title: { en: "Gynecomastia Correction", ar: "علاج التثدي" },
     subtitle: {
-      en: "Precision fat removal to enhance natural body contours.",
-      ar: "إزالة دقيقة للدهون لإبراز قوام الجسم الطبيعي.",
+      en: "Restoring a firmer, more masculine chest contour.",
+      ar: "استعادة قوام صدر أكثر تحديدًا وذكورية.",
     },
   },
   {
-    id: "gallery-body-tummy-tuck",
-    category: "body",
+    id: "gynecomastia-2",
+    category: "gynecomastia",
     showInCategoryGallery: true,
-    beforeImage: B2_BEFORE,
-    afterImage: B2_AFTER,
-    title: { en: "Tummy Tuck", ar: "شد البطن" },
+    beforeImage: F5_BEFORE,
+    afterImage: F5_AFTER,
+    title: { en: "Chest Contouring", ar: "نحت الصدر" },
     subtitle: {
-      en: "Restoring abdominal tone and creating a sleeker profile.",
-      ar: "استعادة شد البطن وتحقيق قوام أكثر انسيابية.",
+      en: "Reducing excess tissue for a natural silhouette.",
+      ar: "تقليل الأنسجة الزائدة للحصول على قوام طبيعي.",
     },
   },
   {
-    id: "gallery-body-mommy-makeover",
-    category: "body",
+    id: "gynecomastia-3",
+    category: "gynecomastia",
     showInCategoryGallery: true,
-    beforeImage: B1_BEFORE,
-    afterImage: B1_AFTER,
-    title: { en: "Mommy Makeover", ar: "تجديد ما بعد الولادة" },
+    beforeImage: F6_BEFORE,
+    afterImage: F6_AFTER,
+    title: { en: "Male Chest Reduction", ar: "تصغير الصدر عند الرجال" },
     subtitle: {
-      en: "Comprehensive restoration of pre-pregnancy body contours.",
-      ar: "استعادة شاملة لقوام الجسم كما كان قبل الحمل.",
+      en: "Achieving a flatter, well-defined chest.",
+      ar: "الحصول على صدر أكثر استواءً وتحديدًا.",
     },
   },
+
+  // --- Before & After page: Arm Lift Cases carousel (3) ---
   {
-    id: "gallery-body-thigh-lift",
-    category: "body",
+    id: "arm-lift-1",
+    category: "arm-lift",
     showInCategoryGallery: true,
-    beforeImage: B2_BEFORE,
-    afterImage: B2_AFTER,
-    title: { en: "Thigh Lift", ar: "شد الفخذين" },
-    subtitle: {
-      en: "Firming and tightening the upper legs for improved shape.",
-      ar: "شد وتثبيت أعلى الساقين لتحسين القوام.",
-    },
-  },
-  {
-    id: "gallery-body-arm-lift",
-    category: "body",
-    showInCategoryGallery: true,
-    beforeImage: B1_BEFORE,
-    afterImage: B1_AFTER,
+    beforeImage: F7_BEFORE,
+    afterImage: F7_AFTER,
     title: { en: "Arm Lift", ar: "شد الذراعين" },
     subtitle: {
-      en: "Reducing excess skin for toned, youthful upper arms.",
+      en: "Reducing excess skin for toned, youthful arms.",
       ar: "تقليل الجلد الزائد للحصول على ذراعين مشدودتين وشابتين.",
     },
   },
   {
-    id: "gallery-body-bbl",
-    category: "body",
+    id: "arm-lift-2",
+    category: "arm-lift",
+    showInCategoryGallery: true,
+    beforeImage: B1_BEFORE,
+    afterImage: B1_AFTER,
+    title: { en: "Brachioplasty", ar: "تجميل أعلى الذراع" },
+    subtitle: {
+      en: "Firming the upper arm for a sculpted silhouette.",
+      ar: "شد أعلى الذراع للحصول على قوام منحوت.",
+    },
+  },
+  {
+    id: "arm-lift-3",
+    category: "arm-lift",
     showInCategoryGallery: true,
     beforeImage: B2_BEFORE,
     afterImage: B2_AFTER,
-    title: { en: "BBL", ar: "شفط ونقل الدهون" },
+    title: { en: "Upper Arm Contouring", ar: "نحت أعلى الذراع" },
     subtitle: {
-      en: "Enhancing curves through precise fat transfer techniques.",
-      ar: "إبراز الانحناءات من خلال تقنيات نقل دهون دقيقة.",
+      en: "Smoother, more defined arm contours.",
+      ar: "خطوط ذراع أكثر نعومة وتحديدًا.",
     },
   },
 
-  // --- Before & After page: Breast & Combined carousel (6) ---
+  // --- Before & After page: Cleft Lip Cases carousel (3) ---
   {
-    id: "gallery-breast-augmentation",
-    category: "breast",
+    id: "cleft-lip-1",
+    category: "cleft-lip",
     showInCategoryGallery: true,
-    beforeImage: R1_BEFORE,
-    afterImage: R1_AFTER,
-    title: { en: "Augmentation", ar: "تكبير الثدي" },
+    beforeImage: F2_BEFORE,
+    afterImage: F2_AFTER,
+    title: { en: "Cleft Lip Repair", ar: "إصلاح الشفة الأرنبية" },
     subtitle: {
-      en: "Natural enhancement tailored to individual proportions.",
-      ar: "تعزيز طبيعي يتناسب مع تناسق الجسم الفردي.",
+      en: "Restoring natural lip symmetry and function.",
+      ar: "استعادة تناسق ووظيفة الشفة بشكل طبيعي.",
     },
   },
   {
-    id: "gallery-breast-reduction",
-    category: "breast",
+    id: "cleft-lip-2",
+    category: "cleft-lip",
     showInCategoryGallery: true,
-    beforeImage: R1_BEFORE,
-    afterImage: R1_AFTER,
-    title: { en: "Reduction", ar: "تصغير الثدي" },
+    beforeImage: F4_BEFORE,
+    afterImage: F4_AFTER,
+    title: { en: "Lip Revision Surgery", ar: "جراحة تصحيح الشفة" },
     subtitle: {
-      en: "Relieving discomfort while achieving a lighter profile.",
-      ar: "تخفيف الانزعاج مع تحقيق قوام أخف.",
+      en: "Refining scar tissue for a smoother appearance.",
+      ar: "تحسين مظهر الندبات للحصول على مظهر أكثر نعومة.",
     },
   },
   {
-    id: "gallery-breast-mastopexy",
-    category: "breast",
+    id: "cleft-lip-3",
+    category: "cleft-lip",
     showInCategoryGallery: true,
-    beforeImage: R1_BEFORE,
-    afterImage: R1_AFTER,
-    title: { en: "Mastopexy", ar: "شد الثدي" },
+    beforeImage: F6_BEFORE,
+    afterImage: F6_AFTER,
+    title: { en: "Cleft Scar Refinement", ar: "تحسين ندبة الشفة الأرنبية" },
     subtitle: {
-      en: "Elevating and reshaping for youthful perkiness.",
-      ar: "رفع وإعادة تشكيل لمظهر شبابي مشدود.",
+      en: "Subtle refinement for improved lip contour.",
+      ar: "تحسين دقيق لخط الشفة.",
+    },
+  },
+
+  // --- Before & After page: Otoplasty (Bat Ears) Cases carousel (3) ---
+  {
+    id: "otoplasty-1",
+    category: "otoplasty",
+    showInCategoryGallery: true,
+    beforeImage: F1_BEFORE,
+    afterImage: F1_AFTER,
+    title: { en: "Otoplasty", ar: "تجميل الأذن" },
+    subtitle: {
+      en: "Repositioning prominent ears closer to the head.",
+      ar: "إعادة تقريب الأذن البارزة من الرأس.",
     },
   },
   {
-    id: "gallery-breast-implant-exchange",
-    category: "breast",
+    id: "otoplasty-2",
+    category: "otoplasty",
     showInCategoryGallery: true,
-    beforeImage: R1_BEFORE,
-    afterImage: R1_AFTER,
-    title: { en: "Implant Exchange", ar: "استبدال الحشوات" },
+    beforeImage: F3_BEFORE,
+    afterImage: F3_AFTER,
+    title: { en: "Ear Pinning", ar: "تثبيت الأذن" },
     subtitle: {
-      en: "Updating size or style with modern advanced materials.",
-      ar: "تحديث الحجم أو النوع باستخدام مواد حديثة متطورة.",
+      en: "Correcting protruding ears for balanced proportions.",
+      ar: "تصحيح بروز الأذن لتحقيق تناسق طبيعي.",
     },
   },
   {
-    id: "gallery-breast-fat-transfer",
-    category: "breast",
+    id: "otoplasty-3",
+    category: "otoplasty",
     showInCategoryGallery: true,
-    beforeImage: R1_BEFORE,
-    afterImage: R1_AFTER,
-    title: { en: "Fat Transfer", ar: "نقل الدهون" },
+    beforeImage: F5_BEFORE,
+    afterImage: F5_AFTER,
+    title: { en: "Prominent Ear Correction", ar: "تصحيح بروز الأذن" },
     subtitle: {
-      en: "Natural volume enhancement using your body's own tissue.",
-      ar: "تعزيز طبيعي للحجم باستخدام أنسجة الجسم الذاتية.",
-    },
-  },
-  {
-    id: "gallery-breast-combined",
-    category: "breast",
-    showInCategoryGallery: true,
-    beforeImage: R1_BEFORE,
-    afterImage: R1_AFTER,
-    title: { en: "Combined", ar: "إجراء مركب" },
-    subtitle: {
-      en: "Synergistic procedures for comprehensive aesthetic harmony.",
-      ar: "إجراءات متكاملة لتحقيق انسجام جمالي شامل.",
+      en: "A natural-looking, well-proportioned ear shape.",
+      ar: "شكل أذن طبيعي ومتناسق.",
     },
   },
 ];
