@@ -80,6 +80,7 @@ export interface Video {
   title: Bilingual;
   category: Bilingual;
   thumbnail: string;
+  videoUrl?: string;
   youtubeId?: string;
   vimeoId?: string;
   aspect?: "9:16" | "16:9";

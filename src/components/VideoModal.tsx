@@ -29,7 +29,16 @@ export function VideoModal({ video, onClose }: VideoModalProps) {
       contentClassName="max-w-3xl aspect-video overflow-hidden bg-black"
     >
       {video &&
-        (embedUrl ? (
+        (video.videoUrl ? (
+          <video
+            key={video.videoUrl}
+            src={video.videoUrl}
+            title={video.title[locale]}
+            className="h-full w-full"
+            controls
+            autoPlay
+          />
+        ) : embedUrl ? (
           <iframe
             src={embedUrl}
             title={video.title[locale]}

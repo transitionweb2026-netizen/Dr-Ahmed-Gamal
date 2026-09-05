@@ -16,6 +16,7 @@ export async function getVideos(): Promise<Video[]> {
       title: row.title,
       category: row.category,
       thumbnail: row.thumbnail,
+      videoUrl: row.video_url ?? undefined,
       youtubeId: row.youtube_id ?? undefined,
       vimeoId: row.vimeo_id ?? undefined,
       aspect: row.aspect,

@@ -26,6 +26,7 @@ export default async function EditVideoPage({ params }: { params: Promise<{ id: 
             title: video.title,
             category: video.category,
             thumbnail: video.thumbnail,
+            video_url: video.video_url,
             youtube_id: video.youtube_id,
             vimeo_id: video.vimeo_id,
             aspect: video.aspect,

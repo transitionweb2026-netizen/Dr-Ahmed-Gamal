@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { BilingualField } from "@/components/admin/BilingualField";
 import { ImageUploadField } from "@/components/admin/ImageUploadField";
+import { VideoUploadField } from "@/components/admin/VideoUploadField";
 import type { VideoFormResult } from "./actions";
 
 interface VideoFormProps {
@@ -13,6 +14,7 @@ interface VideoFormProps {
     title: { en: string; ar: string };
     category: { en: string; ar: string };
     thumbnail: string;
+    video_url: string | null;
     youtube_id: string | null;
     vimeo_id: string | null;
     aspect: string;
@@ -49,10 +51,12 @@ export function VideoForm({ action, submitLabel, defaultValues }: VideoFormProps
 
       <ImageUploadField label="Thumbnail" name="thumbnail" defaultValue={defaultValues?.thumbnail} required />
 
+      <VideoUploadField label="Video file" name="video_url" defaultValue={defaultValues?.video_url} />
+
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="youtube_id" className="block text-sm font-medium text-slate-700">
-            YouTube ID
+            YouTube ID <span className="font-normal text-slate-400">(used only if no video file is uploaded)</span>
           </label>
           <input
             id="youtube_id"

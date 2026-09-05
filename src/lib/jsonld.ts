@@ -101,7 +101,9 @@ export function buildVideoObjectSchema(video: Video, locale: Locale): JsonLd {
     thumbnailUrl: video.thumbnail,
   };
 
-  if (video.youtubeId) {
+  if (video.videoUrl) {
+    schema.contentUrl = video.videoUrl;
+  } else if (video.youtubeId) {
     schema.embedUrl = `https://www.youtube-nocookie.com/embed/${video.youtubeId}`;
   } else if (video.vimeoId) {
     schema.embedUrl = `https://player.vimeo.com/video/${video.vimeoId}`;
