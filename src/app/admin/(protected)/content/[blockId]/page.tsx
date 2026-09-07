@@ -23,11 +23,14 @@ export default async function EditContentBlockPage({ params }: { params: Promise
 
   const supabase = await getSupabaseServerClient();
   const keys = block.fields.map((f) => f.key);
-  const [translationsResult, pageImages] = await Promise.all([
+  const videoSlugs = (block.videos ?? []).map((v) => v.slug);
+  const [translationsResult, pageImages, videosResult] = await Promise.all([
     supabase?.from("translations").select("key, locale, value").in("key", keys),
     getPageImages(),
+    videoSlugs.length > 0 ? supabase?.from("videos").select("slug, video_url").in("slug", videoSlugs) : null,
   ]);
   const rows = (translationsResult?.data ?? []) as { key: string; locale: string; value: string }[];
+  const videoRows = (videosResult?.data ?? []) as { slug: string; video_url: string | null }[];
 
   const values = Object.fromEntries(
     block.fields.map((field) => {
@@ -41,6 +44,10 @@ export default async function EditContentBlockPage({ params }: { params: Promise
   // service the live frontend uses) when the page_images table doesn't
   // exist yet, so this always shows the image that's actually live.
   const imageValues = Object.fromEntries((block.images ?? []).map((img) => [img.slug, pageImages[img.slug]]));
+
+  const videoValues = Object.fromEntries(
+    (block.videos ?? []).map((v) => [v.slug, videoRows.find((row) => row.slug === v.slug)?.video_url ?? ""]),
+  );
 
   return (
     <div>
@@ -67,6 +74,8 @@ export default async function EditContentBlockPage({ params }: { params: Promise
           values={values}
           images={block.images ?? []}
           imageValues={imageValues}
+          videos={block.videos ?? []}
+          videoValues={videoValues}
         />
       </div>
     </div>

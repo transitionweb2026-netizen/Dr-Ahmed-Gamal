@@ -10,9 +10,9 @@ import { getContentBlock } from "../../content-blocks";
 export interface ContentBlockFormResult {
   ok: boolean;
   error?: string;
-  /** Set when text saved fine but the image(s) couldn't be — e.g. the
-   * page_images table hasn't been created yet. Shown alongside a normal
-   * success message rather than as a hard failure. */
+  /** Set when text saved fine but the image(s)/video(s) couldn't be — e.g.
+   * the page_images table hasn't been created yet. Shown alongside a
+   * normal success message rather than as a hard failure. */
   warning?: string;
 }
 
@@ -44,7 +44,7 @@ export async function updateContentBlockAction(
     if (error) return { ok: false, error: error.message };
   }
 
-  let imageWarning: string | undefined;
+  const warnings: string[] = [];
   const images = block.images ?? [];
   if (images.length > 0) {
     const urlSchema = z.string().url("Enter a valid image URL");
@@ -60,12 +60,36 @@ export async function updateContentBlockAction(
     );
     const failed = results.find((r) => r.error);
     if (failed?.error) {
-      imageWarning = `Text saved, but the image(s) couldn't be — ${failed.error.message}. The page_images table may not be created yet (see supabase/migrations/0002_page_images.sql).`;
+      warnings.push(
+        `The image(s) couldn't be saved — ${failed.error.message}. The page_images table may not be created yet (see supabase/migrations/0002_page_images.sql).`,
+      );
+    }
+  }
+
+  const videos = block.videos ?? [];
+  if (videos.length > 0) {
+    const videoUpdates: { slug: string; video_url: string | null }[] = [];
+    for (const video of videos) {
+      const raw = formData.get(`video__${video.slug}`);
+      const trimmed = typeof raw === "string" ? raw.trim() : "";
+      if (trimmed && !/^https?:\/\//.test(trimmed)) {
+        return { ok: false, error: `${video.label}: Enter a valid video URL` };
+      }
+      videoUpdates.push({ slug: video.slug, video_url: trimmed || null });
+    }
+
+    const results = await Promise.all(
+      videoUpdates.map(({ slug, video_url }) => supabase.from("videos").update({ video_url }).eq("slug", slug)),
+    );
+    const failed = results.find((r) => r.error);
+    if (failed?.error) {
+      warnings.push(`The video(s) couldn't be saved — ${failed.error.message}.`);
     }
   }
 
   revalidatePath("/admin/content");
   revalidatePath(`/admin/content/${blockId}`);
+  revalidatePath("/admin/videos");
   revalidatePublicSite();
-  return { ok: true, warning: imageWarning };
+  return { ok: true, warning: warnings.length > 0 ? warnings.join(" ") : undefined };
 }

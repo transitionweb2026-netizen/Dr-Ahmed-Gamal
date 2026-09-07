@@ -30,11 +30,10 @@ export const adminNavGroups: AdminNavGroup[] = [
     items: [
       { href: "/admin/content/home-hero", label: "Hero", hint: "Title, description, buttons & background image" },
       { href: "/admin/stats", label: "Statistics strip", hint: "4 numbers — toggle “Featured on Home”" },
-      { href: "/admin/content/home-about", label: "About", hint: "Heading, description & background image" },
       {
-        href: "/admin/videos",
-        label: "About section video",
-        hint: "Edit the video titled “Meet Dr. Ahmed Gamal” — plays when this section's thumbnail is clicked",
+        href: "/admin/content/home-about",
+        label: "About",
+        hint: "Heading, description, background image & intro video",
       },
       {
         href: "/admin/procedures",
@@ -60,12 +59,7 @@ export const adminNavGroups: AdminNavGroup[] = [
     items: [
       { href: "/admin/content/about-hero", label: "Hero", hint: "Title, description, buttons & background image" },
       { href: "/admin/content/about-message", label: "Personal Message", hint: "Quote, signature & portrait image" },
-      { href: "/admin/content/about-video", label: "Introduction video text" },
-      {
-        href: "/admin/videos",
-        label: "Introduction video",
-        hint: "Edit the video titled “Meet Dr. Ahmed Gamal” — same one shown on Home's About section",
-      },
+      { href: "/admin/content/about-video", label: "Introduction video", hint: "Text & video file" },
       { href: "/admin/stats", label: "Statistics strip", hint: "Toggle “Featured on About”" },
       {
         href: "/admin/procedures",

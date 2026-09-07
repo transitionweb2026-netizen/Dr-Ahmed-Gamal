@@ -31,6 +31,14 @@ export interface ContentImageField {
   label: string;
 }
 
+export interface ContentVideoField {
+  /** Slug in the videos table, e.g. "meet-dr-ahmed" — its video_url column
+   * is what's edited here. */
+  slug: string;
+  /** Human-readable label shown in the admin form. */
+  label: string;
+}
+
 export interface ContentBlock {
   /** URL slug, e.g. "home-hero". */
   id: string;
@@ -41,6 +49,8 @@ export interface ContentBlock {
   fields: ContentField[];
   /** Images that live in this same section — edited in this same form. */
   images?: ContentImageField[];
+  /** Videos that live in this same section — edited in this same form. */
+  videos?: ContentVideoField[];
   /** Buttons/CTAs this section displays that are shared site-wide and edited elsewhere. */
   sharedButtons?: string[];
 }
@@ -74,6 +84,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.home.about.paragraph2", label: "Paragraph 2", multiline: true },
     ],
     images: [{ slug: "home-about", label: "About section background image" }],
+    videos: [{ slug: "meet-dr-ahmed", label: "Introduction video" }],
     sharedButtons: ["Learn More"],
   },
   {
@@ -190,6 +201,7 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.about.video.titleLine2", label: "Title — line 2 (styled in gold italic)" },
       { key: "pages.about.video.paragraph", label: "Description", multiline: true },
     ],
+    videos: [{ slug: "meet-dr-ahmed", label: "Introduction video" }],
     sharedButtons: ["Learn More"],
   },
   {

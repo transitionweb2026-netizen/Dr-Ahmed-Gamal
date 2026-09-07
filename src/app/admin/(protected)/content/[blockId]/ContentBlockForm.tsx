@@ -3,8 +3,9 @@
 import { useActionState } from "react";
 import { BilingualField } from "@/components/admin/BilingualField";
 import { ImageUploadField } from "@/components/admin/ImageUploadField";
+import { VideoUploadField } from "@/components/admin/VideoUploadField";
 import { updateContentBlockAction, type ContentBlockFormResult } from "../actions";
-import type { ContentField, ContentImageField } from "../../../content-blocks";
+import type { ContentField, ContentImageField, ContentVideoField } from "../../../content-blocks";
 
 interface ContentBlockFormProps {
   blockId: string;
@@ -12,9 +13,19 @@ interface ContentBlockFormProps {
   values: Record<string, { en: string; ar: string }>;
   images: ContentImageField[];
   imageValues: Record<string, string>;
+  videos: ContentVideoField[];
+  videoValues: Record<string, string>;
 }
 
-export function ContentBlockForm({ blockId, fields, values, images, imageValues }: ContentBlockFormProps) {
+export function ContentBlockForm({
+  blockId,
+  fields,
+  values,
+  images,
+  imageValues,
+  videos,
+  videoValues,
+}: ContentBlockFormProps) {
   const action = updateContentBlockAction.bind(null, blockId);
   const [state, formAction, pending] = useActionState<ContentBlockFormResult | null, FormData>(action, null);
 
@@ -30,7 +41,16 @@ export function ContentBlockForm({ blockId, fields, values, images, imageValues 
         />
       ))}
 
-      {images.length > 0 && fields.length > 0 && <hr className="border-slate-200" />}
+      {videos.map((video) => (
+        <VideoUploadField
+          key={video.slug}
+          label={video.label}
+          name={`video__${video.slug}`}
+          defaultValue={videoValues[video.slug]}
+        />
+      ))}
+
+      {(images.length > 0 || videos.length > 0) && fields.length > 0 && <hr className="border-slate-200" />}
 
       {fields.map((field) => (
         <BilingualField
