@@ -15,6 +15,7 @@ interface ContentBlockFormProps {
   imageValues: Record<string, string>;
   videos: ContentVideoField[];
   videoValues: Record<string, string>;
+  videoThumbnailValues: Record<string, string>;
 }
 
 export function ContentBlockForm({
@@ -25,6 +26,7 @@ export function ContentBlockForm({
   imageValues,
   videos,
   videoValues,
+  videoThumbnailValues,
 }: ContentBlockFormProps) {
   const action = updateContentBlockAction.bind(null, blockId);
   const [state, formAction, pending] = useActionState<ContentBlockFormResult | null, FormData>(action, null);
@@ -42,12 +44,19 @@ export function ContentBlockForm({
       ))}
 
       {videos.map((video) => (
-        <VideoUploadField
-          key={video.slug}
-          label={video.label}
-          name={`video__${video.slug}`}
-          defaultValue={videoValues[video.slug]}
-        />
+        <div key={video.slug} className="space-y-6">
+          <ImageUploadField
+            label={`${video.label} — cover image`}
+            name={`video_thumbnail__${video.slug}`}
+            defaultValue={videoThumbnailValues[video.slug]}
+            required
+          />
+          <VideoUploadField
+            label={video.label}
+            name={`video__${video.slug}`}
+            defaultValue={videoValues[video.slug]}
+          />
+        </div>
       ))}
 
       {(images.length > 0 || videos.length > 0) && fields.length > 0 && <hr className="border-slate-200" />}

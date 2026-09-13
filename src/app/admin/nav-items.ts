@@ -33,7 +33,7 @@ export const adminNavGroups: AdminNavGroup[] = [
       {
         href: "/admin/content/home-about",
         label: "About",
-        hint: "Heading, description, background image & intro video",
+        hint: "Heading, description, background image, intro video & its cover image",
       },
       {
         href: "/admin/procedures",
@@ -59,7 +59,7 @@ export const adminNavGroups: AdminNavGroup[] = [
     items: [
       { href: "/admin/content/about-hero", label: "Hero", hint: "Title, description, buttons & background image" },
       { href: "/admin/content/about-message", label: "Personal Message", hint: "Quote, signature & portrait image" },
-      { href: "/admin/content/about-video", label: "Introduction video", hint: "Text & video file" },
+      { href: "/admin/content/about-video", label: "Introduction video", hint: "Text, video file & cover image" },
       { href: "/admin/stats", label: "Statistics strip", hint: "Toggle “Featured on About”" },
       {
         href: "/admin/procedures",

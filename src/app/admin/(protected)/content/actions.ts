@@ -68,18 +68,24 @@ export async function updateContentBlockAction(
 
   const videos = block.videos ?? [];
   if (videos.length > 0) {
-    const videoUpdates: { slug: string; video_url: string | null }[] = [];
+    const thumbnailSchema = z.string().url("Enter a valid image URL");
+    const videoUpdates: { slug: string; video_url: string | null; thumbnail: string }[] = [];
     for (const video of videos) {
+      const parsedThumbnail = thumbnailSchema.safeParse(formData.get(`video_thumbnail__${video.slug}`));
+      if (!parsedThumbnail.success) {
+        return { ok: false, error: `${video.label} cover image: ${parsedThumbnail.error.issues[0]?.message}` };
+      }
+
       const raw = formData.get(`video__${video.slug}`);
       const trimmed = typeof raw === "string" ? raw.trim() : "";
       if (trimmed && !/^https?:\/\//.test(trimmed)) {
         return { ok: false, error: `${video.label}: Enter a valid video URL` };
       }
-      videoUpdates.push({ slug: video.slug, video_url: trimmed || null });
+      videoUpdates.push({ slug: video.slug, video_url: trimmed || null, thumbnail: parsedThumbnail.data });
     }
 
     const results = await Promise.all(
-      videoUpdates.map(({ slug, video_url }) => supabase.from("videos").update({ video_url }).eq("slug", slug)),
+      videoUpdates.map(({ slug, ...update }) => supabase.from("videos").update(update).eq("slug", slug)),
     );
     const failed = results.find((r) => r.error);
     if (failed?.error) {

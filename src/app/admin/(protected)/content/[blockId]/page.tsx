@@ -27,10 +27,12 @@ export default async function EditContentBlockPage({ params }: { params: Promise
   const [translationsResult, pageImages, videosResult] = await Promise.all([
     supabase?.from("translations").select("key, locale, value").in("key", keys),
     getPageImages(),
-    videoSlugs.length > 0 ? supabase?.from("videos").select("slug, video_url").in("slug", videoSlugs) : null,
+    videoSlugs.length > 0
+      ? supabase?.from("videos").select("slug, video_url, thumbnail").in("slug", videoSlugs)
+      : null,
   ]);
   const rows = (translationsResult?.data ?? []) as { key: string; locale: string; value: string }[];
-  const videoRows = (videosResult?.data ?? []) as { slug: string; video_url: string | null }[];
+  const videoRows = (videosResult?.data ?? []) as { slug: string; video_url: string | null; thumbnail: string }[];
 
   const values = Object.fromEntries(
     block.fields.map((field) => {
@@ -47,6 +49,10 @@ export default async function EditContentBlockPage({ params }: { params: Promise
 
   const videoValues = Object.fromEntries(
     (block.videos ?? []).map((v) => [v.slug, videoRows.find((row) => row.slug === v.slug)?.video_url ?? ""]),
+  );
+
+  const videoThumbnailValues = Object.fromEntries(
+    (block.videos ?? []).map((v) => [v.slug, videoRows.find((row) => row.slug === v.slug)?.thumbnail ?? ""]),
   );
 
   return (
@@ -76,6 +82,7 @@ export default async function EditContentBlockPage({ params }: { params: Promise
           imageValues={imageValues}
           videos={block.videos ?? []}
           videoValues={videoValues}
+          videoThumbnailValues={videoThumbnailValues}
         />
       </div>
     </div>
