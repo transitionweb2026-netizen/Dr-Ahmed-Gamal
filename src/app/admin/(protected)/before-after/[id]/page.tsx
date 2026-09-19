@@ -32,6 +32,7 @@ export default async function EditCasePage({ params }: { params: Promise<{ id: s
             show_in_category_gallery: caseItem.show_in_category_gallery,
             order_index: caseItem.order_index,
             is_published: caseItem.is_published,
+            angles: caseItem.angles ?? [],
           }}
         />
       </div>

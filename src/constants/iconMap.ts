@@ -43,6 +43,7 @@ import {
   Video,
   GraduationCap,
   Store,
+  LayoutGrid,
   type LucideProps,
 } from "lucide-react";
 import type { ComponentType } from "react";
@@ -72,6 +73,7 @@ export const iconMap = {
   face: Smile,
   facebook: FacebookIcon,
   format_quote: Quote,
+  grid_view: LayoutGrid,
   groups: Users,
   instagram: InstagramIcon,
   location_on: MapPin,

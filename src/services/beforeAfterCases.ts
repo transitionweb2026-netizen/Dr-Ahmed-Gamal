@@ -1,6 +1,6 @@
 import { getSupabasePublicClient } from "@/lib/supabase/public";
 import { beforeAfterCases as staticCases } from "@/content/beforeAfterCases";
-import type { BeforeAfterCase } from "@/types/content";
+import type { BeforeAfterAngle, BeforeAfterCase } from "@/types/content";
 
 export async function getBeforeAfterCases(): Promise<BeforeAfterCase[]> {
   const supabase = getSupabasePublicClient();
@@ -24,6 +24,7 @@ export async function getBeforeAfterCases(): Promise<BeforeAfterCase[]> {
       afterImage: row.after_image,
       featuredOnHome: row.featured_on_home,
       showInCategoryGallery: row.show_in_category_gallery,
+      angles: (row.angles ?? []) as BeforeAfterAngle[],
     }),
   );
 }

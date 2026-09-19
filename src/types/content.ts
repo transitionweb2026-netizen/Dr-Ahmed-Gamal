@@ -30,6 +30,13 @@ export interface Procedure {
 
 export type CaseCategory = "nose" | "gynecomastia" | "arm-lift" | "cleft-lip" | "otoplasty";
 
+/** One angle shown in a case's popup. `afterImage` present → rendered as a
+ * before/after slider (Nose cases only); absent → a single static photo. */
+export interface BeforeAfterAngle {
+  image: string;
+  afterImage?: string;
+}
+
 export interface BeforeAfterCase {
   id: string;
   title: Bilingual;
@@ -39,6 +46,7 @@ export interface BeforeAfterCase {
   afterImage: string;
   featuredOnHome?: boolean;
   showInCategoryGallery?: boolean;
+  angles?: BeforeAfterAngle[];
 }
 
 export interface Testimonial {

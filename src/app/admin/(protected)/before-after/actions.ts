@@ -9,6 +9,13 @@ import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
 
+const ANGLE_COUNT = 4;
+
+const angleSchema = z.object({
+  image: z.string().url("Angle image must be a valid URL"),
+  afterImage: z.string().url("Angle after-image must be a valid URL").optional(),
+});
+
 const caseSchema = z.object({
   slug: z
     .string()
@@ -23,6 +30,7 @@ const caseSchema = z.object({
   show_in_category_gallery: z.boolean(),
   order_index: z.coerce.number().int(),
   is_published: z.boolean(),
+  angles: z.array(angleSchema),
 });
 
 export interface BeforeAfterCaseFormResult {
@@ -31,18 +39,36 @@ export interface BeforeAfterCaseFormResult {
   fieldErrors?: Record<string, string>;
 }
 
+/** Only Nose cases keep a per-angle afterImage — reading angle_after__N for
+ * any other category would just be discarded server-side anyway (CaseForm
+ * doesn't render those inputs once a non-Nose category is selected), but
+ * dropping it here keeps the persisted shape unambiguous either way. */
+function parseAngles(formData: FormData, category: FormDataEntryValue | null) {
+  const isNose = category === "nose";
+  const angles: { image: string; afterImage?: string }[] = [];
+  for (let i = 0; i < ANGLE_COUNT; i++) {
+    const image = String(formData.get(`angle_image__${i}`) ?? "").trim();
+    if (!image) continue;
+    const afterImage = isNose ? String(formData.get(`angle_after__${i}`) ?? "").trim() : "";
+    angles.push(afterImage ? { image, afterImage } : { image });
+  }
+  return angles;
+}
+
 function parseCaseForm(formData: FormData) {
+  const category = formData.get("category");
   return caseSchema.safeParse({
     slug: formData.get("slug"),
     title: bilingualFromForm(formData, "title"),
     subtitle: bilingualFromForm(formData, "subtitle"),
-    category: formData.get("category"),
+    category,
     before_image: formData.get("before_image"),
     after_image: formData.get("after_image"),
     featured_on_home: formData.get("featured_on_home") === "on",
     show_in_category_gallery: formData.get("show_in_category_gallery") === "on",
     order_index: formData.get("order_index"),
     is_published: formData.get("is_published") === "on",
+    angles: parseAngles(formData, category),
   });
 }
 

@@ -1,9 +1,11 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { BilingualField } from "@/components/admin/BilingualField";
 import { ImageUploadField } from "@/components/admin/ImageUploadField";
 import type { BeforeAfterCaseFormResult } from "./actions";
+
+const ANGLE_COUNT = 4;
 
 interface CaseFormProps {
   action: (prev: BeforeAfterCaseFormResult | null, formData: FormData) => Promise<BeforeAfterCaseFormResult>;
@@ -19,11 +21,15 @@ interface CaseFormProps {
     show_in_category_gallery: boolean;
     order_index: number;
     is_published: boolean;
+    angles?: { image: string; afterImage?: string }[];
   };
 }
 
 export function CaseForm({ action, submitLabel, defaultValues }: CaseFormProps) {
   const [state, formAction, pending] = useActionState<BeforeAfterCaseFormResult | null, FormData>(action, null);
+  const [category, setCategory] = useState(defaultValues?.category ?? "");
+  const isNose = category === "nose";
+  const angleDefaults = Array.from({ length: ANGLE_COUNT }, (_, i) => defaultValues?.angles?.[i]);
 
   return (
     <form action={formAction} className="max-w-2xl space-y-6">
@@ -55,7 +61,8 @@ export function CaseForm({ action, submitLabel, defaultValues }: CaseFormProps) 
           id="category"
           name="category"
           required
-          defaultValue={defaultValues?.category}
+          value={category}
+          onChange={(event) => setCategory(event.target.value)}
           className="mt-1 w-full max-w-xs rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500"
         >
           <option value="">Select…</option>
@@ -75,6 +82,33 @@ export function CaseForm({ action, submitLabel, defaultValues }: CaseFormProps) 
           required
         />
         <ImageUploadField label="After image" name="after_image" defaultValue={defaultValues?.after_image} required />
+      </div>
+
+      <div>
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">Popup angle views</h2>
+        <p className="mt-1 text-xs text-slate-400">
+          Shown in a popup when this card is clicked. Up to 4 angles — leave any blank to show fewer.
+          {isNose
+            ? " Nose cases show each angle as its own before/after slider."
+            : " Other categories show each angle as a single photo (no before/after)."}
+        </p>
+        <div className="mt-3 space-y-4">
+          {angleDefaults.map((angle, i) => (
+            <div key={i} className="rounded-md border border-slate-200 p-3">
+              <p className="mb-2 text-xs font-medium text-slate-500">Angle {i + 1}</p>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <ImageUploadField
+                  label={isNose ? "Before" : "Photo"}
+                  name={`angle_image__${i}`}
+                  defaultValue={angle?.image}
+                />
+                {isNose && (
+                  <ImageUploadField label="After" name={`angle_after__${i}`} defaultValue={angle?.afterImage} />
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="grid grid-cols-2 gap-4">

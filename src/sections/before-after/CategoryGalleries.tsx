@@ -1,8 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Carousel } from "@/components/Carousel";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { CaseAnglesModal } from "@/components/CaseAnglesModal";
+import { Icon } from "@/components/Icon";
 import type { BeforeAfterCase, CaseCategory } from "@/types/content";
 
 const CATEGORIES: CaseCategory[] = ["nose", "gynecomastia", "arm-lift", "cleft-lip", "otoplasty"];
@@ -10,6 +13,7 @@ const CATEGORIES: CaseCategory[] = ["nose", "gynecomastia", "arm-lift", "cleft-l
 export function CategoryGalleries({ cases: beforeAfterCases }: { cases: BeforeAfterCase[] }) {
   const locale = useLocale() as "en" | "ar";
   const t = useTranslations("pages.beforeAfter");
+  const [selectedCase, setSelectedCase] = useState<BeforeAfterCase | null>(null);
 
   return (
     <section id="results" className="bg-brand-darker py-24">
@@ -55,6 +59,16 @@ export function CategoryGalleries({ cases: beforeAfterCases }: { cases: BeforeAf
                         {item.title[locale]}
                       </h4>
                       <p className="text-sm text-brand-light/60">{item.subtitle[locale]}</p>
+                      {item.angles && item.angles.some((a) => a.image) && (
+                        <button
+                          type="button"
+                          onClick={() => setSelectedCase(item)}
+                          className="mt-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-gold transition-colors hover:text-brand-light"
+                        >
+                          <Icon name="grid_view" className="h-4 w-4" />
+                          {t("viewAngles")}
+                        </button>
+                      )}
                     </div>
                   ))}
                 </Carousel>
@@ -63,6 +77,8 @@ export function CategoryGalleries({ cases: beforeAfterCases }: { cases: BeforeAf
           })}
         </div>
       </div>
+
+      <CaseAnglesModal caseItem={selectedCase} onClose={() => setSelectedCase(null)} />
     </section>
   );
 }
