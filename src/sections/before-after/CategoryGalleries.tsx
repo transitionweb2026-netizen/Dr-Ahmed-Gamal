@@ -8,7 +8,7 @@ import { CaseAnglesModal } from "@/components/CaseAnglesModal";
 import { Icon } from "@/components/Icon";
 import type { BeforeAfterCase, CaseCategory } from "@/types/content";
 
-const CATEGORIES: CaseCategory[] = ["nose", "gynecomastia", "arm-lift", "cleft-lip", "otoplasty"];
+const CATEGORIES: CaseCategory[] = ["nose", "gynecomastia", "otoplasty"];
 
 export function CategoryGalleries({ cases: beforeAfterCases }: { cases: BeforeAfterCase[] }) {
   const locale = useLocale() as "en" | "ar";

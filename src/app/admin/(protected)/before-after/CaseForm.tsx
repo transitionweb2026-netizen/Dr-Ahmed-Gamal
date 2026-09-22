@@ -68,8 +68,6 @@ export function CaseForm({ action, submitLabel, defaultValues }: CaseFormProps) 
           <option value="">Select…</option>
           <option value="nose">Nose</option>
           <option value="gynecomastia">Gynecomastia</option>
-          <option value="arm-lift">Arm Lift</option>
-          <option value="cleft-lip">Cleft Lip</option>
           <option value="otoplasty">Otoplasty (Bat Ears)</option>
         </select>
       </div>

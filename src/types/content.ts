@@ -28,7 +28,7 @@ export interface Procedure {
   };
 }
 
-export type CaseCategory = "nose" | "gynecomastia" | "arm-lift" | "cleft-lip" | "otoplasty";
+export type CaseCategory = "nose" | "gynecomastia" | "otoplasty";
 
 /** One angle shown in a case's popup. `afterImage` present → rendered as a
  * before/after slider (Nose cases only); absent → a single static photo. */

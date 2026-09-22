@@ -17,23 +17,23 @@ const F6_AFTER = "https://lh3.googleusercontent.com/aida/AP1WRLsuuovF3yMVUlq-B4i
 const F7_BEFORE = "https://lh3.googleusercontent.com/aida/AP1WRLuXlxirl9kyKCi2zau9U5qPJhX_oJVJldW_-aJk9V51_RKfXSInG12iK1-x_-mEM4zTnf3EOchzRrtu-6Lmo-eHay8c6yS4eTXlQDkG2Ma4IK8mh9w6xYp-nqzVL2pWKWPuZe3Mxkv0yDsGUZTnj8COXoSQOqUja8KGb_giM2xvQI0-3L8z_KfTvCJgclZeYEqBeZpN_66Q85m57oGG-gs6hI8CcQFhkklWCsc6wyOos-1QX1UkoDpoKPE";
 const F7_AFTER = "https://lh3.googleusercontent.com/aida/AP1WRLsmxLnzoFPO8wD5rIhQgiYLg2hbCgCmW747pJCFgmRMi1H41GXi9yPbNf-exevrY4XW8OXafJ6CI4ni4Xue-oQFrmFrCsMrdy8hgcjlBL6tCP9mgI5I_J7_tKbvvOB_cBWU6RETfKQcnPtoFO4ZSn_L_BL-lFr1NwoPQsCoA3K0twXc34wyDV-pVtMdg4fcDd8F0viA5vgdDfmMgaL3_cyxb9ghEL29s9ncc9OD0Fu-2hjG0Tr3HUYXeAxO";
 
-// Body-category pairs (2 distinct pairs)
-const B1_BEFORE = "https://lh3.googleusercontent.com/aida/AP1WRLtsZcIKgBV4xvkA1II32vkJ-3jl7uka5cX3bgdLLCmyK36ir2I9BEn5JmhoSGiSDcUsSrsqa_SWk-8wSxtyh7mYYnypyWM2MuE9To3WgHsYUU259eEsH-Wl9OC9Zk0lY7frVMNdf23ooQyrIfp_y2rFsZJKgo7ScmwQXM6FCV_BM7S1hdFqsbSZwc3V7QhlfYmXqssS7MRYIr5gu6a1EBW2yiJgBzczJOKeSqjem_ZryocQ_ErL9LboivAz";
-const B1_AFTER = "https://lh3.googleusercontent.com/aida/AP1WRLvWGHraHbJV88T6daPqMCZcXkTWykgBKYq---IxaAdzivp40_aRSCFhopluUR4AGUoQ5dHZnZEDnIlVAtPvr40GlS8VdX7wSmd2DHWKY5kVqHnPYleyI9uDOAPZ7gBNH_J8kUMvoPGZLfp7dvJI_s6f3HYWq42LX_M0lSD7tSIpTxLCi9JOLY71UuS2Fjs6mLWEhBojU5nf_GLIX2P0t5sqqlFl2age15JJv-SYg675jbaJxuhmnNzu3qkp";
+// Body-category pair (used only by Home's "Body Contouring" featured card)
 const B2_BEFORE = "https://lh3.googleusercontent.com/aida-public/AB6AXuBeZgbac4ojzj2byKokz2-WDtMKBYFln99iEd_OVQulqZkM1wkx_x2CFDe4SS8HAppXdBfDJ5huG7kg_tGFY_KMX7vHLNZEXW8ir12hVXZZFpN7MUCOdO99yHZD5cApTHDl1YMNtueRXvI2FeWbBADU_GhKij4U3K2AgWB3CiOoNDTgkkhCB-u3EbhR0aRzn6v3MEE9GDiNTTr5sKKteeXnoT8dy3K0Bz-V-Mix-cAjNLaQ6_KZsQmqOw";
 const B2_AFTER = "https://lh3.googleusercontent.com/aida-public/AB6AXuCJQnCxSidxFk5u3Z1usoeb8TPHiPAUvlNhPQeqUdpMZZM13ie5e3f7nd8BxeS0Wl7HYY-iJ0-NYXiE2iqFnroDn7pgBpWrUf38xmvPvx7LWaYXFof_BJCRXHGW-_Xl-I1OrDvkcf_CWB8jNsYcLH0bEjSIGQZzvCAo9upUXkGvUjy-NcKarqN5V9tSi76gJt4Y5xPCy7YK8Q4ep-IymFsbGg-vki1FvPJ6xoBLPpb50YHeOMrVYwbY6w";
 
-// Category → 5 named procedures (nose, gynecomastia, arm-lift, cleft-lip,
-// otoplasty), replacing the old 3 broad regions (face/body/breast). Category
-// here is unrelated to the "Featured on Home" cases below — it's only used
-// to group cards into the Before & After page's category carousels — so
-// reusing this same small pool of stock pairs across categories is fine
-// (see scripts/seed-before-after-cases.mjs, the source of truth these mirror).
+// Category → 3 named procedures (nose, gynecomastia, otoplasty) — Arm Lift and
+// Cleft Lip were dropped entirely per client request, and the surviving
+// categories' card counts were curated (Nose 3→7, Gynecomastia 3→2,
+// Otoplasty 3→1). Category here is unrelated to the "Featured on Home"
+// cases below — it's only used to group cards into the Before & After
+// page's category carousels — so reusing this same small pool of stock
+// pairs across categories is fine (see scripts/curate-before-after-cases.mjs,
+// the source of truth these mirror).
 export const beforeAfterCases: BeforeAfterCase[] = [
   // --- Home page featured preview (6) ---
   {
     id: "home-facelift-neck-lift",
-    category: "arm-lift",
+    category: "gynecomastia",
     beforeImage: F4_BEFORE,
     afterImage: F4_AFTER,
     featuredOnHome: true,
@@ -60,7 +60,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
   },
   {
     id: "home-facelift",
-    category: "cleft-lip",
+    category: "otoplasty",
     beforeImage: F6_BEFORE,
     afterImage: F6_AFTER,
     featuredOnHome: true,
@@ -86,7 +86,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
     subtitle: { en: "Defined jawline", ar: "خط فك محدد المعالم" },
   },
 
-  // --- Before & After page: Nose Cases carousel (3) ---
+  // --- Before & After page: Nose Cases carousel (7) ---
   {
     id: "nose-1",
     category: "nose",
@@ -123,8 +123,56 @@ export const beforeAfterCases: BeforeAfterCase[] = [
       ar: "تنعيم القصبة لملف جانبي أكثر دقة.",
     },
   },
+  {
+    id: "nose-4",
+    category: "nose",
+    showInCategoryGallery: true,
+    beforeImage: F4_BEFORE,
+    afterImage: F4_AFTER,
+    title: { en: "Nose Reshaping", ar: "إعادة تشكيل الأنف" },
+    subtitle: {
+      en: "A refined, naturally balanced nose shape.",
+      ar: "شكل أنف منحوت بتناسق طبيعي.",
+    },
+  },
+  {
+    id: "nose-5",
+    category: "nose",
+    showInCategoryGallery: true,
+    beforeImage: F5_BEFORE,
+    afterImage: F5_AFTER,
+    title: { en: "Deviated Septum Correction", ar: "تصحيح انحراف الحاجز الأنفي" },
+    subtitle: {
+      en: "Restoring both function and form.",
+      ar: "استعادة الوظيفة والمظهر معًا.",
+    },
+  },
+  {
+    id: "nose-6",
+    category: "nose",
+    showInCategoryGallery: true,
+    beforeImage: F6_BEFORE,
+    afterImage: F6_AFTER,
+    title: { en: "Nasal Profile Balancing", ar: "موازنة ملامح الأنف" },
+    subtitle: {
+      en: "Smoothing the profile for facial harmony.",
+      ar: "تنعيم الملف الجانبي لتحقيق تناسق الوجه.",
+    },
+  },
+  {
+    id: "nose-7",
+    category: "nose",
+    showInCategoryGallery: true,
+    beforeImage: F7_BEFORE,
+    afterImage: F7_AFTER,
+    title: { en: "Revision Rhinoplasty", ar: "تجميل الأنف التصحيحي" },
+    subtitle: {
+      en: "Refining results from a previous procedure.",
+      ar: "تحسين نتائج عملية سابقة.",
+    },
+  },
 
-  // --- Before & After page: Gynecomastia Cases carousel (3) ---
+  // --- Before & After page: Gynecomastia Cases carousel (2) ---
   {
     id: "gynecomastia-1",
     category: "gynecomastia",
@@ -149,96 +197,8 @@ export const beforeAfterCases: BeforeAfterCase[] = [
       ar: "تقليل الأنسجة الزائدة للحصول على قوام طبيعي.",
     },
   },
-  {
-    id: "gynecomastia-3",
-    category: "gynecomastia",
-    showInCategoryGallery: true,
-    beforeImage: F6_BEFORE,
-    afterImage: F6_AFTER,
-    title: { en: "Male Chest Reduction", ar: "تصغير الصدر عند الرجال" },
-    subtitle: {
-      en: "Achieving a flatter, well-defined chest.",
-      ar: "الحصول على صدر أكثر استواءً وتحديدًا.",
-    },
-  },
 
-  // --- Before & After page: Arm Lift Cases carousel (3) ---
-  {
-    id: "arm-lift-1",
-    category: "arm-lift",
-    showInCategoryGallery: true,
-    beforeImage: F7_BEFORE,
-    afterImage: F7_AFTER,
-    title: { en: "Arm Lift", ar: "شد الذراعين" },
-    subtitle: {
-      en: "Reducing excess skin for toned, youthful arms.",
-      ar: "تقليل الجلد الزائد للحصول على ذراعين مشدودتين وشابتين.",
-    },
-  },
-  {
-    id: "arm-lift-2",
-    category: "arm-lift",
-    showInCategoryGallery: true,
-    beforeImage: B1_BEFORE,
-    afterImage: B1_AFTER,
-    title: { en: "Brachioplasty", ar: "تجميل أعلى الذراع" },
-    subtitle: {
-      en: "Firming the upper arm for a sculpted silhouette.",
-      ar: "شد أعلى الذراع للحصول على قوام منحوت.",
-    },
-  },
-  {
-    id: "arm-lift-3",
-    category: "arm-lift",
-    showInCategoryGallery: true,
-    beforeImage: B2_BEFORE,
-    afterImage: B2_AFTER,
-    title: { en: "Upper Arm Contouring", ar: "نحت أعلى الذراع" },
-    subtitle: {
-      en: "Smoother, more defined arm contours.",
-      ar: "خطوط ذراع أكثر نعومة وتحديدًا.",
-    },
-  },
-
-  // --- Before & After page: Cleft Lip Cases carousel (3) ---
-  {
-    id: "cleft-lip-1",
-    category: "cleft-lip",
-    showInCategoryGallery: true,
-    beforeImage: F2_BEFORE,
-    afterImage: F2_AFTER,
-    title: { en: "Cleft Lip Repair", ar: "إصلاح الشفة الأرنبية" },
-    subtitle: {
-      en: "Restoring natural lip symmetry and function.",
-      ar: "استعادة تناسق ووظيفة الشفة بشكل طبيعي.",
-    },
-  },
-  {
-    id: "cleft-lip-2",
-    category: "cleft-lip",
-    showInCategoryGallery: true,
-    beforeImage: F4_BEFORE,
-    afterImage: F4_AFTER,
-    title: { en: "Lip Revision Surgery", ar: "جراحة تصحيح الشفة" },
-    subtitle: {
-      en: "Refining scar tissue for a smoother appearance.",
-      ar: "تحسين مظهر الندبات للحصول على مظهر أكثر نعومة.",
-    },
-  },
-  {
-    id: "cleft-lip-3",
-    category: "cleft-lip",
-    showInCategoryGallery: true,
-    beforeImage: F6_BEFORE,
-    afterImage: F6_AFTER,
-    title: { en: "Cleft Scar Refinement", ar: "تحسين ندبة الشفة الأرنبية" },
-    subtitle: {
-      en: "Subtle refinement for improved lip contour.",
-      ar: "تحسين دقيق لخط الشفة.",
-    },
-  },
-
-  // --- Before & After page: Otoplasty (Bat Ears) Cases carousel (3) ---
+  // --- Before & After page: Otoplasty (Bat Ears) Cases carousel (1) ---
   {
     id: "otoplasty-1",
     category: "otoplasty",
@@ -249,30 +209,6 @@ export const beforeAfterCases: BeforeAfterCase[] = [
     subtitle: {
       en: "Repositioning prominent ears closer to the head.",
       ar: "إعادة تقريب الأذن البارزة من الرأس.",
-    },
-  },
-  {
-    id: "otoplasty-2",
-    category: "otoplasty",
-    showInCategoryGallery: true,
-    beforeImage: F3_BEFORE,
-    afterImage: F3_AFTER,
-    title: { en: "Ear Pinning", ar: "تثبيت الأذن" },
-    subtitle: {
-      en: "Correcting protruding ears for balanced proportions.",
-      ar: "تصحيح بروز الأذن لتحقيق تناسق طبيعي.",
-    },
-  },
-  {
-    id: "otoplasty-3",
-    category: "otoplasty",
-    showInCategoryGallery: true,
-    beforeImage: F5_BEFORE,
-    afterImage: F5_AFTER,
-    title: { en: "Prominent Ear Correction", ar: "تصحيح بروز الأذن" },
-    subtitle: {
-      en: "A natural-looking, well-proportioned ear shape.",
-      ar: "شكل أذن طبيعي ومتناسق.",
     },
   },
 ];
