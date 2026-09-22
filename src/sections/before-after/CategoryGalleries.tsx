@@ -46,6 +46,7 @@ export function CategoryGalleries({ cases: beforeAfterCases }: { cases: BeforeAf
                   slideBasisClassName="basis-full md:basis-1/3"
                   showDots={false}
                   navButtonClassName="border-brand-gold/40 bg-black/60"
+                  centerIfFewerThan={3}
                 >
                   {cases.map((item) => (
                     <div key={item.id} className="card-glow-halo rounded-2xl">

@@ -47,6 +47,7 @@ export async function MilestonesCarousel() {
           ariaLabel={t("heading")}
           slideBasisClassName="basis-full sm:basis-1/2 lg:basis-1/3"
           navButtonClassName="h-14 w-14 border-brand-gold/40 bg-[#1a120a]/80 shadow-[0_0_20px_rgba(212,175,55,0.2)] backdrop-blur-md"
+          centerIfFewerThan={3}
         >
           {homeMilestones.map((milestone) => (
             <div

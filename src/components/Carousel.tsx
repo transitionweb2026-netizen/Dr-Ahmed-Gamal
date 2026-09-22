@@ -17,6 +17,11 @@ interface CarouselProps {
   ariaLabel?: string;
   /** Override the default nav-button size/treatment for this usage. */
   navButtonClassName?: string;
+  /** When there are this many slides or fewer, center the row instead of
+   * start-aligning it — avoids a lopsided row when a category/section has
+   * fewer cards than fit in one row (pass the slide count that fills one
+   * row at the widest breakpoint, e.g. 3 for "basis-full md:basis-1/3"). */
+  centerIfFewerThan?: number;
 }
 
 export function Carousel({
@@ -27,6 +32,7 @@ export function Carousel({
   showDots = true,
   ariaLabel,
   navButtonClassName,
+  centerIfFewerThan,
 }: CarouselProps) {
   const dir = useDirection();
   const t = useTranslations("common");
@@ -63,7 +69,12 @@ export function Carousel({
         aria-label={ariaLabel}
         aria-roledescription="carousel"
       >
-        <div className="-ms-4 flex">
+        <div
+          className={cn(
+            "-ms-4 flex",
+            centerIfFewerThan && children.length > 0 && children.length <= centerIfFewerThan && "justify-center",
+          )}
+        >
           {children.map((child, i) => (
             <div
               key={i}

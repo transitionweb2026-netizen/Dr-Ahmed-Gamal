@@ -21,7 +21,7 @@ export function BeforeAfterPreview({ cases }: { cases: BeforeAfterCase[] }) {
           <h2 className="font-serif text-4xl text-brand-light">{t("heading")}</h2>
         </div>
 
-        <Carousel ariaLabel={t("heading")}>
+        <Carousel ariaLabel={t("heading")} centerIfFewerThan={3}>
           {featured.map((item) => (
             <div key={item.id}>
               <BeforeAfterSlider
