@@ -27,6 +27,8 @@ export default async function AdminContactInfoPage() {
               email_href: row.email_href,
               address: row.address,
               maps_url: row.maps_url,
+              location_2_address: row.location_2_address ?? { en: "", ar: "" },
+              location_2_maps_url: row.location_2_maps_url ?? "",
               working_hours: row.working_hours ?? [],
               locations: row.locations ?? [],
               social: row.social ?? {},

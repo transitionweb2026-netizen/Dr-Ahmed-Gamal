@@ -27,6 +27,8 @@ interface ContactInfoFormProps {
     email_href: string;
     address: { en: string; ar: string };
     maps_url: string;
+    location_2_address: { en: string; ar: string };
+    location_2_maps_url: string;
     working_hours: WorkingHourRow[];
     locations: LocationRow[];
     social: { facebook?: string; instagram?: string; tiktok?: string };
@@ -104,6 +106,27 @@ export function ContactInfoForm({ defaultValues }: ContactInfoFormProps) {
         <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">Address</h2>
         <BilingualField label="Address" name="address" defaultValue={defaultValues.address} multiline required />
         <TextField label="Google Maps URL" name="maps_url" defaultValue={defaultValues.maps_url} />
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+          Second map location <span className="font-normal normal-case text-slate-400">(leave both blank to hide)</span>
+        </h2>
+        <p className="text-xs text-slate-400">
+          Shows a second &quot;Clinic Destination&quot; card on the Contact page, right below the first — its
+          heading/tagline/image are edited under Website Content → Contact → Second Location.
+        </p>
+        <BilingualField
+          label="Address"
+          name="location_2_address"
+          defaultValue={defaultValues.location_2_address}
+          multiline
+        />
+        <TextFieldOptional
+          label="Google Maps URL"
+          name="location_2_maps_url"
+          defaultValue={defaultValues.location_2_maps_url}
+        />
       </section>
 
       <section>

@@ -7,6 +7,7 @@ import { bilingualFromForm } from "@/lib/admin/formHelpers";
 import { revalidatePublicSite } from "@/lib/admin/revalidatePublicSite";
 
 const bilingualSchema = z.object({ en: z.string().min(1, "Required"), ar: z.string().min(1, "Required") });
+const optionalBilingualSchema = z.object({ en: z.string(), ar: z.string() });
 
 const workingHourRowSchema = z.object({ days: bilingualSchema, hours: bilingualSchema });
 
@@ -33,6 +34,8 @@ const contactInfoSchema = z.object({
   email_href: z.string().min(1, "Required"),
   address: bilingualSchema,
   maps_url: z.string().min(1, "Required"),
+  location_2_address: optionalBilingualSchema,
+  location_2_maps_url: z.string(),
   working_hours: z.array(workingHourRowSchema),
   locations: z.array(locationRowSchema),
   social: socialSchema,
@@ -81,6 +84,8 @@ export async function updateContactInfoAction(
     email_href: formData.get("email_href"),
     address: bilingualFromForm(formData, "address"),
     maps_url: formData.get("maps_url"),
+    location_2_address: bilingualFromForm(formData, "location_2_address"),
+    location_2_maps_url: formData.get("location_2_maps_url"),
     working_hours: workingHours,
     locations,
     social: rawSocial,
@@ -91,9 +96,21 @@ export async function updateContactInfoAction(
   // Drop empty social URLs entirely rather than storing "".
   const social = Object.fromEntries(Object.entries(parsed.data.social).filter(([, v]) => v));
 
+  // Only keep the second location when it's fully filled in — a partially
+  // filled or blank one is treated as "not set" (LocationBlock's presence
+  // check requires both address and maps_url) so it stays hidden instead of
+  // rendering with an empty field.
+  const { location_2_address, location_2_maps_url, ...rest } = parsed.data;
+  const hasLocation2 = location_2_address.en.trim() && location_2_address.ar.trim() && location_2_maps_url.trim();
+
   const { error } = await supabase
     .from("contact_info")
-    .update({ ...parsed.data, social })
+    .update({
+      ...rest,
+      social,
+      location_2_address: hasLocation2 ? location_2_address : null,
+      location_2_maps_url: hasLocation2 ? location_2_maps_url.trim() : null,
+    })
     .eq("id", 1);
 
   if (error) return { ok: false, error: error.message };

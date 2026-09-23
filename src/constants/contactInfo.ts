@@ -32,6 +32,7 @@ export const contactInfo = {
     encodeURIComponent(
       "Dr. Ahmed Gamal El-Din Borhamy Plastic Surgery Clinic, 9 MAGD El-Arab, Sidi Beshr Qebli, Montaza 2, Alexandria Governorate 5517134",
     ),
+  location2: null as { address: Bilingual; mapsUrl: string } | null,
   locations: [] as {
     address: Bilingual;
     phone: { display: string; href: string };

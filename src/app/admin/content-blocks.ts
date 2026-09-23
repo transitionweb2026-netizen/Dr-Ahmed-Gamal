@@ -501,6 +501,17 @@ export const contentBlocks: ContentBlock[] = [
     images: [{ slug: "contact-location", label: "Clinic location image" }],
   },
   {
+    id: "contact-location-2",
+    page: "Contact",
+    section: "Second Location (text)",
+    fields: [
+      { key: "pages.contact.location2.heading", label: "Heading" },
+      { key: "pages.contact.location2.tagline", label: "Tagline" },
+      { key: "pages.contact.location2.imageAlt", label: "Location image description (for accessibility)" },
+    ],
+    images: [{ slug: "contact-location-2", label: "Clinic location image" }],
+  },
+  {
     id: "contact-info-grid",
     page: "Contact",
     section: "Contact Info Grid — labels",

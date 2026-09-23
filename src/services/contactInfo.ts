@@ -15,6 +15,10 @@ export async function getContactInfo(): Promise<typeof staticContactInfo> {
     email: { display: row.email_display, href: row.email_href },
     address: row.address,
     mapsUrl: row.maps_url,
+    location2:
+      row.location_2_address && row.location_2_maps_url
+        ? { address: row.location_2_address, mapsUrl: row.location_2_maps_url }
+        : null,
     workingHours: row.working_hours ?? [],
     social: row.social ?? {},
     locations: (row.locations ?? []).map(

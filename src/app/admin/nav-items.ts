@@ -145,9 +145,10 @@ export const adminNavGroups: AdminNavGroup[] = [
       {
         href: "/admin/contact-info",
         label: "Contact details",
-        hint: "Phone, WhatsApp, email, address, branch locations, hours, social",
+        hint: "Phone, WhatsApp, email, address, 2nd map address, branch locations, hours, social",
       },
       { href: "/admin/content/contact-location", label: "Location", hint: "Heading, tagline & clinic image" },
+      { href: "/admin/content/contact-location-2", label: "Second Location", hint: "Heading, tagline & clinic image" },
       { href: "/admin/procedures", label: "Procedure dropdown", hint: "Populates the contact form's procedure selector" },
       { href: "/admin/content/contact-info-grid", label: "Contact info grid — labels" },
       { href: "/admin/content/contact-closing-cta", label: "Closing CTA text" },

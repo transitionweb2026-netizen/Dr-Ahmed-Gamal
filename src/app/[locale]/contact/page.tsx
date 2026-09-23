@@ -11,6 +11,7 @@ import { ContactClosingCta } from "@/sections/contact/ContactClosingCta";
 import { getProcedures } from "@/services/procedures";
 import { getSeoMetadata } from "@/services/seoMetadata";
 import { getPageImages } from "@/services/pageImages";
+import { getContactInfo } from "@/services/contactInfo";
 
 export async function generateMetadata({
   params,
@@ -40,13 +41,37 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const [procedures, images] = await Promise.all([getProcedures(), getPageImages()]);
+  const loc = locale as "en" | "ar";
+  const [procedures, images, contactInfo, tLocation, tLocation2] = await Promise.all([
+    getProcedures(),
+    getPageImages(),
+    getContactInfo(),
+    getTranslations({ locale, namespace: "pages.contact.location" }),
+    getTranslations({ locale, namespace: "pages.contact.location2" }),
+  ]);
 
   return (
     <main>
       <ContactHero image={images["contact-hero"]} />
       <ContactFormSection procedures={procedures} image={images["contact-form-portrait"]} />
-      <LocationBlock image={images["contact-location"]} />
+      <LocationBlock
+        image={images["contact-location"]}
+        imageAlt={tLocation("imageAlt")}
+        heading={tLocation("heading")}
+        tagline={tLocation("tagline")}
+        address={contactInfo.address[loc]}
+        mapsUrl={contactInfo.mapsUrl}
+      />
+      {contactInfo.location2 && (
+        <LocationBlock
+          image={images["contact-location-2"]}
+          imageAlt={tLocation2("imageAlt")}
+          heading={tLocation2("heading")}
+          tagline={tLocation2("tagline")}
+          address={contactInfo.location2.address[loc]}
+          mapsUrl={contactInfo.location2.mapsUrl}
+        />
+      )}
       <ContactInfoGrid />
       <ContactClosingCta />
     </main>
