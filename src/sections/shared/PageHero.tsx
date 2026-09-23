@@ -97,7 +97,10 @@ export function PageHero({
         )}
       >
         {eyebrow && (
-          <p className="inline-block rounded-full border border-brand-gold/30 bg-brand-dark/50 px-4 py-1 text-label-sm uppercase tracking-[0.2em] text-brand-gold backdrop-blur-md">
+          // Hidden on mobile — the pill sat on top of the hero photo (e.g.
+          // the doctor's face on Home) at narrow widths; still shown from
+          // lg up, where there's enough room for it to sit clear of the image.
+          <p className="hidden rounded-full border border-brand-gold/30 bg-brand-dark/50 px-4 py-1 text-label-sm uppercase tracking-[0.2em] text-brand-gold backdrop-blur-md lg:inline-block">
             {eyebrow}
           </p>
         )}
@@ -112,7 +115,11 @@ export function PageHero({
         {paragraph && (
           <p
             className={cn(
-              "mt-6 text-body-lg leading-relaxed text-brand-light/70",
+              // Mobile-only shadow — at narrow widths the hero image's
+              // brighter areas can wash out this translucent text; the
+              // shadow keeps it readable without changing its color.
+              // Dropped again from lg up, where the reference has none.
+              "mt-6 text-body-lg leading-relaxed text-brand-light/70 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] lg:drop-shadow-none",
               !isCenter && "max-w-lg",
             )}
           >
