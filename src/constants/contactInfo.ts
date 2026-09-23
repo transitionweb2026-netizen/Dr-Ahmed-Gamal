@@ -24,12 +24,14 @@ export const contactInfo = {
     href: "mailto:info@drahmedgamal.com",
   },
   address: {
-    en: "Elite Aesthetics Center, Street 90, Fifth Settlement, New Cairo, Egypt",
-    ar: "مركز إيليت للتجميل، شارع 90، التجمع الخامس، القاهرة الجديدة، مصر",
+    en: "Dr. Ahmed Gamal El-Din Borhamy Plastic Surgery Clinic, 9 MAGD El-Arab, Sidi Beshr Qebli, Montaza 2, Alexandria Governorate 5517134",
+    ar: "عيادة دكتور احمد جمال الدين برهامى لجراحات التجميل، 9 MAGD El-Arab, Sidi Beshr Qebli, Montaza 2, Alexandria Governorate 5517134",
   } satisfies Bilingual,
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent("Street 90, Fifth Settlement, New Cairo, Egypt"),
+    encodeURIComponent(
+      "Dr. Ahmed Gamal El-Din Borhamy Plastic Surgery Clinic, 9 MAGD El-Arab, Sidi Beshr Qebli, Montaza 2, Alexandria Governorate 5517134",
+    ),
   locations: [] as {
     address: Bilingual;
     phone: { display: string; href: string };

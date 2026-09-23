@@ -172,7 +172,7 @@ export const beforeAfterCases: BeforeAfterCase[] = [
     },
   },
 
-  // --- Before & After page: Gynecomastia Cases carousel (2) ---
+  // --- Before & After page: Gynecomastia Cases carousel (3) ---
   {
     id: "gynecomastia-1",
     category: "gynecomastia",
@@ -195,6 +195,18 @@ export const beforeAfterCases: BeforeAfterCase[] = [
     subtitle: {
       en: "Reducing excess tissue for a natural silhouette.",
       ar: "تقليل الأنسجة الزائدة للحصول على قوام طبيعي.",
+    },
+  },
+  {
+    id: "gynecomastia-3",
+    category: "gynecomastia",
+    showInCategoryGallery: true,
+    beforeImage: F1_BEFORE,
+    afterImage: F2_AFTER,
+    title: { en: "Puffy Nipple Correction", ar: "علاج انتفاخ الحلمة" },
+    subtitle: {
+      en: "Reducing localized puffiness for a flatter chest line.",
+      ar: "تقليل الانتفاخ الموضعي للحصول على خط صدر أكثر استواءً.",
     },
   },
 
