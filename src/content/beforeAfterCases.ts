@@ -21,14 +21,13 @@ const F7_AFTER = "https://lh3.googleusercontent.com/aida/AP1WRLsmxLnzoFPO8wD5rIh
 const B2_BEFORE = "https://lh3.googleusercontent.com/aida-public/AB6AXuBeZgbac4ojzj2byKokz2-WDtMKBYFln99iEd_OVQulqZkM1wkx_x2CFDe4SS8HAppXdBfDJ5huG7kg_tGFY_KMX7vHLNZEXW8ir12hVXZZFpN7MUCOdO99yHZD5cApTHDl1YMNtueRXvI2FeWbBADU_GhKij4U3K2AgWB3CiOoNDTgkkhCB-u3EbhR0aRzn6v3MEE9GDiNTTr5sKKteeXnoT8dy3K0Bz-V-Mix-cAjNLaQ6_KZsQmqOw";
 const B2_AFTER = "https://lh3.googleusercontent.com/aida-public/AB6AXuCJQnCxSidxFk5u3Z1usoeb8TPHiPAUvlNhPQeqUdpMZZM13ie5e3f7nd8BxeS0Wl7HYY-iJ0-NYXiE2iqFnroDn7pgBpWrUf38xmvPvx7LWaYXFof_BJCRXHGW-_Xl-I1OrDvkcf_CWB8jNsYcLH0bEjSIGQZzvCAo9upUXkGvUjy-NcKarqN5V9tSi76gJt4Y5xPCy7YK8Q4ep-IymFsbGg-vki1FvPJ6xoBLPpb50YHeOMrVYwbY6w";
 
-// Category → 3 named procedures (nose, gynecomastia, otoplasty) — Arm Lift and
-// Cleft Lip were dropped entirely per client request, and the surviving
-// categories' card counts were curated (Nose 3→7, Gynecomastia 3→2,
-// Otoplasty 3→1). Category here is unrelated to the "Featured on Home"
-// cases below — it's only used to group cards into the Before & After
-// page's category carousels — so reusing this same small pool of stock
-// pairs across categories is fine (see scripts/curate-before-after-cases.mjs,
-// the source of truth these mirror).
+// Category → 6 named procedures (nose, gynecomastia, otoplasty, lip-repair,
+// eyelid-lift, scar-revision). Category here is unrelated to the
+// "Featured on Home" cases below — it's only used to group cards into the
+// Before & After page's category carousels — so reusing this same small
+// pool of stock pairs across categories is fine (see
+// scripts/add-before-after-cards-2026-09-28.mjs, the source of truth these
+// mirror).
 export const beforeAfterCases: BeforeAfterCase[] = [
   // --- Home page featured preview (6) ---
   {
@@ -171,8 +170,56 @@ export const beforeAfterCases: BeforeAfterCase[] = [
       ar: "تحسين نتائج عملية سابقة.",
     },
   },
+  {
+    id: "nose-8",
+    category: "nose",
+    showInCategoryGallery: true,
+    beforeImage: F1_BEFORE,
+    afterImage: F1_AFTER,
+    title: { en: "Nasal Hump Removal", ar: "إزالة حدبة الأنف" },
+    subtitle: {
+      en: "Smoothing the bridge for a straighter profile.",
+      ar: "تنعيم القصبة للحصول على ملف جانبي أكثر استقامة.",
+    },
+  },
+  {
+    id: "nose-9",
+    category: "nose",
+    showInCategoryGallery: true,
+    beforeImage: F2_BEFORE,
+    afterImage: F2_AFTER,
+    title: { en: "Nostril Reduction", ar: "تصغير فتحتي الأنف" },
+    subtitle: {
+      en: "Refining nostril width for facial balance.",
+      ar: "ضبط عرض فتحتي الأنف لتحقيق تناسق الوجه.",
+    },
+  },
+  {
+    id: "nose-10",
+    category: "nose",
+    showInCategoryGallery: true,
+    beforeImage: F3_BEFORE,
+    afterImage: F3_AFTER,
+    title: { en: "Crooked Nose Correction", ar: "تصحيح اعوجاج الأنف" },
+    subtitle: {
+      en: "Straightening the nose for a centered profile.",
+      ar: "تقويم الأنف للحصول على ملف متمركز.",
+    },
+  },
+  {
+    id: "nose-11",
+    category: "nose",
+    showInCategoryGallery: true,
+    beforeImage: F4_BEFORE,
+    afterImage: F4_AFTER,
+    title: { en: "Nasal Tip Rotation", ar: "تدوير طرف الأنف" },
+    subtitle: {
+      en: "Adjusting tip angle for a balanced profile.",
+      ar: "ضبط زاوية طرف الأنف للحصول على ملف متوازن.",
+    },
+  },
 
-  // --- Before & After page: Gynecomastia Cases carousel (3) ---
+  // --- Before & After page: Gynecomastia Cases carousel (5) ---
   {
     id: "gynecomastia-1",
     category: "gynecomastia",
@@ -209,8 +256,32 @@ export const beforeAfterCases: BeforeAfterCase[] = [
       ar: "تقليل الانتفاخ الموضعي للحصول على خط صدر أكثر استواءً.",
     },
   },
+  {
+    id: "gynecomastia-4",
+    category: "gynecomastia",
+    showInCategoryGallery: true,
+    beforeImage: F5_BEFORE,
+    afterImage: F5_AFTER,
+    title: { en: "Liposuction-Assisted Gynecomastia Surgery", ar: "جراحة التثدي بمساعدة شفط الدهون" },
+    subtitle: {
+      en: "Combining excision and liposuction for a flatter chest.",
+      ar: "الجمع بين الاستئصال وشفط الدهون للحصول على صدر أكثر استواءً.",
+    },
+  },
+  {
+    id: "gynecomastia-5",
+    category: "gynecomastia",
+    showInCategoryGallery: true,
+    beforeImage: F6_BEFORE,
+    afterImage: F6_AFTER,
+    title: { en: "Chest Skin Tightening", ar: "شد جلد الصدر" },
+    subtitle: {
+      en: "Removing excess skin for a firmer chest contour.",
+      ar: "إزالة الجلد الزائد للحصول على قوام صدر أكثر شدًا.",
+    },
+  },
 
-  // --- Before & After page: Otoplasty (Bat Ears) Cases carousel (1) ---
+  // --- Before & After page: Otoplasty (Bat Ears) Cases carousel (3) ---
   {
     id: "otoplasty-1",
     category: "otoplasty",
@@ -221,6 +292,72 @@ export const beforeAfterCases: BeforeAfterCase[] = [
     subtitle: {
       en: "Repositioning prominent ears closer to the head.",
       ar: "إعادة تقريب الأذن البارزة من الرأس.",
+    },
+  },
+  {
+    id: "otoplasty-2",
+    category: "otoplasty",
+    showInCategoryGallery: true,
+    beforeImage: F3_BEFORE,
+    afterImage: F3_AFTER,
+    title: { en: "Prominent Ear Correction", ar: "تصحيح بروز الأذن" },
+    subtitle: {
+      en: "Correcting protruding ears for balanced proportions.",
+      ar: "تصحيح بروز الأذن لتحقيق تناسق طبيعي.",
+    },
+  },
+  {
+    id: "otoplasty-3",
+    category: "otoplasty",
+    showInCategoryGallery: true,
+    beforeImage: F4_BEFORE,
+    afterImage: F4_AFTER,
+    title: { en: "Ear Pinning", ar: "تثبيت الأذن" },
+    subtitle: {
+      en: "Repositioning prominent ears closer to the head.",
+      ar: "إعادة تقريب الأذن البارزة من الرأس.",
+    },
+  },
+
+  // --- Before & After page: Lip Repair Cases carousel (1) ---
+  {
+    id: "lip-repair-1",
+    category: "lip-repair",
+    showInCategoryGallery: true,
+    beforeImage: F5_BEFORE,
+    afterImage: F5_AFTER,
+    title: { en: "Lip Repair", ar: "إصلاح الشفاه" },
+    subtitle: {
+      en: "Restoring natural lip shape and function.",
+      ar: "استعادة شكل ووظيفة الشفاه بشكل طبيعي.",
+    },
+  },
+
+  // --- Before & After page: Eyelid Lifting Cases carousel (1) ---
+  {
+    id: "eyelid-lift-1",
+    category: "eyelid-lift",
+    showInCategoryGallery: true,
+    beforeImage: F6_BEFORE,
+    afterImage: F6_AFTER,
+    title: { en: "Eyelid Lift", ar: "شد الجفون" },
+    subtitle: {
+      en: "A refreshed, more youthful look around the eyes.",
+      ar: "مظهر منتعش وأكثر شبابًا حول العينين.",
+    },
+  },
+
+  // --- Before & After page: Scar Revision Cases carousel (1) ---
+  {
+    id: "scar-revision-1",
+    category: "scar-revision",
+    showInCategoryGallery: true,
+    beforeImage: F7_BEFORE,
+    afterImage: F7_AFTER,
+    title: { en: "Scar Revision", ar: "تحسين الندبات" },
+    subtitle: {
+      en: "Refining the appearance of scars for smoother skin.",
+      ar: "تحسين مظهر الندبات للحصول على بشرة أكثر نعومة.",
     },
   },
 ];

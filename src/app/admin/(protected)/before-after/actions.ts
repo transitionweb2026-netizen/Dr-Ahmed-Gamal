@@ -23,7 +23,7 @@ const caseSchema = z.object({
     .regex(/^[a-z0-9-]+$/, "Lowercase letters, numbers, and hyphens only"),
   title: bilingualSchema,
   subtitle: bilingualSchema,
-  category: z.enum(["nose", "gynecomastia", "otoplasty"]),
+  category: z.enum(["nose", "gynecomastia", "otoplasty", "lip-repair", "eyelid-lift", "scar-revision"]),
   before_image: z.string().url("Must be a valid URL"),
   after_image: z.string().url("Must be a valid URL"),
   featured_on_home: z.boolean(),

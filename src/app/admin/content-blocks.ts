@@ -297,6 +297,9 @@ export const contentBlocks: ContentBlock[] = [
       { key: "pages.beforeAfter.groups.nose", label: "Category label — Nose" },
       { key: "pages.beforeAfter.groups.gynecomastia", label: "Category label — Gynecomastia" },
       { key: "pages.beforeAfter.groups.otoplasty", label: "Category label — Otoplasty (Bat Ears)" },
+      { key: "pages.beforeAfter.groups.lip-repair", label: "Category label — Lip Repair" },
+      { key: "pages.beforeAfter.groups.eyelid-lift", label: "Category label — Eyelid Lifting" },
+      { key: "pages.beforeAfter.groups.scar-revision", label: "Category label — Scar Revision" },
     ],
   },
   {

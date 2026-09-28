@@ -319,7 +319,10 @@
       "groups": {
         "nose": "Nose Cases",
         "gynecomastia": "Gynecomastia Cases",
-        "otoplasty": "Otoplasty (Bat Ears) Cases"
+        "otoplasty": "Otoplasty (Bat Ears) Cases",
+        "lip-repair": "Lip Repair Cases",
+        "eyelid-lift": "Eyelid Lifting Cases",
+        "scar-revision": "Scar Revision Cases"
       },
       "testimonials": { "heading": "What Our Patients Say" },
       "cta": {
