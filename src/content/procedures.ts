@@ -49,45 +49,6 @@ export const procedures: Procedure[] = [
     },
   },
   {
-    slug: "facelift",
-    name: { en: "Facelift", ar: "شد الوجه" },
-    shortDescription: {
-      en: "Restore youthful contours with advanced lifting techniques for a natural rejuvenation.",
-      ar: "استعادة ملامح الشباب من خلال تقنيات شد متقدمة لتجديد طبيعي المظهر.",
-    },
-    category: "face",
-    icon: "face",
-    image: IMG_FACE_NECK,
-    featuredOnHome: true,
-    order: 2,
-    detail: {
-      overview: {
-        en: "A facelift addresses signs of aging in the lower face and neck by repositioning underlying tissues and removing excess skin. The goal is a refreshed, rested appearance — never a 'pulled' or overdone look.",
-        ar: "يعالج شد الوجه علامات التقدم في العمر في الجزء السفلي من الوجه والرقبة عن طريق إعادة ترتيب الأنسجة العميقة وإزالة الجلد الزائد. الهدف هو الحصول على مظهر منتعش ومرتاح، وليس مظهرًا \"مشدودًا\" أو مبالغًا فيه.",
-      },
-      recovery: {
-        en: "Initial social recovery typically takes 10 to 14 days, with residual swelling settling gradually over the following weeks as your natural contours emerge.",
-        ar: "تستغرق فترة التعافي الاجتماعي الأولية عادةً من 10 إلى 14 يومًا، مع تراجع تدريجي للتورم المتبقي خلال الأسابيع التالية حتى تظهر ملامحك الطبيعية.",
-      },
-      faq: [
-        {
-          question: { en: "What is a deep plane facelift?", ar: "ما هو شد الوجه بتقنية Deep Plane؟" },
-          answer: {
-            en: "An advanced technique that lifts deeper tissues for longer-lasting, natural results.",
-            ar: "تقنية متقدمة تشد الأنسجة العميقة لتحقيق نتائج طبيعية أطول أمدًا.",
-          },
-        },
-        {
-          question: { en: "Can this be combined with eyelid surgery?", ar: "هل يمكن دمجه مع جراحة الجفون؟" },
-          answer: {
-            en: "Yes, combination procedures are common and can be performed efficiently in a single session.",
-            ar: "نعم، الجمع بين الإجراءين شائع ويمكن إجراؤه بكفاءة في جلسة واحدة.",
-          },
-        },
-      ],
-    },
-  },
-  {
     slug: "blepharoplasty",
     name: { en: "Blepharoplasty", ar: "جراحة تجميل الجفون" },
     shortDescription: {
