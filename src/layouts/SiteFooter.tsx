@@ -140,17 +140,21 @@ export async function SiteFooter() {
             <Link href="/terms" className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark">
               {t("termsOfService")}
             </Link>
-            {/* DOM order is the logical reading order (label, then logo, then
-                brand) — RTL/LTR mirroring is handled by the page's own dir,
-                not by branching here. */}
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-darker/60 py-1 ps-1 pe-3 backdrop-blur-md">
-              <span className="font-medium text-brand-light/70">{t("developedByLabel")}</span>
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold to-[#9c7a1f]">
-                <Image src="/transition-logo-icon.png" alt="" width={120} height={120} className="h-4 w-4" />
-              </span>
-              <span className="font-serif italic text-brand-gold">{t("developedByBrand")}</span>
-            </span>
           </div>
+        </div>
+
+        {/* Own centered row, bottom-most element of the footer. DOM order is
+            the logical reading order (label, then logo, then brand name) —
+            RTL/LTR mirroring is handled by the page's own dir, not branched
+            here. */}
+        <div className="mt-8 flex justify-center">
+          <span className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-brand-gold to-[#f2ca50] px-5 py-2 shadow-[0_4px_24px_rgba(212,175,55,0.3)]">
+            <span className="text-sm font-medium text-brand-darker/80">{t("developedByLabel")}</span>
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-brand-darker">
+              <Image src="/transition-logo-icon.png" alt="" width={120} height={120} className="h-6 w-6" />
+            </span>
+            <span className="text-base font-bold text-brand-darker">{t("developedByBrand")}</span>
+          </span>
         </div>
       </div>
     </footer>
