@@ -75,7 +75,8 @@
     "rightsReserved": "© {year} د. أحمد جمال البرهامي لجراحات التجميل. جميع الحقوق محفوظة.",
     "privacyPolicy": "سياسة الخصوصية",
     "termsOfService": "الشروط والأحكام",
-    "developedBy": "تم التطوير بواسطة Transition",
+    "developedByLabel": "تصميم وتطوير",
+    "developedByBrand": "Transition",
     "categories": {
       "facial": "إجراءات الوجه",
       "breast": "جراحات الثدي",

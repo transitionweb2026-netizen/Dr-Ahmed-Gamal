@@ -140,7 +140,16 @@ export async function SiteFooter() {
             <Link href="/terms" className="rounded transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark">
               {t("termsOfService")}
             </Link>
-            <span>{t("developedBy")}</span>
+            {/* DOM order is the logical reading order (label, then logo, then
+                brand) — RTL/LTR mirroring is handled by the page's own dir,
+                not by branching here. */}
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-darker/60 py-1 ps-1 pe-3 backdrop-blur-md">
+              <span className="font-medium text-brand-light/70">{t("developedByLabel")}</span>
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold to-[#9c7a1f]">
+                <Image src="/transition-logo-icon.png" alt="" width={120} height={120} className="h-4 w-4" />
+              </span>
+              <span className="font-serif italic text-brand-gold">{t("developedByBrand")}</span>
+            </span>
           </div>
         </div>
       </div>

@@ -75,7 +75,8 @@
     "rightsReserved": "© {year} Dr. Ahmed Gamal El-Borhamy Plastic Surgery. All Rights Reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "developedBy": "Developed by Transition",
+    "developedByLabel": "Design & Development",
+    "developedByBrand": "Transition",
     "categories": {
       "facial": "Facial Procedures",
       "breast": "Breast Surgery",
