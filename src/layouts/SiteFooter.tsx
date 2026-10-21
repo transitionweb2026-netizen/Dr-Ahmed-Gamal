@@ -150,8 +150,8 @@ export async function SiteFooter() {
         <div className="mt-8 flex justify-center">
           <span className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-brand-gold to-[#f2ca50] px-5 py-2 shadow-[0_4px_24px_rgba(212,175,55,0.3)]">
             <span className="text-sm font-medium text-brand-darker/80">{t("developedByLabel")}</span>
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-gold via-[#a67c00] to-[#5c4000] p-2">
-              <Image src="/transition-logo-icon.png" alt="" width={160} height={160} className="h-full w-full object-contain" />
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-gold via-[#a67c00] to-[#5c4000] p-1.5">
+              <Image src="/transition-logo-icon.png" alt="" width={240} height={240} className="h-full w-full object-contain" />
             </span>
             <span className="text-base font-bold text-brand-darker">{t("developedByBrand")}</span>
           </span>
